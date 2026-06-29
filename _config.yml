@@ -1,0 +1,22 @@
+title: NCCR Metadata
+description: Semantic metadata and documentation for the National Childhood Cancer Registry Data Platform
+url: "https://nci-dccps.github.io"
+baseurl: "/nccr-metadata"
+
+theme: minima
+
+header_pages:
+  - index.md
+  - metadata/index.md
+  - metadata/data-sources.md
+  - metadata/vocabulary.md
+  - metadata/usage.md
+
+# Keep TTL files accessible as static assets
+include:
+  - "*.ttl"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
