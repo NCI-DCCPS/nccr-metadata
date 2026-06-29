@@ -1,0 +1,363 @@
+## ---------------------------------------------------------
+## NCCR Data Platform — DATMM 6.0.0 Metadata Record
+## ---------------------------------------------------------
+## This file describes the National Childhood Cancer Registry
+## Data Platform and its component datasources using the NLM
+## DATaset Metadata Model (DATMM) v6.0.0.
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+@prefix schema: <http://schema.org/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix nccr:   <https://nccrdataplatform.ccdi.cancer.gov/ontology/> .
+@prefix nccr-ds: <https://nccrdataplatform.ccdi.cancer.gov/datasource/> .
+@prefix nccr-doc: <https://nccrdataplatform.ccdi.cancer.gov/documentation/> .
+@prefix nccr-agent: <https://nccrdataplatform.ccdi.cancer.gov/agent/> .
+@prefix nccr-repo: <https://nccrdataplatform.ccdi.cancer.gov/repository/> .
+@prefix nccr-subj: <https://nccrdataplatform.ccdi.cancer.gov/subject/> .
+
+## ==========================================================
+## REPOSITORY
+## ==========================================================
+
+nccr-repo:nccr-data-lake a datmm:Repository ;
+    dct:title "NCCR Secure Cloud Data Lake" ;
+    dct:identifier "nccr-data-lake" ;
+    dct:description "AWS-based secure data lake hosting de-identified cancer registry, claims, pharmacy, and contextual data for the NCCR Data Platform." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/home> .
+
+## ==========================================================
+## AGENTS (Contributors)
+## ==========================================================
+
+nccr-agent:nci a foaf:Agent ;
+    foaf:name "National Cancer Institute (NCI)" ;
+    dct:identifier "https://ror.org/040gcmg81" .
+
+nccr-agent:ccdi a foaf:Agent ;
+    foaf:name "Childhood Cancer Data Initiative (CCDI)" ;
+    dct:identifier "ccdi" .
+
+nccr-agent:seer a foaf:Agent ;
+    foaf:name "Surveillance, Epidemiology, and End Results (SEER) Program" ;
+    dct:identifier "https://seer.cancer.gov" .
+
+nccr-agent:cog a foaf:Agent ;
+    foaf:name "Children's Oncology Group (COG)" ;
+    dct:identifier "https://www.childrensoncologygroup.org" .
+
+nccr-agent:naaccr a foaf:Agent ;
+    foaf:name "North American Association of Central Cancer Registries (NAACCR)" ;
+    dct:identifier "https://www.naaccr.org" .
+
+## ==========================================================
+## CONTRIBUTIONS
+## ==========================================================
+
+nccr-agent:nci-contribution a bf:Contribution ;
+    bf:agent nccr-agent:nci ;
+    bf:role "publisher" .
+
+nccr-agent:ccdi-contribution a bf:Contribution ;
+    bf:agent nccr-agent:ccdi ;
+    bf:role "initiative" .
+
+nccr-agent:seer-contribution a bf:Contribution ;
+    bf:agent nccr-agent:seer ;
+    bf:role "data provider" .
+
+nccr-agent:cog-contribution a bf:Contribution ;
+    bf:agent nccr-agent:cog ;
+    bf:role "data provider" .
+
+## ==========================================================
+## GRANT / FUNDING
+## ==========================================================
+
+nccr-agent:ccdi-grant a schema:Grant ;
+    schema:name "Childhood Cancer Data Initiative" ;
+    schema:funder nccr-agent:nci-contribution ;
+    schema:url <https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative> .
+
+## ==========================================================
+## PLATFORM (as a Collection containing Datasets)
+## ==========================================================
+
+nccr-ds:platform a dcmitype:Collection, datmm:Dataset ;
+    dct:title "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform" ;
+    dct:alternative "NCCR Data Platform" ;
+    dct:description "An interactive, secure cloud platform for cohort discovery, data exploration and visualization, data access requests, and custom dataset generation using de-identified cancer data for children, adolescents, and young adults (ages 0-39)." ;
+    dct:identifier "doi:10.71925/byd9-3d93" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Data browser and cohort discovery available to registered users. Individual-level data downloads require IRB review and approval via the NCCR Data Access Request process." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/home> ;
+    dct:isPartOf nccr-repo:nccr-data-lake ;
+    bf:contribution nccr-agent:nci-contribution, nccr-agent:ccdi-contribution, nccr-agent:seer-contribution, nccr-agent:cog-contribution ;
+    schema:funding nccr-agent:ccdi-grant ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:subject
+        nccr-subj:childhood-cancer ,
+        nccr-subj:aya-cancer ,
+        nccr-subj:population-based-registry ,
+        nccr-subj:pharmacy-claims ,
+        nccr-subj:medical-claims ,
+        nccr-subj:radiation-oncology ,
+        nccr-subj:area-based-measures ,
+        nccr-subj:clinical-trials ,
+        nccr-subj:data-linkage ;
+    dct:hasPart
+        nccr-ds:ctc ,
+        nccr-ds:abm ,
+        nccr-ds:ccdi ,
+        nccr-ds:cog ,
+        nccr-ds:medical-claims ,
+        nccr-ds:pharm ,
+        nccr-ds:ro ;
+    dct:isReferencedBy
+        nccr-doc:ctc-metadata ,
+        nccr-doc:abm-metadata ,
+        nccr-doc:ccdi-metadata ,
+        nccr-doc:cog-metadata ,
+        nccr-doc:mcd-metadata ,
+        nccr-doc:mce-metadata ,
+        nccr-doc:mcp-metadata ,
+        nccr-doc:pharm-metadata ,
+        nccr-doc:ro-metadata ,
+        nccr-doc:dataConfig ,
+        nccr-doc:dictionary-schema .
+
+## ==========================================================
+## DATASOURCES (as Datasets within the Platform)
+## ==========================================================
+
+## --- Consolidated Tumor Case (CTC) ---
+nccr-ds:ctc a datmm:Dataset ;
+    dct:title "Consolidated Tumor Case (CTC)" ;
+    dct:alternative "CTC" ;
+    dct:description "Final adjudicated data collected from population-based cancer registries including SEER. Submitted in December 2024 under NCCR data submission requirements for cases diagnosed 1995-2022. Records represent 52.7% of all U.S. children, adolescents, and young adults ages 0-39 based on 2020 U.S. populations." ;
+    dct:identifier "ctc" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:isReferencedBy nccr-doc:ctc-metadata ;
+    bf:contribution nccr-agent:seer-contribution ;
+    dct:subject nccr-subj:population-based-registry, nccr-subj:childhood-cancer .
+
+## --- Area-Based Measures (ABM) ---
+nccr-ds:abm a datmm:Dataset ;
+    dct:title "Area-Based Measures" ;
+    dct:alternative "ABM" ;
+    dct:description "Non-clinical data variables derived from the US Census Department providing broader context of factors that may contribute to a person's health. Variables are 2010 Census attributes based on 2010 Census-defined geographic boundaries. Values provided for patients with SEER diagnosis year 2006-2022." ;
+    dct:identifier "abm" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:isReferencedBy nccr-doc:abm-metadata ;
+    dct:subject nccr-subj:area-based-measures .
+
+## --- Childhood Cancer Data Initiative Mappings (CCDI) ---
+nccr-ds:ccdi a datmm:Dataset ;
+    dct:title "Childhood Cancer Data Initiative (CCDI) Mappings" ;
+    dct:alternative "CCDI" ;
+    dct:description "Leverages the CCDI Participant Index (CPI) to match the same individual across different organizations, datasets, and studies. Maps publicly available participant identifiers to NCCR identifiers to enable accurate dataset merging and novel analysis across public health surveillance, research studies, and real-world healthcare resources." ;
+    dct:identifier "ccdi" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:isReferencedBy nccr-doc:ccdi-metadata ;
+    bf:contribution nccr-agent:ccdi-contribution ;
+    dct:subject nccr-subj:data-linkage .
+
+## --- Children's Oncology Group (COG) ---
+nccr-ds:cog a datmm:Dataset ;
+    dct:title "Children's Oncology Group (COG)" ;
+    dct:alternative "COG" ;
+    dct:description "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Collects data from patients with a COG captured diagnosis year 2007-2018." ;
+    dct:identifier "cog" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:isReferencedBy nccr-doc:cog-metadata ;
+    bf:contribution nccr-agent:cog-contribution ;
+    dct:subject nccr-subj:clinical-trials .
+
+## --- Medical Claims (parent group) ---
+nccr-ds:medical-claims a datmm:Dataset ;
+    dct:title "Medical Claims" ;
+    dct:alternative "MC" ;
+    dct:description "Diagnosis, enrollment, and procedure data extracted from claims collected by various insurers." ;
+    dct:identifier "mc" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:hasPart nccr-ds:mcd, nccr-ds:mce, nccr-ds:mcp ;
+    dct:subject nccr-subj:medical-claims .
+
+## --- Medical Claims Diagnosis (MCD) ---
+nccr-ds:mcd a datmm:Dataset ;
+    dct:title "Medical Claims Diagnosis" ;
+    dct:alternative "MCD" ;
+    dct:description "Patient diagnosis data extracted from medical claims collected by various insurers. Includes ICD-9 or ICD-10 diagnosis codes associated with each claim, sequence numbers for diagnoses occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and claim service date." ;
+    dct:identifier "mcd" ;
+    dct:isPartOf nccr-ds:medical-claims ;
+    dct:isReferencedBy nccr-doc:mcd-metadata ;
+    dct:subject nccr-subj:medical-claims .
+
+## --- Medical Claims Enrollment (MCE) ---
+nccr-ds:mce a datmm:Dataset ;
+    dct:title "Medical Claims Enrollment" ;
+    dct:alternative "MCE" ;
+    dct:description "Patient enrollment data extracted from medical claims. Includes details about each patient's insurance enrollment status at various points in time before and after their index cancer diagnosis. Enrollment status known only for years 2000-2023, for patients with SEER diagnosis year 2000-2021." ;
+    dct:identifier "mce" ;
+    dct:isPartOf nccr-ds:medical-claims ;
+    dct:isReferencedBy nccr-doc:mce-metadata ;
+    dct:subject nccr-subj:medical-claims .
+
+## --- Medical Claims Procedure (MCP) ---
+nccr-ds:mcp a datmm:Dataset ;
+    dct:title "Medical Claims Procedure" ;
+    dct:alternative "MCP" ;
+    dct:description "Patient procedure data extracted from medical claims. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, procedure modifiers, sequence numbers, and months elapsed between index cancer diagnosis and service date." ;
+    dct:identifier "mcp" ;
+    dct:isPartOf nccr-ds:medical-claims ;
+    dct:isReferencedBy nccr-doc:mcp-metadata ;
+    dct:subject nccr-subj:medical-claims .
+
+## --- Pharmacy Claims (PHARM) ---
+nccr-ds:pharm a datmm:Dataset ;
+    dct:title "Pharmacy Claims" ;
+    dct:alternative "PHARM" ;
+    dct:description "Information derived from outpatient pharmacy providers' claims for medications dispensed to patients with cancer. Includes patients with claims since 2000 from commercial plans, Medicaid, and commercial pharmacies. Contains 9- and 11-digit NDC, CanMED/RxNorm drug classification, dispense quantity/duration, and months from diagnosis to dispense. Primarily oral antineoplastics and infusion-based chemotherapies; hospital-based chemotherapy agents currently not included." ;
+    dct:identifier "pharm" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:isReferencedBy nccr-doc:pharm-metadata ;
+    dct:subject nccr-subj:pharmacy-claims .
+
+## --- Radiation Oncology (RO) ---
+nccr-ds:ro a datmm:Dataset ;
+    dct:title "Radiation Oncology" ;
+    dct:alternative "RO" ;
+    dct:description "Data from NCI-supported Cancer Centers and the Pediatric Proton/Photon Consortium Registry (PPCR). Offers expanded radiation treatment data including radiation anatomic site, therapy type, energy type, total and prescribed doses and fractions, months from index diagnosis to start and end of treatment, and other elements abstracted from clinical records." ;
+    dct:identifier "ro" ;
+    dct:isPartOf nccr-ds:platform ;
+    dct:isReferencedBy nccr-doc:ro-metadata ;
+    dct:subject nccr-subj:radiation-oncology .
+
+## ==========================================================
+## DOCUMENTATION (Metadata JSON files as Documentation)
+## ==========================================================
+
+nccr-doc:ctc-metadata a datmm:Documentation ;
+    dct:title "CTC Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "ctc_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Consolidated Tumor Case datasource. Defines field names, types, permissible values, processing rules, and display settings." ;
+    dct:references nccr-ds:ctc .
+
+nccr-doc:abm-metadata a datmm:Documentation ;
+    dct:title "ABM Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "abm_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Area-Based Measures datasource." ;
+    dct:references nccr-ds:abm .
+
+nccr-doc:ccdi-metadata a datmm:Documentation ;
+    dct:title "CCDI Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "ccdi_metadata.json" ;
+    dct:description "Variable-level data dictionary for the CCDI Mappings datasource." ;
+    dct:references nccr-ds:ccdi .
+
+nccr-doc:cog-metadata a datmm:Documentation ;
+    dct:title "COG Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "cog_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Children's Oncology Group datasource." ;
+    dct:references nccr-ds:cog .
+
+nccr-doc:mcd-metadata a datmm:Documentation ;
+    dct:title "MCD Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "mcd_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Medical Claims Diagnosis datasource." ;
+    dct:references nccr-ds:mcd .
+
+nccr-doc:mce-metadata a datmm:Documentation ;
+    dct:title "MCE Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "mce_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Medical Claims Enrollment datasource." ;
+    dct:references nccr-ds:mce .
+
+nccr-doc:mcp-metadata a datmm:Documentation ;
+    dct:title "MCP Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "mcp_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Medical Claims Procedure datasource." ;
+    dct:references nccr-ds:mcp .
+
+nccr-doc:pharm-metadata a datmm:Documentation ;
+    dct:title "PHARM Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "pharm_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Pharmacy Claims datasource." ;
+    dct:references nccr-ds:pharm .
+
+nccr-doc:ro-metadata a datmm:Documentation ;
+    dct:title "RO Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "ro_metadata.json" ;
+    dct:description "Variable-level data dictionary for the Radiation Oncology datasource." ;
+    dct:references nccr-ds:ro .
+
+nccr-doc:dataConfig a datmm:Documentation ;
+    dct:title "Platform Data Configuration" ;
+    dct:type "application/json" ;
+    dct:identifier "dataConfig.json" ;
+    dct:description "Master configuration file defining datasource descriptions, UI structure, default selections, and references to dictionary and report files for the Data Browser." ;
+    dct:references nccr-ds:platform .
+
+nccr-doc:dictionary-schema a datmm:Documentation ;
+    dct:title "NCCR Data Dictionary JSON Schema" ;
+    dct:type "application/schema+json" ;
+    dct:identifier "dictionary.json" ;
+    dct:description "JSON Schema (draft 2019-09) defining the structure of NCCR data dictionary metadata files." ;
+    dct:references nccr-ds:platform .
+
+## ==========================================================
+## SUBJECT CONCEPTS
+## ==========================================================
+
+nccr-subj:childhood-cancer a skos:Concept ;
+    skos:prefLabel "Childhood cancer"@en ;
+    skos:definition "Cancers diagnosed in children ages 0-14."@en .
+
+nccr-subj:aya-cancer a skos:Concept ;
+    skos:prefLabel "Adolescent and young adult cancer"@en ;
+    skos:definition "Cancers diagnosed in adolescents and young adults ages 15-39."@en .
+
+nccr-subj:population-based-registry a skos:Concept ;
+    skos:prefLabel "Population-based cancer registry"@en ;
+    skos:definition "Systematic collection of cancer data covering a defined geographic population."@en .
+
+nccr-subj:pharmacy-claims a skos:Concept ;
+    skos:prefLabel "Pharmacy claims"@en ;
+    skos:definition "Data from outpatient pharmacy dispensing records."@en .
+
+nccr-subj:medical-claims a skos:Concept ;
+    skos:prefLabel "Medical claims"@en ;
+    skos:definition "Data from insurance claims for diagnoses, procedures, and enrollment."@en .
+
+nccr-subj:radiation-oncology a skos:Concept ;
+    skos:prefLabel "Radiation oncology"@en ;
+    skos:definition "Radiation treatment data from cancer centers and registries."@en .
+
+nccr-subj:area-based-measures a skos:Concept ;
+    skos:prefLabel "Area-based measures"@en ;
+    skos:definition "Socioeconomic and geographic contextual variables linked to patients via census tracts."@en .
+
+nccr-subj:clinical-trials a skos:Concept ;
+    skos:prefLabel "Clinical trials"@en ;
+    skos:definition "Data from clinical trial enrollment and registry protocols."@en .
+
+nccr-subj:data-linkage a skos:Concept ;
+    skos:prefLabel "Data linkage"@en ;
+    skos:definition "Cross-dataset patient matching via participant indices."@en .

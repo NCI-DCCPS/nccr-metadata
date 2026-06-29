@@ -1,0 +1,534 @@
+## ---------------------------------------------------------
+## NCCR Vocabulary — Lightweight RDF Ontology
+## ---------------------------------------------------------
+## Defines classes and properties for representing NCCR
+## variable-level metadata, processing rules, value sets,
+## cohort filters, and platform behavior.
+##
+## Namespace: https://nccrdataplatform.ccdi.cancer.gov/vocab#
+## ---------------------------------------------------------
+
+@prefix nccr:   <https://nccrdataplatform.ccdi.cancer.gov/vocab#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+
+## ==========================================================
+## ONTOLOGY METADATA
+## ==========================================================
+
+nccr: a owl:Ontology ;
+    rdfs:label "NCCR Data Platform Vocabulary"@en ;
+    dct:title "National Childhood Cancer Registry Data Platform Vocabulary" ;
+    dct:description """A lightweight RDF vocabulary for representing variable-level
+metadata from the NCCR Data Platform JSON data dictionaries. Covers data source
+structure, variable definitions, value sets, processing rules, cohort filters,
+and platform display behavior."""@en ;
+    dct:creator "NCI Division of Cancer Control and Population Sciences (DCCPS)" ;
+    dct:created "2026-06-26"^^xsd:date ;
+    owl:versionInfo "1.0.0" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
+
+## ==========================================================
+## CLASSES — Core Domain
+## ==========================================================
+
+nccr:DataSource a owl:Class ;
+    rdfs:label "Data Source"@en ;
+    skos:definition "A named collection of variables within the NCCR platform (e.g., CTC, PHARM, COG). Maps to a datasource entry in dataConfig.json and a *_metadata.json file."@en .
+
+nccr:DataSourceGroup a owl:Class ;
+    rdfs:label "Data Source Group"@en ;
+    rdfs:subClassOf nccr:DataSource ;
+    skos:definition "A logical grouping of related data sources (e.g., Medical Claims groups MCD, MCE, MCP)."@en .
+
+nccr:Variable a owl:Class ;
+    rdfs:label "Variable"@en ;
+    skos:definition "A data element (column/field) described in an NCCR metadata JSON dictionary. Corresponds to one entry in the Dictionary_Elements array."@en .
+
+nccr:DerivedVariable a owl:Class ;
+    rdfs:subClassOf nccr:Variable ;
+    rdfs:label "Derived Variable"@en ;
+    skos:definition "A variable that is computed during ETL processing rather than received directly from a data provider. Examples include binned columns and month-range columns."@en .
+
+nccr:ValueSet a owl:Class ;
+    rdfs:label "Value Set"@en ;
+    rdfs:subClassOf skos:ConceptScheme ;
+    skos:definition "A controlled set of permissible values for a variable. Corresponds to the Permissible_Values array in the JSON metadata."@en .
+
+nccr:CodeValue a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Code Value"@en ;
+    skos:definition "A single permissible value within a ValueSet."@en .
+
+nccr:Section a owl:Class ;
+    rdfs:label "Section"@en ;
+    skos:definition "A logical grouping of variables within a data dictionary (e.g., Demographic, Cancer Identification, Treatment). Maps to Item_Section."@en .
+
+## ==========================================================
+## CLASSES — External Vocabulary References
+## ==========================================================
+
+nccr:SourceVocabulary a owl:Class ;
+    rdfs:label "Source Vocabulary"@en ;
+    skos:definition "An external coding system or terminology used by a variable (e.g., NAACCR, SEER, ICD-O-3, RxNorm, CanMED, AJCC, HCPCS, CPT)."@en .
+
+## ==========================================================
+## CLASSES — Processing & ETL
+## ==========================================================
+
+nccr:ProcessingRule a owl:Class ;
+    rdfs:label "Processing Rule"@en ;
+    skos:definition "A rule describing how raw data is transformed during ETL. Includes deduplication logic, substitutions, and derived column generation."@en .
+
+nccr:DataSubstitution a owl:Class ;
+    rdfs:label "Data Substitution"@en ;
+    skos:definition "A value replacement applied during ETL processing. Maps to Processed_Data_Substitutions entries."@en .
+
+nccr:BinDefinition a owl:Class ;
+    rdfs:label "Bin Definition"@en ;
+    skos:definition "A numeric interval or category used to bin a continuous variable into discrete groups. Maps to Add_Processed_Binned_Column.Bins entries."@en .
+
+nccr:ValidationRule a owl:Class ;
+    rdfs:label "Validation Rule"@en ;
+    skos:definition "A machine-checkable constraint (regex or pattern) used to validate field values. Maps to Validate_As."@en .
+
+## ==========================================================
+## CLASSES — Platform Behavior (UI, Analytics, Filters)
+## ==========================================================
+
+nccr:CohortFilter a owl:Class ;
+    rdfs:label "Cohort Filter"@en ;
+    skos:definition "A filter control used in the Cohort Discovery page to subset patients. Maps to entries in parameter_map.json and dashboardFilters.json."@en .
+
+nccr:DisplayConfig a owl:Class ;
+    rdfs:label "Display Configuration"@en ;
+    skos:definition "UI and dashboard display settings for a variable (visibility, graph generation, hover behavior)."@en .
+
+## ==========================================================
+## OBJECT PROPERTIES — Structural Relationships
+## ==========================================================
+
+nccr:belongsToSource a owl:ObjectProperty ;
+    rdfs:label "belongs to source"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:DataSource ;
+    skos:definition "Associates a variable with its parent data source."@en .
+
+nccr:hasVariable a owl:ObjectProperty ;
+    rdfs:label "has variable"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range nccr:Variable ;
+    owl:inverseOf nccr:belongsToSource ;
+    skos:definition "Links a data source to one of its variables."@en .
+
+nccr:hasMember a owl:ObjectProperty ;
+    rdfs:label "has member"@en ;
+    rdfs:domain nccr:DataSourceGroup ;
+    rdfs:range nccr:DataSource ;
+    skos:definition "Links a data source group to its child data sources."@en .
+
+nccr:inSection a owl:ObjectProperty ;
+    rdfs:label "in section"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:Section ;
+    skos:definition "Associates a variable with its logical section within the dictionary."@en .
+
+nccr:hasValueSet a owl:ObjectProperty ;
+    rdfs:label "has value set"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:ValueSet ;
+    skos:definition "Associates a variable with its set of permissible values."@en .
+
+nccr:hasCodeValue a owl:ObjectProperty ;
+    rdfs:label "has code value"@en ;
+    rdfs:domain nccr:ValueSet ;
+    rdfs:range nccr:CodeValue ;
+    skos:definition "Links a value set to one of its allowed code values."@en .
+
+nccr:sourceVocabulary a owl:ObjectProperty ;
+    rdfs:label "source vocabulary"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:SourceVocabulary ;
+    skos:definition "Links a variable to the external terminology it uses."@en .
+
+nccr:hasProcessingRule a owl:ObjectProperty ;
+    rdfs:label "has processing rule"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:ProcessingRule ;
+    skos:definition "Associates a variable with an ETL processing rule."@en .
+
+nccr:hasSubstitution a owl:ObjectProperty ;
+    rdfs:label "has substitution"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:DataSubstitution ;
+    skos:definition "Associates a variable with a value substitution applied during processing."@en .
+
+nccr:hasBinDefinition a owl:ObjectProperty ;
+    rdfs:label "has bin definition"@en ;
+    rdfs:domain nccr:DerivedVariable ;
+    rdfs:range nccr:BinDefinition ;
+    skos:definition "Associates a derived (binned) variable with its bin definitions."@en .
+
+nccr:derivedFrom a owl:ObjectProperty ;
+    rdfs:label "derived from"@en ;
+    rdfs:domain nccr:DerivedVariable ;
+    rdfs:range nccr:Variable ;
+    skos:definition "Links a derived variable to the source variable it was computed from."@en .
+
+nccr:hasValidation a owl:ObjectProperty ;
+    rdfs:label "has validation"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:ValidationRule ;
+    skos:definition "Associates a variable with a validation constraint."@en .
+
+nccr:hasDisplayConfig a owl:ObjectProperty ;
+    rdfs:label "has display configuration"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:DisplayConfig ;
+    skos:definition "Associates a variable with its UI/dashboard display settings."@en .
+
+nccr:boundToFilter a owl:ObjectProperty ;
+    rdfs:label "bound to filter"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range nccr:CohortFilter ;
+    skos:definition "Links a variable to the cohort filter control that uses it."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Variable Identity
+## ==========================================================
+
+nccr:sourceColumn a owl:DatatypeProperty ;
+    rdfs:label "source column"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "The column name as it appears in the source data file (Column_Name_at_Source)."@en .
+
+nccr:itemName a owl:DatatypeProperty ;
+    rdfs:label "item name"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "The human-readable display name of the variable (Item_Name)."@en .
+
+nccr:itemNumber a owl:DatatypeProperty ;
+    rdfs:label "item number"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "The registry or standard item number (Item_Number), typically a NAACCR item number."@en .
+
+nccr:itemDescription a owl:DatatypeProperty ;
+    rdfs:label "item description"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "The detailed descriptive text for the variable (Item_Description)."@en .
+
+nccr:rationale a owl:DatatypeProperty ;
+    rdfs:label "rationale"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "Why the variable exists or is collected (Rationale)."@en .
+
+nccr:externalLink a owl:DatatypeProperty ;
+    rdfs:label "external link"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Link to external documentation such as the NAACCR data dictionary (Internet_Link)."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Data Type Information
+## ==========================================================
+
+nccr:semanticType a owl:DatatypeProperty ;
+    rdfs:label "semantic type"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "The semantic category of the field value: numeric, float, boolean, string, lookup_value, or numeric_relation."@en .
+
+nccr:fieldLength a owl:DatatypeProperty ;
+    rdfs:label "field length"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "The declared maximum field length in characters (Field_Length)."@en .
+
+nccr:abbreviatedSourceVocabulary a owl:DatatypeProperty ;
+    rdfs:label "abbreviated source vocabulary"@en ;
+    rdfs:domain nccr:Variable ;
+    rdfs:range xsd:string ;
+    skos:definition "Short name of the external vocabulary (Abbreviated_Source_Vocabulary), e.g., NAACCR, SEER, ICD-O-3."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Processing & ETL
+## ==========================================================
+
+nccr:processingRuleText a owl:DatatypeProperty ;
+    rdfs:label "processing rule text"@en ;
+    rdfs:domain nccr:ProcessingRule ;
+    rdfs:range xsd:string ;
+    skos:definition "Human-readable description of a processing/deduplication rule (Processing_Rules)."@en .
+
+nccr:substitutionValue a owl:DatatypeProperty ;
+    rdfs:label "substitution value"@en ;
+    rdfs:domain nccr:DataSubstitution ;
+    rdfs:range xsd:string ;
+    skos:definition "The original value to be replaced during processing."@en .
+
+nccr:substitutionReplacement a owl:DatatypeProperty ;
+    rdfs:label "substitution replacement"@en ;
+    rdfs:domain nccr:DataSubstitution ;
+    rdfs:range xsd:string ;
+    skos:definition "The replacement value (or empty for removal)."@en .
+
+nccr:substitutionActive a owl:DatatypeProperty ;
+    rdfs:label "substitution active"@en ;
+    rdfs:domain nccr:DataSubstitution ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether this substitution is currently applied (Processed_Data_Substitutions_Active)."@en .
+
+nccr:monthRangeColumnType a owl:DatatypeProperty ;
+    rdfs:label "month range column type"@en ;
+    rdfs:domain nccr:DerivedVariable ;
+    rdfs:range xsd:string ;
+    skos:definition "The type of month-range derived column to create (Add_Processed_Month_Range_Column value, e.g., 'default')."@en .
+
+nccr:binLabel a owl:DatatypeProperty ;
+    rdfs:label "bin label"@en ;
+    rdfs:domain nccr:BinDefinition ;
+    rdfs:range xsd:string ;
+    skos:definition "The display label for a numeric bin category."@en .
+
+nccr:binMin a owl:DatatypeProperty ;
+    rdfs:label "bin minimum"@en ;
+    rdfs:domain nccr:BinDefinition ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The lower bound of a numeric bin."@en .
+
+nccr:binMax a owl:DatatypeProperty ;
+    rdfs:label "bin maximum"@en ;
+    rdfs:domain nccr:BinDefinition ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The upper bound of a numeric bin."@en .
+
+nccr:binInclusiveLower a owl:DatatypeProperty ;
+    rdfs:label "bin inclusive lower"@en ;
+    rdfs:domain nccr:BinDefinition ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether the lower bound is inclusive."@en .
+
+nccr:binInclusiveUpper a owl:DatatypeProperty ;
+    rdfs:label "bin inclusive upper"@en ;
+    rdfs:domain nccr:BinDefinition ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether the upper bound is inclusive."@en .
+
+nccr:validatePattern a owl:DatatypeProperty ;
+    rdfs:label "validate pattern"@en ;
+    rdfs:domain nccr:ValidationRule ;
+    rdfs:range xsd:string ;
+    skos:definition "A regular expression used to validate field values (Validate_As)."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Display & Platform Behavior
+## ==========================================================
+
+nccr:visibleInUI a owl:DatatypeProperty ;
+    rdfs:label "visible in UI"@en ;
+    rdfs:domain nccr:DisplayConfig ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether the variable appears in the Data Browser and cohort selection UI (Visible_in_UI)."@en .
+
+nccr:visibleInQuicksight a owl:DatatypeProperty ;
+    rdfs:label "visible in QuickSight"@en ;
+    rdfs:domain nccr:DisplayConfig ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether the variable is included in QuickSight analytics dashboards (Visible_in_Quicksight)."@en .
+
+nccr:generateGraph a owl:DatatypeProperty ;
+    rdfs:label "generate graph"@en ;
+    rdfs:domain nccr:DisplayConfig ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether the Data Browser generates a distribution graph for this variable (Generate_Data_Browser_Graph)."@en .
+
+nccr:graphLimit a owl:DatatypeProperty ;
+    rdfs:label "graph limit"@en ;
+    rdfs:domain nccr:DisplayConfig ;
+    rdfs:range xsd:integer ;
+    skos:definition "Maximum number of values to display in a graph (Data_Browser_Graph_Limit)."@en .
+
+nccr:graphHoverLookup a owl:DatatypeProperty ;
+    rdfs:label "graph hover lookup"@en ;
+    rdfs:domain nccr:DisplayConfig ;
+    rdfs:range xsd:string ;
+    skos:definition "Sentinel or lookup key for graph hover text display (Data_Browser_Graph_Hover_Display_Lookup). Value '_all_' means show all values."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Cohort Filter
+## ==========================================================
+
+nccr:filterType a owl:DatatypeProperty ;
+    rdfs:label "filter type"@en ;
+    rdfs:domain nccr:CohortFilter ;
+    rdfs:range xsd:string ;
+    skos:definition "The type of filter operation: EQUALS, MIN, or MAX (from parameter_map.json)."@en .
+
+nccr:filterFieldName a owl:DatatypeProperty ;
+    rdfs:label "filter field name"@en ;
+    rdfs:domain nccr:CohortFilter ;
+    rdfs:range xsd:string ;
+    skos:definition "The processed field name the filter operates on (fieldname in parameter_map.json)."@en .
+
+nccr:filterControlTitle a owl:DatatypeProperty ;
+    rdfs:label "filter control title"@en ;
+    rdfs:domain nccr:CohortFilter ;
+    rdfs:range xsd:string ;
+    skos:definition "The UI label shown for this filter control (control-title in parameter_map.json)."@en .
+
+nccr:filterDataSource a owl:ObjectProperty ;
+    rdfs:label "filter data source"@en ;
+    rdfs:domain nccr:CohortFilter ;
+    rdfs:range nccr:DataSource ;
+    skos:definition "The data source this filter applies to (datasource in parameter_map.json)."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — DataSource
+## ==========================================================
+
+nccr:sourceId a owl:DatatypeProperty ;
+    rdfs:label "source identifier"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The short identifier for the data source as used in the platform code (e.g., 'CTC', 'PHARM')."@en .
+
+nccr:sourceLabel a owl:DatatypeProperty ;
+    rdfs:label "source label"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The human-readable display name of the data source (source_label in dataConfig.json)."@en .
+
+nccr:dictionaryFile a owl:DatatypeProperty ;
+    rdfs:label "dictionary file"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The filename of the JSON data dictionary for this source (e.g., 'ctc_metadata.json')."@en .
+
+nccr:reportFile a owl:DatatypeProperty ;
+    rdfs:label "report file"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The filename of the variable distribution report JSON (e.g., 'ctcReport.json')."@en .
+
+nccr:categorized a owl:DatatypeProperty ;
+    rdfs:label "categorized"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether variables in this source are grouped by section in the UI (categorize in dataConfig.json)."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Code Value
+## ==========================================================
+
+nccr:codeNotation a owl:DatatypeProperty ;
+    rdfs:label "code notation"@en ;
+    rdfs:domain nccr:CodeValue ;
+    rdfs:range xsd:string ;
+    skos:definition "The coded value (Value in Permissible_Values)."@en .
+
+nccr:codeDescription a owl:DatatypeProperty ;
+    rdfs:label "code description"@en ;
+    rdfs:domain nccr:CodeValue ;
+    rdfs:range xsd:string ;
+    skos:definition "The human-readable meaning of the code (Description in Permissible_Values)."@en .
+
+## ==========================================================
+## NAMED INDIVIDUALS — Source Vocabularies
+## ==========================================================
+
+nccr:vocab-NAACCR a nccr:SourceVocabulary ;
+    rdfs:label "NAACCR"@en ;
+    skos:definition "North American Association of Central Cancer Registries standard."@en ;
+    foaf:homepage <https://www.naaccr.org> .
+
+nccr:vocab-SEER a nccr:SourceVocabulary ;
+    rdfs:label "SEER"@en ;
+    skos:definition "Surveillance, Epidemiology, and End Results coding system."@en ;
+    foaf:homepage <https://seer.cancer.gov> .
+
+nccr:vocab-ICD-O-3 a nccr:SourceVocabulary ;
+    rdfs:label "ICD-O-3"@en ;
+    skos:definition "International Classification of Diseases for Oncology, 3rd edition."@en .
+
+nccr:vocab-ICD-9 a nccr:SourceVocabulary ;
+    rdfs:label "ICD-9"@en ;
+    skos:definition "International Classification of Diseases, 9th revision."@en .
+
+nccr:vocab-ICD-10 a nccr:SourceVocabulary ;
+    rdfs:label "ICD-10"@en ;
+    skos:definition "International Classification of Diseases, 10th revision."@en .
+
+nccr:vocab-AJCC a nccr:SourceVocabulary ;
+    rdfs:label "AJCC"@en ;
+    skos:definition "American Joint Committee on Cancer staging system."@en .
+
+nccr:vocab-RxNorm a nccr:SourceVocabulary ;
+    rdfs:label "RxNorm"@en ;
+    skos:definition "NLM normalized names for clinical drugs."@en ;
+    foaf:homepage <https://www.nlm.nih.gov/research/umls/rxnorm/> .
+
+nccr:vocab-CanMED a nccr:SourceVocabulary ;
+    rdfs:label "CanMED"@en ;
+    skos:definition "NCI Cancer Medications Enquiry Database classification."@en .
+
+nccr:vocab-HCPCS a nccr:SourceVocabulary ;
+    rdfs:label "HCPCS"@en ;
+    skos:definition "Healthcare Common Procedure Coding System."@en .
+
+nccr:vocab-CPT a nccr:SourceVocabulary ;
+    rdfs:label "CPT"@en ;
+    skos:definition "Current Procedural Terminology (AMA)."@en .
+
+nccr:vocab-CoC a nccr:SourceVocabulary ;
+    rdfs:label "CoC"@en ;
+    skos:definition "Commission on Cancer standards."@en .
+
+nccr:vocab-NPCR a nccr:SourceVocabulary ;
+    rdfs:label "NPCR"@en ;
+    skos:definition "National Program of Cancer Registries."@en .
+
+nccr:vocab-ATC a nccr:SourceVocabulary ;
+    rdfs:label "ATC"@en ;
+    skos:definition "Anatomical Therapeutic Chemical Classification System."@en .
+
+nccr:vocab-SEER-Recode a nccr:SourceVocabulary ;
+    rdfs:label "SEER Recode"@en ;
+    skos:definition "SEER site recode classification schemes."@en .
+
+## ==========================================================
+## NAMED INDIVIDUALS — Semantic Types (enumeration)
+## ==========================================================
+
+nccr:semtype-string a skos:Concept ;
+    rdfs:label "string"@en ;
+    skos:definition "Free-text or identifier string."@en .
+
+nccr:semtype-numeric a skos:Concept ;
+    rdfs:label "numeric"@en ;
+    skos:definition "Integer numeric value."@en .
+
+nccr:semtype-float a skos:Concept ;
+    rdfs:label "float"@en ;
+    skos:definition "Floating-point numeric value."@en .
+
+nccr:semtype-boolean a skos:Concept ;
+    rdfs:label "boolean"@en ;
+    skos:definition "True/false value."@en .
+
+nccr:semtype-lookup_value a skos:Concept ;
+    rdfs:label "lookup_value"@en ;
+    skos:definition "Coded value from a controlled vocabulary (has Permissible_Values)."@en .
+
+nccr:semtype-numeric_relation a skos:Concept ;
+    rdfs:label "numeric_relation"@en ;
+    skos:definition "Numeric value representing a relationship or derived count."@en .
