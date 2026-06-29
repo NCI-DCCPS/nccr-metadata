@@ -12,7 +12,7 @@ This repository provides semantic metadata representations for the NCCR Data Pla
 |------|---------|
 | `nccr_vocab.ttl` | **Vocabulary** — OWL classes and properties for variables, value sets, filters, processing rules, and display configuration |
 | `nccr_datmm.ttl` | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and its 9 datasources (CTC, ABM, CCDI, COG, MCD, MCE, MCP, PHARM, RO) |
-| `nccr_instances_example.ttl` | **Examples** — Sample RDF instances showing how CTC, PHARM, and MCD variables look in practice |
+| `nccr_instances.ttl` | **Instance data** — Complete RDF representation of all 533 variables across all 9 NCCR datasources, including value sets, display configs, filters, and processing rules (28,620 triples) |
 
 ## Data Sources Described
 
@@ -31,11 +31,11 @@ This repository provides semantic metadata representations for the NCCR Data Pla
 ## Architecture
 
 ```
-nccr_vocab.ttl              ← Defines classes & properties (the schema)
+nccr_vocab.ttl        ← Defines classes & properties (the schema)
        │
-nccr_datmm.ttl             ← Dataset-level catalog (who, what, where)
+nccr_datmm.ttl       ← Dataset-level catalog (who, what, where)
        │
-nccr_instances_example.ttl  ← Variable-level instance data (the content)
+nccr_instances.ttl    ← All variables, value sets, filters, and rules as RDF (the content)
 ```
 
 The vocabulary supports three layers of metadata:
@@ -61,7 +61,7 @@ from rdflib import Graph
 g = Graph()
 g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_vocab.ttl")
 g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_datmm.ttl")
-g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_instances_example.ttl")
+g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_instances.ttl")
 
 # Query: which variables are visible in the Data Browser?
 results = g.query("""
