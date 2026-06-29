@@ -108,6 +108,18 @@ nav_exclude: true
 | `nccr:selectsValue` | FilterCriterion → CodeValue | Reference to a coded value |
 | `nccr:allValuesSelected` | FilterCriterion | True if no restriction (ALL_VALUES) |
 
+### Data versioning
+
+| Property | Domain | Description |
+|----------|--------|-------------|
+| `nccr:currentDataVersion` | DataSource | The ETL build timestamp identifying the data version currently loaded in the platform (e.g., `2026-06-21-1430`) |
+| `nccr:instancesGeneratedFrom` | DataSource | The data version from which the RDF instance data was generated — allows consumers to verify freshness |
+
+These properties enable:
+- Tracking which data version the published metadata describes
+- Validating imported cohorts against the current platform state
+- Detecting version mismatches when a cohort was saved against an older data release
+
 ---
 
 ## Source vocabularies (named individuals)
