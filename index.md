@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: NCCR Data Platform — Metadata & Documentation
 nav_order: 1
 ---
 
