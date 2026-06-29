@@ -25,9 +25,11 @@ This site provides **machine-readable metadata** for the platform's datasources 
 
 ## Quick links
 
-- [Download vocabulary (TTL)](nccr_vocab.ttl)
-- [Download dataset catalog (TTL)](nccr_datmm.ttl)
-- [Download full instance data (TTL)](nccr_instances.ttl)
+| File | Type | |
+|------|------|-|
+| [`nccr_vocab.ttl`](nccr_vocab.ttl) | <span style="background:#2e7d32;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">OWL</span> <span style="background:#0066cc;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">Turtle</span> | Vocabulary (schema) |
+| [`nccr_datmm.ttl`](nccr_datmm.ttl) | <span style="background:#6a1b9a;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">DATMM</span> <span style="background:#0066cc;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">Turtle</span> | Dataset catalog |
+| [`nccr_instances.ttl`](nccr_instances.ttl) | <span style="background:#e65100;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">RDF</span> <span style="background:#0066cc;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">Turtle</span> | Full instance data (28K triples) |
 - [GitHub repository](https://github.com/NCI-DCCPS/nccr-metadata)
 
 ---
