@@ -532,3 +532,101 @@ nccr:semtype-lookup_value a skos:Concept ;
 nccr:semtype-numeric_relation a skos:Concept ;
     rdfs:label "numeric_relation"@en ;
     skos:definition "Numeric value representing a relationship or derived count."@en .
+
+## ==========================================================
+## CLASSES — Cohort Definition
+## ==========================================================
+
+nccr:CohortDefinition a owl:Class ;
+    rdfs:label "Cohort Definition"@en ;
+    skos:definition "A saved set of filter criteria defining a patient cohort on the NCCR Data Platform. Captures which datasources are included and what filter values are selected, enabling portable, reproducible, and citable cohort specifications."@en .
+
+nccr:FilterCriterion a owl:Class ;
+    rdfs:label "Filter Criterion"@en ;
+    skos:definition "A single filter selection within a cohort definition — links a CohortFilter to specific selected value(s)."@en .
+
+## ==========================================================
+## OBJECT PROPERTIES — Cohort Definition
+## ==========================================================
+
+nccr:includesSource a owl:ObjectProperty ;
+    rdfs:label "includes source"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range nccr:DataSource ;
+    skos:definition "Links a cohort definition to a datasource that is included in the cohort."@en .
+
+nccr:hasFilterCriterion a owl:ObjectProperty ;
+    rdfs:label "has filter criterion"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range nccr:FilterCriterion ;
+    skos:definition "Links a cohort definition to one of its filter criteria."@en .
+
+nccr:appliesFilter a owl:ObjectProperty ;
+    rdfs:label "applies filter"@en ;
+    rdfs:domain nccr:FilterCriterion ;
+    rdfs:range nccr:CohortFilter ;
+    skos:definition "Links a filter criterion to the CohortFilter definition it uses."@en .
+
+nccr:selectsValue a owl:ObjectProperty ;
+    rdfs:label "selects value"@en ;
+    rdfs:domain nccr:FilterCriterion ;
+    rdfs:range nccr:CodeValue ;
+    skos:definition "Links a filter criterion to a specific coded value from the filter's value set. Used when the filter selects from permissible values."@en .
+
+## ==========================================================
+## DATATYPE PROPERTIES — Cohort Definition
+## ==========================================================
+
+nccr:cohortName a owl:DatatypeProperty ;
+    rdfs:label "cohort name"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range xsd:string ;
+    skos:definition "The user-assigned name of the cohort."@en .
+
+nccr:cohortCreator a owl:DatatypeProperty ;
+    rdfs:label "cohort creator"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifier or name of the researcher who created the cohort."@en .
+
+nccr:cohortCreated a owl:DatatypeProperty ;
+    rdfs:label "cohort created"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date and time the cohort was created or last modified."@en .
+
+nccr:dataVersion a owl:DatatypeProperty ;
+    rdfs:label "data version"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range xsd:string ;
+    skos:definition "The NCCR data version (build timestamp) at the time the cohort was defined, enabling reproducibility."@en .
+
+nccr:patientCount a owl:DatatypeProperty ;
+    rdfs:label "patient count"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of unique patients matching this cohort definition at the time it was saved."@en .
+
+nccr:tumorCount a owl:DatatypeProperty ;
+    rdfs:label "tumor count"@en ;
+    rdfs:domain nccr:CohortDefinition ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of tumor records matching this cohort definition at the time it was saved."@en .
+
+nccr:filterNumericValue a owl:DatatypeProperty ;
+    rdfs:label "filter numeric value"@en ;
+    rdfs:domain nccr:FilterCriterion ;
+    rdfs:range xsd:decimal ;
+    skos:definition "A numeric value for MIN/MAX filter criteria (e.g., min age = 15)."@en .
+
+nccr:filterStringValue a owl:DatatypeProperty ;
+    rdfs:label "filter string value"@en ;
+    rdfs:domain nccr:FilterCriterion ;
+    rdfs:range xsd:string ;
+    skos:definition "A string value for EQUALS filter criteria when not referencing a CodeValue."@en .
+
+nccr:allValuesSelected a owl:DatatypeProperty ;
+    rdfs:label "all values selected"@en ;
+    rdfs:domain nccr:FilterCriterion ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates that all possible values are selected for this filter (no restriction). Maps to the 'ALL_VALUES' sentinel in the platform JSON."@en .
