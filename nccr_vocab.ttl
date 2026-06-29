@@ -426,6 +426,18 @@ nccr:categorized a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     skos:definition "Whether variables in this source are grouped by section in the UI (categorize in dataConfig.json)."@en .
 
+nccr:currentDataVersion a owl:DatatypeProperty ;
+    rdfs:label "current data version"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The ETL build timestamp identifying the data version currently loaded in the platform (e.g., '2026-06-21-1430'). Used to track which data version the metadata instances describe and to validate cohort compatibility on import."@en .
+
+nccr:instancesGeneratedFrom a owl:DatatypeProperty ;
+    rdfs:label "instances generated from"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The data version from which the RDF instance data was generated. Enables consumers to verify whether the instances match the current platform state."@en .
+
 ## ==========================================================
 ## DATATYPE PROPERTIES — Code Value
 ## ==========================================================

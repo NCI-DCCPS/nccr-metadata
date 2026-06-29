@@ -16,6 +16,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
 @prefix nccr:   <https://nccrdataplatform.ccdi.cancer.gov/ontology/> .
+@prefix nccrv:  <https://nccrdataplatform.ccdi.cancer.gov/vocab#> .
 @prefix nccr-ds: <https://nccrdataplatform.ccdi.cancer.gov/datasource/> .
 @prefix nccr-doc: <https://nccrdataplatform.ccdi.cancer.gov/documentation/> .
 @prefix nccr-agent: <https://nccrdataplatform.ccdi.cancer.gov/agent/> .
@@ -98,6 +99,8 @@ nccr-ds:platform a dcmitype:Collection, datmm:Dataset ;
     dct:language "en" ;
     dct:rights "Controlled access. Data browser and cohort discovery available to registered users. Individual-level data downloads require IRB review and approval via the NCCR Data Access Request process." ;
     adms:status "published" ;
+    nccrv:currentDataVersion "2026-06-21-1430" ;
+    nccrv:instancesGeneratedFrom "2026-06-21-1430" ;
     foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/home> ;
     dct:isPartOf nccr-repo:nccr-data-lake ;
     bf:contribution nccr-agent:nci-contribution, nccr-agent:ccdi-contribution, nccr-agent:seer-contribution, nccr-agent:cog-contribution ;
