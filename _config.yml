@@ -7,9 +7,6 @@ theme: minima
 
 header_pages:
   - metadata/index.md
-  - metadata/data-sources.md
-  - metadata/vocabulary.md
-  - metadata/usage.md
 
 # Keep TTL files accessible as static assets
 include:

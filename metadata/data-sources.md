@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Data Sources
-nav_order: 3
+permalink: /metadata/data-sources/
+nav_exclude: true
 ---
 
 # NCCR Data Sources

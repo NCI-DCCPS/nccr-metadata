@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Usage & Examples
-nav_order: 5
+permalink: /metadata/usage/
+nav_exclude: true
 ---
 
 # Usage & Code Examples

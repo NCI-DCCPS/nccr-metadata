@@ -1,10 +1,15 @@
 ---
 layout: page
 title: Metadata
-nav_order: 2
+permalink: /metadata/
 ---
 
 # NCCR Metadata Files
+
+[Data Sources](data-sources) · [Vocabulary Reference](vocabulary) · [Usage & Examples](usage)
+{: .fs-5 }
+
+---
 
 This repository publishes the NCCR Data Platform's metadata as linked data (RDF/Turtle), enabling FAIR-compliant discovery and integration.
 

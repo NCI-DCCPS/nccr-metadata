@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Vocabulary
-nav_order: 4
+permalink: /metadata/vocabulary/
+nav_exclude: true
 ---
 
 # NCCR Vocabulary Reference
