@@ -10,11 +10,11 @@ This repository publishes the NCCR Data Platform's metadata as linked data (RDF/
 
 ## Files
 
-| File | Type | Purpose | Triples |
-|------|------|---------|---------|
-| [`nccr_vocab.ttl`]({{ site.baseurl }}/nccr_vocab.ttl) | <span style="background:#2e7d32;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">OWL</span> <span style="background:#0066cc;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">Turtle</span> | **Vocabulary** — classes and properties for variables, value sets, filters, processing rules, and display configuration | ~120 |
-| [`nccr_datmm.ttl`]({{ site.baseurl }}/nccr_datmm.ttl) | <span style="background:#6a1b9a;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">DATMM</span> <span style="background:#0066cc;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">Turtle</span> | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and all 9 datasources, agents, contributions, and funding | ~180 |
-| [`nccr_instances.ttl`]({{ site.baseurl }}/nccr_instances.ttl) | <span style="background:#e65100;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">RDF</span> <span style="background:#0066cc;color:white;padding:2px 8px;border-radius:3px;font-size:0.8em">Turtle</span> | **Instance data** — all 533 variables, 2,303 coded values, 51 cohort filters, and processing rules | 28,620 |
+| File | Format | Purpose | Triples |
+|------|--------|---------|---------|
+| [`nccr_vocab.ttl`]({{ site.baseurl }}/nccr_vocab.ttl) | OWL / Turtle | **Vocabulary** — classes and properties for variables, value sets, filters, processing rules, and display configuration | ~120 |
+| [`nccr_datmm.ttl`]({{ site.baseurl }}/nccr_datmm.ttl) | DATMM / Turtle | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and all 9 datasources, agents, contributions, and funding | ~180 |
+| [`nccr_instances.ttl`]({{ site.baseurl }}/nccr_instances.ttl) | RDF / Turtle | **Instance data** — all 533 variables, 2,303 coded values, 51 cohort filters, and processing rules | 28,620 |
 
 ## Architecture
 

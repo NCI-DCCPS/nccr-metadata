@@ -6,7 +6,6 @@ baseurl: "/nccr-metadata"
 theme: minima
 
 header_pages:
-  - index.md
   - metadata/index.md
   - metadata/data-sources.md
   - metadata/vocabulary.md
