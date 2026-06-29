@@ -44,6 +44,13 @@ nav_exclude: true
 | `nccr:DisplayConfig` | UI and dashboard display settings for a variable |
 | `nccr:SourceVocabulary` | An external coding system (NAACCR, SEER, ICD-O-3, etc.) |
 
+### Cohort definitions
+
+| Class | Description |
+|-------|-------------|
+| `nccr:CohortDefinition` | A saved set of filter criteria defining a patient cohort — portable, reproducible, citable |
+| `nccr:FilterCriterion` | A single filter selection within a cohort definition |
+
 ---
 
 ## Key properties
@@ -82,6 +89,24 @@ nav_exclude: true
 | `nccr:graphLimit` | DisplayConfig | Max values in graph |
 | `nccr:filterType` | CohortFilter | EQUALS, MIN, or MAX |
 | `nccr:filterControlTitle` | CohortFilter | UI label for the filter |
+
+### Cohort definition
+
+| Property | Domain | Description |
+|----------|--------|-------------|
+| `nccr:cohortName` | CohortDefinition | User-assigned name |
+| `nccr:cohortCreator` | CohortDefinition | Who created it |
+| `nccr:cohortCreated` | CohortDefinition | When it was created (xsd:dateTime) |
+| `nccr:dataVersion` | CohortDefinition | NCCR data version for reproducibility |
+| `nccr:patientCount` | CohortDefinition | Matching patients at save time |
+| `nccr:tumorCount` | CohortDefinition | Matching tumors at save time |
+| `nccr:includesSource` | CohortDefinition → DataSource | Which datasources are selected |
+| `nccr:hasFilterCriterion` | CohortDefinition → FilterCriterion | Links to filter selections |
+| `nccr:appliesFilter` | FilterCriterion → CohortFilter | Which filter is being used |
+| `nccr:filterNumericValue` | FilterCriterion | Numeric value for MIN/MAX filters |
+| `nccr:filterStringValue` | FilterCriterion | String value for EQUALS filters |
+| `nccr:selectsValue` | FilterCriterion → CodeValue | Reference to a coded value |
+| `nccr:allValuesSelected` | FilterCriterion | True if no restriction (ALL_VALUES) |
 
 ---
 
