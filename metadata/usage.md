@@ -121,6 +121,63 @@ SELECT ?derived ?label ?sourceVar ?binLabel ?min ?max WHERE {
 ORDER BY ?derived ?min
 ```
 
+### Query value distributions (frequencies)
+
+```sparql
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label ?count WHERE {
+    ?var nccr:sourceColumn "sex" ;
+         nccr:belongsToSource <https://nccrdataplatform.ccdi.cancer.gov/datasource/ctc> ;
+         nccr:hasValueSet ?vs .
+    ?vs nccr:hasCodeValue ?cv .
+    ?cv skos:prefLabel ?label ;
+        nccr:recordCount ?count .
+}
+ORDER BY DESC(?count)
+```
+
+Example result:
+```
+Female: 900,104
+Male:   574,264
+```
+
+### Find rare values (low frequency)
+
+```sparql
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?varLabel ?code ?description ?count WHERE {
+    ?var a nccr:Variable ;
+         rdfs:label ?varLabel ;
+         nccr:hasValueSet/nccr:hasCodeValue ?cv .
+    ?cv skos:notation ?code ;
+        skos:prefLabel ?description ;
+        nccr:recordCount ?count .
+    FILTER(?count < 100)
+}
+ORDER BY ?count
+LIMIT 20
+```
+
+### Get total record counts per datasource
+
+```sparql
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?source ?label ?count WHERE {
+    ?source a nccr:DataSource ;
+            rdfs:label ?label ;
+            nccr:totalRecordCount ?count .
+}
+ORDER BY DESC(?count)
+```
+
 ---
 
 ## Python: full example

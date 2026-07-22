@@ -19,7 +19,7 @@ This repository publishes the NCCR Data Platform's metadata as linked data (RDF/
 |------|--------|---------|---------|
 | [`nccr_vocab.ttl`]({{ site.baseurl }}/nccr_vocab.ttl) | OWL / Turtle | **Vocabulary** — classes and properties for variables, value sets, filters, processing rules, and display configuration | ~120 |
 | [`nccr_datmm.ttl`]({{ site.baseurl }}/nccr_datmm.ttl) | DATMM / Turtle | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and all 9 datasources, agents, contributions, and funding | ~180 |
-| [`nccr_instances.ttl`]({{ site.baseurl }}/nccr_instances.ttl) | RDF / Turtle | **Instance data** — all 533 variables, 2,303 coded values, 51 cohort filters, and processing rules | 28,620 |
+| [`nccr_instances.ttl`]({{ site.baseurl }}/nccr_instances.ttl) | RDF / Turtle | **Instance data** — all 533 variables, 3,715 coded values with observed frequencies, 51 cohort filters, and processing rules | 42,067 |
 
 ## Architecture
 

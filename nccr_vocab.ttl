@@ -454,6 +454,18 @@ nccr:codeDescription a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     skos:definition "The human-readable meaning of the code (Description in Permissible_Values)."@en .
 
+nccr:recordCount a owl:DatatypeProperty ;
+    rdfs:label "record count"@en ;
+    rdfs:domain nccr:CodeValue ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of records (tumors/claims/events) with this value in the current data version. Counts below 16 are suppressed for privacy."@en .
+
+nccr:totalRecordCount a owl:DatatypeProperty ;
+    rdfs:label "total record count"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:integer ;
+    skos:definition "The total number of records in this data source in the current data version."@en .
+
 ## ==========================================================
 ## NAMED INDIVIDUALS — Source Vocabularies
 ## ==========================================================

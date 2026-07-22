@@ -114,11 +114,14 @@ nav_exclude: true
 |----------|--------|-------------|
 | `nccr:currentDataVersion` | DataSource | The ETL build timestamp identifying the data version currently loaded in the platform (e.g., `2026-06-21-1430`) |
 | `nccr:instancesGeneratedFrom` | DataSource | The data version from which the RDF instance data was generated — allows consumers to verify freshness |
+| `nccr:totalRecordCount` | DataSource | Total number of records in this data source |
+| `nccr:recordCount` | CodeValue | Observed frequency — number of records with this value (counts below 16 suppressed for privacy) |
 
 These properties enable:
 - Tracking which data version the published metadata describes
 - Validating imported cohorts against the current platform state
 - Detecting version mismatches when a cohort was saved against an older data release
+- Data discovery by querying value distributions without accessing the platform directly
 
 ---
 
