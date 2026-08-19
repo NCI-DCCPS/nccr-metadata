@@ -45,7 +45,15 @@ datmm/                         ← DATMM catalog layer (NLM Dataset Catalog)
 ├── repository.ttl                 Repository (NCCR Data Platform)
 ├── agents.ttl                     Organizations & contributions
 ├── concepts.ttl                   Subject concepts
-└── {ctc,abm,...,ro}.ttl           9 standalone Dataset records
+├── ctc.ttl                        Consolidated Tumor Case dataset
+├── abm.ttl                        Area-Based Measures dataset
+├── ccdi.ttl                       CCDI Mappings dataset
+├── cog.ttl                        Children's Oncology Group dataset
+├── mcd.ttl                        Medical Claims Diagnosis dataset
+├── mce.ttl                        Medical Claims Enrollment dataset
+├── mcp.ttl                        Medical Claims Procedure dataset
+├── pharm.ttl                      Pharmacy Claims dataset
+└── ro.ttl                         Radiation Oncology dataset
 
 nccr_vocab.ttl                 ← Schema layer (defines classes & properties)
 

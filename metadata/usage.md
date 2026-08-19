@@ -18,8 +18,11 @@ NCCR = Namespace("https://nccrdataplatform.ccdi.cancer.gov/vocab#")
 
 g = Graph()
 g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_vocab.ttl")
-g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_datmm.ttl")
 g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_instances.ttl")
+
+# Load DATMM catalog records
+for f in ["repository", "agents", "concepts", "ctc", "abm", "ccdi", "cog", "mcd", "mce", "mcp", "pharm", "ro"]:
+    g.parse(f"https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/datmm/{f}.ttl")
 
 print(f"Loaded {len(g)} triples")
 ```
