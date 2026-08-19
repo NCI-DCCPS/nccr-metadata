@@ -1,0 +1,45 @@
+## ---------------------------------------------------------
+## DATMM Dataset Record: Consolidated Tumor Case (CTC)
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+
+<http://id.nlm.nih.gov/datmm/dataset/nccr-ctc> a datmm:Dataset ;
+    dct:title "NCCR Consolidated Tumor Case (CTC)" ;
+    dct:alternative "CTC" ;
+    dct:description "Final adjudicated data collected from population-based cancer registries including SEER. Contains all cancer diagnoses reported in 21 states for years 1995-2022, totaling 1,474,368 tumors from 1,359,308 unique individuals ages 0-39. Registries include California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. Also includes NAACCR Virtual Pooled Registry linkage for identifying prior and subsequent malignant neoplasms." ;
+    dct:identifier "nccr-ctc" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/CTC> ;
+    dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
+    bf:contribution
+        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
+        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ,
+        <http://id.nlm.nih.gov/datmm/contribution/seer-provider> ;
+    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0003> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0010> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0014> ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-ctc-dictionary> .
+
+<http://id.nlm.nih.gov/datmm/documentation/nccr-ctc-dictionary> a datmm:Documentation ;
+    dct:title "CTC Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "ctc_metadata.json" ;
+    dct:description "Variable-level data dictionary defining 109 fields including demographics, cancer identification, staging, treatment, follow-up, and survival variables. References NAACCR, SEER, ICD-O-3, and AJCC standards." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/CTC/2> ;
+    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-ctc> .

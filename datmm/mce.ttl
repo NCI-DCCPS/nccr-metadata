@@ -1,0 +1,44 @@
+## ---------------------------------------------------------
+## DATMM Dataset Record: Medical Claims Enrollment (MCE)
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+
+<http://id.nlm.nih.gov/datmm/dataset/nccr-mce> a datmm:Dataset ;
+    dct:title "NCCR Medical Claims Enrollment (MCE)" ;
+    dct:alternative "MCE" ;
+    dct:description "Patient enrollment data extracted from medical claims collected by various insurers. Includes details about each patient's insurance enrollment status at various points in time before and after their index cancer diagnosis. Enrollment status known only for years 2000-2023, for patients with SEER diagnosis year 2000-2021." ;
+    dct:identifier "nccr-mce" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCE> ;
+    dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
+    dct:relation <http://id.nlm.nih.gov/datmm/dataset/nccr-mcd> , <http://id.nlm.nih.gov/datmm/dataset/nccr-mcp> ;
+    bf:contribution
+        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
+        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ;
+    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0005> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0012> ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-mce-dictionary> .
+
+<http://id.nlm.nih.gov/datmm/documentation/nccr-mce-dictionary> a datmm:Documentation ;
+    dct:title "MCE Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "mce_metadata.json" ;
+    dct:description "Variable-level data dictionary defining 362 fields for insurance enrollment status over time relative to cancer diagnosis." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCE> ;
+    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-mce> .

@@ -1,0 +1,63 @@
+## ---------------------------------------------------------
+## NCCR DATMM — Shared Agents and Contributions
+## ---------------------------------------------------------
+## Agents (organizations) and their contributions referenced
+## by Dataset records via bf:contribution.
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+
+## === Agents ===
+
+<http://id.nlm.nih.gov/datmm/agent/nci> a foaf:Agent ;
+    foaf:name "National Cancer Institute (NCI)" ;
+    dct:identifier "https://ror.org/040gcmg81" .
+
+<http://id.nlm.nih.gov/datmm/agent/ccdi> a foaf:Agent ;
+    foaf:name "Childhood Cancer Data Initiative (CCDI)" ;
+    dct:identifier "https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative" .
+
+<http://id.nlm.nih.gov/datmm/agent/seer> a foaf:Agent ;
+    foaf:name "Surveillance, Epidemiology, and End Results (SEER) Program" ;
+    dct:identifier "https://seer.cancer.gov" .
+
+<http://id.nlm.nih.gov/datmm/agent/cog> a foaf:Agent ;
+    foaf:name "Children's Oncology Group (COG)" ;
+    dct:identifier "https://www.childrensoncologygroup.org" .
+
+<http://id.nlm.nih.gov/datmm/agent/naaccr> a foaf:Agent ;
+    foaf:name "North American Association of Central Cancer Registries (NAACCR)" ;
+    dct:identifier "https://www.naaccr.org" .
+
+<http://id.nlm.nih.gov/datmm/agent/dccps> a foaf:Agent ;
+    foaf:name "Division of Cancer Control and Population Sciences (DCCPS)" ;
+    dct:identifier "https://cancercontrol.cancer.gov" .
+
+## === Contributions ===
+
+<http://id.nlm.nih.gov/datmm/contribution/nci-publisher> a bf:Contribution ;
+    bf:agent <http://id.nlm.nih.gov/datmm/agent/nci> ;
+    bf:role "publisher" .
+
+<http://id.nlm.nih.gov/datmm/contribution/dccps-creator> a bf:Contribution ;
+    bf:agent <http://id.nlm.nih.gov/datmm/agent/dccps> ;
+    bf:role "creator" .
+
+<http://id.nlm.nih.gov/datmm/contribution/seer-provider> a bf:Contribution ;
+    bf:agent <http://id.nlm.nih.gov/datmm/agent/seer> ;
+    bf:role "data provider" .
+
+<http://id.nlm.nih.gov/datmm/contribution/cog-provider> a bf:Contribution ;
+    bf:agent <http://id.nlm.nih.gov/datmm/agent/cog> ;
+    bf:role "data provider" .
+
+## === Grant ===
+
+<http://id.nlm.nih.gov/datmm/grant/ccdi> a schema:Grant ;
+    schema:name "Childhood Cancer Data Initiative" ;
+    schema:funder <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ;
+    schema:url <https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative> .

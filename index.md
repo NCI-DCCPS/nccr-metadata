@@ -15,7 +15,7 @@ This site provides **machine-readable metadata** for the platform's datasources 
 
 | Section | Description |
 |---------|-------------|
-| [Metadata](metadata/) | RDF ontology files, dataset catalog, and variable-level metadata |
+| [Metadata](metadata/) | DATMM catalog records, RDF vocabulary, and instance data |
 | [Data Sources](metadata/data-sources) | Descriptions of the 9 NCCR datasources |
 | [Vocabulary](metadata/vocabulary) | Classes and properties defined in the NCCR vocabulary |
 | [Usage & Examples](metadata/usage) | Code snippets for Python, R, and SPARQL |
@@ -27,8 +27,8 @@ This site provides **machine-readable metadata** for the platform's datasources 
 | File | Description |
 |------|-------------|
 | [nccr_vocab.ttl](nccr_vocab.ttl) | Vocabulary — OWL ontology (schema) |
-| [nccr_datmm.ttl](nccr_datmm.ttl) | Dataset catalog — DATMM 6.0.0 |
-| [nccr_instances.ttl](nccr_instances.ttl) | Instance data — 28,620 triples across all 9 datasources |
+| [nccr_instances.ttl](nccr_instances.ttl) | Instance data — 42,067 triples with value frequencies |
+| [datmm/](datmm/) | DATMM catalog — 9 standalone dataset records + repository |
 
 - [GitHub repository](https://github.com/NCI-DCCPS/nccr-metadata)
 

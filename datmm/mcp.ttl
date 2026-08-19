@@ -1,0 +1,43 @@
+## ---------------------------------------------------------
+## DATMM Dataset Record: Medical Claims Procedure (MCP)
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+
+<http://id.nlm.nih.gov/datmm/dataset/nccr-mcp> a datmm:Dataset ;
+    dct:title "NCCR Medical Claims Procedure (MCP)" ;
+    dct:alternative "MCP" ;
+    dct:description "Patient procedure data extracted from medical claims collected by various insurers. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, applicable procedure modifiers, sequence numbers for procedures occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and the service date of the procedure. Contains 62,669,037 records." ;
+    dct:identifier "nccr-mcp" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCP> ;
+    dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
+    dct:relation <http://id.nlm.nih.gov/datmm/dataset/nccr-mcd> , <http://id.nlm.nih.gov/datmm/dataset/nccr-mce> ;
+    bf:contribution
+        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
+        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ;
+    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0005> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-mcp-dictionary> .
+
+<http://id.nlm.nih.gov/datmm/documentation/nccr-mcp-dictionary> a datmm:Documentation ;
+    dct:title "MCP Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "mcp_metadata.json" ;
+    dct:description "Variable-level data dictionary defining 9 fields for medical claims procedure data including ICD, HCPCS, and CPT codes with modifiers and temporal relationships." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCP> ;
+    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-mcp> .

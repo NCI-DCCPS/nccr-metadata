@@ -1,0 +1,89 @@
+## ---------------------------------------------------------
+## NCCR DATMM — Shared Concept Instances
+## ---------------------------------------------------------
+## Subject concepts referenced by Dataset records via
+## dct:subject. Each concept has a local identifier,
+## human-readable label, and scheme membership per
+## DATMM requirements.
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+
+## === Subject Concepts ===
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0001> a skos:Concept ;
+    dct:identifier "nccr-0001" ;
+    rdfs:label "Childhood cancer" ;
+    skos:inScheme "MeSH" ;
+    dct:source <https://meshb.nlm.nih.gov/record/ui?ui=D009369> .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0002> a skos:Concept ;
+    dct:identifier "nccr-0002" ;
+    rdfs:label "Adolescent and young adult cancer" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0003> a skos:Concept ;
+    dct:identifier "nccr-0003" ;
+    rdfs:label "Population-based cancer registry" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0004> a skos:Concept ;
+    dct:identifier "nccr-0004" ;
+    rdfs:label "Pharmacy claims" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0005> a skos:Concept ;
+    dct:identifier "nccr-0005" ;
+    rdfs:label "Medical claims" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0006> a skos:Concept ;
+    dct:identifier "nccr-0006" ;
+    rdfs:label "Radiation oncology" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0007> a skos:Concept ;
+    dct:identifier "nccr-0007" ;
+    rdfs:label "Area-based socioeconomic measures" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0008> a skos:Concept ;
+    dct:identifier "nccr-0008" ;
+    rdfs:label "Clinical trials" ;
+    skos:inScheme "MeSH" ;
+    dct:source <https://meshb.nlm.nih.gov/record/ui?ui=D002986> .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0009> a skos:Concept ;
+    dct:identifier "nccr-0009" ;
+    rdfs:label "Data linkage" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0010> a skos:Concept ;
+    dct:identifier "nccr-0010" ;
+    rdfs:label "Cancer surveillance" ;
+    skos:inScheme "MeSH" ;
+    dct:source <https://meshb.nlm.nih.gov/record/ui?ui=D011159> .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0011> a skos:Concept ;
+    dct:identifier "nccr-0011" ;
+    rdfs:label "De-identified patient data" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0012> a skos:Concept ;
+    dct:identifier "nccr-0012" ;
+    rdfs:label "Insurance enrollment" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0013> a skos:Concept ;
+    dct:identifier "nccr-0013" ;
+    rdfs:label "Drug dispensing" ;
+    skos:inScheme "NCCR" .
+
+<http://id.nlm.nih.gov/datmm/concept/nccr-0014> a skos:Concept ;
+    dct:identifier "nccr-0014" ;
+    rdfs:label "Tumor registry" ;
+    skos:inScheme "MeSH" ;
+    dct:source <https://meshb.nlm.nih.gov/record/ui?ui=D012042> .

@@ -1,0 +1,42 @@
+## ---------------------------------------------------------
+## DATMM Dataset Record: Area-Based Measures (ABM)
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+
+<http://id.nlm.nih.gov/datmm/dataset/nccr-abm> a datmm:Dataset ;
+    dct:title "NCCR Area-Based Measures (ABM)" ;
+    dct:alternative "ABM" ;
+    dct:description "Non-clinical data variables derived from the US Census Department providing broader context of health-related factors. Variables use 2010 Census attributes and 2010 Census-defined geographic boundaries. Includes Yost socioeconomic status quintiles, Rural-Urban Commuting Area codes, Urban Rural Indicator Codes, and persistent poverty indicators. Values provided for patients with SEER diagnosis year 2006-2022." ;
+    dct:identifier "nccr-abm" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/ABM> ;
+    dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
+    bf:contribution
+        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
+        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ;
+    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0007> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-abm-dictionary> .
+
+<http://id.nlm.nih.gov/datmm/documentation/nccr-abm-dictionary> a datmm:Documentation ;
+    dct:title "ABM Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "abm_metadata.json" ;
+    dct:description "Variable-level data dictionary defining 6 socioeconomic and geographic context fields linked to tumor records via census tracts." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/ABM/2> ;
+    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-abm> .

@@ -1,0 +1,43 @@
+## ---------------------------------------------------------
+## DATMM Dataset Record: Children's Oncology Group (COG)
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+
+<http://id.nlm.nih.gov/datmm/dataset/nccr-cog> a datmm:Dataset ;
+    dct:title "NCCR Children's Oncology Group (COG)" ;
+    dct:alternative "COG" ;
+    dct:description "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018." ;
+    dct:identifier "nccr-cog" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG> ;
+    dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
+    bf:contribution
+        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
+        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ,
+        <http://id.nlm.nih.gov/datmm/contribution/cog-provider> ;
+    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0008> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-cog-dictionary> .
+
+<http://id.nlm.nih.gov/datmm/documentation/nccr-cog-dictionary> a datmm:Documentation ;
+    dct:title "COG Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "cog_metadata.json" ;
+    dct:description "Variable-level data dictionary defining 8 fields for COG clinical trial and registry enrollment data." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG/2> ;
+    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-cog> .

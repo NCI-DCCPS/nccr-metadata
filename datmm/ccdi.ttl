@@ -1,0 +1,42 @@
+## ---------------------------------------------------------
+## DATMM Dataset Record: CCDI Mappings (CCDI)
+## ---------------------------------------------------------
+
+@prefix datmm:  <http://id.nlm.nih.gov/datmm/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+
+<http://id.nlm.nih.gov/datmm/dataset/nccr-ccdi> a datmm:Dataset ;
+    dct:title "NCCR Childhood Cancer Data Initiative Mappings (CCDI)" ;
+    dct:alternative "CCDI Mappings" ;
+    dct:description "Leverages the CCDI Participant Index (CPI) to match individuals across organizations, datasets, and studies. Maps publicly available participant identifiers to NCCR identifiers enabling dataset merging across public health surveillance, research studies, and real-world healthcare resources. Three types of external resources: datasets (e.g., genomic data from phs002790), organizations (e.g., AACR Project GENIE), and studies (e.g., St. Jude). Records updated periodically via the CPI." ;
+    dct:identifier "nccr-ccdi" ;
+    dct:issued "2026-06-21"^^xsd:date ;
+    dct:language "en" ;
+    dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process. Approval to access mappings for external resources should be obtained from the respective resource." ;
+    adms:status "published" ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/CCDI> ;
+    dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
+    bf:contribution
+        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
+        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ;
+    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0009> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ;
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-ccdi-dictionary> .
+
+<http://id.nlm.nih.gov/datmm/documentation/nccr-ccdi-dictionary> a datmm:Documentation ;
+    dct:title "CCDI Data Dictionary" ;
+    dct:type "application/json" ;
+    dct:identifier "ccdi_metadata.json" ;
+    dct:description "Variable-level data dictionary defining 3 fields for cross-dataset participant matching via the CCDI Participant Index." ;
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/CCDI/2> ;
+    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-ccdi> .
