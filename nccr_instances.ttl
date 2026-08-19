@@ -204,361 +204,11 @@ nccr-dv:ro-radiation-fractions-prescribed-binned a nccr:DerivedVariable ;
         nccr-dv:ro-radiation-fractions-prescribed-binned-bin-9 ;
     nccr:sourceColumn "radiation_fractions_prescribed_binned" .
 
-nccr-flt:BehaviorCode a nccr:CohortFilter ;
-    rdfs:label "BehaviorCode filter"@en ;
-    nccr:filterControlTitle "ICD-O-3 Behavior Code" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "behavioricdo3public_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:BiobankingTumorClassTrialCount a nccr:CohortFilter ;
-    rdfs:label "BiobankingTumorClassTrialCount filter"@en ;
-    nccr:filterControlTitle "Biobanking/Tumor Classification" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "biobankingtumorclassstudycount_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:CauseOfDeath a nccr:CohortFilter ;
-    rdfs:label "CauseOfDeath filter"@en ;
-    nccr:filterControlTitle "SEER Cause of Death" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "seercausespecificcod_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:CcdiResourceId a nccr:CohortFilter ;
-    rdfs:label "CcdiResourceId filter"@en ;
-    nccr:filterControlTitle "Debug Resource Participant Id" ;
-    nccr:filterDataSource nccr-ds:ccdi ;
-    nccr:filterFieldName "resourceparticipantid" ;
-    nccr:filterType "EQUALS" .
-
 nccr-flt:CcdiResourceIdAndName a nccr:CohortFilter ;
     rdfs:label "CcdiResourceIdAndName filter"@en ;
     nccr:filterControlTitle "Debug CcdiResourceIdAndName" ;
     nccr:filterDataSource nccr-ds:ccdi ;
     nccr:filterFieldName "etl_calc_ccdi_resource_id_and_name" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:CcdiResourceName a nccr:CohortFilter ;
-    rdfs:label "CcdiResourceName filter"@en ;
-    nccr:filterControlTitle "Resources" ;
-    nccr:filterDataSource nccr-ds:ccdi ;
-    nccr:filterFieldName "resourcename" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:Chemotherapy a nccr:CohortFilter ;
-    rdfs:label "Chemotherapy filter"@en ;
-    nccr:filterControlTitle "Chemotherapy" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "rxsummchemorecode_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:CombinedSummaryStage a nccr:CohortFilter ;
-    rdfs:label "CombinedSummaryStage filter"@en ;
-    nccr:filterControlTitle "Combined Summary Stage" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "combinedsspubdetailed_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:DrugCategory a nccr:CohortFilter ;
-    rdfs:label "DrugCategory filter"@en ;
-    nccr:filterControlTitle "CanMED Drug Category" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "canmeddrugcategory_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:DrugName a nccr:CohortFilter ;
-    rdfs:label "DrugName filter"@en ;
-    nccr:filterControlTitle "CanMED Non-proprietary Name" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "canmednonproprietaryname" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:EnrolledCogTrial a nccr:CohortFilter ;
-    rdfs:label "EnrolledCogTrial filter"@en ;
-    nccr:filterControlTitle "Reported COG Study Enrollment" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "reportedcogenrollment_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:Histology a nccr:CohortFilter ;
-    rdfs:label "Histology filter"@en ;
-    nccr:filterControlTitle "ICD-O-3 Histology/Behavior" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "histologybehaviorrecodepublic_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:Iccc a nccr:CohortFilter ;
-    rdfs:label "Iccc filter"@en ;
-    nccr:filterControlTitle "ICCC (Level 2)" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "iccc2017recode_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:IcccExtended a nccr:CohortFilter ;
-    rdfs:label "IcccExtended filter"@en ;
-    nccr:filterControlTitle "ICCC Extended (Level 3)" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "iccc2017extendedrecode_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:IcccMajor a nccr:CohortFilter ;
-    rdfs:label "IcccMajor filter"@en ;
-    nccr:filterControlTitle "ICCC Major (Level 1)" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "icccmajor_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:IndexCancer a nccr:CohortFilter ;
-    rdfs:label "IndexCancer filter"@en ;
-    nccr:filterControlTitle "Index Cancer" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "indexcancer_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:MajorDrugClass a nccr:CohortFilter ;
-    rdfs:label "MajorDrugClass filter"@en ;
-    nccr:filterControlTitle "CanMED Major Drug Class" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "canmedmajordrugclass" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:MaxAgeAtDiagnosis a nccr:CohortFilter ;
-    rdfs:label "MaxAgeAtDiagnosis filter"@en ;
-    nccr:filterControlTitle "Max Age (Yrs)" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "agerecodesingle90p_int" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MaxMonthsFromIndexCancer a nccr:CohortFilter ;
-    rdfs:label "MaxMonthsFromIndexCancer filter"@en ;
-    nccr:filterControlTitle "Max Months" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "monthsfromindexdxtotumor_int" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MaxMonthsToDispense a nccr:CohortFilter ;
-    rdfs:label "MaxMonthsToDispense filter"@en ;
-    nccr:filterControlTitle "Max Months from 1st Dx to Dispense" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "monthsfromindexdxtodispense" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MaxMonthsToEndTreatment a nccr:CohortFilter ;
-    rdfs:label "MaxMonthsToEndTreatment filter"@en ;
-    nccr:filterControlTitle "Max Months" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "months_from_dx_to_treatment_end" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MaxMonthsToStartTreatment a nccr:CohortFilter ;
-    rdfs:label "MaxMonthsToStartTreatment filter"@en ;
-    nccr:filterControlTitle "Max Months" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "months_from_dx_to_tx_start" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MaxRadiationDoseDelivered a nccr:CohortFilter ;
-    rdfs:label "MaxRadiationDoseDelivered filter"@en ;
-    nccr:filterControlTitle "Max Dose" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_dose_delivered" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MaxRadiationFractionsDelivered a nccr:CohortFilter ;
-    rdfs:label "MaxRadiationFractionsDelivered filter"@en ;
-    nccr:filterControlTitle "Max Fractions" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_fractions_delivered" ;
-    nccr:filterType "MAX" .
-
-nccr-flt:MinAgeAtDiagnosis a nccr:CohortFilter ;
-    rdfs:label "MinAgeAtDiagnosis filter"@en ;
-    nccr:filterControlTitle "Min Age (Yrs)" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "agerecodesingle90p_int" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:MinMonthsFromIndexCancer a nccr:CohortFilter ;
-    rdfs:label "MinMonthsFromIndexCancer filter"@en ;
-    nccr:filterControlTitle "Min Months" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "monthsfromindexdxtotumor_int" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:MinMonthsToDispense a nccr:CohortFilter ;
-    rdfs:label "MinMonthsToDispense filter"@en ;
-    nccr:filterControlTitle "Min Months from 1st Dx to Dispense" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "monthsfromindexdxtodispense" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:MinMonthsToEndTreatment a nccr:CohortFilter ;
-    rdfs:label "MinMonthsToEndTreatment filter"@en ;
-    nccr:filterControlTitle "Min Months" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "months_from_dx_to_treatment_end" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:MinMonthsToStartTreatment a nccr:CohortFilter ;
-    rdfs:label "MinMonthsToStartTreatment filter"@en ;
-    nccr:filterControlTitle "Min Months" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "months_from_dx_to_tx_start" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:MinRadiationDoseDelivered a nccr:CohortFilter ;
-    rdfs:label "MinRadiationDoseDelivered filter"@en ;
-    nccr:filterControlTitle "Min Dose" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_dose_delivered" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:MinRadiationFractionsDelivered a nccr:CohortFilter ;
-    rdfs:label "MinRadiationFractionsDelivered filter"@en ;
-    nccr:filterControlTitle "Min Fractions" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_fractions_delivered" ;
-    nccr:filterType "MIN" .
-
-nccr-flt:NumberOfPrimaries a nccr:CohortFilter ;
-    rdfs:label "NumberOfPrimaries filter"@en ;
-    nccr:filterControlTitle "Number of Primaries" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "numberofprimaries_int" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:PathologyReportsAvailable a nccr:CohortFilter ;
-    rdfs:label "PathologyReportsAvailable filter"@en ;
-    nccr:filterControlTitle "Pathology Reports Available" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "pathreportsflag_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:PrimarySite a nccr:CohortFilter ;
-    rdfs:label "PrimarySite filter"@en ;
-    nccr:filterControlTitle "Primary Site" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "primarysite_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RaceEthnicity a nccr:CohortFilter ;
-    rdfs:label "RaceEthnicity filter"@en ;
-    nccr:filterControlTitle "Race/Ethnicity" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "racerecodewbaiapihisp_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RadiationAnatomicSite a nccr:CohortFilter ;
-    rdfs:label "RadiationAnatomicSite filter"@en ;
-    nccr:filterControlTitle "Radiation Anatomic Site" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_anatomic_site_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RadiationSource a nccr:CohortFilter ;
-    rdfs:label "RadiationSource filter"@en ;
-    nccr:filterControlTitle "Radiation Energy Type" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_energy_type_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RadiationTechnique a nccr:CohortFilter ;
-    rdfs:label "RadiationTechnique filter"@en ;
-    nccr:filterControlTitle "Radiation Therapy Type" ;
-    nccr:filterDataSource nccr-ds:ro ;
-    nccr:filterFieldName "radiation_therapy_type_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RadiationTherapy a nccr:CohortFilter ;
-    rdfs:label "RadiationTherapy filter"@en ;
-    nccr:filterControlTitle "Radiation Therapy" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "radiationrecode_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RegistryTrialCount a nccr:CohortFilter ;
-    rdfs:label "RegistryTrialCount filter"@en ;
-    nccr:filterControlTitle "Registry/Epidemiology" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "registrystudycount_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RxNormActProdClass a nccr:CohortFilter ;
-    rdfs:label "RxNormActProdClass filter"@en ;
-    nccr:filterControlTitle "RxNorm ACTPROD Class" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "rxnormatcprodclass" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:RxNormDisplayName a nccr:CohortFilter ;
-    rdfs:label "RxNormDisplayName filter"@en ;
-    nccr:filterControlTitle "RxNorm Display Name" ;
-    nccr:filterDataSource nccr-ds:pharm ;
-    nccr:filterFieldName "rxnormdisplayname" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:Sex a nccr:CohortFilter ;
-    rdfs:label "Sex filter"@en ;
-    nccr:filterControlTitle "Sex" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "sex_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:SupportiveTrialCount a nccr:CohortFilter ;
-    rdfs:label "SupportiveTrialCount filter"@en ;
-    nccr:filterControlTitle "Supportive" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "supportivestudycount_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:SurgeryPrimSite a nccr:CohortFilter ;
-    rdfs:label "SurgeryPrimSite filter"@en ;
-    nccr:filterControlTitle "Surgery of Primary Site" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "rxsummsurgprimsite_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:TherapeuticFrontLineTrialCount a nccr:CohortFilter ;
-    rdfs:label "TherapeuticFrontLineTrialCount filter"@en ;
-    nccr:filterControlTitle "Therapeutic Frontline" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "therapeuticfrontlinetrialcount_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:TherapeuticOtherTrialCount a nccr:CohortFilter ;
-    rdfs:label "TherapeuticOtherTrialCount filter"@en ;
-    nccr:filterControlTitle "Therapeutic-Other" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "therapeuticothertrialcount_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:TherapeuticRelapsedTrialCount a nccr:CohortFilter ;
-    rdfs:label "TherapeuticRelapsedTrialCount filter"@en ;
-    nccr:filterControlTitle "Therapeutic Relapsed" ;
-    nccr:filterDataSource nccr-ds:cog ;
-    nccr:filterFieldName "therapeuticrelapsedtrialcount_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:TumorOrder a nccr:CohortFilter ;
-    rdfs:label "TumorOrder filter"@en ;
-    nccr:filterControlTitle "Tumor Order" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "tumororder_int" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:VitalStatus a nccr:CohortFilter ;
-    rdfs:label "VitalStatus filter"@en ;
-    nccr:filterControlTitle "Vital Status" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "vitalstatusrecode_str" ;
-    nccr:filterType "EQUALS" .
-
-nccr-flt:YearOfDiagnosis a nccr:CohortFilter ;
-    rdfs:label "YearOfDiagnosis filter"@en ;
-    nccr:filterControlTitle "Year of Diagnosis" ;
-    nccr:filterDataSource nccr-ds:ctc ;
-    nccr:filterFieldName "yearofdiagnosis_int" ;
     nccr:filterType "EQUALS" .
 
 nccr-cv:abm-persistentpoverty-0 a skos:Concept,
@@ -35304,6 +34954,356 @@ nccr-dsp:ro-untransformed-rad-therapy-type a nccr:DisplayConfig ;
     nccr:visibleInQuicksight false ;
     nccr:visibleInUI true .
 
+nccr-flt:BehaviorCode a nccr:CohortFilter ;
+    rdfs:label "BehaviorCode filter"@en ;
+    nccr:filterControlTitle "ICD-O-3 Behavior Code" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "behavioricdo3public_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:BiobankingTumorClassTrialCount a nccr:CohortFilter ;
+    rdfs:label "BiobankingTumorClassTrialCount filter"@en ;
+    nccr:filterControlTitle "Biobanking/Tumor Classification" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "biobankingtumorclassstudycount_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:CauseOfDeath a nccr:CohortFilter ;
+    rdfs:label "CauseOfDeath filter"@en ;
+    nccr:filterControlTitle "SEER Cause of Death" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "seercausespecificcod_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:CcdiResourceId a nccr:CohortFilter ;
+    rdfs:label "CcdiResourceId filter"@en ;
+    nccr:filterControlTitle "Debug Resource Participant Id" ;
+    nccr:filterDataSource nccr-ds:ccdi ;
+    nccr:filterFieldName "resourceparticipantid" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:CcdiResourceName a nccr:CohortFilter ;
+    rdfs:label "CcdiResourceName filter"@en ;
+    nccr:filterControlTitle "Resources" ;
+    nccr:filterDataSource nccr-ds:ccdi ;
+    nccr:filterFieldName "resourcename" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:Chemotherapy a nccr:CohortFilter ;
+    rdfs:label "Chemotherapy filter"@en ;
+    nccr:filterControlTitle "Chemotherapy" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "rxsummchemorecode_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:CombinedSummaryStage a nccr:CohortFilter ;
+    rdfs:label "CombinedSummaryStage filter"@en ;
+    nccr:filterControlTitle "Combined Summary Stage" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "combinedsspubdetailed_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:DrugCategory a nccr:CohortFilter ;
+    rdfs:label "DrugCategory filter"@en ;
+    nccr:filterControlTitle "CanMED Drug Category" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "canmeddrugcategory_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:DrugName a nccr:CohortFilter ;
+    rdfs:label "DrugName filter"@en ;
+    nccr:filterControlTitle "CanMED Non-proprietary Name" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "canmednonproprietaryname" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:EnrolledCogTrial a nccr:CohortFilter ;
+    rdfs:label "EnrolledCogTrial filter"@en ;
+    nccr:filterControlTitle "Reported COG Study Enrollment" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "reportedcogenrollment_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:Histology a nccr:CohortFilter ;
+    rdfs:label "Histology filter"@en ;
+    nccr:filterControlTitle "ICD-O-3 Histology/Behavior" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "histologybehaviorrecodepublic_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:Iccc a nccr:CohortFilter ;
+    rdfs:label "Iccc filter"@en ;
+    nccr:filterControlTitle "ICCC (Level 2)" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "iccc2017recode_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:IcccExtended a nccr:CohortFilter ;
+    rdfs:label "IcccExtended filter"@en ;
+    nccr:filterControlTitle "ICCC Extended (Level 3)" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "iccc2017extendedrecode_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:IcccMajor a nccr:CohortFilter ;
+    rdfs:label "IcccMajor filter"@en ;
+    nccr:filterControlTitle "ICCC Major (Level 1)" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "icccmajor_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:IndexCancer a nccr:CohortFilter ;
+    rdfs:label "IndexCancer filter"@en ;
+    nccr:filterControlTitle "Index Cancer" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "indexcancer_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:MajorDrugClass a nccr:CohortFilter ;
+    rdfs:label "MajorDrugClass filter"@en ;
+    nccr:filterControlTitle "CanMED Major Drug Class" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "canmedmajordrugclass" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:MaxAgeAtDiagnosis a nccr:CohortFilter ;
+    rdfs:label "MaxAgeAtDiagnosis filter"@en ;
+    nccr:filterControlTitle "Max Age (Yrs)" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "agerecodesingle90p_int" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MaxMonthsFromIndexCancer a nccr:CohortFilter ;
+    rdfs:label "MaxMonthsFromIndexCancer filter"@en ;
+    nccr:filterControlTitle "Max Months" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "monthsfromindexdxtotumor_int" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MaxMonthsToDispense a nccr:CohortFilter ;
+    rdfs:label "MaxMonthsToDispense filter"@en ;
+    nccr:filterControlTitle "Max Months from 1st Dx to Dispense" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "monthsfromindexdxtodispense" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MaxMonthsToEndTreatment a nccr:CohortFilter ;
+    rdfs:label "MaxMonthsToEndTreatment filter"@en ;
+    nccr:filterControlTitle "Max Months" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "months_from_dx_to_treatment_end" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MaxMonthsToStartTreatment a nccr:CohortFilter ;
+    rdfs:label "MaxMonthsToStartTreatment filter"@en ;
+    nccr:filterControlTitle "Max Months" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "months_from_dx_to_tx_start" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MaxRadiationDoseDelivered a nccr:CohortFilter ;
+    rdfs:label "MaxRadiationDoseDelivered filter"@en ;
+    nccr:filterControlTitle "Max Dose" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_dose_delivered" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MaxRadiationFractionsDelivered a nccr:CohortFilter ;
+    rdfs:label "MaxRadiationFractionsDelivered filter"@en ;
+    nccr:filterControlTitle "Max Fractions" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_fractions_delivered" ;
+    nccr:filterType "MAX" .
+
+nccr-flt:MinAgeAtDiagnosis a nccr:CohortFilter ;
+    rdfs:label "MinAgeAtDiagnosis filter"@en ;
+    nccr:filterControlTitle "Min Age (Yrs)" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "agerecodesingle90p_int" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:MinMonthsFromIndexCancer a nccr:CohortFilter ;
+    rdfs:label "MinMonthsFromIndexCancer filter"@en ;
+    nccr:filterControlTitle "Min Months" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "monthsfromindexdxtotumor_int" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:MinMonthsToDispense a nccr:CohortFilter ;
+    rdfs:label "MinMonthsToDispense filter"@en ;
+    nccr:filterControlTitle "Min Months from 1st Dx to Dispense" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "monthsfromindexdxtodispense" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:MinMonthsToEndTreatment a nccr:CohortFilter ;
+    rdfs:label "MinMonthsToEndTreatment filter"@en ;
+    nccr:filterControlTitle "Min Months" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "months_from_dx_to_treatment_end" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:MinMonthsToStartTreatment a nccr:CohortFilter ;
+    rdfs:label "MinMonthsToStartTreatment filter"@en ;
+    nccr:filterControlTitle "Min Months" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "months_from_dx_to_tx_start" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:MinRadiationDoseDelivered a nccr:CohortFilter ;
+    rdfs:label "MinRadiationDoseDelivered filter"@en ;
+    nccr:filterControlTitle "Min Dose" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_dose_delivered" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:MinRadiationFractionsDelivered a nccr:CohortFilter ;
+    rdfs:label "MinRadiationFractionsDelivered filter"@en ;
+    nccr:filterControlTitle "Min Fractions" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_fractions_delivered" ;
+    nccr:filterType "MIN" .
+
+nccr-flt:NumberOfPrimaries a nccr:CohortFilter ;
+    rdfs:label "NumberOfPrimaries filter"@en ;
+    nccr:filterControlTitle "Number of Primaries" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "numberofprimaries_int" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:PathologyReportsAvailable a nccr:CohortFilter ;
+    rdfs:label "PathologyReportsAvailable filter"@en ;
+    nccr:filterControlTitle "Pathology Reports Available" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "pathreportsflag_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:PrimarySite a nccr:CohortFilter ;
+    rdfs:label "PrimarySite filter"@en ;
+    nccr:filterControlTitle "Primary Site" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "primarysite_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RaceEthnicity a nccr:CohortFilter ;
+    rdfs:label "RaceEthnicity filter"@en ;
+    nccr:filterControlTitle "Race/Ethnicity" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "racerecodewbaiapihisp_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RadiationAnatomicSite a nccr:CohortFilter ;
+    rdfs:label "RadiationAnatomicSite filter"@en ;
+    nccr:filterControlTitle "Radiation Anatomic Site" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_anatomic_site_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RadiationSource a nccr:CohortFilter ;
+    rdfs:label "RadiationSource filter"@en ;
+    nccr:filterControlTitle "Radiation Energy Type" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_energy_type_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RadiationTechnique a nccr:CohortFilter ;
+    rdfs:label "RadiationTechnique filter"@en ;
+    nccr:filterControlTitle "Radiation Therapy Type" ;
+    nccr:filterDataSource nccr-ds:ro ;
+    nccr:filterFieldName "radiation_therapy_type_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RadiationTherapy a nccr:CohortFilter ;
+    rdfs:label "RadiationTherapy filter"@en ;
+    nccr:filterControlTitle "Radiation Therapy" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "radiationrecode_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RegistryTrialCount a nccr:CohortFilter ;
+    rdfs:label "RegistryTrialCount filter"@en ;
+    nccr:filterControlTitle "Registry/Epidemiology" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "registrystudycount_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RxNormActProdClass a nccr:CohortFilter ;
+    rdfs:label "RxNormActProdClass filter"@en ;
+    nccr:filterControlTitle "RxNorm ACTPROD Class" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "rxnormatcprodclass" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:RxNormDisplayName a nccr:CohortFilter ;
+    rdfs:label "RxNormDisplayName filter"@en ;
+    nccr:filterControlTitle "RxNorm Display Name" ;
+    nccr:filterDataSource nccr-ds:pharm ;
+    nccr:filterFieldName "rxnormdisplayname" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:Sex a nccr:CohortFilter ;
+    rdfs:label "Sex filter"@en ;
+    nccr:filterControlTitle "Sex" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "sex_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:SupportiveTrialCount a nccr:CohortFilter ;
+    rdfs:label "SupportiveTrialCount filter"@en ;
+    nccr:filterControlTitle "Supportive" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "supportivestudycount_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:SurgeryPrimSite a nccr:CohortFilter ;
+    rdfs:label "SurgeryPrimSite filter"@en ;
+    nccr:filterControlTitle "Surgery of Primary Site" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "rxsummsurgprimsite_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:TherapeuticFrontLineTrialCount a nccr:CohortFilter ;
+    rdfs:label "TherapeuticFrontLineTrialCount filter"@en ;
+    nccr:filterControlTitle "Therapeutic Frontline" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "therapeuticfrontlinetrialcount_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:TherapeuticOtherTrialCount a nccr:CohortFilter ;
+    rdfs:label "TherapeuticOtherTrialCount filter"@en ;
+    nccr:filterControlTitle "Therapeutic-Other" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "therapeuticothertrialcount_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:TherapeuticRelapsedTrialCount a nccr:CohortFilter ;
+    rdfs:label "TherapeuticRelapsedTrialCount filter"@en ;
+    nccr:filterControlTitle "Therapeutic Relapsed" ;
+    nccr:filterDataSource nccr-ds:cog ;
+    nccr:filterFieldName "therapeuticrelapsedtrialcount_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:TumorOrder a nccr:CohortFilter ;
+    rdfs:label "TumorOrder filter"@en ;
+    nccr:filterControlTitle "Tumor Order" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "tumororder_int" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:VitalStatus a nccr:CohortFilter ;
+    rdfs:label "VitalStatus filter"@en ;
+    nccr:filterControlTitle "Vital Status" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "vitalstatusrecode_str" ;
+    nccr:filterType "EQUALS" .
+
+nccr-flt:YearOfDiagnosis a nccr:CohortFilter ;
+    rdfs:label "YearOfDiagnosis filter"@en ;
+    nccr:filterControlTitle "Year of Diagnosis" ;
+    nccr:filterDataSource nccr-ds:ctc ;
+    nccr:filterFieldName "yearofdiagnosis_int" ;
+    nccr:filterType "EQUALS" .
+
 nccr-proc:abm-tumorrecordnumber-validation a nccr:ValidationRule ;
     nccr:validatePattern "\\d{2}" .
 
@@ -35510,6 +35510,7 @@ nccr-var:ccdi-nccrid a nccr:Variable ;
 nccr-var:ccdi-resourcename a nccr:Variable ;
     rdfs:label "Resource Name" ;
     nccr:belongsToSource nccr-ds:ccdi ;
+    nccr:boundToFilter nccr-flt:CcdiResourceName ;
     nccr:fieldLength "100" ;
     nccr:hasDisplayConfig nccr-dsp:ccdi-resourcename ;
     nccr:itemDescription """Name of resource associated with the resource participant identifier with a matched NCCR patient.
@@ -35524,6 +35525,7 @@ nccr-var:ccdi-resourcename a nccr:Variable ;
 nccr-var:ccdi-resourceparticipantid a nccr:Variable ;
     rdfs:label "Resource Participant Identifier" ;
     nccr:belongsToSource nccr-ds:ccdi ;
+    nccr:boundToFilter nccr-flt:CcdiResourceId ;
     nccr:fieldLength "100" ;
     nccr:hasDisplayConfig nccr-dsp:ccdi-resourceparticipantid ;
     nccr:itemDescription "Public identifier that appears in a research dataset accessible to researchers (e.g., Kids First ID or GENIE ID). This also includes global identifiers used more broadly (e.g., COG USI or dbGaP Subject ID)." ;
@@ -35534,6 +35536,7 @@ nccr-var:ccdi-resourceparticipantid a nccr:Variable ;
 nccr-var:cog-biobankingtumorclassstudycount a nccr:Variable ;
     rdfs:label "Biobanking/Tumor Classification Study Enrollments" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:BiobankingTumorClassTrialCount ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:cog-biobankingtumorclassstudycount ;
     nccr:hasValueSet nccr-vs:cog-biobankingtumorclassstudycount ;
@@ -35558,6 +35561,7 @@ nccr-var:cog-nccrid a nccr:Variable ;
 nccr-var:cog-registrystudycount a nccr:Variable ;
     rdfs:label "Registry/Epidemiology Study Enrollments" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:RegistryTrialCount ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:cog-registrystudycount ;
     nccr:hasValueSet nccr-vs:cog-registrystudycount ;
@@ -35570,6 +35574,7 @@ These studies track and record data on patients over time to study patient healt
 nccr-var:cog-reportedcogenrollment a nccr:Variable ;
     rdfs:label "Reported COG Study Enrollment" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:EnrolledCogTrial ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:cog-reportedcogenrollment ;
     nccr:hasValueSet nccr-vs:cog-reportedcogenrollment ;
@@ -35581,6 +35586,7 @@ nccr-var:cog-reportedcogenrollment a nccr:Variable ;
 nccr-var:cog-supportivestudycount a nccr:Variable ;
     rdfs:label "Supportive Study Enrollments" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:SupportiveTrialCount ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:cog-supportivestudycount ;
     nccr:hasValueSet nccr-vs:cog-supportivestudycount ;
@@ -35593,6 +35599,7 @@ These studies focus on improving the health and/or quality of life patients by m
 nccr-var:cog-therapeuticfrontlinetrialcount a nccr:Variable ;
     rdfs:label "Therapeutic Frontline Trial Enrollments" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:TherapeuticFrontLineTrialCount ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:cog-therapeuticfrontlinetrialcount ;
     nccr:hasValueSet nccr-vs:cog-therapeuticfrontlinetrialcount ;
@@ -35605,6 +35612,7 @@ These studies test the effectiveness and safety of treatments that are given as 
 nccr-var:cog-therapeuticothertrialcount a nccr:Variable ;
     rdfs:label "Therapeutic-Other Trial Enrollments" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:TherapeuticOtherTrialCount ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:cog-therapeuticothertrialcount ;
     nccr:hasValueSet nccr-vs:cog-therapeuticothertrialcount ;
@@ -35617,6 +35625,7 @@ These studies test the safety and efficacy of interventions to improve treatment
 nccr-var:cog-therapeuticrelapsedtrialcount a nccr:Variable ;
     rdfs:label "Therapeutic Relapsed Trial Enrollments" ;
     nccr:belongsToSource nccr-ds:cog ;
+    nccr:boundToFilter nccr-flt:TherapeuticRelapsedTrialCount ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:cog-therapeuticrelapsedtrialcount ;
     nccr:hasValueSet nccr-vs:cog-therapeuticrelapsedtrialcount ;
@@ -35672,6 +35681,8 @@ nccr-var:ctc-agerecodesingle90p a nccr:Variable ;
     rdfs:label "Age recode with single ages and 90+" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:MaxAgeAtDiagnosis,
+        nccr-flt:MinAgeAtDiagnosis ;
     nccr:fieldLength "2" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-agerecodesingle90p ;
     nccr:hasValueSet nccr-vs:ctc-agerecodesingle90p ;
@@ -35686,6 +35697,7 @@ nccr-var:ctc-behavioricdo3public a nccr:Variable ;
     rdfs:label "Behavior code ICD-O-3" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:BehaviorCode ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-behavioricdo3public ;
     nccr:hasValueSet nccr-vs:ctc-behavioricdo3public ;
@@ -35754,6 +35766,7 @@ nccr-var:ctc-combinedsspubdetailed a nccr:Variable ;
     rdfs:label "Combined Summary Stage with Expanded Regional Codes (2004+)" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:CombinedSummaryStage ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-combinedsspubdetailed ;
     nccr:hasValueSet nccr-vs:ctc-combinedsspubdetailed ;
@@ -36361,6 +36374,7 @@ nccr-var:ctc-histologybehaviorrecodepublic a nccr:Variable ;
     rdfs:label "ICD-O-3 Histology/Behavior" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:Histology ;
     nccr:fieldLength "6" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-histologybehaviorrecodepublic ;
     nccr:inSection nccr-sec:cancer-identification ;
@@ -36375,6 +36389,7 @@ nccr-var:ctc-iccc2017extendedrecode a nccr:Variable ;
     rdfs:label "ICCC site recode extended 3rd edition/IARC 2017" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:IcccExtended ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-iccc2017extendedrecode ;
     nccr:hasValueSet nccr-vs:ctc-iccc2017extendedrecode ;
@@ -36390,6 +36405,7 @@ nccr-var:ctc-iccc2017recode a nccr:Variable ;
     rdfs:label "ICCC site recode 3rd edition/IARC 2017" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:Iccc ;
     nccr:fieldLength "3" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-iccc2017recode ;
     nccr:hasValueSet nccr-vs:ctc-iccc2017recode ;
@@ -36405,6 +36421,7 @@ nccr-var:ctc-icccmajor a nccr:Variable ;
     rdfs:label "ICCC Major Category" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:IcccMajor ;
     nccr:fieldLength "2" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-icccmajor ;
     nccr:hasValueSet nccr-vs:ctc-icccmajor ;
@@ -36432,6 +36449,7 @@ nccr-var:ctc-indexcancer a nccr:Variable ;
     rdfs:label "Index Cancer (first primary tumor or cancer in the current data source)" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:IndexCancer ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-indexcancer ;
     nccr:hasValueSet nccr-vs:ctc-indexcancer ;
@@ -36551,6 +36569,7 @@ nccr-var:ctc-numberofprimaries a nccr:Variable ;
     rdfs:label "Total number of primary tumors or cancers for this patient" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:NumberOfPrimaries ;
     nccr:fieldLength "1-2" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-numberofprimaries ;
     nccr:hasValueSet nccr-vs:ctc-numberofprimaries ;
@@ -36598,6 +36617,7 @@ nccr-var:ctc-pathreportsflag a nccr:Variable ;
     rdfs:label "Path Report Flag" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:PathologyReportsAvailable ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-pathreportsflag ;
     nccr:hasValueSet nccr-vs:ctc-pathreportsflag ;
@@ -36613,6 +36633,7 @@ nccr-var:ctc-primarysite a nccr:Variable ;
     rdfs:label "Primary Site" ;
     nccr:abbreviatedSourceVocabulary "SEER/CoC" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:PrimarySite ;
     nccr:externalLink "https://apps.naaccr.org/data-dictionary/data-dictionary/version%3D24/data-item-view/item-number%3D400/"^^xsd:anyURI ;
     nccr:fieldLength "4" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-primarysite ;
@@ -36659,6 +36680,7 @@ nccr-var:ctc-racerecodewbaiapihisp a nccr:Variable ;
     rdfs:label "Race and origin recode (NHW, NHB, NHAIAN, NHAPI, Hispanic)" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:RaceEthnicity ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-racerecodewbaiapihisp ;
     nccr:hasValueSet nccr-vs:ctc-racerecodewbaiapihisp ;
@@ -36674,6 +36696,7 @@ nccr-var:ctc-radiationrecode a nccr:Variable ;
     rdfs:label "Radiation recode" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:RadiationTherapy ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-radiationrecode ;
     nccr:hasValueSet nccr-vs:ctc-radiationrecode ;
@@ -36842,6 +36865,7 @@ nccr-var:ctc-rxsummchemorecode a nccr:Variable ;
     rdfs:label "Chemotherapy recode (yes, no/unk)" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:Chemotherapy ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-rxsummchemorecode ;
     nccr:hasValueSet nccr-vs:ctc-rxsummchemorecode ;
@@ -36914,6 +36938,7 @@ nccr-var:ctc-rxsummsurgprimsite a nccr:Variable ;
     rdfs:label "RX Summ--Surg Prim Site 03-2022" ;
     nccr:abbreviatedSourceVocabulary "SEER/CoC" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:SurgeryPrimSite ;
     nccr:externalLink "https://apps.naaccr.org/data-dictionary/data-dictionary/version%3D24/data-item-view/item-number%3D1290/"^^xsd:anyURI ;
     nccr:fieldLength "2" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-rxsummsurgprimsite ;
@@ -37079,6 +37104,7 @@ nccr-var:ctc-seercausespecificcod a nccr:Variable ;
     rdfs:label "SEER Cause Specific COD" ;
     nccr:abbreviatedSourceVocabulary "SEER" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:CauseOfDeath ;
     nccr:externalLink "https://apps.naaccr.org/data-dictionary/data-dictionary/version%3D24/data-item-view/item-number%3D1914/"^^xsd:anyURI ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-seercausespecificcod ;
@@ -37152,6 +37178,7 @@ nccr-var:ctc-sex a nccr:Variable ;
     rdfs:label "Sex" ;
     nccr:abbreviatedSourceVocabulary "SEER/CoC" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:Sex ;
     nccr:externalLink "https://apps.naaccr.org/data-dictionary/data-dictionary/version%3D24/data-item-view/item-number%3D220/"^^xsd:anyURI ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-sex ;
@@ -37289,6 +37316,7 @@ nccr-var:ctc-tumororder a nccr:Variable ;
     rdfs:label "Chronological order for this tumor" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:TumorOrder ;
     nccr:fieldLength "1-2" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-tumororder ;
     nccr:inSection nccr-sec:virtual-pooled-registry-vpr ;
@@ -37365,6 +37393,7 @@ nccr-var:ctc-vitalstatusrecode a nccr:Variable ;
     rdfs:label "Vital Status Recode" ;
     nccr:abbreviatedSourceVocabulary "NAACCR" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:VitalStatus ;
     nccr:externalLink "https://apps.naaccr.org/data-dictionary/data-dictionary/version%3D24/data-item-view/item-number%3D1762/"^^xsd:anyURI ;
     nccr:fieldLength "1" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-vitalstatusrecode ;
@@ -37384,6 +37413,7 @@ nccr-var:ctc-yearofdiagnosis a nccr:Variable ;
     rdfs:label "Year of Diagnosis" ;
     nccr:abbreviatedSourceVocabulary "SEER/CoC" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:YearOfDiagnosis ;
     nccr:externalLink "https://apps.naaccr.org/data-dictionary/data-dictionary/version%3D24/data-item-view/item-number%3D390/"^^xsd:anyURI ;
     nccr:fieldLength "4" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-yearofdiagnosis ;
@@ -41514,6 +41544,7 @@ nccr-var:mcp-nccrid a nccr:Variable ;
 nccr-var:pharm-canmeddrugcategory a nccr:Variable ;
     rdfs:label "CanMED Drug Category" ;
     nccr:belongsToSource nccr-ds:pharm ;
+    nccr:boundToFilter nccr-flt:DrugCategory ;
     nccr:hasDisplayConfig nccr-dsp:pharm-canmeddrugcategory ;
     nccr:hasValueSet nccr-vs:pharm-canmeddrugcategory ;
     nccr:itemDescription "The CanMED Drug Category is extracted from CanMEDs SEER Rx category and classifies the drug into one of five groups: Hormone, Chemotherapy, Ancillary, Immunotherapy, or Radiopharmaceutical. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim. <p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields" ;
@@ -41524,6 +41555,7 @@ nccr-var:pharm-canmeddrugcategory a nccr:Variable ;
 nccr-var:pharm-canmedmajordrugclass a nccr:Variable ;
     rdfs:label "CanMED Major Drug Class" ;
     nccr:belongsToSource nccr-ds:pharm ;
+    nccr:boundToFilter nccr-flt:MajorDrugClass ;
     nccr:hasDisplayConfig nccr-dsp:pharm-canmedmajordrugclass ;
     nccr:hasSubstitution nccr-sub:pharm-canmedmajordrugclass-sub-0 ;
     nccr:itemDescription "The CanMED Major Drug Class denotes the general mechanism of action or group name. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim.<p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields" ;
@@ -41545,6 +41577,7 @@ nccr-var:pharm-canmedminordrugclass a nccr:Variable ;
 nccr-var:pharm-canmednonproprietaryname a nccr:Variable ;
     rdfs:label "CanMED Non-proprietary Name" ;
     nccr:belongsToSource nccr-ds:pharm ;
+    nccr:boundToFilter nccr-flt:DrugName ;
     nccr:hasDisplayConfig nccr-dsp:pharm-canmednonproprietaryname ;
     nccr:hasSubstitution nccr-sub:pharm-canmednonproprietaryname-sub-0 ;
     nccr:itemDescription "Generic name given by the FDA upon drug approval for identification irrespective of branding or proprietary naming as reported by CanMED. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim. Names separated by semicolons. <p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields" ;
@@ -41607,6 +41640,7 @@ nccr-var:pharm-nccrid a nccr:Variable ;
 nccr-var:pharm-rxnormatcprodclass a nccr:Variable ;
     rdfs:label "RxNorm ATCPROD Class" ;
     nccr:belongsToSource nccr-ds:pharm ;
+    nccr:boundToFilter nccr-flt:RxNormActProdClass ;
     nccr:hasDisplayConfig nccr-dsp:pharm-rxnormatcprodclass ;
     nccr:hasSubstitution nccr-sub:pharm-rxnormatcprodclass-sub-0,
         nccr-sub:pharm-rxnormatcprodclass-sub-1 ;
@@ -41629,6 +41663,7 @@ nccr-var:pharm-rxnormconceptname a nccr:Variable ;
 nccr-var:pharm-rxnormdisplayname a nccr:Variable ;
     rdfs:label "RxNorm Display Name" ;
     nccr:belongsToSource nccr-ds:pharm ;
+    nccr:boundToFilter nccr-flt:RxNormDisplayName ;
     nccr:hasDisplayConfig nccr-dsp:pharm-rxnormdisplayname ;
     nccr:hasSubstitution nccr-sub:pharm-rxnormdisplayname-sub-0,
         nccr-sub:pharm-rxnormdisplayname-sub-1 ;
@@ -41683,6 +41718,7 @@ nccr-var:ro-nccrid a nccr:Variable ;
 nccr-var:ro-radiation-anatomic-site a nccr:Variable ;
     rdfs:label "Radiation Anatomic Site" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:RadiationAnatomicSite ;
     nccr:hasDisplayConfig nccr-dsp:ro-radiation-anatomic-site ;
     nccr:hasValueSet nccr-vs:ro-radiation-anatomic-site ;
     nccr:itemDescription "Harmonized anatomic site or region that radiation is delivered to. This field contains harmonized values mapped from the originally submitted data found in field Untransformed Radiation Anatomic Site. <p>Permissible values for this field include one or more NCIt concept codes in format C##### or C######. Missing values are mapped to C43234 (Not Reported). <p>For more details about mappings for this field, see Transformation Description. <p>For more details about specific NCIt concept codes, see Description or Long Description." ;
@@ -41693,6 +41729,7 @@ nccr-var:ro-radiation-anatomic-site a nccr:Variable ;
 nccr-var:ro-radiation-energy-type a nccr:Variable ;
     rdfs:label "Radiation Energy Type" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:RadiationSource ;
     nccr:hasDisplayConfig nccr-dsp:ro-radiation-energy-type ;
     nccr:hasValueSet nccr-vs:ro-radiation-energy-type ;
     nccr:itemDescription "The type of radiation therapy used as treatment of a disease by means of exposure of the target or the whole body to radiation. This field contains harmonized values mapped from the originally submitted values found in field Untransformed Radiation Energy Type. <p>Permissible values for this field include one or more NCIt concept codes in format C##### or C######. Missing values are mapped to C43234 (Not Reported). <p>For more details about mappings for this field, see Transformation Description. <p>For more details about specific NCIt concept codes, see Description or Long Description." ;
@@ -41703,6 +41740,7 @@ nccr-var:ro-radiation-energy-type a nccr:Variable ;
 nccr-var:ro-radiation-therapy-type a nccr:Variable ;
     rdfs:label "Radiation Therapy Type" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:RadiationTechnique ;
     nccr:hasDisplayConfig nccr-dsp:ro-radiation-therapy-type ;
     nccr:hasValueSet nccr-vs:ro-radiation-therapy-type ;
     nccr:itemDescription "The type of treatment by means of exposure of the target or the whole body to radiation. This field contains harmonized values mapped from the originally submitted data found in field Untransformed Radiation Therapy Type. <p>Permissible values for this field include one or more NCIt concept codes in format C##### or C######. Missing values are mapped to C43234 (Not Reported). <p>For more details about mappings for this field, see Transformation Description. <p>For more details about specific NCIt concept codes, see Description or Long Description." ;
@@ -41875,6 +41913,8 @@ nccr-var:ctc-monthsfromindexdxtotumor a nccr:Variable ;
     rdfs:label "Number of Months from Index Cancer to Tumor" ;
     nccr:abbreviatedSourceVocabulary "SEER Recode" ;
     nccr:belongsToSource nccr-ds:ctc ;
+    nccr:boundToFilter nccr-flt:MaxMonthsFromIndexCancer,
+        nccr-flt:MinMonthsFromIndexCancer ;
     nccr:fieldLength "1-4" ;
     nccr:hasDisplayConfig nccr-dsp:ctc-monthsfromindexdxtotumor ;
     nccr:hasValueSet nccr-vs:ctc-monthsfromindexdxtotumor ;
@@ -41920,6 +41960,8 @@ nccr-var:pharm-medicationdispensequantity a nccr:Variable ;
 nccr-var:pharm-monthsfromindexdxtodispense a nccr:Variable ;
     rdfs:label "Months From Index Cancer to Dispense Date" ;
     nccr:belongsToSource nccr-ds:pharm ;
+    nccr:boundToFilter nccr-flt:MaxMonthsToDispense,
+        nccr-flt:MinMonthsToDispense ;
     nccr:fieldLength "1-4" ;
     nccr:hasDisplayConfig nccr-dsp:pharm-monthsfromindexdxtodispense ;
     nccr:hasValueSet nccr-vs:pharm-monthsfromindexdxtodispense ;
@@ -41931,6 +41973,8 @@ nccr-var:pharm-monthsfromindexdxtodispense a nccr:Variable ;
 nccr-var:ro-months-from-dx-to-treatment-end a nccr:Variable ;
     rdfs:label "Months from Index Cancer Dx to End of Treatment" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:MaxMonthsToEndTreatment,
+        nccr-flt:MinMonthsToEndTreatment ;
     nccr:hasDisplayConfig nccr-dsp:ro-months-from-dx-to-treatment-end ;
     nccr:hasValueSet nccr-vs:ro-months-from-dx-to-treatment-end ;
     nccr:itemDescription "Total number of months from the index cancer to the end of this radiation record." ;
@@ -41941,6 +41985,8 @@ nccr-var:ro-months-from-dx-to-treatment-end a nccr:Variable ;
 nccr-var:ro-months-from-dx-to-tx-start a nccr:Variable ;
     rdfs:label "Months from Index Cancer Dx to Start of Treatment" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:MaxMonthsToStartTreatment,
+        nccr-flt:MinMonthsToStartTreatment ;
     nccr:hasDisplayConfig nccr-dsp:ro-months-from-dx-to-tx-start ;
     nccr:hasValueSet nccr-vs:ro-months-from-dx-to-tx-start ;
     nccr:itemDescription "Total number of months from the index cancer to the start of this radiation record." ;
@@ -41951,6 +41997,8 @@ nccr-var:ro-months-from-dx-to-tx-start a nccr:Variable ;
 nccr-var:ro-radiation-dose-delivered a nccr:Variable ;
     rdfs:label "Radiation Dose Delivered" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:MaxRadiationDoseDelivered,
+        nccr-flt:MinRadiationDoseDelivered ;
     nccr:hasDisplayConfig nccr-dsp:ro-radiation-dose-delivered ;
     nccr:hasValueSet nccr-vs:ro-radiation-dose-delivered ;
     nccr:itemDescription "Total radiation dose delivered for this radiation record. Doses were submitted as both grays and centigrays, but were converted to grays at a ratio of 100 centigrays:1 gray. " ;
@@ -41971,6 +42019,8 @@ nccr-var:ro-radiation-dose-prescribed a nccr:Variable ;
 nccr-var:ro-radiation-fractions-delivered a nccr:Variable ;
     rdfs:label "Radiation Fractions Delivered" ;
     nccr:belongsToSource nccr-ds:ro ;
+    nccr:boundToFilter nccr-flt:MaxRadiationFractionsDelivered,
+        nccr-flt:MinRadiationFractionsDelivered ;
     nccr:hasDisplayConfig nccr-dsp:ro-radiation-fractions-delivered ;
     nccr:hasValueSet nccr-vs:ro-radiation-fractions-delivered ;
     nccr:itemDescription "Total number of fractions or divided doses that were delivered to the patient for this radiation record." ;

@@ -410,11 +410,7 @@ class TestRareValues:
 # ============================================================
 
 class TestFilterablePharmVariables:
-    """From usage.md: full Python example.
-    NOTE: boundToFilter linkage requires matching filter fieldnames (with _str/_int suffixes)
-    back to source column names. Currently this is not populated by the converter.
-    This test validates the query structure works when the linkage exists.
-    """
+    """From usage.md: full Python example."""
 
     QUERY = """
     PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
@@ -431,25 +427,13 @@ class TestFilterablePharmVariables:
     }
     """
 
-    def test_query_is_valid(self, graph):
-        """Query should execute without error (even if no results yet)."""
+    def test_returns_results(self, graph):
         results = list(graph.query(self.QUERY))
-        # boundToFilter linkage not yet populated by converter
-        # When it is, this should return >0 results
-        assert isinstance(results, list)
+        assert len(results) > 0, "Should find filterable pharmacy variables"
 
-    def test_pharm_filters_exist_independently(self, graph):
-        """PHARM filters exist in the graph, validating the data is available."""
-        results = list(graph.query("""
-            PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
-            PREFIX nccr-ds: <https://nccrdataplatform.ccdi.cancer.gov/datasource/>
-            SELECT ?title WHERE {
-                ?f a nccr:CohortFilter ;
-                   nccr:filterControlTitle ?title ;
-                   nccr:filterDataSource nccr-ds:pharm .
-            }
-        """))
-        titles = [str(row.title) for row in results]
+    def test_drug_category_filter(self, graph):
+        results = list(graph.query(self.QUERY))
+        titles = [str(row.filterTitle) for row in results]
         assert "CanMED Drug Category" in titles
 
 
