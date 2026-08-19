@@ -19,6 +19,7 @@ This site provides **machine-readable metadata** for the platform's datasources 
 | [Data Sources](metadata/data-sources) | Descriptions of the 9 NCCR datasources |
 | [Vocabulary](metadata/vocabulary) | Classes and properties defined in the NCCR vocabulary |
 | [Usage & Examples](metadata/usage) | Code snippets for Python, R, and SPARQL |
+| [Cohort Builder Tool](tools/) | CLI tool for discovering variables, exploring value frequencies, and building cohort definitions |
 
 ---
 
