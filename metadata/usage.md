@@ -183,6 +183,123 @@ ORDER BY DESC(?count)
 
 ---
 
+## Building a cohort: discovering filterable variables
+
+The NCCR Data Platform allows researchers to build patient cohorts by selecting datasources and applying filters. The metadata captures which variables are filterable and what values are available.
+
+### List all filterable variables by datasource
+
+```sparql
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?datasource ?variable ?filterTitle ?filterType WHERE {
+    ?var a nccr:Variable ;
+         rdfs:label ?variable ;
+         nccr:belongsToSource/rdfs:label ?datasource ;
+         nccr:boundToFilter ?filter .
+    ?filter nccr:filterControlTitle ?filterTitle ;
+            nccr:filterType ?filterType .
+}
+ORDER BY ?datasource ?filterTitle
+```
+
+Example results:
+```
+Consolidated Tumor Case (CTC)    Sex                      Sex              EQUALS
+Consolidated Tumor Case (CTC)    Year of Diagnosis        Year of Diagnosis  EQUALS
+Consolidated Tumor Case (CTC)    Age recode...            Min Age (Yrs)    MIN
+Consolidated Tumor Case (CTC)    Age recode...            Max Age (Yrs)    MAX
+Pharmacy Claims                  CanMED Drug Category     CanMED Drug Category  EQUALS
+Radiation Oncology               Radiation Anatomic Site  Radiation Anatomic Site  EQUALS
+```
+
+### What values can I filter on for a specific variable?
+
+```sparql
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?value ?description ?count WHERE {
+    ?var a nccr:Variable ;
+         rdfs:label "ICD-O-3 Behavior Code" ;
+         nccr:boundToFilter ?filter ;
+         nccr:hasValueSet/nccr:hasCodeValue ?cv .
+    ?cv skos:notation ?value ;
+        skos:prefLabel ?description .
+    OPTIONAL { ?cv nccr:recordCount ?count . }
+}
+ORDER BY ?value
+```
+
+### Which datasources have filterable variables?
+
+```sparql
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?datasource (COUNT(?filter) as ?filterCount) WHERE {
+    ?var nccr:belongsToSource ?ds ;
+         nccr:boundToFilter ?filter .
+    ?ds rdfs:label ?datasource .
+}
+GROUP BY ?datasource
+ORDER BY DESC(?filterCount)
+```
+
+### Full Python example: explore CTC filters before building a cohort
+
+```python
+"""Discover what filters are available for CTC and their possible values."""
+from rdflib import Graph, Namespace
+
+g = Graph()
+g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_instances.ttl")
+
+# Step 1: What can I filter on in CTC?
+filters_query = """
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX nccr-ds: <https://nccrdataplatform.ccdi.cancer.gov/datasource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?varLabel ?filterTitle ?filterType WHERE {
+    ?var a nccr:Variable ;
+         rdfs:label ?varLabel ;
+         nccr:belongsToSource nccr-ds:ctc ;
+         nccr:boundToFilter ?filter .
+    ?filter nccr:filterControlTitle ?filterTitle ;
+            nccr:filterType ?filterType .
+}
+ORDER BY ?filterTitle
+"""
+print("=== Available CTC Filters ===")
+for row in g.query(filters_query):
+    print(f"  {row.filterTitle} ({row.filterType}) — variable: {row.varLabel}")
+
+# Step 2: What are the possible values for Sex?
+values_query = """
+PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?code ?label ?count WHERE {
+    ?var nccr:sourceColumn "sex" ;
+         nccr:belongsToSource <https://nccrdataplatform.ccdi.cancer.gov/datasource/ctc> ;
+         nccr:hasValueSet/nccr:hasCodeValue ?cv .
+    ?cv skos:notation ?code ;
+        skos:prefLabel ?label .
+    OPTIONAL { ?cv nccr:recordCount ?count . }
+}
+ORDER BY ?code
+"""
+print("\n=== Sex values ===")
+for row in g.query(values_query):
+    count_str = f" ({int(row['count']):,} records)" if row['count'] else ""
+    print(f"  Code {row.code}: {row.label}{count_str}")
+```
+
+---
+
 ## Python: full example
 
 ```python
