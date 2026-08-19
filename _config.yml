@@ -3,7 +3,9 @@ description: Semantic metadata and documentation for the National Childhood Canc
 url: "https://nci-dccps.github.io"
 baseurl: "/nccr-metadata"
 
-theme: minima
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
 
 header_pages:
   - metadata/index.md
@@ -11,7 +13,12 @@ header_pages:
 # Keep TTL files accessible as static assets
 include:
   - "*.ttl"
+  - "datmm/*.ttl"
   - "datmm"
+
+# Prevent Jekyll from ignoring dotfiles or special folders
+keep_files:
+  - datmm
 
 exclude:
   - README.md
