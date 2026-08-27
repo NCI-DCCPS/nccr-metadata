@@ -6,7 +6,6 @@
 @prefix dct:    <http://purl.org/dc/terms/> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix bf:     <http://id.loc.gov/ontologies/bibframe/> .
-@prefix schema: <http://schema.org/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix adms:   <http://www.w3.org/ns/adms#> .
 
@@ -21,15 +20,11 @@
     adms:status "published" ;
     foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/RO> ;
     dct:isPartOf <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> ;
-    bf:contribution
-        <http://id.nlm.nih.gov/datmm/contribution/nci-publisher> ,
-        <http://id.nlm.nih.gov/datmm/contribution/dccps-creator> ;
-    schema:funding <http://id.nlm.nih.gov/datmm/grant/ccdi> ;
+    bf:contribution <http://id.nlm.nih.gov/datmm/contribution/seer> ;
     dct:subject
         <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
-        <http://id.nlm.nih.gov/datmm/concept/nccr-0006> ,
-        <http://id.nlm.nih.gov/datmm/concept/nccr-0011> ;
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0010> ;
     dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
     dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-ro-dictionary> .
 

@@ -19,8 +19,8 @@ Per NLM requirements, the NCCR Data Platform is described as a **Repository** co
 | File | Description |
 |------|-------------|
 | [`datmm/repository.ttl`]({{ site.baseurl }}/datmm/repository.ttl) | NCCR Data Platform as a DATMM Repository |
-| [`datmm/agents.ttl`]({{ site.baseurl }}/datmm/agents.ttl) | Shared agents (NCI, CCDI, SEER, COG, DCCPS) and contributions |
-| [`datmm/concepts.ttl`]({{ site.baseurl }}/datmm/concepts.ttl) | Subject concepts with identifiers and scheme membership |
+| [`datmm/agents.ttl`]({{ site.baseurl }}/datmm/agents.ttl) | SEER Program (NCI) agent and its contribution |
+| [`datmm/concepts.ttl`]({{ site.baseurl }}/datmm/concepts.ttl) | MeSH-backed subject concepts with identifiers and scheme membership |
 | [`datmm/ctc.ttl`]({{ site.baseurl }}/datmm/ctc.ttl) | Consolidated Tumor Case dataset |
 | [`datmm/abm.ttl`]({{ site.baseurl }}/datmm/abm.ttl) | Area-Based Measures dataset |
 | [`datmm/ccdi.ttl`]({{ site.baseurl }}/datmm/ccdi.ttl) | CCDI Mappings dataset |
@@ -43,8 +43,8 @@ Per NLM requirements, the NCCR Data Platform is described as a **Repository** co
 ```
 datmm/                         ← DATMM catalog layer (NLM Dataset Catalog)
 ├── repository.ttl                 Repository (NCCR Data Platform)
-├── agents.ttl                     Organizations & contributions
-├── concepts.ttl                   Subject concepts
+├── agents.ttl                     SEER Program agent & contribution
+├── concepts.ttl                   MeSH-backed subject concepts
 ├── ctc.ttl                        Consolidated Tumor Case dataset
 ├── abm.ttl                        Area-Based Measures dataset
 ├── ccdi.ttl                       CCDI Mappings dataset
@@ -63,7 +63,7 @@ nccr_instances.ttl             ← Content layer (all variables, values, frequen
 ## Three layers of metadata
 
 **Dataset discovery (DATMM)**
-: Repository identity, dataset descriptions, contributors, funding, access rights, subject concepts — mapped to the NLM Dataset Catalog
+: Repository identity, dataset descriptions, contributor, access rights, and MeSH-backed subject concepts — mapped to the NLM Dataset Catalog
 
 **Scientific metadata (NCCR Vocabulary)**
 : Variable definitions, value sets, links to external vocabularies (NAACCR, SEER, ICD-O-3, RxNorm, CanMED, AJCC)
@@ -78,4 +78,4 @@ nccr_instances.ttl             ← Content layer (all variables, values, frequen
 - [Dublin Core Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) — Descriptive properties
 - [OWL 2](https://www.w3.org/TR/owl2-overview/) — Vocabulary definition
 - [BIBFRAME](http://id.loc.gov/ontologies/bibframe/) — Agent contributions
-- [Schema.org](https://schema.org/) — Grants and funding
+- [MeSH RDF](https://id.nlm.nih.gov/mesh/) — Subject concept identifiers

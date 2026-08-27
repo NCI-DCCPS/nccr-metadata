@@ -468,8 +468,8 @@ class TestDATMMStructure:
         """))
         assert len(results) == 9, f"Expected 9 datasets in repository, got {len(results)}"
 
-    def test_datasets_have_subjects(self, graph):
-        """Every dataset must have at least one dct:subject."""
+    def test_datasets_have_three_subjects(self, graph):
+        """Every dataset must have exactly 3 subjects (Pediatrics + Neoplasms + specific)."""
         results = list(graph.query("""
             PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
             PREFIX dct: <http://purl.org/dc/terms/>
@@ -480,57 +480,124 @@ class TestDATMMStructure:
             }
             GROUP BY ?ds ?title
         """))
+        assert len(results) == 9, f"Expected 9 datasets, got {len(results)}"
         for row in results:
-            assert int(row.n) >= 2, f"{row.title} has fewer than 2 subjects"
+            assert int(row.n) == 3, f"{row.title} has {row.n} subjects, expected 3"
 
-    def test_subjects_have_identifiers(self, graph):
-        """Every concept used as subject must have dct:identifier."""
+    def test_all_datasets_share_pediatrics_and_neoplasms(self, graph):
+        """Every dataset must include the shared Pediatrics + Neoplasms concepts."""
+        pediatrics = "http://id.nlm.nih.gov/datmm/concept/nccr-0001"
+        neoplasms = "http://id.nlm.nih.gov/datmm/concept/nccr-0002"
         results = list(graph.query("""
             PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
             PREFIX dct: <http://purl.org/dc/terms/>
-            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-            SELECT ?concept ?id ?label WHERE {
+            SELECT ?ds (GROUP_CONCAT(STR(?subj); separator=",") as ?subjects) WHERE {
                 ?ds a datmm:Dataset ;
-                    dct:subject ?concept .
-                ?concept dct:identifier ?id ;
-                         rdfs:label ?label .
+                    dct:subject ?subj .
+            }
+            GROUP BY ?ds
+        """))
+        for row in results:
+            subjects = str(row.subjects)
+            assert pediatrics in subjects, f"{row.ds} missing Pediatrics"
+            assert neoplasms in subjects, f"{row.ds} missing Neoplasms"
+
+    def test_ten_concepts_defined(self, graph):
+        """Exactly 10 MeSH-backed concepts should be defined."""
+        results = list(graph.query("""
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT ?concept WHERE {
+                ?concept a skos:Concept .
+                FILTER(STRSTARTS(STR(?concept), "http://id.nlm.nih.gov/datmm/concept/"))
             }
         """))
-        assert len(results) > 0, "Subjects should have identifiers"
-        ids = [str(row.id) for row in results]
-        assert "nccr-0001" in ids
+        assert len(results) == 10, f"Expected 10 concepts, got {len(results)}"
 
-    def test_subjects_have_scheme(self, graph):
-        """Every concept must have skos:inScheme."""
+    def test_concepts_follow_nlm_pattern(self, graph):
+        """Each concept must have dct:source, rdfs:label, skos:inScheme 'MeSH RDF', and a MeSH dct:identifier."""
         results = list(graph.query("""
             PREFIX dct: <http://purl.org/dc/terms/>
             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            SELECT ?concept ?label ?scheme WHERE {
+            SELECT ?concept ?source ?label ?scheme ?id WHERE {
                 ?concept a skos:Concept ;
-                         dct:identifier ?id ;
+                         dct:source ?source ;
                          rdfs:label ?label ;
-                         skos:inScheme ?scheme .
+                         skos:inScheme ?scheme ;
+                         dct:identifier ?id .
                 FILTER(STRSTARTS(STR(?concept), "http://id.nlm.nih.gov/datmm/concept/"))
             }
         """))
-        assert len(results) > 0
+        assert len(results) == 10, f"Expected 10 fully-formed concepts, got {len(results)}"
+        for row in results:
+            assert str(row.source) == "repository_supplied", f"{row.concept} wrong dct:source"
+            assert str(row.scheme) == "MeSH RDF", f"{row.concept} wrong skos:inScheme"
+            assert str(row.id).startswith("http://id.nlm.nih.gov/mesh/D"), (
+                f"{row.concept} dct:identifier is not a MeSH URI: {row.id}"
+            )
 
-    def test_datasets_have_contributions(self, graph):
-        """Every dataset must have at least one bf:contribution."""
+    def test_pediatrics_and_neoplasms_mesh_ids(self, graph):
+        """Verify the two shared concepts map to the correct MeSH descriptors."""
+        results = list(graph.query("""
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT ?label ?id WHERE {
+                ?concept rdfs:label ?label ;
+                         dct:identifier ?id .
+                FILTER(STRSTARTS(STR(?concept), "http://id.nlm.nih.gov/datmm/concept/"))
+            }
+        """))
+        mesh = {str(row.label): str(row.id) for row in results}
+        assert mesh.get("Pediatrics") == "http://id.nlm.nih.gov/mesh/D010372"
+        assert mesh.get("Neoplasms") == "http://id.nlm.nih.gov/mesh/D009369"
+
+    def test_single_seer_contributor(self, graph):
+        """Every dataset must reference exactly one contribution: the SEER Program."""
+        seer = "http://id.nlm.nih.gov/datmm/contribution/seer"
         results = list(graph.query("""
             PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
             PREFIX dct: <http://purl.org/dc/terms/>
             PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
-            SELECT ?ds ?title (COUNT(?contrib) as ?n) WHERE {
+            SELECT ?ds ?title (COUNT(?contrib) as ?n) (GROUP_CONCAT(STR(?contrib); separator=",") as ?contribs) WHERE {
                 ?ds a datmm:Dataset ;
                     dct:title ?title ;
                     bf:contribution ?contrib .
             }
             GROUP BY ?ds ?title
         """))
+        assert len(results) == 9
         for row in results:
-            assert int(row.n) >= 2, f"{row.title} has fewer than 2 contributions"
+            assert int(row.n) == 1, f"{row.title} has {row.n} contributions, expected 1"
+            assert seer in str(row.contribs), f"{row.title} does not reference SEER"
+
+    def test_seer_contribution_structure(self, graph):
+        """The SEER contribution must have bf:agent and bf:role 'contributor'."""
+        results = list(graph.query("""
+            PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            SELECT ?agent ?role ?name WHERE {
+                <http://id.nlm.nih.gov/datmm/contribution/seer> bf:agent ?agent ;
+                    bf:role ?role .
+                ?agent foaf:name ?name .
+            }
+        """))
+        assert len(results) == 1, "SEER contribution should have exactly one agent"
+        row = results[0]
+        assert str(row.role) == "contributor"
+        assert "SEER" in str(row.name)
+
+    def test_no_funding_present(self, graph):
+        """Funding was intentionally dropped — no schema:funding or Grant should exist."""
+        results = list(graph.query("""
+            PREFIX schema: <http://schema.org/>
+            SELECT ?s ?o WHERE { ?s schema:funding ?o . }
+        """))
+        assert len(results) == 0, f"Found {len(results)} schema:funding triples; expected 0"
+        grants = list(graph.query("""
+            PREFIX schema: <http://schema.org/>
+            SELECT ?g WHERE { ?g a schema:Grant . }
+        """))
+        assert len(grants) == 0, f"Found {len(grants)} Grant records; expected 0"
 
     def test_datasets_have_documentation(self, graph):
         """Every dataset must link to a Documentation record."""

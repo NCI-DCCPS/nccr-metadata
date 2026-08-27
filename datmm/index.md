@@ -11,8 +11,8 @@ Individual DATMM records for the NCCR Data Platform, structured per NLM requirem
 | File | Description |
 |------|-------------|
 | [repository.ttl](repository.ttl) | NCCR Data Platform as a DATMM Repository |
-| [agents.ttl](agents.ttl) | Shared agents (NCI, CCDI, SEER, COG, DCCPS) and contributions |
-| [concepts.ttl](concepts.ttl) | Subject concepts with identifiers and scheme membership |
+| [agents.ttl](agents.ttl) | SEER Program (NCI) agent and its contribution |
+| [concepts.ttl](concepts.ttl) | MeSH-backed subject concepts with identifiers and scheme membership |
 | [ctc.ttl](ctc.ttl) | Consolidated Tumor Case dataset |
 | [abm.ttl](abm.ttl) | Area-Based Measures dataset |
 | [ccdi.ttl](ccdi.ttl) | CCDI Mappings dataset |
