@@ -571,7 +571,7 @@ class TestDATMMStructure:
             assert seer in str(row.contribs), f"{row.title} does not reference SEER"
 
     def test_seer_contribution_structure(self, graph):
-        """The SEER contribution must have bf:agent and bf:role 'contributor'."""
+        """The SEER contribution must have bf:agent and bf:role (Wikidata contributor URI)."""
         results = list(graph.query("""
             PREFIX bf: <http://id.loc.gov/ontologies/bibframe/>
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -583,8 +583,61 @@ class TestDATMMStructure:
         """))
         assert len(results) == 1, "SEER contribution should have exactly one agent"
         row = results[0]
-        assert str(row.role) == "contributor"
+        assert str(row.role) == "http://www.wikidata.org/entity/Q20204892"
         assert "SEER" in str(row.name)
+
+    def test_repository_has_shared_subjects(self, graph):
+        """The Repository must carry the shared Pediatrics + Neoplasms subjects."""
+        results = list(graph.query("""
+            PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT ?label WHERE {
+                ?repo a datmm:Repository ;
+                      dct:subject/rdfs:label ?label .
+            }
+        """))
+        labels = sorted(str(r.label) for r in results)
+        assert labels == ["Neoplasms", "Pediatrics"], f"Repository subjects: {labels}"
+
+    def test_only_ctc_references_article(self, graph):
+        """Only the CTC dataset should reference the PubMed article; it is the sole Documentation."""
+        # Exactly one Documentation node, and it is the PMC article
+        docs = list(graph.query("""
+            PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
+            PREFIX dct: <http://purl.org/dc/terms/>
+            SELECT ?doc ?type ?title WHERE {
+                ?doc a datmm:Documentation ;
+                     dct:type ?type ;
+                     dct:title ?title .
+            }
+        """))
+        assert len(docs) == 1, f"Expected 1 Documentation node, got {len(docs)}"
+        assert str(docs[0].type) == "article"
+        assert "Cancer Registries" in str(docs[0].title)
+
+        # Only CTC references it
+        refs = list(graph.query("""
+            PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
+            PREFIX dct: <http://purl.org/dc/terms/>
+            SELECT ?ds WHERE {
+                ?ds a datmm:Dataset ;
+                    dct:isReferencedBy ?doc .
+            }
+        """))
+        ds_ids = [str(r.ds).split("/")[-1] for r in refs]
+        assert ds_ids == ["nccr-ctc"], f"Expected only nccr-ctc to reference article, got {ds_ids}"
+
+    def test_no_fabricated_dictionary_docs(self, graph):
+        """The old made-up '-dictionary' Documentation nodes must be gone."""
+        results = list(graph.query("""
+            PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
+            SELECT ?doc WHERE {
+                ?doc a datmm:Documentation .
+                FILTER(CONTAINS(STR(?doc), "dictionary"))
+            }
+        """))
+        assert len(results) == 0, f"Found {len(results)} leftover dictionary Documentation nodes"
 
     def test_no_funding_present(self, graph):
         """Funding was intentionally dropped — no schema:funding or Grant should exist."""
@@ -599,19 +652,17 @@ class TestDATMMStructure:
         """))
         assert len(grants) == 0, f"Found {len(grants)} Grant records; expected 0"
 
-    def test_datasets_have_documentation(self, graph):
-        """Every dataset must link to a Documentation record."""
+    def test_repository_has_no_url_identifier(self, graph):
+        """Repository dct:identifier should be omitted (NLM assigns a linked-data URI)."""
         results = list(graph.query("""
             PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
             PREFIX dct: <http://purl.org/dc/terms/>
-            SELECT ?ds ?title ?doc WHERE {
-                ?ds a datmm:Dataset ;
-                    dct:title ?title ;
-                    dct:isReferencedBy ?doc .
-                ?doc a datmm:Documentation .
+            SELECT ?id WHERE {
+                ?repo a datmm:Repository ;
+                      dct:identifier ?id .
             }
         """))
-        assert len(results) == 9, f"Expected 9 datasets with documentation, got {len(results)}"
+        assert len(results) == 0, "Repository should not carry a URL as dct:identifier"
 
 
 # ============================================================

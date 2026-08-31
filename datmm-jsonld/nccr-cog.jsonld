@@ -1,122 +1,97 @@
 {
   "@context": {
-    "adms": "http://www.w3.org/ns/adms#",
-    "bf": "http://id.loc.gov/ontologies/bibframe/",
+    "@vocab": "http://schema.org/",
     "datmm": "http://id.nlm.nih.gov/datmm/",
+    "schema": "http://schema.org/",
     "dct": "http://purl.org/dc/terms/",
     "foaf": "http://xmlns.com/foaf/0.1/",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bf": "http://id.loc.gov/ontologies/bibframe/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "org": "http://www.w3.org/ns/org#",
+    "adms": "http://www.w3.org/ns/adms#"
   },
   "@graph": [
     {
-      "@id": "http://id.nlm.nih.gov/datmm/agent/seer",
-      "@type": "foaf:Agent",
-      "dct:identifier": "https://seer.cancer.gov",
-      "foaf:name": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute"
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/concept/nccr-0002",
-      "@type": "skos:Concept",
-      "dct:identifier": {
-        "@id": "http://id.nlm.nih.gov/mesh/D009369"
-      },
-      "dct:source": "repository_supplied",
-      "rdfs:label": "Neoplasms",
-      "skos:inScheme": "MeSH RDF"
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/contribution/seer",
-      "@type": "bf:Contribution",
-      "bf:agent": {
-        "@id": "http://id.nlm.nih.gov/datmm/agent/seer"
-      },
-      "bf:role": "contributor"
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/repository/nccr-data-platform",
-      "@type": "datmm:Repository",
-      "dct:alternative": "NCCR Data Platform",
-      "dct:description": "A secure, interactive cloud platform for cohort discovery, data exploration and visualization, data access requests, and custom dataset generation. Provides de-identified cancer data for children, adolescents, and young adults (ages 0-39) from population-based registries and linked real-world health data sources.",
-      "dct:identifier": "https://nccrdataplatform.ccdi.cancer.gov",
-      "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
-      "foaf:homepage": {
-        "@id": "https://nccrdataplatform.ccdi.cancer.gov/home"
-      }
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/dataset/nccr-cog",
       "@type": "datmm:Dataset",
-      "adms:status": "published",
-      "bf:contribution": {
-        "@id": "http://id.nlm.nih.gov/datmm/contribution/seer"
-      },
-      "dct:alternative": "COG",
-      "dct:bibliographicCitation": "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93.",
-      "dct:description": "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018.",
-      "dct:identifier": "nccr-cog",
-      "dct:isPartOf": {
-        "@id": "http://id.nlm.nih.gov/datmm/repository/nccr-data-platform"
-      },
-      "dct:isReferencedBy": {
-        "@id": "http://id.nlm.nih.gov/datmm/documentation/nccr-cog-dictionary"
-      },
-      "dct:issued": {
-        "@type": "xsd:date",
-        "@value": "2026-06-21"
-      },
-      "dct:language": "en",
-      "dct:rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
-      "dct:subject": [
-        {
-          "@id": "http://id.nlm.nih.gov/datmm/concept/nccr-0001"
-        },
-        {
-          "@id": "http://id.nlm.nih.gov/datmm/concept/nccr-0002"
-        },
-        {
-          "@id": "http://id.nlm.nih.gov/datmm/concept/nccr-0006"
-        }
+      "dct:identifier": [
+        "nccr-cog"
       ],
       "dct:title": "NCCR Children's Oncology Group (COG)",
-      "foaf:homepage": {
-        "@id": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG"
-      }
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/concept/nccr-0006",
-      "@type": "skos:Concept",
-      "dct:identifier": {
-        "@id": "http://id.nlm.nih.gov/mesh/D002986"
-      },
-      "dct:source": "repository_supplied",
-      "rdfs:label": "Clinical Trials as Topic",
-      "skos:inScheme": "MeSH RDF"
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/documentation/nccr-cog-dictionary",
-      "@type": "datmm:Documentation",
-      "dct:description": "Variable-level data dictionary defining 8 fields for COG clinical trial and registry enrollment data.",
-      "dct:identifier": "cog_metadata.json",
-      "dct:references": {
-        "@id": "http://id.nlm.nih.gov/datmm/dataset/nccr-cog"
-      },
-      "dct:title": "COG Data Dictionary",
-      "dct:type": "application/json",
-      "foaf:homepage": {
-        "@id": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG/2"
-      }
-    },
-    {
-      "@id": "http://id.nlm.nih.gov/datmm/concept/nccr-0001",
-      "@type": "skos:Concept",
-      "dct:identifier": {
-        "@id": "http://id.nlm.nih.gov/mesh/D010372"
-      },
-      "dct:source": "repository_supplied",
-      "rdfs:label": "Pediatrics",
-      "skos:inScheme": "MeSH RDF"
+      "dct:alternative": [
+        "COG"
+      ],
+      "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG",
+      "dct:description": "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018.",
+      "dct:language": "en",
+      "dct:rights": [
+        "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
+      ],
+      "adms:status": "published",
+      "dct:isPartOf": [
+        {
+          "@type": "datmm:Repository",
+          "dct:identifier": null,
+          "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
+          "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/home",
+          "dct:alternative": [
+            "NCCR Data Platform"
+          ],
+          "dct:subject": [
+            {
+              "@type": "skos:Concept",
+              "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+              "skos:inScheme": "MeSH RDF",
+              "rdfs:label": "Neoplasms",
+              "dct:source": "repository_supplied"
+            },
+            {
+              "@type": "skos:Concept",
+              "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+              "skos:inScheme": "MeSH RDF",
+              "rdfs:label": "Pediatrics",
+              "dct:source": "repository_supplied"
+            }
+          ]
+        }
+      ],
+      "bf:contribution": [
+        {
+          "@type": "bf:Contribution",
+          "bf:role": [
+            "http://www.wikidata.org/entity/Q20204892"
+          ],
+          "bf:agent": {
+            "@type": "foaf:Agent",
+            "dct:identifier": "https://seer.cancer.gov",
+            "foaf:name": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute"
+          }
+        }
+      ],
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D002986",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Clinical Trials as Topic",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
     }
   ]
 }

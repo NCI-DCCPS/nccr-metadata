@@ -26,13 +26,4 @@
         <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0007> ;
-    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
-    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-mcp-dictionary> .
-
-<http://id.nlm.nih.gov/datmm/documentation/nccr-mcp-dictionary> a datmm:Documentation ;
-    dct:title "MCP Data Dictionary" ;
-    dct:type "application/json" ;
-    dct:identifier "mcp_metadata.json" ;
-    dct:description "Variable-level data dictionary defining 9 fields for medical claims procedure data including ICD, HCPCS, and CPT codes with modifiers and temporal relationships." ;
-    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCP> ;
-    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-mcp> .
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." .

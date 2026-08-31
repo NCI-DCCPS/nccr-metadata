@@ -11,9 +11,15 @@
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 
+## Note: dct:identifier is intentionally omitted. The NLM Dataset Catalog
+## will assign a linked-data DATMM URI on ingestion; it can be added here
+## afterward. (The platform URL lives in foaf:homepage.)
+
 <http://id.nlm.nih.gov/datmm/repository/nccr-data-platform> a datmm:Repository ;
     dct:title "National Childhood Cancer Registry (NCCR) Data Platform" ;
     dct:alternative "NCCR Data Platform" ;
-    dct:identifier "https://nccrdataplatform.ccdi.cancer.gov" ;
     dct:description "A secure, interactive cloud platform for cohort discovery, data exploration and visualization, data access requests, and custom dataset generation. Provides de-identified cancer data for children, adolescents, and young adults (ages 0-39) from population-based registries and linked real-world health data sources." ;
-    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/home> .
+    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/home> ;
+    dct:subject
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
+        <http://id.nlm.nih.gov/datmm/concept/nccr-0002> .

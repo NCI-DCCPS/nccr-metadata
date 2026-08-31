@@ -25,13 +25,4 @@
         <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0010> ;
-    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
-    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-ro-dictionary> .
-
-<http://id.nlm.nih.gov/datmm/documentation/nccr-ro-dictionary> a datmm:Documentation ;
-    dct:title "RO Data Dictionary" ;
-    dct:type "application/json" ;
-    dct:identifier "ro_metadata.json" ;
-    dct:description "Variable-level data dictionary defining 15 fields for radiation oncology treatment data from cancer centers and PPCR." ;
-    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/RO/2> ;
-    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-ro> .
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." .

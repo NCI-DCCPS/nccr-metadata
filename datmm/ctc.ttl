@@ -26,12 +26,11 @@
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0003> ;
     dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." ;
-    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/nccr-ctc-dictionary> .
+    dct:isReferencedBy <http://id.nlm.nih.gov/datmm/documentation/pmc10629798> .
 
-<http://id.nlm.nih.gov/datmm/documentation/nccr-ctc-dictionary> a datmm:Documentation ;
-    dct:title "CTC Data Dictionary" ;
-    dct:type "application/json" ;
-    dct:identifier "ctc_metadata.json" ;
-    dct:description "Variable-level data dictionary defining 109 fields including demographics, cancer identification, staging, treatment, follow-up, and survival variables. References NAACCR, SEER, ICD-O-3, and AJCC standards." ;
-    foaf:homepage <https://nccrdataplatform.ccdi.cancer.gov/data-browser/CTC/2> ;
-    dct:references <http://id.nlm.nih.gov/datmm/dataset/nccr-ctc> .
+## Published article about the NCCR registry datasets (identified by NLM).
+<http://id.nlm.nih.gov/datmm/documentation/pmc10629798> a datmm:Documentation ;
+    dct:type "article" ;
+    dct:identifier "37941743" , "PMC10629798" ;
+    dct:title "Harnessing the Power of Cancer Registries to Advance Our Understanding of Pediatric Cancer" ;
+    foaf:homepage <https://pmc.ncbi.nlm.nih.gov/articles/PMC10629798> .

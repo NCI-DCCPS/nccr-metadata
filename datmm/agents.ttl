@@ -5,6 +5,9 @@
 ## Surveillance, Epidemiology, and End Results (SEER)
 ## Program. Datasets reference the contribution below via
 ## bf:contribution.
+##
+## bf:role uses the Wikidata "contributor" entity
+## (Q20204892), matching the NLM Dataset Catalog convention.
 ## ---------------------------------------------------------
 
 @prefix dct:    <http://purl.org/dc/terms/> .
@@ -21,4 +24,4 @@
 
 <http://id.nlm.nih.gov/datmm/contribution/seer> a bf:Contribution ;
     bf:agent <http://id.nlm.nih.gov/datmm/agent/seer> ;
-    bf:role "contributor" .
+    bf:role <http://www.wikidata.org/entity/Q20204892> .
