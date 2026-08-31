@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "nccr-metadata": {
+      "command": "/absolute/path/to/nccr-metadata/mcp/.venv/bin/python3",
+      "args": ["/absolute/path/to/nccr-metadata/mcp/nccr_mcp_server.py"]
+    }
+  }
+}

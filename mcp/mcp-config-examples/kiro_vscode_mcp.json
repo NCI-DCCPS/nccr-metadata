@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "nccr-metadata": {
+      "command": "/absolute/path/to/nccr-metadata/mcp/.venv/bin/python3",
+      "args": ["/absolute/path/to/nccr-metadata/mcp/nccr_mcp_server.py"],
+      "disabled": false,
+      "autoApprove": [
+        "list_datasources",
+        "discover_filters",
+        "get_values",
+        "top_values",
+        "search_by_subject",
+        "get_dataset_info"
+      ]
+    }
+  }
+}
