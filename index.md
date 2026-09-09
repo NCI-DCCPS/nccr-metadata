@@ -20,7 +20,7 @@ This site provides **machine-readable metadata** for the platform's datasources 
 | [Vocabulary](metadata/vocabulary) | Classes and properties defined in the NCCR vocabulary |
 | [Usage & Examples](metadata/usage) | Code snippets for Python, R, and SPARQL |
 | [Cohort Builder Tool](tools/) | CLI tool for discovering variables, exploring value frequencies, and building cohort definitions |
-| [Data Cut ERD](erd) | Interactive entity-relationship diagram of a full data cut |
+| [Data Cut ERD](erd.html) | Interactive entity-relationship diagram of a full data cut (full-screen) |
 
 ---
 
