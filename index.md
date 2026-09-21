@@ -21,7 +21,7 @@ This site provides **machine-readable metadata** for the platform's datasources 
 | [Usage & Examples](metadata/usage) | Code snippets for Python, R, and SPARQL |
 | [Cohort Builder Tool](tools/) | CLI tool for discovering variables, exploring value frequencies, and building cohort definitions |
 | [Data Cut ERD](erd.html) | Interactive entity-relationship diagram of a full data cut (full-screen) |
-| [Metadata Graph](graph.html) | Interactive graph of the ontology and sample data, parsed live from the Turtle |
+| [Metadata Graph](graph.html) | Interactive graph of the ontology and example data, parsed live from the Turtle |
 
 ---
 

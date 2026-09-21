@@ -8,7 +8,7 @@
   Self-contained interactive RDF/Turtle graph viewer for GitHub Pages.
   - Parses Turtle in the browser with N3.js (CDN)
   - Renders an interactive force-directed graph with vis-network (CDN)
-  - Switch between the ONTOLOGY (nccr_vocab.ttl) and SAMPLE DATA (sample-instances.ttl)
+  - Switch between the ONTOLOGY (nccr_vocab.ttl) and EXAMPLE DATA (sample-instances.ttl)
   Source of truth = the .ttl files in this repo, fetched live.
   No build step, no server.
 -->
@@ -92,7 +92,7 @@
     <div class="title">NCCR Metadata — <span class="accent">Interactive Graph</span></div>
     <div class="switch">
       <button id="btn-onto" class="active" onclick="loadView('ontology')">Ontology</button>
-      <button id="btn-data" onclick="loadView('data')">Sample Data</button>
+      <button id="btn-data" onclick="loadView('data')">Example Data</button>
     </div>
     <div class="search">
       <input id="q" type="text" placeholder="Search nodes…" oninput="doSearch(this.value)">
@@ -122,7 +122,7 @@
     },
     data: {
       file: "sample-instances.ttl",
-      desc: "Real sample data: CTC is central (amber); the 8 other sources link to it on the patient key. CTC and ABM drill down into variables, value sets, and code values with record counts.",
+      desc: "Real example data: CTC is central (amber); the 8 other sources link to it on the patient key. CTC and ABM drill down into variables, value sets, and code values with record counts.",
     }
   };
   const PREFIXES = [
