@@ -165,7 +165,9 @@
     const status=document.getElementById("status");
     status.style.display="block"; status.textContent="Loading "+VIEWS[view].file+" …";
     try{
-      const ttl = await (await fetch(VIEWS[view].file)).text();
+      // cache-buster: always fetch the current .ttl, never a stale cached copy
+      const url = VIEWS[view].file + "?t=" + Date.now();
+      const ttl = await (await fetch(url, {cache:"no-store"})).text();
       buildGraph(ttl, view);
       status.style.display="none";
     }catch(e){
