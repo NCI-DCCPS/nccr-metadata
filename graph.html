@@ -122,7 +122,7 @@
     },
     data: {
       file: "sample-instances.ttl",
-      desc: "A real sample of instance data (ABM datasource): DataSource → Variables → ValueSets → CodeValues with record counts.",
+      desc: "Real sample data: CTC is the master (amber); the 8 other sources link to it on the patient key. CTC and ABM drill down into variables, value sets, and code values with record counts.",
     }
   };
   const PREFIXES = [
@@ -141,8 +141,9 @@
   const COLORS = {
     Class:{background:"#4cc9f0",border:"#2b9ec6"},
     Property:{background:"#b18cff",border:"#8a5cf0"},
+    Master:{background:"#ffb703",border:"#c98e00"},      // CTC master source
     DataSource:{background:"#2ec4b6",border:"#1f8f85"},
-    Variable:{background:"#ffb703",border:"#c98e00"},
+    Variable:{background:"#4cc9f0",border:"#2b9ec6"},
     ValueSet:{background:"#8be9a8",border:"#4fb877"},
     CodeValue:{background:"#f5f7fa",border:"#9db2c6"},
     Other:{background:"#7d93a8",border:"#556577"},
@@ -187,7 +188,7 @@
       const types=(p["rdf:type"]||[]).join(" ");
       if(/owl:Class/.test(types)) n.type="Class";
       else if(/owl:ObjectProperty|owl:DatatypeProperty|rdf:Property/.test(types)) n.type="Property";
-      else if(/nccr:DataSourceGroup|nccr:DataSource/.test(types)) n.type="DataSource";
+      else if(/nccr:DataSourceGroup|nccr:DataSource/.test(types)) n.type=(p["nccr:isMasterSource"]?"Master":"DataSource");
       else if(/nccr:DerivedVariable|nccr:Variable/.test(types)) n.type="Variable";
       else if(/nccr:ValueSet/.test(types)) n.type="ValueSet";
       else if(/nccr:CodeValue/.test(types)) n.type="CodeValue";
@@ -221,18 +222,23 @@
       // append record count for code values if present
       const rc=(n.props["nccr:recordCount"]||[])[0];
       if(rc) lbl+="\n("+Number(rc).toLocaleString()+")";
+      const sz = n.type==="Master"?34 : (n.type==="Class"||n.type==="DataSource"?22 : (n.type==="Other"?8:14));
       visNodes.push({
-        id:n.id, label:lbl, color:c, shape:"dot",
-        size: n.type==="Class"||n.type==="DataSource"?22:(n.type==="Other"?8:14),
-        font:{color:"#f5f7fa", size:14, face:"Inter", strokeWidth:3, strokeColor:"#0a1622"}
+        id:n.id, label:lbl, color:c, shape:"dot", size:sz,
+        font:{color:"#f5f7fa", size: n.type==="Master"?18:14, face:"Inter", strokeWidth:3, strokeColor:"#0a1622"}
       });
     });
-    edges.forEach((e,i)=>visEdges.push({
-      id:"e"+i, from:e.from, to:e.to, label:e.label,
-      arrows:"to", color:{color:"rgba(157,178,198,.45)",highlight:"#2ec4b6"},
-      font:{color:"#9db2c6", size:11, strokeWidth:3, strokeColor:"#0a1622", align:"middle"},
-      smooth:{type:"dynamic"}
-    }));
+    edges.forEach((e,i)=>{
+      const isLink = e.label==="nccr:linksToMaster";
+      visEdges.push({
+        id:"e"+i, from:e.from, to:e.to, label:isLink?"links to master":e.label,
+        arrows:"to",
+        width: isLink?3:1,
+        color:{color: isLink?"rgba(255,183,3,.7)":"rgba(157,178,198,.45)", highlight:"#2ec4b6"},
+        font:{color: isLink?"#ffb703":"#9db2c6", size:11, strokeWidth:3, strokeColor:"#0a1622", align:"middle"},
+        smooth:{type:"dynamic"}
+      });
+    });
 
     allNodes=nodes;
     renderLegend(view);
@@ -277,7 +283,7 @@
   function renderLegend(view){
     const items = view==="ontology"
       ? [["Class","Class"],["Property","Property"]]
-      : [["DataSource","Data source"],["Variable","Variable"],["ValueSet","Value set"],["CodeValue","Code value"]];
+      : [["Master","CTC (master)"],["DataSource","Data source"],["Variable","Variable"],["ValueSet","Value set"],["CodeValue","Code value"]];
     document.getElementById("legend").innerHTML =
       items.map(([t,lbl])=>`<div class="row"><span class="dot" style="background:${COLORS[t].background}"></span>${lbl}</div>`).join("");
   }

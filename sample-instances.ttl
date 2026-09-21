@@ -2,13 +2,18 @@
 ## NCCR Sample Instance Data — for the interactive graph viewer
 ## ---------------------------------------------------------
 ## A small, curated slice of the full nccr_instances.ttl (~42k triples),
-## chosen to be readable as a node-link graph. Shows the real shape of the
-## data: a DataSource -> its Variables -> each Variable's ValueSet -> the
-## CodeValues (permissible values) with real record counts.
+## chosen to be readable as a node-link graph and to tell the platform's
+## linkage story: CTC is the master datasource; every other source links to
+## it on the patient key (nccrId), and CTC + ABM also share tumorRecordNumber.
 ##
-## This is REAL data from the Area-Based Measures (ABM) datasource.
-## The full instance graph lives in nccr_instances.ttl (the source of truth);
-## this file is a display-sized sample for graph/erd.html visualization.
+## - CTC (master) is shown with real variables -> value set -> code values.
+## - All 9 sources connect to CTC via nccr:linksToMaster (with the link key).
+## - ABM is expanded with real variables/values for extra depth.
+##
+## Linkage properties (nccr:masterSource / nccr:linksToMaster / nccr:linkKey)
+## express the data-cut join model documented in the ERD. The full instance
+## graph is in nccr_instances.ttl (the source of truth); this is a display sample.
+## All values below are REAL data from the platform.
 ## ---------------------------------------------------------
 
 @prefix nccr:    <https://nccrdataplatform.ccdi.cancer.gov/vocab#> .
@@ -19,15 +24,115 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-## ---- Data source ----
+## =========================================================
+## MASTER DATA SOURCE — CTC
+## =========================================================
+nccr-ds:ctc a nccr:DataSource ;
+    rdfs:label "Consolidated Tumor Case (CTC) — MASTER" ;
+    nccr:sourceId "CTC" ;
+    nccr:isMasterSource true ;
+    nccr:grain "one row per tumor" ;
+    nccr:hasVariable nccr-var:ctc-sex ,
+                     nccr-var:ctc-racerecodewbaiapihisp ,
+                     nccr-var:ctc-icccmajor ,
+                     nccr-var:ctc-vitalstatusrecode .
+
+## CTC variables (real)
+nccr-var:ctc-sex a nccr:Variable ;
+    rdfs:label "Sex" ;
+    nccr:belongsToSource nccr-ds:ctc ;
+    nccr:sourceColumn "sex" ;
+    nccr:hasValueSet nccr-vs:ctc-sex .
+
+nccr-var:ctc-racerecodewbaiapihisp a nccr:Variable ;
+    rdfs:label "Race/Ethnicity" ;
+    nccr:belongsToSource nccr-ds:ctc ;
+    nccr:sourceColumn "raceRecodeWBAiApiHisp" .
+
+nccr-var:ctc-icccmajor a nccr:Variable ;
+    rdfs:label "ICCC Major Category" ;
+    nccr:belongsToSource nccr-ds:ctc ;
+    nccr:sourceColumn "icccMajor" .
+
+nccr-var:ctc-vitalstatusrecode a nccr:Variable ;
+    rdfs:label "Vital Status" ;
+    nccr:belongsToSource nccr-ds:ctc ;
+    nccr:sourceColumn "vitalStatusRecode" .
+
+## CTC Sex value set + real code values
+nccr-vs:ctc-sex a nccr:ValueSet ;
+    rdfs:label "Sex — values" .
+
+nccr-cv:ctc-sex-1 a nccr:CodeValue ;
+    skos:inScheme nccr-vs:ctc-sex ;
+    skos:prefLabel "Male" ;
+    nccr:codeNotation "1" ;
+    nccr:recordCount 574264 .
+
+nccr-cv:ctc-sex-2 a nccr:CodeValue ;
+    skos:inScheme nccr-vs:ctc-sex ;
+    skos:prefLabel "Female" ;
+    nccr:codeNotation "2" ;
+    nccr:recordCount 900104 .
+
+## =========================================================
+## OTHER DATA SOURCES — each links to the CTC master
+## Patient-level link on nccrId; ABM also links on tumorRecordNumber.
+## =========================================================
 nccr-ds:abm a nccr:DataSource ;
     rdfs:label "Area-Based Measures (ABM)" ;
     nccr:sourceId "ABM" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId + tumorRecordNumber" ;
     nccr:hasVariable nccr-var:abm-persistentpoverty ,
                      nccr-var:abm-ruca2010c ,
                      nccr-var:abm-uric2010a .
 
-## ---- Variables ----
+nccr-ds:pharm a nccr:DataSource ;
+    rdfs:label "Pharmacy Claims (PHARM)" ;
+    nccr:sourceId "PHARM" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+nccr-ds:ro a nccr:DataSource ;
+    rdfs:label "Radiation Oncology (RO)" ;
+    nccr:sourceId "RO" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+nccr-ds:cog a nccr:DataSource ;
+    rdfs:label "Children's Oncology Group (COG)" ;
+    nccr:sourceId "COG" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+nccr-ds:mcd a nccr:DataSource ;
+    rdfs:label "Medical Claims — Diagnosis (MCD)" ;
+    nccr:sourceId "MCD" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+nccr-ds:mcp a nccr:DataSource ;
+    rdfs:label "Medical Claims — Procedure (MCP)" ;
+    nccr:sourceId "MCP" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+nccr-ds:mce a nccr:DataSource ;
+    rdfs:label "Medical Claims — Enrollment (MCE)" ;
+    nccr:sourceId "MCE" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+nccr-ds:ccdi a nccr:DataSource ;
+    rdfs:label "CCDI Participant Index (CCDI)" ;
+    nccr:sourceId "CCDI" ;
+    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linkKey "nccrId" .
+
+## =========================================================
+## ABM DEPTH — real variables -> value sets -> code values
+## =========================================================
 nccr-var:abm-persistentpoverty a nccr:Variable ;
     rdfs:label "Persistent Poverty" ;
     nccr:belongsToSource nccr-ds:abm ;
@@ -46,7 +151,6 @@ nccr-var:abm-uric2010a a nccr:Variable ;
     nccr:sourceColumn "uric2010A" ;
     nccr:hasValueSet nccr-vs:abm-uric2010a .
 
-## ---- Value sets ----
 nccr-vs:abm-persistentpoverty a nccr:ValueSet ;
     rdfs:label "Persistent Poverty — values" .
 nccr-vs:abm-ruca2010c a nccr:ValueSet ;
@@ -54,57 +158,29 @@ nccr-vs:abm-ruca2010c a nccr:ValueSet ;
 nccr-vs:abm-uric2010a a nccr:ValueSet ;
     rdfs:label "URIC — values" .
 
-## ---- Code values (permissible values) with real record counts ----
 nccr-cv:abm-persistentpoverty-0 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "No" ;
-    nccr:codeNotation "0" ;
-    nccr:recordCount 893260 .
-
+    skos:prefLabel "No" ; nccr:codeNotation "0" ; nccr:recordCount 893260 .
 nccr-cv:abm-persistentpoverty-1 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "Yes" ;
-    nccr:codeNotation "1" ;
-    nccr:recordCount 100113 .
-
+    skos:prefLabel "Yes" ; nccr:codeNotation "1" ; nccr:recordCount 100113 .
 nccr-cv:abm-persistentpoverty-7 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "No Data for Year of Diagnosis" ;
-    nccr:codeNotation "7" ;
-    nccr:recordCount 475642 .
-
+    skos:prefLabel "No Data for Year of Diagnosis" ; nccr:codeNotation "7" ; nccr:recordCount 475642 .
 nccr-cv:abm-persistentpoverty-9 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "Missing" ;
-    nccr:codeNotation "9" ;
-    nccr:recordCount 5353 .
+    skos:prefLabel "Missing" ; nccr:codeNotation "9" ; nccr:recordCount 5353 .
 
 nccr-cv:abm-ruca2010c-1 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-ruca2010c ;
-    skos:prefLabel "Urban" ;
-    nccr:codeNotation "1" .
-
+    skos:inScheme nccr-vs:abm-ruca2010c ; skos:prefLabel "Urban" ; nccr:codeNotation "1" .
 nccr-cv:abm-ruca2010c-2 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-ruca2010c ;
-    skos:prefLabel "Rural" ;
-    nccr:codeNotation "2" .
+    skos:inScheme nccr-vs:abm-ruca2010c ; skos:prefLabel "Rural" ; nccr:codeNotation "2" .
 
 nccr-cv:abm-uric2010a-1 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-uric2010a ;
-    skos:prefLabel "All urban" ;
-    nccr:codeNotation "1" .
-
+    skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "All urban" ; nccr:codeNotation "1" .
 nccr-cv:abm-uric2010a-2 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-uric2010a ;
-    skos:prefLabel "Mostly urban" ;
-    nccr:codeNotation "2" .
-
+    skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "Mostly urban" ; nccr:codeNotation "2" .
 nccr-cv:abm-uric2010a-3 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-uric2010a ;
-    skos:prefLabel "Mostly rural" ;
-    nccr:codeNotation "3" .
-
+    skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "Mostly rural" ; nccr:codeNotation "3" .
 nccr-cv:abm-uric2010a-4 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-uric2010a ;
-    skos:prefLabel "All rural" ;
-    nccr:codeNotation "4" .
+    skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "All rural" ; nccr:codeNotation "4" .
