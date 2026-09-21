@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCCR Metadata — Interactive Graph</title>
+<!--
+  Self-contained interactive RDF/Turtle graph viewer for GitHub Pages.
+  - Parses Turtle in the browser with N3.js (CDN)
+  - Renders an interactive force-directed graph with vis-network (CDN)
+  - Switch between the ONTOLOGY (nccr_vocab.ttl) and SAMPLE DATA (sample-instances.ttl)
+  Source of truth = the .ttl files in this repo, fetched live.
+  No build step, no server.
+-->
+<script src="https://unpkg.com/n3/browser/n3.min.js"></script>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+  :root{
+    --navy:#0d1b2a; --navy2:#0a1622; --teal:#2ec4b6; --cyan:#4cc9f0;
+    --amber:#ffb703; --ink:#f5f7fa; --muted:#9db2c6; --card:#10233a;
+    --violet:#b18cff; --green:#8be9a8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:'Inter','Segoe UI',-apple-system,sans-serif;
+    background:var(--navy2); color:var(--ink);
+    display:flex; flex-direction:column; height:100vh; overflow:hidden;
+  }
+  header{
+    flex:none; padding:12px 20px;
+    background:linear-gradient(180deg,#12283f,var(--navy));
+    border-bottom:1px solid rgba(46,196,182,.35);
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  header .title{font-size:17px; font-weight:800; white-space:nowrap;}
+  header .title .accent{color:var(--teal);}
+  /* toggle switch */
+  .switch{display:inline-flex; background:rgba(255,255,255,.06); border-radius:10px; padding:3px; gap:2px;}
+  .switch button{
+    border:0; background:transparent; color:var(--muted); font:inherit; font-size:13px;
+    font-weight:600; padding:7px 16px; border-radius:8px; cursor:pointer;
+  }
+  .switch button.active{background:var(--teal); color:#062018;}
+  .search{margin-left:auto; display:flex; gap:8px; align-items:center;}
+  .search input{
+    background:rgba(255,255,255,.06); border:1px solid rgba(157,178,198,.3);
+    color:var(--ink); border-radius:8px; padding:7px 12px; font:inherit; font-size:13px; width:220px;
+  }
+  .search input::placeholder{color:var(--muted);}
+  .home{font-size:13px; color:var(--teal); text-decoration:none; white-space:nowrap;}
+
+  .stage{flex:1 1 auto; position:relative;}
+  #graph{position:absolute; inset:0;}
+  #status{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:var(--muted); font-size:15px; text-align:center;
+  }
+
+  /* legend + detail panel */
+  .legend{
+    position:absolute; left:16px; bottom:16px; z-index:5;
+    background:rgba(16,35,58,.92); border:1px solid rgba(157,178,198,.2);
+    border-radius:10px; padding:12px 14px; font-size:12px; color:var(--muted);
+    display:flex; flex-direction:column; gap:6px; backdrop-filter:blur(3px);
+  }
+  .legend .row{display:flex; align-items:center; gap:8px;}
+  .legend .dot{width:12px; height:12px; border-radius:50%;}
+  .detail{
+    position:absolute; right:16px; top:16px; width:320px; max-height:calc(100% - 32px);
+    overflow:auto; z-index:6; background:rgba(16,35,58,.95);
+    border:1px solid rgba(46,196,182,.4); border-radius:12px; padding:16px 18px;
+    font-size:13px; line-height:1.5; display:none; backdrop-filter:blur(3px);
+  }
+  .detail h3{font-size:15px; color:var(--teal); margin-bottom:4px; word-break:break-word;}
+  .detail .type{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px;}
+  .detail table{width:100%; border-collapse:collapse;}
+  .detail td{padding:4px 0; vertical-align:top; border-bottom:1px solid rgba(157,178,198,.12);}
+  .detail td.k{color:var(--cyan); font-weight:600; width:38%; padding-right:8px; word-break:break-word;}
+  .detail td.v{color:var(--ink); word-break:break-word;}
+  .detail .close{float:right; cursor:pointer; color:var(--muted); font-size:16px; border:0; background:none;}
+  footer{
+    flex:none; padding:6px 20px; font-size:11.5px; color:var(--muted);
+    background:var(--navy2); border-top:1px solid rgba(157,178,198,.15);
+    display:flex; justify-content:space-between; gap:16px;
+  }
+  footer a{color:var(--teal);}
+</style>
+</head>
+<body>
+  <header>
+    <div class="title">NCCR Metadata — <span class="accent">Interactive Graph</span></div>
+    <div class="switch">
+      <button id="btn-onto" class="active" onclick="loadView('ontology')">Ontology</button>
+      <button id="btn-data" onclick="loadView('data')">Sample Data</button>
+    </div>
+    <div class="search">
+      <input id="q" type="text" placeholder="Search nodes…" oninput="doSearch(this.value)">
+      <a class="home" href="./">← Home</a>
+    </div>
+  </header>
+
+  <div class="stage">
+    <div id="graph"></div>
+    <div id="status">Loading…</div>
+    <div class="legend" id="legend"></div>
+    <div class="detail" id="detail"></div>
+  </div>
+
+  <footer>
+    <span id="foot-desc">Drag nodes · scroll to zoom · click a node for details.</span>
+    <span>Parsed live from the repo's Turtle · NCCR · DCCPS/NCI/NIH ·
+      <a href="https://github.com/NCI-DCCPS/nccr-metadata">repo</a></span>
+  </footer>
+
+<script>
+  // ---------- config ----------
+  const VIEWS = {
+    ontology: {
+      file: "nccr_vocab.ttl",
+      desc: "The NCCR vocabulary: classes (blue), properties (violet), and how they relate (subClassOf, domain, range).",
+    },
+    data: {
+      file: "sample-instances.ttl",
+      desc: "A real sample of instance data (ABM datasource): DataSource → Variables → ValueSets → CodeValues with record counts.",
+    }
+  };
+  const PREFIXES = [
+    ["https://nccrdataplatform.ccdi.cancer.gov/vocab#","nccr:"],
+    ["https://nccrdataplatform.ccdi.cancer.gov/datasource/","ds:"],
+    ["https://nccrdataplatform.ccdi.cancer.gov/variable/","var:"],
+    ["https://nccrdataplatform.ccdi.cancer.gov/valueset/","vs:"],
+    ["https://nccrdataplatform.ccdi.cancer.gov/code/","code:"],
+    ["http://www.w3.org/2000/01/rdf-schema#","rdfs:"],
+    ["http://www.w3.org/2002/07/owl#","owl:"],
+    ["http://www.w3.org/2004/02/skos/core#","skos:"],
+    ["http://purl.org/dc/terms/","dct:"],
+    ["http://www.w3.org/1999/02/22-rdf-syntax-ns#","rdf:"],
+    ["http://www.w3.org/2001/XMLSchema#","xsd:"],
+  ];
+  const COLORS = {
+    Class:{background:"#4cc9f0",border:"#2b9ec6"},
+    Property:{background:"#b18cff",border:"#8a5cf0"},
+    DataSource:{background:"#2ec4b6",border:"#1f8f85"},
+    Variable:{background:"#ffb703",border:"#c98e00"},
+    ValueSet:{background:"#8be9a8",border:"#4fb877"},
+    CodeValue:{background:"#f5f7fa",border:"#9db2c6"},
+    Other:{background:"#7d93a8",border:"#556577"},
+  };
+
+  let network=null, allNodes=null;
+
+  function short(uri){
+    for(const [full,pfx] of PREFIXES) if(uri.startsWith(full)) return pfx+uri.slice(full.length);
+    return uri;
+  }
+  function isUri(t){ return t && t.termType==="NamedNode"; }
+
+  async function loadView(view){
+    document.getElementById("btn-onto").classList.toggle("active", view==="ontology");
+    document.getElementById("btn-data").classList.toggle("active", view==="data");
+    document.getElementById("foot-desc").textContent = VIEWS[view].desc;
+    document.getElementById("detail").style.display="none";
+    const status=document.getElementById("status");
+    status.style.display="block"; status.textContent="Loading "+VIEWS[view].file+" …";
+    try{
+      const ttl = await (await fetch(VIEWS[view].file)).text();
+      buildGraph(ttl, view);
+      status.style.display="none";
+    }catch(e){
+      status.textContent="Could not load "+VIEWS[view].file+" ("+e+")";
+    }
+  }
+
+  function buildGraph(ttl, view){
+    const parser=new N3.Parser();
+    const quads=parser.parse(ttl);
+    const nodes=new Map();   // uri -> {label,type,props:{}}
+    const edges=[];
+
+    function ensure(uri){
+      if(!nodes.has(uri)) nodes.set(uri,{id:uri,label:short(uri),type:"Other",props:{}});
+      return nodes.get(uri);
+    }
+    function classify(n){
+      const p=n.props;
+      const types=(p["rdf:type"]||[]).join(" ");
+      if(/owl:Class/.test(types)) n.type="Class";
+      else if(/owl:ObjectProperty|owl:DatatypeProperty|rdf:Property/.test(types)) n.type="Property";
+      else if(/nccr:DataSourceGroup|nccr:DataSource/.test(types)) n.type="DataSource";
+      else if(/nccr:DerivedVariable|nccr:Variable/.test(types)) n.type="Variable";
+      else if(/nccr:ValueSet/.test(types)) n.type="ValueSet";
+      else if(/nccr:CodeValue/.test(types)) n.type="CodeValue";
+    }
+
+    for(const q of quads){
+      const s=ensure(q.subject.value);
+      const pShort=short(q.predicate.value);
+      if(isUri(q.object)){
+        // relationship edge (skip rdf:type — captured as a prop for classification)
+        if(pShort==="rdf:type"){
+          (s.props["rdf:type"]=s.props["rdf:type"]||[]).push(short(q.object.value));
+        }else{
+          ensure(q.object.value);
+          edges.push({from:q.subject.value, to:q.object.value, label:pShort});
+        }
+      }else{
+        // literal -> store as property; prefer a readable label
+        const val=q.object.value;
+        (s.props[pShort]=s.props[pShort]||[]).push(val);
+        if(pShort==="rdfs:label"||pShort==="skos:prefLabel") s.label=val;
+      }
+    }
+    nodes.forEach(classify);
+
+    // build vis datasets
+    const visNodes=[], visEdges=[];
+    nodes.forEach(n=>{
+      const c=COLORS[n.type]||COLORS.Other;
+      let lbl=n.label;
+      // append record count for code values if present
+      const rc=(n.props["nccr:recordCount"]||[])[0];
+      if(rc) lbl+="\n("+Number(rc).toLocaleString()+")";
+      visNodes.push({
+        id:n.id, label:lbl, color:c, shape:"dot",
+        size: n.type==="Class"||n.type==="DataSource"?22:(n.type==="Other"?8:14),
+        font:{color:"#f5f7fa", size:14, face:"Inter", strokeWidth:3, strokeColor:"#0a1622"}
+      });
+    });
+    edges.forEach((e,i)=>visEdges.push({
+      id:"e"+i, from:e.from, to:e.to, label:e.label,
+      arrows:"to", color:{color:"rgba(157,178,198,.45)",highlight:"#2ec4b6"},
+      font:{color:"#9db2c6", size:11, strokeWidth:3, strokeColor:"#0a1622", align:"middle"},
+      smooth:{type:"dynamic"}
+    }));
+
+    allNodes=nodes;
+    renderLegend(view);
+    const container=document.getElementById("graph");
+    const data={nodes:new vis.DataSet(visNodes), edges:new vis.DataSet(visEdges)};
+    const options={
+      physics:{ stabilization:{iterations:180}, barnesHut:{gravitationalConstant:-9000, springLength:150, springConstant:0.03} },
+      interaction:{hover:true, tooltipDelay:150, navigationButtons:false},
+      nodes:{borderWidth:2},
+      edges:{selectionWidth:2}
+    };
+    if(network) network.destroy();
+    network=new vis.Network(container, data, options);
+    network.on("click", params=>{
+      if(params.nodes.length){ showDetail(params.nodes[0]); }
+      else{ document.getElementById("detail").style.display="none"; }
+    });
+  }
+
+  function showDetail(uri){
+    const n=allNodes.get(uri); if(!n) return;
+    const d=document.getElementById("detail");
+    let rows="";
+    const order=["skos:definition","rdfs:comment","nccr:sourceColumn","skos:prefLabel",
+                 "nccr:codeNotation","nccr:recordCount","nccr:sourceId","rdfs:subClassOf",
+                 "rdfs:domain","rdfs:range"];
+    const seen=new Set(["rdf:type","rdfs:label"]);
+    const keys=[...order.filter(k=>n.props[k]), ...Object.keys(n.props).filter(k=>!order.includes(k)&&!seen.has(k))];
+    for(const k of keys){
+      if(seen.has(k)) continue;
+      let v=n.props[k].join(", ");
+      if(k==="nccr:recordCount") v=Number(v).toLocaleString()+" records";
+      rows+=`<tr><td class="k">${k}</td><td class="v">${v}</td></tr>`;
+    }
+    const typeList=(n.props["rdf:type"]||[]).join(", ")||n.type;
+    d.innerHTML=`<button class="close" onclick="document.getElementById('detail').style.display='none'">×</button>
+      <h3>${n.label}</h3><div class="type">${typeList} · <span style="color:var(--muted)">${short(uri)}</span></div>
+      <table>${rows||'<tr><td class="v">No additional properties.</td></tr>'}</table>`;
+    d.style.display="block";
+  }
+
+  function renderLegend(view){
+    const items = view==="ontology"
+      ? [["Class","Class"],["Property","Property"]]
+      : [["DataSource","Data source"],["Variable","Variable"],["ValueSet","Value set"],["CodeValue","Code value"]];
+    document.getElementById("legend").innerHTML =
+      items.map(([t,lbl])=>`<div class="row"><span class="dot" style="background:${COLORS[t].background}"></span>${lbl}</div>`).join("");
+  }
+
+  function doSearch(q){
+    if(!network||!allNodes) return;
+    q=q.trim().toLowerCase();
+    if(!q){ network.unselectAll(); return; }
+    const hits=[];
+    allNodes.forEach(n=>{ if((n.label||"").toLowerCase().includes(q) || n.id.toLowerCase().includes(q)) hits.push(n.id); });
+    if(hits.length){ network.selectNodes(hits); network.focus(hits[0],{scale:1.1, animation:true}); }
+  }
+
+  // initial
+  loadView('ontology');
+</script>
+</body>
+</html>
