@@ -2,18 +2,19 @@
 ## NCCR Sample Instance Data — for the interactive graph viewer
 ## ---------------------------------------------------------
 ## A small, curated slice of the full nccr_instances.ttl (~42k triples),
-## chosen to be readable as a node-link graph and to tell the platform's
-## linkage story: CTC is the master datasource; every other source links to
-## it on the patient key (nccrId), and CTC + ABM also share tumorRecordNumber.
+## chosen to be readable as a node-link graph and to mirror the ERD: CTC is
+## the central tumor source that every other source links to on the patient
+## key (nccrId); CTC and ABM also share tumorRecordNumber.
 ##
-## - CTC (master) is shown with real variables -> value set -> code values.
-## - All 9 sources connect to CTC via nccr:linksToMaster (with the link key).
-## - ABM is expanded with real variables/values for extra depth.
+## - All 9 datasources are present, each with a real sample variable.
+## - Every non-CTC source links to CTC via nccr:linksToCtc (with the link key).
+## - CTC and ABM drill down into variables -> value sets -> code values.
 ##
-## Linkage properties (nccr:masterSource / nccr:linksToMaster / nccr:linkKey)
-## express the data-cut join model documented in the ERD. The full instance
-## graph is in nccr_instances.ttl (the source of truth); this is a display sample.
-## All values below are REAL data from the platform.
+## The linkage property (nccr:linksToCtc / nccr:linkKey) expresses the data-cut
+## join model documented in the ERD. It is used here for visualization only and
+## is intentionally NOT part of nccr_vocab.ttl (so the vocabulary, CLI, MCP
+## server, examples, and JSON-LD generation are unaffected). The full instance
+## graph is in nccr_instances.ttl (the source of truth). All values are REAL.
 ## ---------------------------------------------------------
 
 @prefix nccr:    <https://nccrdataplatform.ccdi.cancer.gov/vocab#> .
@@ -25,19 +26,18 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
 ## =========================================================
-## MASTER DATA SOURCE — CTC
+## CTC — the central tumor source (all others link to it)
 ## =========================================================
 nccr-ds:ctc a nccr:DataSource ;
-    rdfs:label "Consolidated Tumor Case (CTC) — MASTER" ;
+    rdfs:label "Consolidated Tumor Case (CTC)" ;
     nccr:sourceId "CTC" ;
-    nccr:isMasterSource true ;
+    nccr:isCentralSource true ;
     nccr:grain "one row per tumor" ;
     nccr:hasVariable nccr-var:ctc-sex ,
                      nccr-var:ctc-racerecodewbaiapihisp ,
                      nccr-var:ctc-icccmajor ,
                      nccr-var:ctc-vitalstatusrecode .
 
-## CTC variables (real)
 nccr-var:ctc-sex a nccr:Variable ;
     rdfs:label "Sex" ;
     nccr:belongsToSource nccr-ds:ctc ;
@@ -59,123 +59,59 @@ nccr-var:ctc-vitalstatusrecode a nccr:Variable ;
     nccr:belongsToSource nccr-ds:ctc ;
     nccr:sourceColumn "vitalStatusRecode" .
 
-## CTC Sex value set + real code values
 nccr-vs:ctc-sex a nccr:ValueSet ;
     rdfs:label "Sex — values" .
-
 nccr-cv:ctc-sex-1 a nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-sex ;
-    skos:prefLabel "Male" ;
-    nccr:codeNotation "1" ;
-    nccr:recordCount 574264 .
-
+    skos:prefLabel "Male" ; nccr:codeNotation "1" ; nccr:recordCount 574264 .
 nccr-cv:ctc-sex-2 a nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-sex ;
-    skos:prefLabel "Female" ;
-    nccr:codeNotation "2" ;
-    nccr:recordCount 900104 .
+    skos:prefLabel "Female" ; nccr:codeNotation "2" ; nccr:recordCount 900104 .
 
 ## =========================================================
-## OTHER DATA SOURCES — each links to the CTC master
-## Patient-level link on nccrId; ABM also links on tumorRecordNumber.
+## ABM — links to CTC on nccrId + tumorRecordNumber; drilled down
 ## =========================================================
 nccr-ds:abm a nccr:DataSource ;
     rdfs:label "Area-Based Measures (ABM)" ;
     nccr:sourceId "ABM" ;
-    nccr:linksToMaster nccr-ds:ctc ;
+    nccr:linksToCtc nccr-ds:ctc ;
     nccr:linkKey "nccrId + tumorRecordNumber" ;
     nccr:hasVariable nccr-var:abm-persistentpoverty ,
                      nccr-var:abm-ruca2010c ,
                      nccr-var:abm-uric2010a .
 
-nccr-ds:pharm a nccr:DataSource ;
-    rdfs:label "Pharmacy Claims (PHARM)" ;
-    nccr:sourceId "PHARM" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-nccr-ds:ro a nccr:DataSource ;
-    rdfs:label "Radiation Oncology (RO)" ;
-    nccr:sourceId "RO" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-nccr-ds:cog a nccr:DataSource ;
-    rdfs:label "Children's Oncology Group (COG)" ;
-    nccr:sourceId "COG" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-nccr-ds:mcd a nccr:DataSource ;
-    rdfs:label "Medical Claims — Diagnosis (MCD)" ;
-    nccr:sourceId "MCD" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-nccr-ds:mcp a nccr:DataSource ;
-    rdfs:label "Medical Claims — Procedure (MCP)" ;
-    nccr:sourceId "MCP" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-nccr-ds:mce a nccr:DataSource ;
-    rdfs:label "Medical Claims — Enrollment (MCE)" ;
-    nccr:sourceId "MCE" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-nccr-ds:ccdi a nccr:DataSource ;
-    rdfs:label "CCDI Participant Index (CCDI)" ;
-    nccr:sourceId "CCDI" ;
-    nccr:linksToMaster nccr-ds:ctc ;
-    nccr:linkKey "nccrId" .
-
-## =========================================================
-## ABM DEPTH — real variables -> value sets -> code values
-## =========================================================
 nccr-var:abm-persistentpoverty a nccr:Variable ;
     rdfs:label "Persistent Poverty" ;
     nccr:belongsToSource nccr-ds:abm ;
     nccr:sourceColumn "persistentPoverty" ;
     nccr:hasValueSet nccr-vs:abm-persistentpoverty .
-
 nccr-var:abm-ruca2010c a nccr:Variable ;
     rdfs:label "2010 RUCA-based Categorization" ;
     nccr:belongsToSource nccr-ds:abm ;
     nccr:sourceColumn "ruca2010C" ;
     nccr:hasValueSet nccr-vs:abm-ruca2010c .
-
 nccr-var:abm-uric2010a a nccr:Variable ;
     rdfs:label "Urban Rural Indicator Code (URIC)" ;
     nccr:belongsToSource nccr-ds:abm ;
     nccr:sourceColumn "uric2010A" ;
     nccr:hasValueSet nccr-vs:abm-uric2010a .
 
-nccr-vs:abm-persistentpoverty a nccr:ValueSet ;
-    rdfs:label "Persistent Poverty — values" .
-nccr-vs:abm-ruca2010c a nccr:ValueSet ;
-    rdfs:label "RUCA — values" .
-nccr-vs:abm-uric2010a a nccr:ValueSet ;
-    rdfs:label "URIC — values" .
+nccr-vs:abm-persistentpoverty a nccr:ValueSet ; rdfs:label "Persistent Poverty — values" .
+nccr-vs:abm-ruca2010c a nccr:ValueSet ; rdfs:label "RUCA — values" .
+nccr-vs:abm-uric2010a a nccr:ValueSet ; rdfs:label "URIC — values" .
 
 nccr-cv:abm-persistentpoverty-0 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "No" ; nccr:codeNotation "0" ; nccr:recordCount 893260 .
+    skos:inScheme nccr-vs:abm-persistentpoverty ; skos:prefLabel "No" ; nccr:codeNotation "0" ; nccr:recordCount 893260 .
 nccr-cv:abm-persistentpoverty-1 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "Yes" ; nccr:codeNotation "1" ; nccr:recordCount 100113 .
+    skos:inScheme nccr-vs:abm-persistentpoverty ; skos:prefLabel "Yes" ; nccr:codeNotation "1" ; nccr:recordCount 100113 .
 nccr-cv:abm-persistentpoverty-7 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "No Data for Year of Diagnosis" ; nccr:codeNotation "7" ; nccr:recordCount 475642 .
+    skos:inScheme nccr-vs:abm-persistentpoverty ; skos:prefLabel "No Data for Year of Diagnosis" ; nccr:codeNotation "7" ; nccr:recordCount 475642 .
 nccr-cv:abm-persistentpoverty-9 a nccr:CodeValue ;
-    skos:inScheme nccr-vs:abm-persistentpoverty ;
-    skos:prefLabel "Missing" ; nccr:codeNotation "9" ; nccr:recordCount 5353 .
-
+    skos:inScheme nccr-vs:abm-persistentpoverty ; skos:prefLabel "Missing" ; nccr:codeNotation "9" ; nccr:recordCount 5353 .
 nccr-cv:abm-ruca2010c-1 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-ruca2010c ; skos:prefLabel "Urban" ; nccr:codeNotation "1" .
 nccr-cv:abm-ruca2010c-2 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-ruca2010c ; skos:prefLabel "Rural" ; nccr:codeNotation "2" .
-
 nccr-cv:abm-uric2010a-1 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "All urban" ; nccr:codeNotation "1" .
 nccr-cv:abm-uric2010a-2 a nccr:CodeValue ;
@@ -184,3 +120,102 @@ nccr-cv:abm-uric2010a-3 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "Mostly rural" ; nccr:codeNotation "3" .
 nccr-cv:abm-uric2010a-4 a nccr:CodeValue ;
     skos:inScheme nccr-vs:abm-uric2010a ; skos:prefLabel "All rural" ; nccr:codeNotation "4" .
+
+## =========================================================
+## PHARM — links to CTC on nccrId; sample variables
+## =========================================================
+nccr-ds:pharm a nccr:DataSource ;
+    rdfs:label "Pharmacy Claims (PHARM)" ;
+    nccr:sourceId "PHARM" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:pharm-canmeddrugcategory ,
+                     nccr-var:pharm-canmedmajordrugclass .
+nccr-var:pharm-canmeddrugcategory a nccr:Variable ;
+    rdfs:label "CanMED Drug Category" ;
+    nccr:belongsToSource nccr-ds:pharm ; nccr:sourceColumn "canmedDrugCategory" .
+nccr-var:pharm-canmedmajordrugclass a nccr:Variable ;
+    rdfs:label "CanMED Major Drug Class" ;
+    nccr:belongsToSource nccr-ds:pharm ; nccr:sourceColumn "canmedMajorDrugClass" .
+
+## =========================================================
+## RO — links to CTC on nccrId; sample variables
+## =========================================================
+nccr-ds:ro a nccr:DataSource ;
+    rdfs:label "Radiation Oncology (RO)" ;
+    nccr:sourceId "RO" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:ro-radiation-therapy-type ,
+                     nccr-var:ro-radiation-anatomic-site .
+nccr-var:ro-radiation-therapy-type a nccr:Variable ;
+    rdfs:label "Radiation Therapy Type" ;
+    nccr:belongsToSource nccr-ds:ro ; nccr:sourceColumn "radiation_therapy_type" .
+nccr-var:ro-radiation-anatomic-site a nccr:Variable ;
+    rdfs:label "Radiation Anatomic Site" ;
+    nccr:belongsToSource nccr-ds:ro ; nccr:sourceColumn "radiation_anatomic_site" .
+
+## =========================================================
+## COG — links to CTC on nccrId; sample variable
+## =========================================================
+nccr-ds:cog a nccr:DataSource ;
+    rdfs:label "Children's Oncology Group (COG)" ;
+    nccr:sourceId "COG" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:cog-reportedcogenrollment .
+nccr-var:cog-reportedcogenrollment a nccr:Variable ;
+    rdfs:label "Reported COG Study Enrollment" ;
+    nccr:belongsToSource nccr-ds:cog ; nccr:sourceColumn "reportedCOGEnrollment" .
+
+## =========================================================
+## MCD — links to CTC on nccrId; sample variable
+## =========================================================
+nccr-ds:mcd a nccr:DataSource ;
+    rdfs:label "Medical Claims — Diagnosis (MCD)" ;
+    nccr:sourceId "MCD" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:mcd-claimdiagnosiscode .
+nccr-var:mcd-claimdiagnosiscode a nccr:Variable ;
+    rdfs:label "Claim Diagnosis Code" ;
+    nccr:belongsToSource nccr-ds:mcd ; nccr:sourceColumn "claimDiagnosisCode" .
+
+## =========================================================
+## MCP — links to CTC on nccrId; sample variable
+## =========================================================
+nccr-ds:mcp a nccr:DataSource ;
+    rdfs:label "Medical Claims — Procedure (MCP)" ;
+    nccr:sourceId "MCP" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:mcp-claimprocedurecode .
+nccr-var:mcp-claimprocedurecode a nccr:Variable ;
+    rdfs:label "Claim Procedure Code" ;
+    nccr:belongsToSource nccr-ds:mcp ; nccr:sourceColumn "claimProcedureCode" .
+
+## =========================================================
+## MCE — links to CTC on nccrId; sample variable
+## =========================================================
+nccr-ds:mce a nccr:DataSource ;
+    rdfs:label "Medical Claims — Enrollment (MCE)" ;
+    nccr:sourceId "MCE" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:mce-enrollindexdxmonth .
+nccr-var:mce-enrollindexdxmonth a nccr:Variable ;
+    rdfs:label "Enrolled During Month of Index Cancer Diagnosis" ;
+    nccr:belongsToSource nccr-ds:mce ; nccr:sourceColumn "enrollIndexDxMonth" .
+
+## =========================================================
+## CCDI — links to CTC on nccrId; sample variable
+## =========================================================
+nccr-ds:ccdi a nccr:DataSource ;
+    rdfs:label "CCDI Participant Index (CCDI)" ;
+    nccr:sourceId "CCDI" ;
+    nccr:linksToCtc nccr-ds:ctc ;
+    nccr:linkKey "nccrId" ;
+    nccr:hasVariable nccr-var:ccdi-resourcename .
+nccr-var:ccdi-resourcename a nccr:Variable ;
+    rdfs:label "Resource Name" ;
+    nccr:belongsToSource nccr-ds:ccdi ; nccr:sourceColumn "resourceName" .
