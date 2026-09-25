@@ -82,7 +82,12 @@ The form's fields and limits are also described structurally in
 [`../../request-form.ttl`](../../request-form.ttl). **If the live form changes, update
 both** that file and `SKILL.md`.
 
-The form's recommended fields, which are selected by default and required, are
-recorded in `request-form.ttl` and reported by `list_data_elements`. These are
-confirmed for CTC. Other data sources will report no recommended elements until their
-defaults are confirmed.
+"Recommended" means two different things, and only one of them is metadata:
+
+- **Baseline defaults** the form selects for a source regardless of the science. These
+  are recorded in `request-form.ttl` and reported by `list_data_elements`. Confirmed
+  for CTC; other sources report none until their defaults are confirmed.
+- **Aim-specific recommendations** that NCCR staff raise when they review a submitted
+  request, flagging variables the research aims imply but the request left out. That is
+  per-request judgement, so it isn't modelled as metadata. `SKILL.md` instructs the
+  assistant to run the same coverage check while the draft is still editable.

@@ -133,11 +133,12 @@ calendar time, because each external person runs a parallel request.
 Select the specific fields to include, per data source. Recommended fields are
 selected by default and are required; other defaulted fields may be adjusted.
 
-For CTC, the recommended fields are Tumor Record Number, Sequence Number--Central,
-and the four Virtual Pooled Registry fields: Index Cancer, Total number of primary
-tumors, Chronological order for this tumor, and Number of Months from Index Cancer to
-Tumor. Together these identify the tumor record and place it in the patient's sequence
-of primaries. They come with every CTC request, so don't spend justification on them.
+For CTC, the baseline defaults are Tumor Record Number, Sequence Number--Central, and
+the four Virtual Pooled Registry fields: Index Cancer, Total number of primary tumors,
+Chronological order for this tumor, and Number of Months from Index Cancer to Tumor.
+Together these identify the tumor record and place it in the patient's sequence of
+primaries. They come with every CTC request regardless of the science, so don't spend
+justification on them.
 
 Guidance:
 - Request what you need **and can justify from the Analytic Plan.** Over-requesting
@@ -147,6 +148,28 @@ Guidance:
 - If NCCR metadata tools are available (MCP server or the cohort builder CLI), use
   them to look up what variables exist per source, their permissible values, and how
   often each value actually occurs. Feasibility before commitment.
+
+#### Do the reviewer's coverage check before they do
+NCCR staff review submitted requests and flag variables the researcher did **not**
+select but that the stated research aims imply they need. Under-requesting is the
+failure mode this catches, and it costs the researcher an amendment cycle. Run the
+same check yourself while the draft is still editable.
+
+Work backwards from the Analytic Plan, not forwards from the element list:
+1. Pull out every named exposure, outcome, covariate, stratifier, and time variable
+   from the aims and analytic plan.
+2. For each one, find the variable that carries it. Use `list_data_elements` per
+   source, or the metadata site.
+3. Then ask what the stated design *requires* but the aims never mention. Survival
+   analysis needs follow-up time and vital status. Stratified estimates need the
+   stratifying variable itself. Adjusted models need each stated covariate. Trend or
+   latency claims need the relevant timing variable.
+4. Name the gaps to the researcher and let them decide: "your plan says you'll adjust
+   for stage, but stage isn't in your selection."
+
+Say what you searched and what you couldn't find. If a variable the plan depends on
+doesn't exist in any source, that's a finding worth raising early, because it may
+change the analytic plan rather than the element list.
 
 ### 8. CCDI Mappings Approval Documentation
 Upload a PDF of your approval from other resources to link data (for example, a dbGaP
@@ -169,9 +192,11 @@ early rather than at the end.
 5. **Suggest Research Areas** based on the Aims; let them confirm.
 6. **Walk the collaborator rules**, distinguishing internal from external.
 7. **Help with Data Elements** using the metadata tools if available, checking each
-   element against the analytic plan.
+   element against the analytic plan, then running the coverage check in the other
+   direction to catch variables the plan needs but the selection omits.
 8. **Validate before handing off**: all required fields present, limits respected,
-   cohort described consistently, approval documents ready.
+   cohort described consistently, approval documents ready, and no unexplained gap
+   between the analytic plan and the selected elements.
 9. **Hand off explicitly.** State what they must do: review, attach IRB and approval
    documents, submit, and sign/acknowledge.
 
@@ -181,9 +206,12 @@ early rather than at the end.
 - **Never** invent data availability, record counts, or variable names. Look them up
   in the NCCR metadata, or say you don't know.
 - **Never** put patient-identifying content anywhere in the request.
-- Don't assert that a field is "recommended/required" beyond what the metadata says.
-  `list_data_elements` marks recommended fields; treat anything unmarked as the
+- Don't assert that a field is a form default beyond what the metadata marks.
+  `list_data_elements` flags the baseline defaults; treat anything unmarked as the
   researcher's choice.
+- When you flag a variable the aims imply, present it as a gap for the researcher to
+  judge, not as a platform requirement. You are anticipating reviewer feedback, not
+  speaking for the reviewers.
 
 ## Useful reference points
 - **NCCR metadata** (variables, permissible values, real frequencies):

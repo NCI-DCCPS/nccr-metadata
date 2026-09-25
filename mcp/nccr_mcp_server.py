@@ -482,10 +482,15 @@ def build_cohort(name: str, datasources: list[str], filters: list[dict]) -> str:
 # Backed by request-form.ttl (a separate file; core vocab/instances untouched).
 # Pairs with the `nccr-data-request` skill in skills/nccr-data-request/.
 #
-# The form's recommended (default + required) elements are recorded in
-# request-form.ttl via nccr-req:recommendedForRequest and surfaced by
-# list_data_elements(). Confirmed for CTC only; other sources return no
-# recommended elements until their defaults are confirmed.
+# The baseline default elements are recorded in request-form.ttl via
+# nccr-req:recommendedForRequest and surfaced by list_data_elements(). Confirmed
+# for CTC only; other sources report none until their defaults are confirmed.
+#
+# Separately, NCCR staff reviewing a submitted request flag variables the stated
+# research aims imply but the request omits. That is per-request judgement, not a
+# property of a variable, so there is no tool for it. The `nccr-data-request`
+# skill performs the equivalent coverage check against the analytic plan, using
+# the catalogue this tool returns.
 # ============================================================
 
 REQ = Namespace("https://nccrdataplatform.ccdi.cancer.gov/request#")
@@ -641,9 +646,13 @@ def list_data_elements(datasource: str) -> str:
     Returns variable labels, source column names, and descriptions where available so
     each requested element can be justified against the analytic plan.
 
-    Each element carries "recommended", which is True for the fields the form selects
-    by default and requires. Recommended fields cannot be removed from a request, so a
-    draft does not need to justify them.
+    Each element carries "recommended", True for the baseline fields the form selects by
+    default for that source. That baseline is fixed and does not depend on the research
+    aims, so a draft does not need to argue for those fields.
+
+    This does not tell you whether the selection is scientifically complete. Reviewers
+    flag variables the aims imply but the request omits, so compare the full catalogue
+    against the analytic plan rather than trusting the defaults.
     """
     g = get_graph()
     rg = get_request_graph()
@@ -672,9 +681,10 @@ def list_data_elements(datasource: str) -> str:
         "recommended_count": len(recommended),
         "recommended_elements": recommended,
         "elements": out,
-        "note": ("Recommended elements are selected by default and required; they "
-                 "cannot be removed. Remaining elements are the researcher's choice "
-                 "and should be justified against the analytic plan."),
+        "note": ("'recommended' marks the baseline elements the form selects by default "
+                 "for this source, independent of the research aims. Everything else is "
+                 "the researcher's choice. Reviewers flag aim-relevant variables that a "
+                 "request leaves out, so check this catalogue against the analytic plan."),
     }, indent=2)
 
 

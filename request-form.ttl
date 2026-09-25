@@ -13,11 +13,23 @@
 ## CAVEAT: that template was captured from web copy and may be incomplete.
 ## Verify against the live form before relying on this for submission.
 ##
-## The Data Elements step pre-selects a set of "recommended" variables that are
-## selected by default and cannot be removed. Those are recorded below with
-## nccr-req:recommendedForRequest. Confirmed for CTC as of 2026-06-26:
-## Tumor Record Number, Sequence Number--Central, and the four Virtual Pooled
-## Registry (VPR) fields (nccr-sec:virtual-pooled-registry-vpr).
+## TWO SENSES OF "RECOMMENDED" — do not conflate them:
+##
+##  1. BASELINE DEFAULTS (modelled here, as nccr-req:recommendedForRequest).
+##     A fixed per-source set the Data Elements step selects by default. These
+##     identify the tumour record and locate it in the patient's sequence of
+##     primaries, so they travel with the request regardless of the science.
+##     Confirmed for CTC as of 2026-06-26: Tumor Record Number,
+##     Sequence Number--Central, and the four Virtual Pooled Registry (VPR)
+##     fields (nccr-sec:virtual-pooled-registry-vpr).
+##
+##  2. REVIEWER RECOMMENDATIONS (deliberately NOT modelled here).
+##     During human review of a submitted request, NCCR staff read the stated
+##     research aims and flag variables the researcher did not select but that
+##     the aims imply they need. This is per-request judgement against the
+##     science, not a property of a variable, so it cannot be a static triple.
+##     It is handled by the `nccr-data-request` skill, which does the same
+##     coverage check against the analytic plan before submission.
 ## ---------------------------------------------------------
 
 @prefix nccr-req: <https://nccrdataplatform.ccdi.cancer.gov/request#> .
@@ -65,7 +77,7 @@ nccr-req:valueSet a owl:ObjectProperty ;
     rdfs:label "value set"@en .
 nccr-req:recommendedForRequest a owl:DatatypeProperty ;
     rdfs:label "recommended for request"@en ; rdfs:range xsd:boolean ;
-    skos:definition "True if this variable is a recommended field in the Data Elements step, meaning it is selected by default and required. Recommended fields cannot be removed from a request."@en .
+    skos:definition "True if the Data Elements step selects this variable by default for its data source. A fixed baseline set, independent of the research aims. Distinct from the aim-specific variables NCCR staff recommend during human review of a request, which are per-request judgement and are not modelled here."@en .
 
 ## ==========================================================
 ## FIELDS
@@ -137,12 +149,14 @@ nccr-req:ccdiMappingsApproval a nccr-req:RequestField ;
     nccr-req:fieldGuidance "Upload a PDF of your approval from other resources to link data, e.g., dbGaP profile." .
 
 ## ==========================================================
-## RECOMMENDED (DEFAULT + REQUIRED) DATA ELEMENTS
+## BASELINE DEFAULT DATA ELEMENTS
 ## ==========================================================
 ## Per the Data Elements step: "Recommended fields are selected by default and
 ## are required; other defaulted fields may be updated if necessary."
 ## These six identify the tumor record and place it in the patient's sequence of
 ## primaries, so every CTC request carries them whether or not they are analysed.
+## This is the baseline set only. Aim-specific additions come out of human review
+## (see the header note) and are not represented as triples.
 ##
 ## Tumor identity
 nccr-var:ctc-tumorrecordnumber nccr-req:recommendedForRequest true .
