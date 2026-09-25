@@ -476,5 +476,201 @@ def build_cohort(name: str, datasources: list[str], filters: list[dict]) -> str:
     return turtle
 
 
+# ============================================================
+# DATA REQUEST FORM TOOLS
+# ------------------------------------------------------------
+# Backed by request-form.ttl (a separate file; core vocab/instances untouched).
+# Pairs with the `nccr-data-request` skill in skills/nccr-data-request/.
+#
+# NOT IMPLEMENTED YET: recommend_data_elements(). The form's
+# "recommended / default / required" designation for each variable is not in the
+# published metadata (likely hardcoded in the platform form config). Once that
+# source is identified, populate nccr-req:recommendedForRequest in
+# request-form.ttl and add the tool.
+# ============================================================
+
+REQ = Namespace("https://nccrdataplatform.ccdi.cancer.gov/request#")
+LOCAL_REQUEST_FORM = [REPO_ROOT / "request-form.ttl"]
+
+_req_graph: Graph | None = None
+
+
+def get_request_graph() -> Graph:
+    """Load and cache the data-request form description."""
+    global _req_graph
+    if _req_graph is not None:
+        return _req_graph
+    g = Graph()
+    p = _first_existing(LOCAL_REQUEST_FORM)
+    if p:
+        g.parse(str(p), format="turtle")
+    else:
+        try:
+            g.parse(f"{RAW_BASE}/request-form.ttl", format="turtle")
+        except Exception:
+            pass
+    _req_graph = g
+    return g
+
+
+@mcp.tool()
+def list_request_fields() -> str:
+    """List the NCCR Data Request form fields with character limits, whether each is
+    publicly displayed, whether it is required, and the on-form guidance text.
+
+    Use this before drafting a request so limits and public-visibility are respected.
+    """
+    g = get_request_graph()
+    rows = []
+    for f in g.subjects(RDF.type, REQ.RequestField):
+        rows.append({
+            "field": str(g.value(f, RDFS.label) or ""),
+            "order": int(g.value(f, REQ.fieldOrder) or 0),
+            "input_type": str(g.value(f, REQ.inputType) or ""),
+            "max_characters": (int(g.value(f, REQ.maxCharacters))
+                               if g.value(f, REQ.maxCharacters) else None),
+            "publicly_displayed": (str(g.value(f, REQ.publiclyDisplayed)).lower()
+                                   == "true"),
+            "required": (str(g.value(f, REQ.required)).lower() == "true"),
+            "guidance": str(g.value(f, REQ.fieldGuidance) or ""),
+        })
+    rows.sort(key=lambda r: r["order"])
+    public = [r["field"] for r in rows if r["publicly_displayed"]]
+    return json.dumps({
+        "fields": rows,
+        "publicly_displayed_fields": public,
+        "note": ("Fields marked publicly_displayed appear on the public Data Requests "
+                 "page. Warn the researcher before drafting them."),
+    }, indent=2)
+
+
+@mcp.tool()
+def list_research_areas() -> str:
+    """List the controlled vocabulary of NCCR Research Areas selectable on the data
+    request form. Multiple areas may apply to one request."""
+    g = get_request_graph()
+    areas = sorted(
+        str(g.value(c, SKOS.prefLabel))
+        for c in g.subjects(RDF.type, SKOS.Concept)
+        if g.value(c, SKOS.prefLabel)
+    )
+    return json.dumps({"research_areas": areas, "count": len(areas)}, indent=2)
+
+
+@mcp.tool()
+def validate_request_draft(draft: dict) -> str:
+    """Validate a draft NCCR data request against the form rules.
+
+    Pass a dict keyed by field label, e.g.:
+      {"Project Name": "...", "Scientific Research Aims": "...",
+       "Research Areas": ["Epidemiology", "Late-effects of cancer"]}
+
+    Checks character limits, missing required fields, and invalid research areas.
+    Also reports which supplied fields are publicly displayed.
+    """
+    g = get_request_graph()
+
+    fields = {}
+    for f in g.subjects(RDF.type, REQ.RequestField):
+        label = str(g.value(f, RDFS.label) or "")
+        fields[label] = {
+            "max": (int(g.value(f, REQ.maxCharacters))
+                    if g.value(f, REQ.maxCharacters) else None),
+            "required": (str(g.value(f, REQ.required)).lower() == "true"),
+            "public": (str(g.value(f, REQ.publiclyDisplayed)).lower() == "true"),
+        }
+    valid_areas = {
+        str(g.value(c, SKOS.prefLabel))
+        for c in g.subjects(RDF.type, SKOS.Concept) if g.value(c, SKOS.prefLabel)
+    }
+
+    errors, warnings, info = [], [], []
+
+    # required fields present and non-empty
+    for label, meta in fields.items():
+        if meta["required"]:
+            v = draft.get(label)
+            if v is None or (isinstance(v, str) and not v.strip()) or \
+               (isinstance(v, list) and not v):
+                errors.append(f"Missing required field: {label}")
+
+    # character limits
+    counts = {}
+    for label, value in draft.items():
+        meta = fields.get(label)
+        if meta is None:
+            warnings.append(f"Unrecognized field (not on the form): {label}")
+            continue
+        if isinstance(value, str) and meta["max"]:
+            n = len(value)
+            counts[label] = {"characters": n, "limit": meta["max"],
+                             "remaining": meta["max"] - n}
+            if n > meta["max"]:
+                errors.append(
+                    f"{label}: {n} characters exceeds the {meta['max']} limit "
+                    f"(over by {n - meta['max']})")
+            elif n > meta["max"] * 0.95:
+                warnings.append(f"{label}: {n}/{meta['max']} characters — very close "
+                                f"to the limit")
+        if meta["public"] and value:
+            info.append(f"{label} is PUBLICLY DISPLAYED")
+
+    # research areas
+    areas = draft.get("Research Areas")
+    if areas:
+        if isinstance(areas, str):
+            areas = [areas]
+        for a in areas:
+            if a not in valid_areas:
+                errors.append(f"Invalid Research Area: {a!r}. Valid values: "
+                              f"{sorted(valid_areas)}")
+
+    return json.dumps({
+        "valid": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "public_field_notice": info,
+        "character_counts": counts,
+    }, indent=2)
+
+
+@mcp.tool()
+def list_data_elements(datasource: str) -> str:
+    """List the variables available from one NCCR datasource, for the 'Data Elements
+    Requested' step of a data request.
+
+    Returns variable labels, source column names, and descriptions where available so
+    each requested element can be justified against the analytic plan.
+
+    Note: this does NOT indicate which elements the form pre-selects as
+    'recommended/required' — that designation is not present in the published
+    metadata. Verify defaults against the live form.
+    """
+    g = get_graph()
+    ds_key = datasource.strip().lower()
+    out = []
+    for var in g.subjects(RDF.type, NCCR.Variable):
+        src = g.value(var, NCCR.belongsToSource)
+        if src is None:
+            continue
+        if ds_key not in str(src).lower().rsplit("/", 1)[-1]:
+            continue
+        out.append({
+            "variable": str(g.value(var, RDFS.label) or ""),
+            "source_column": str(g.value(var, NCCR.sourceColumn) or ""),
+            "semantic_type": str(g.value(var, NCCR.semanticType) or ""),
+            "description": (str(g.value(var, NCCR.itemDescription) or "")[:300]),
+            "has_value_set": g.value(var, NCCR.hasValueSet) is not None,
+        })
+    out.sort(key=lambda r: r["variable"])
+    return json.dumps({
+        "datasource": datasource.upper(),
+        "element_count": len(out),
+        "elements": out,
+        "note": ("Recommended/required defaults are set by the platform form and are "
+                 "not represented here."),
+    }, indent=2)
+
+
 if __name__ == "__main__":
     mcp.run()

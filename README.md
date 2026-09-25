@@ -13,6 +13,25 @@ This repository provides semantic metadata representations for the NCCR Data Pla
 | `nccr_vocab.ttl` | **Vocabulary** — OWL classes and properties for variables, value sets, filters, processing rules, and display configuration |
 | `nccr_datmm.ttl` | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and its 9 datasources (CTC, ABM, CCDI, COG, MCD, MCE, MCP, PHARM, RO) |
 | `nccr_instances.ttl` | **Instance data** — Complete RDF representation of all 533 variables across all 9 NCCR datasources, including value sets, display configs, filters, and processing rules (28,620 triples) |
+| `request-form.ttl` | **Data request form** — field inventory, character limits, publicly-displayed flags, and the Research Areas controlled vocabulary |
+| `mcp/` | **MCP server** — exposes the metadata as tools for AI assistants ([setup](mcp/README.md)) |
+| `skills/nccr-data-request/` | **Skill** — helps a researcher draft and validate an NCCR data request ([install](skills/nccr-data-request/README.md)) |
+
+## AI-Assisted Use
+
+Two complementary pieces let an AI assistant work with NCCR data:
+
+- **[MCP server](mcp/README.md)** — register it once in Claude, Cursor, VS Code, or
+  Kiro and ask about NCCR data in plain language. Tools cover datasource discovery,
+  variables, permissible values with real frequencies, subject search, cohort
+  building, and data-request validation.
+- **[Data request skill](skills/nccr-data-request/README.md)** — guidance for writing
+  an NCCR Data Request: the narrative sections, Research Areas, collaborator rules,
+  and element selection. Copy it into your assistant's skills folder
+  (e.g. `~/.kiro/skills/` or `~/.claude/skills/`).
+
+The MCP server supplies the facts; the skill supplies the judgment. They're designed
+to be used together.
 
 ## Data Sources Described
 

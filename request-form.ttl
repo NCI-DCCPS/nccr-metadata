@@ -1,0 +1,163 @@
+## ---------------------------------------------------------
+## NCCR Data Request Form — structured description
+## ---------------------------------------------------------
+## Describes the NCCR Data Request form so tools can validate a draft:
+## field inventory, character limits, which fields are publicly displayed,
+## and the controlled vocabulary for Research Areas.
+##
+## SEPARATE FILE BY DESIGN. Nothing here modifies nccr_vocab.ttl or
+## nccr_instances.ttl, so the CLI, MCP server, examples, and JSON-LD
+## generation are unaffected. New tooling opts in by loading this file.
+##
+## Source: the NCCR Data Request form (see docs/NCCR-DataRequest-Template.txt).
+## CAVEAT: that template was captured from web copy and may be incomplete.
+## Verify against the live form before relying on this for submission.
+##
+## NOT YET MODELLED: per-variable "recommended / default / required" flags for
+## the Data Elements step. The form defaults those, but the designation is not
+## present in the published metadata (likely hardcoded in the platform's form
+## config). Once the source is identified, add e.g.:
+##     nccr-var:ctc-sex nccr-req:recommendedForRequest true .
+## ---------------------------------------------------------
+
+@prefix nccr-req: <https://nccrdataplatform.ccdi.cancer.gov/request#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+
+## ==========================================================
+## CLASSES / PROPERTIES (minimal, local to this file)
+## ==========================================================
+
+nccr-req: a owl:Ontology ;
+    rdfs:label "NCCR Data Request Form Description"@en ;
+    dct:description "Field inventory, limits, and controlled vocabularies for the NCCR Data Request form."@en ;
+    dct:created "2026-09-23"^^xsd:date ;
+    owl:versionInfo "0.1.0-draft" .
+
+nccr-req:RequestField a owl:Class ;
+    rdfs:label "Request Field"@en ;
+    skos:definition "A single input field on the NCCR Data Request form."@en .
+
+nccr-req:RequestSection a owl:Class ;
+    rdfs:label "Request Section"@en .
+
+nccr-req:fieldOrder a owl:DatatypeProperty ;
+    rdfs:label "field order"@en ; rdfs:range xsd:integer .
+nccr-req:maxCharacters a owl:DatatypeProperty ;
+    rdfs:label "maximum characters"@en ; rdfs:range xsd:integer .
+nccr-req:publiclyDisplayed a owl:DatatypeProperty ;
+    rdfs:label "publicly displayed"@en ; rdfs:range xsd:boolean ;
+    skos:definition "True if the field's content is shown publicly on the Data Requests page."@en .
+nccr-req:required a owl:DatatypeProperty ;
+    rdfs:label "required"@en ; rdfs:range xsd:boolean .
+nccr-req:fieldGuidance a owl:DatatypeProperty ;
+    rdfs:label "field guidance"@en ;
+    skos:definition "The instruction text shown to the user on the form."@en .
+nccr-req:inputType a owl:DatatypeProperty ;
+    rdfs:label "input type"@en ;
+    skos:definition "text | longtext | multiselect | boolean | fileupload | elementpicker"@en .
+nccr-req:valueSet a owl:ObjectProperty ;
+    rdfs:label "value set"@en .
+nccr-req:recommendedForRequest a owl:DatatypeProperty ;
+    rdfs:label "recommended for request"@en ; rdfs:range xsd:boolean ;
+    skos:definition "True if this variable is selected by default and required in the Data Elements step. NOT YET POPULATED — source of truth not identified."@en .
+
+## ==========================================================
+## FIELDS
+## ==========================================================
+
+nccr-req:projectName a nccr-req:RequestField ;
+    rdfs:label "Project Name" ;
+    nccr-req:fieldOrder 1 ;
+    nccr-req:inputType "text" ;
+    nccr-req:publiclyDisplayed true ;
+    nccr-req:required true ;
+    nccr-req:fieldGuidance "Enter a unique and descriptive project name that will be easy to identify later." .
+
+nccr-req:scientificResearchAims a nccr-req:RequestField ;
+    rdfs:label "Scientific Research Aims" ;
+    nccr-req:fieldOrder 2 ;
+    nccr-req:inputType "longtext" ;
+    nccr-req:maxCharacters 1500 ;
+    nccr-req:publiclyDisplayed true ;
+    nccr-req:required true ;
+    nccr-req:fieldGuidance "Briefly describe your proposed research, its aims, and its value to science or public health." .
+
+nccr-req:researchRelevance a nccr-req:RequestField ;
+    rdfs:label "Research Relevance" ;
+    nccr-req:fieldOrder 3 ;
+    nccr-req:inputType "longtext" ;
+    nccr-req:maxCharacters 1500 ;
+    nccr-req:publiclyDisplayed true ;
+    nccr-req:required true ;
+    nccr-req:fieldGuidance "Briefly describe how your research will advance a particular scientific field of inquiry." .
+
+nccr-req:scientificApproach a nccr-req:RequestField ;
+    rdfs:label "Scientific Approach and Analytic Plan" ;
+    nccr-req:fieldOrder 4 ;
+    nccr-req:inputType "longtext" ;
+    nccr-req:maxCharacters 1500 ;
+    nccr-req:publiclyDisplayed true ;
+    nccr-req:required true ;
+    nccr-req:fieldGuidance "Briefly summarize your analytic plan, including key outcomes of interest." .
+
+nccr-req:researchAreas a nccr-req:RequestField ;
+    rdfs:label "Research Areas" ;
+    nccr-req:fieldOrder 5 ;
+    nccr-req:inputType "multiselect" ;
+    nccr-req:publiclyDisplayed true ;
+    nccr-req:required true ;
+    nccr-req:valueSet nccr-req:ResearchAreaScheme .
+
+nccr-req:collaborators a nccr-req:RequestField ;
+    rdfs:label "Specify Collaborators" ;
+    nccr-req:fieldOrder 6 ;
+    nccr-req:inputType "boolean+list" ;
+    nccr-req:publiclyDisplayed false ;
+    nccr-req:fieldGuidance "List any members of your research team who need access to the requested dataset. Collaborators must register for SEER Research Plus. External collaborators at a different institution must each have a SEER Research Plus account and submit a data request referencing this data request ID, citing the exact project title, cohorts and project details. NIH permits release of controlled-access data only to individuals and organizations meeting the security requirements in NOT-OD-25-083." .
+
+nccr-req:dataElements a nccr-req:RequestField ;
+    rdfs:label "Data Elements Requested" ;
+    nccr-req:fieldOrder 7 ;
+    nccr-req:inputType "elementpicker" ;
+    nccr-req:publiclyDisplayed false ;
+    nccr-req:required true ;
+    nccr-req:fieldGuidance "For each data source, select the specific fields to include in your requested dataset. Recommended fields are selected by default and are required; other defaulted fields may be updated if necessary." .
+
+nccr-req:ccdiMappingsApproval a nccr-req:RequestField ;
+    rdfs:label "CCDI Mappings Approval Documentation" ;
+    nccr-req:fieldOrder 8 ;
+    nccr-req:inputType "fileupload" ;
+    nccr-req:publiclyDisplayed false ;
+    nccr-req:fieldGuidance "Upload a PDF of your approval from other resources to link data, e.g., dbGaP profile." .
+
+## ==========================================================
+## RESEARCH AREAS — controlled vocabulary
+## ==========================================================
+
+nccr-req:ResearchAreaScheme a skos:ConceptScheme ;
+    rdfs:label "NCCR Research Areas"@en ;
+    skos:definition "Controlled list of research areas selectable on the NCCR Data Request form."@en .
+
+nccr-req:area-health-disparities a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Health disparities"@en .
+nccr-req:area-methods-development a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Methods development"@en .
+nccr-req:area-particular-diagnosis a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ;
+    skos:prefLabel "Research focused on particular cancer diagnosis"@en .
+nccr-req:area-social-behavioral a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Social/Behavioral"@en .
+nccr-req:area-population-health a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Population health"@en .
+nccr-req:area-late-effects a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Late-effects of cancer"@en .
+nccr-req:area-health-services a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Health services"@en .
+nccr-req:area-treatment-patterns a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Treatment patterns"@en .
+nccr-req:area-epidemiology a skos:Concept ;
+    skos:inScheme nccr-req:ResearchAreaScheme ; skos:prefLabel "Epidemiology"@en .
