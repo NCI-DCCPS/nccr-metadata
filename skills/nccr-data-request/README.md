@@ -82,5 +82,7 @@ The form's fields and limits are also described structurally in
 [`../../request-form.ttl`](../../request-form.ttl). **If the live form changes, update
 both** that file and `SKILL.md`.
 
-Default element selections are maintained by the NCCR Data Platform form itself, so
-confirm those in the form when finalizing a request.
+The form's recommended fields, which are selected by default and required, are
+recorded in `request-form.ttl` and reported by `list_data_elements`. These are
+confirmed for CTC. Other data sources will report no recommended elements until their
+defaults are confirmed.

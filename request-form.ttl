@@ -13,13 +13,16 @@
 ## CAVEAT: that template was captured from web copy and may be incomplete.
 ## Verify against the live form before relying on this for submission.
 ##
-## SCOPE: default element selections for the Data Elements step are maintained
-## by the NCCR Data Platform form and are out of scope for this file.
-## nccr-req:recommendedForRequest is reserved for that use, e.g.:
-##     nccr-var:ctc-sex nccr-req:recommendedForRequest true .
+## The Data Elements step pre-selects a set of "recommended" variables that are
+## selected by default and cannot be removed. Those are recorded below with
+## nccr-req:recommendedForRequest. Confirmed for CTC as of 2026-06-26:
+## Tumor Record Number, Sequence Number--Central, and the four Virtual Pooled
+## Registry (VPR) fields (nccr-sec:virtual-pooled-registry-vpr).
 ## ---------------------------------------------------------
 
 @prefix nccr-req: <https://nccrdataplatform.ccdi.cancer.gov/request#> .
+@prefix nccr-var: <https://nccrdataplatform.ccdi.cancer.gov/variable/> .
+@prefix nccr-sec: <https://nccrdataplatform.ccdi.cancer.gov/section/> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
@@ -62,7 +65,7 @@ nccr-req:valueSet a owl:ObjectProperty ;
     rdfs:label "value set"@en .
 nccr-req:recommendedForRequest a owl:DatatypeProperty ;
     rdfs:label "recommended for request"@en ; rdfs:range xsd:boolean ;
-    skos:definition "True if this variable is selected by default in the Data Elements step. Reserved for future use; default selections are maintained by the NCCR Data Platform form."@en .
+    skos:definition "True if this variable is a recommended field in the Data Elements step, meaning it is selected by default and required. Recommended fields cannot be removed from a request."@en .
 
 ## ==========================================================
 ## FIELDS
@@ -132,6 +135,25 @@ nccr-req:ccdiMappingsApproval a nccr-req:RequestField ;
     nccr-req:inputType "fileupload" ;
     nccr-req:publiclyDisplayed false ;
     nccr-req:fieldGuidance "Upload a PDF of your approval from other resources to link data, e.g., dbGaP profile." .
+
+## ==========================================================
+## RECOMMENDED (DEFAULT + REQUIRED) DATA ELEMENTS
+## ==========================================================
+## Per the Data Elements step: "Recommended fields are selected by default and
+## are required; other defaulted fields may be updated if necessary."
+## These six identify the tumor record and place it in the patient's sequence of
+## primaries, so every CTC request carries them whether or not they are analysed.
+##
+## Tumor identity
+nccr-var:ctc-tumorrecordnumber nccr-req:recommendedForRequest true .
+nccr-var:ctc-sequencenumbercentral nccr-req:recommendedForRequest true .
+##
+## Virtual Pooled Registry (VPR) — all four members of
+## nccr-sec:virtual-pooled-registry-vpr
+nccr-var:ctc-indexcancer nccr-req:recommendedForRequest true .
+nccr-var:ctc-numberofprimaries nccr-req:recommendedForRequest true .
+nccr-var:ctc-tumororder nccr-req:recommendedForRequest true .
+nccr-var:ctc-monthsfromindexdxtotumor nccr-req:recommendedForRequest true .
 
 ## ==========================================================
 ## RESEARCH AREAS — controlled vocabulary

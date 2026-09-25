@@ -133,6 +133,12 @@ calendar time, because each external person runs a parallel request.
 Select the specific fields to include, per data source. Recommended fields are
 selected by default and are required; other defaulted fields may be adjusted.
 
+For CTC, the recommended fields are Tumor Record Number, Sequence Number--Central,
+and the four Virtual Pooled Registry fields: Index Cancer, Total number of primary
+tumors, Chronological order for this tumor, and Number of Months from Index Cancer to
+Tumor. Together these identify the tumor record and place it in the patient's sequence
+of primaries. They come with every CTC request, so don't spend justification on them.
+
 Guidance:
 - Request what you need **and can justify from the Analytic Plan.** Over-requesting
   invites scrutiny; under-requesting means an amendment later.
@@ -175,8 +181,9 @@ early rather than at the end.
 - **Never** invent data availability, record counts, or variable names. Look them up
   in the NCCR metadata, or say you don't know.
 - **Never** put patient-identifying content anywhere in the request.
-- Don't assert that a field is "recommended/required" unless you've verified it
-  against the live form or metadata — the defaults are set by the platform.
+- Don't assert that a field is "recommended/required" beyond what the metadata says.
+  `list_data_elements` marks recommended fields; treat anything unmarked as the
+  researcher's choice.
 
 ## Useful reference points
 - **NCCR metadata** (variables, permissible values, real frequencies):

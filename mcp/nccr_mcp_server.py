@@ -482,9 +482,10 @@ def build_cohort(name: str, datasources: list[str], filters: list[dict]) -> str:
 # Backed by request-form.ttl (a separate file; core vocab/instances untouched).
 # Pairs with the `nccr-data-request` skill in skills/nccr-data-request/.
 #
-# Scope note: default element selections for the Data Elements step are
-# maintained by the NCCR Data Platform form, so these tools list available
-# elements rather than assert which ones are pre-selected.
+# The form's recommended (default + required) elements are recorded in
+# request-form.ttl via nccr-req:recommendedForRequest and surfaced by
+# list_data_elements(). Confirmed for CTC only; other sources return no
+# recommended elements until their defaults are confirmed.
 # ============================================================
 
 REQ = Namespace("https://nccrdataplatform.ccdi.cancer.gov/request#")
@@ -640,11 +641,12 @@ def list_data_elements(datasource: str) -> str:
     Returns variable labels, source column names, and descriptions where available so
     each requested element can be justified against the analytic plan.
 
-    Lists what is available to request. Which elements the form pre-selects by
-    default is maintained by the NCCR Data Platform form itself, so confirm those
-    in the form when finalizing a request.
+    Each element carries "recommended", which is True for the fields the form selects
+    by default and requires. Recommended fields cannot be removed from a request, so a
+    draft does not need to justify them.
     """
     g = get_graph()
+    rg = get_request_graph()
     ds_key = datasource.strip().lower()
     out = []
     for var in g.subjects(RDF.type, NCCR.Variable):
@@ -659,14 +661,20 @@ def list_data_elements(datasource: str) -> str:
             "semantic_type": str(g.value(var, NCCR.semanticType) or ""),
             "description": (str(g.value(var, NCCR.itemDescription) or "")[:300]),
             "has_value_set": g.value(var, NCCR.hasValueSet) is not None,
+            "recommended": bool(rg.value(var, REQ.recommendedForRequest)),
         })
-    out.sort(key=lambda r: r["variable"])
+    # Recommended first, then alphabetical.
+    out.sort(key=lambda r: (not r["recommended"], r["variable"]))
+    recommended = [r["variable"] for r in out if r["recommended"]]
     return json.dumps({
         "datasource": datasource.upper(),
         "element_count": len(out),
+        "recommended_count": len(recommended),
+        "recommended_elements": recommended,
         "elements": out,
-        "note": ("Default element selections are maintained by the NCCR Data Platform "
-                 "form; confirm them in the form when finalizing a request."),
+        "note": ("Recommended elements are selected by default and required; they "
+                 "cannot be removed. Remaining elements are the researcher's choice "
+                 "and should be justified against the analytic plan."),
     }, indent=2)
 
 
