@@ -84,9 +84,11 @@ both** that file and `SKILL.md`.
 
 "Recommended" means two different things, and only one of them is metadata:
 
-- **Baseline defaults** the form selects for a source regardless of the science. These
-  are recorded in `request-form.ttl` and reported by `list_data_elements`. Confirmed
-  for CTC; other sources report none until their defaults are confirmed.
+- **Baseline defaults** the form selects and requires whenever a given source is in the
+  request, regardless of the science. Recorded in `request-form.ttl` and reported by
+  `list_data_elements`. Confirmed for CTC (6 elements, always present because CTC is in
+  every request) and CCDI Mappings (2 elements, when that source is requested). Other
+  sources report none until their defaults are confirmed.
 - **Aim-specific recommendations** that NCCR staff raise when they review a submitted
   request, flagging variables the research aims imply but the request left out. That is
   per-request judgement, so it isn't modelled as metadata. `SKILL.md` instructs the

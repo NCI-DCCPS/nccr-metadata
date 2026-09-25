@@ -484,7 +484,9 @@ def build_cohort(name: str, datasources: list[str], filters: list[dict]) -> str:
 #
 # The baseline default elements are recorded in request-form.ttl via
 # nccr-req:recommendedForRequest and surfaced by list_data_elements(). Confirmed
-# for CTC only; other sources report none until their defaults are confirmed.
+# for CTC (6) and CCDI (2); other sources report none until their defaults are
+# confirmed. CTC is in every request, so its six are always present; other
+# sources' baselines apply only when that source is requested.
 #
 # Separately, NCCR staff reviewing a submitted request flag variables the stated
 # research aims imply but the request omits. That is per-request judgement, not a
@@ -653,10 +655,16 @@ def list_data_elements(datasource: str) -> str:
     This does not tell you whether the selection is scientifically complete. Reviewers
     flag variables the aims imply but the request omits, so compare the full catalogue
     against the analytic plan rather than trusting the defaults.
+
+    CTC is included in every request. Other sources link to it and cannot be requested
+    on their own, so the CTC baseline elements come along with any source. For sources
+    other than CTC the baseline applies only when that source is requested.
     """
     g = get_graph()
     rg = get_request_graph()
     ds_key = datasource.strip().lower()
+    always = [str(s).rsplit("/", 1)[-1].upper()
+              for s in rg.objects(REQ.dataElements, REQ.alwaysIncludedSource)]
     out = []
     for var in g.subjects(RDF.type, NCCR.Variable):
         src = g.value(var, NCCR.belongsToSource)
@@ -680,11 +688,13 @@ def list_data_elements(datasource: str) -> str:
         "element_count": len(out),
         "recommended_count": len(recommended),
         "recommended_elements": recommended,
+        "always_included_sources": always,
         "elements": out,
-        "note": ("'recommended' marks the baseline elements the form selects by default "
-                 "for this source, independent of the research aims. Everything else is "
-                 "the researcher's choice. Reviewers flag aim-relevant variables that a "
-                 "request leaves out, so check this catalogue against the analytic plan."),
+        "note": ("'recommended' marks the elements the form selects by default, and "
+                 "requires, when this source is in the request. Independent of the "
+                 "research aims; everything else is the researcher's choice. Reviewers "
+                 "flag aim-relevant variables that a request leaves out, so check this "
+                 "catalogue against the analytic plan."),
     }, indent=2)
 
 

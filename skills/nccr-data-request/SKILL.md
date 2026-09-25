@@ -133,12 +133,21 @@ calendar time, because each external person runs a parallel request.
 Select the specific fields to include, per data source. Recommended fields are
 selected by default and are required; other defaulted fields may be adjusted.
 
+**CTC is in every request.** The other sources link to CTC on the patient key and
+can't be requested on their own, so a request is always "CTC plus whatever else."
+
 For CTC, the baseline defaults are Tumor Record Number, Sequence Number--Central, and
 the four Virtual Pooled Registry fields: Index Cancer, Total number of primary tumors,
 Chronological order for this tumor, and Number of Months from Index Cancer to Tumor.
 Together these identify the tumor record and place it in the patient's sequence of
-primaries. They come with every CTC request regardless of the science, so don't spend
+primaries. Because CTC is always present, these six are always present, so don't spend
 justification on them.
+
+**If they request CCDI Mappings**, both Resource Name and Resource Participant
+Identifier are required. A CCDI mapping is the pair of which external resource and
+which participant ID inside it, so one without the other can't be used. Requesting
+CCDI is also the case that needs the mappings approval PDF (field 8), so raise both at
+the same time.
 
 Guidance:
 - Request what you need **and can justify from the Analytic Plan.** Over-requesting

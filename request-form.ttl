@@ -16,12 +16,12 @@
 ## TWO SENSES OF "RECOMMENDED" — do not conflate them:
 ##
 ##  1. BASELINE DEFAULTS (modelled here, as nccr-req:recommendedForRequest).
-##     A fixed per-source set the Data Elements step selects by default. These
-##     identify the tumour record and locate it in the patient's sequence of
-##     primaries, so they travel with the request regardless of the science.
-##     Confirmed for CTC as of 2026-06-26: Tumor Record Number,
-##     Sequence Number--Central, and the four Virtual Pooled Registry (VPR)
-##     fields (nccr-sec:virtual-pooled-registry-vpr).
+##     Per data source, the elements the form selects by default and requires
+##     whenever that source is in the request. Fixed, and independent of the
+##     research aims. Confirmed as of 2026-06-26 for CTC (6 elements) and CCDI
+##     (2 elements). Because CTC is in every request
+##     (nccr-req:alwaysIncludedSource), its six are always present; CCDI's two
+##     apply only when the CCDI Mappings source is requested.
 ##
 ##  2. REVIEWER RECOMMENDATIONS (deliberately NOT modelled here).
 ##     During human review of a submitted request, NCCR staff read the stated
@@ -35,6 +35,7 @@
 @prefix nccr-req: <https://nccrdataplatform.ccdi.cancer.gov/request#> .
 @prefix nccr-var: <https://nccrdataplatform.ccdi.cancer.gov/variable/> .
 @prefix nccr-sec: <https://nccrdataplatform.ccdi.cancer.gov/section/> .
+@prefix nccr-ds:  <https://nccrdataplatform.ccdi.cancer.gov/datasource/> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
@@ -75,9 +76,12 @@ nccr-req:inputType a owl:DatatypeProperty ;
     skos:definition "text | longtext | multiselect | boolean | fileupload | elementpicker"@en .
 nccr-req:valueSet a owl:ObjectProperty ;
     rdfs:label "value set"@en .
+nccr-req:alwaysIncludedSource a owl:ObjectProperty ;
+    rdfs:label "always included data source"@en ;
+    skos:definition "A data source present in every request. Other sources link to it and cannot be requested on their own, so its baseline default elements are always part of the dataset."@en .
 nccr-req:recommendedForRequest a owl:DatatypeProperty ;
     rdfs:label "recommended for request"@en ; rdfs:range xsd:boolean ;
-    skos:definition "True if the Data Elements step selects this variable by default for its data source. A fixed baseline set, independent of the research aims. Distinct from the aim-specific variables NCCR staff recommend during human review of a request, which are per-request judgement and are not modelled here."@en .
+    skos:definition "True if the Data Elements step selects this variable by default, and requires it, whenever its data source is included in the request. A fixed baseline, independent of the research aims. Distinct from the aim-specific variables NCCR staff recommend during human review, which are per-request judgement and are not modelled here."@en .
 
 ## ==========================================================
 ## FIELDS
@@ -158,6 +162,13 @@ nccr-req:ccdiMappingsApproval a nccr-req:RequestField ;
 ## This is the baseline set only. Aim-specific additions come out of human review
 ## (see the header note) and are not represented as triples.
 ##
+## CTC is in every request. Other sources link to it and cannot be requested on
+## their own, which is why only the CTC copies of the shared identifiers are
+## flagged below. ABM also carries a Tumor Record Number
+## (nccr-var:abm-tumorrecordnumber), but since CTC is always present its copy is
+## always there too, so flagging ABM's would be redundant.
+nccr-req:dataElements nccr-req:alwaysIncludedSource nccr-ds:ctc .
+##
 ## Tumor identity
 nccr-var:ctc-tumorrecordnumber nccr-req:recommendedForRequest true .
 nccr-var:ctc-sequencenumbercentral nccr-req:recommendedForRequest true .
@@ -168,6 +179,14 @@ nccr-var:ctc-indexcancer nccr-req:recommendedForRequest true .
 nccr-var:ctc-numberofprimaries nccr-req:recommendedForRequest true .
 nccr-var:ctc-tumororder nccr-req:recommendedForRequest true .
 nccr-var:ctc-monthsfromindexdxtotumor nccr-req:recommendedForRequest true .
+
+## CCDI Mappings (nccr-ds:ccdi) — conditional on requesting that source.
+## A mapping is the pair (which external resource, which participant ID inside
+## it), so both are required together; either one alone is not usable. The third
+## CCDI variable, nccr-var:ccdi-nccrid, is the patient key shared across sources
+## and is not flagged here.
+nccr-var:ccdi-resourcename nccr-req:recommendedForRequest true .
+nccr-var:ccdi-resourceparticipantid nccr-req:recommendedForRequest true .
 
 ## ==========================================================
 ## RESEARCH AREAS — controlled vocabulary
