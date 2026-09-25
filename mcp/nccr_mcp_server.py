@@ -482,11 +482,9 @@ def build_cohort(name: str, datasources: list[str], filters: list[dict]) -> str:
 # Backed by request-form.ttl (a separate file; core vocab/instances untouched).
 # Pairs with the `nccr-data-request` skill in skills/nccr-data-request/.
 #
-# NOT IMPLEMENTED YET: recommend_data_elements(). The form's
-# "recommended / default / required" designation for each variable is not in the
-# published metadata (likely hardcoded in the platform form config). Once that
-# source is identified, populate nccr-req:recommendedForRequest in
-# request-form.ttl and add the tool.
+# Scope note: default element selections for the Data Elements step are
+# maintained by the NCCR Data Platform form, so these tools list available
+# elements rather than assert which ones are pre-selected.
 # ============================================================
 
 REQ = Namespace("https://nccrdataplatform.ccdi.cancer.gov/request#")
@@ -642,9 +640,9 @@ def list_data_elements(datasource: str) -> str:
     Returns variable labels, source column names, and descriptions where available so
     each requested element can be justified against the analytic plan.
 
-    Note: this does NOT indicate which elements the form pre-selects as
-    'recommended/required' — that designation is not present in the published
-    metadata. Verify defaults against the live form.
+    Lists what is available to request. Which elements the form pre-selects by
+    default is maintained by the NCCR Data Platform form itself, so confirm those
+    in the form when finalizing a request.
     """
     g = get_graph()
     ds_key = datasource.strip().lower()
@@ -667,8 +665,8 @@ def list_data_elements(datasource: str) -> str:
         "datasource": datasource.upper(),
         "element_count": len(out),
         "elements": out,
-        "note": ("Recommended/required defaults are set by the platform form and are "
-                 "not represented here."),
+        "note": ("Default element selections are maintained by the NCCR Data Platform "
+                 "form; confirm them in the form when finalizing a request."),
     }, indent=2)
 
 

@@ -82,7 +82,5 @@ The form's fields and limits are also described structurally in
 [`../../request-form.ttl`](../../request-form.ttl). **If the live form changes, update
 both** that file and `SKILL.md`.
 
-Known gap: the form pre-selects certain data elements as "recommended/required."
-That designation is not in the published metadata (it appears to be set in the
-platform's form configuration), so neither the skill nor the tools assert which
-elements are defaulted. Verify defaults against the live form.
+Default element selections are maintained by the NCCR Data Platform form itself, so
+confirm those in the form when finalizing a request.

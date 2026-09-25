@@ -13,10 +13,9 @@
 ## CAVEAT: that template was captured from web copy and may be incomplete.
 ## Verify against the live form before relying on this for submission.
 ##
-## NOT YET MODELLED: per-variable "recommended / default / required" flags for
-## the Data Elements step. The form defaults those, but the designation is not
-## present in the published metadata (likely hardcoded in the platform's form
-## config). Once the source is identified, add e.g.:
+## SCOPE: default element selections for the Data Elements step are maintained
+## by the NCCR Data Platform form and are out of scope for this file.
+## nccr-req:recommendedForRequest is reserved for that use, e.g.:
 ##     nccr-var:ctc-sex nccr-req:recommendedForRequest true .
 ## ---------------------------------------------------------
 
@@ -63,7 +62,7 @@ nccr-req:valueSet a owl:ObjectProperty ;
     rdfs:label "value set"@en .
 nccr-req:recommendedForRequest a owl:DatatypeProperty ;
     rdfs:label "recommended for request"@en ; rdfs:range xsd:boolean ;
-    skos:definition "True if this variable is selected by default and required in the Data Elements step. NOT YET POPULATED — source of truth not identified."@en .
+    skos:definition "True if this variable is selected by default in the Data Elements step. Reserved for future use; default selections are maintained by the NCCR Data Platform form."@en .
 
 ## ==========================================================
 ## FIELDS
