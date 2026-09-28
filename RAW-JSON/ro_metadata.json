@@ -1,0 +1,4990 @@
+{
+  "Links": {
+    "nci_thesaurus": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/[placeholder]",
+    "caDSR": "https://cadsr.cancer.gov/onedata/dmdirect/NIH/NCI/CO/CDEDD?filter=CDEDD.ITEM_ID=[placeholder]%20and%20ver_nr=1"
+  },
+  "Dictionary_Elements": [
+    {
+      "Column_Name_at_Source": "nccrId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 64,
+        "Semantic_Type": "string"
+      },
+      "Info": [],
+      "Item_Name": "NCCR Persistent Identifier",
+      "Internet_Link": "",
+      "Item_Description": "NCCR Persistent Identifier for the Data Platform",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": false,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false,
+      "Permissible_Value_Details": []
+    },
+    {
+      "Column_Name_at_Source": "recordId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 8,
+        "Semantic_Type": "string"
+      },
+      "Info": [],
+      "Item_Name": "Record ID",
+      "Internet_Link": "",
+      "Item_Description": "This field contains a unique number to indicate that this is a unique record within the Radiation Oncology dataset. Each radiation record represents a unique radiation event or series. Because exact dates are masked and records are presented in terms of months from index diagnosis, multiple records may appear to be identical. This field is provided to confirm to the user that these are unique records.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false,
+      "Permissible_Value_Details": [
+        {
+          "Value": "10000000-99999999",
+          "Description": "The unique record indicator number for a patient"
+        }
+      ],
+      "Permissible_Values": [
+        {
+          "Value": "10000000-99999999",
+          "Description": "The unique record indicator number for a patient"
+        }
+      ]
+    },
+    {
+      "Column_Name_at_Source": "sequenceId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "string"
+      },
+      "Info": [],
+      "Item_Name": "Sequence Number",
+      "Internet_Link": "",
+      "Item_Description": "Sequence number indicating the order of radiation records, calculated based on start date. Each radiation record represents a unique radiation event or series. Because exact dates are masked and records are presented in terms of months from index diagnosis, multiple records may appear to take place in the same month. This field provides additional information to the user by informing them of the order in which records took place (based on start date), including whether records have the same start date. <p>For patients with known start dates for all radiation records, all sequence numbers start with digit 8 (i.e., 8XX). For patients with at least one radiation record with no known start date, all sequence numbers start with digit 9 (i.e., 9XX), and sequence numbers for records with no known start date are coded as 999. If multiple radiation records for a patient start on the same date, sequence numbers will be identical.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false,
+      "Permissible_Values": [
+        {
+          "Value": "801-899",
+          "Description": "Sequence indicator for patient with known start dates for all radiation records"
+        },
+        {
+          "Value": "901-998",
+          "Description": "Sequence indicator for patient with at least one radiation record with missing start date"
+        },
+        {
+          "Value": "999",
+          "Description": "Not known due to missing start date"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "801-899",
+          "Description": "Sequence indicator for patient with known start dates for all radiation records"
+        },
+        {
+          "Value": "901-998",
+          "Description": "Sequence indicator for patient with at least one radiation record with missing start date"
+        },
+        {
+          "Value": "999",
+          "Description": "Not known due to missing start date"
+        }
+      ]
+    },
+    {
+      "Item_Name": "Months from Index Cancer Dx to Start of Treatment",
+      "Column_Name_at_Source": "months_from_dx_to_tx_start",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "numeric"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Month_Range_Column": "one negative bin",
+      "Units": "months",
+      "Item_Description": "Total number of months from the index cancer to the start of this radiation record.",
+      "Permissible_Values": [
+        {
+          "Value": "-999-999",
+          "Description": "Exact months"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "-999-999",
+          "Description": "Exact months"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ]
+    },
+    {
+      "Item_Name": "Months from Index Cancer Dx to End of Treatment",
+      "Column_Name_at_Source": "months_from_dx_to_treatment_end",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "numeric"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Month_Range_Column": true,
+      "Units": "months",
+      "Item_Description": "Total number of months from the index cancer to the end of this radiation record.",
+      "Permissible_Values": [
+        {
+          "Value": "-999-999",
+          "Description": "Exact months"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "-999-999",
+          "Description": "Exact months"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ]
+    },
+    {
+      "Item_Name": "Radiation Anatomic Site",
+      "Info": [
+        {
+          "label": "Transformation Description",
+          "Value": "These data were provided from multiple sources using various semantic encodings. To harmonize the submitted data, a common data element (CDE) from the NCI's Cancer Data Standards Registry and Repository (caDSR II) with permissible values in alignment with submitted values was selected and validated by a team of clinical oncology experts. Radiation Anatomic Site was harmonized to the CDE with Public ID 13362279. Submitted values corresponding to the harmonized data in this field can be found in the Untransformed Radiation Anatomic Site field. <p>For submitted values that map to more than one permissible value found in the chosen CDE, Radiation Anatomic Site will contain multiple concept codes separated by pipes (e.g., C##### | C#####). In some cases, a single unit exists in the chosen CDE that is made up of multiple concept codes; these are presented as multiple concept codes separated by colons (e.g., C#####:C#####). <p>Submitted values that represent a radiation anatomic site but do not map to a permissible value found in the chosen CDE are mapped to C17649 (Other). Submitted values that contain text that does not represent a radiation anatomic site are mapped to C17998 (Unknown). When submitted values for the Untransformed Radiation Anatomic Site field are empty, this field is mapped to C43234 (Not Reported)."
+        },
+        {
+          "Type": "link",
+          "label": "caDSR CDE Public ID",
+          "Url": "caDSR",
+          "Value": "13362279"
+        }
+      ],
+      "Item_Section": "",
+      "Column_Name_at_Source": "radiation_anatomic_site",
+      "NCI Thesaurus base url": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "lookup_value"
+      },
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Item_Description": "Harmonized anatomic site or region that radiation is delivered to. This field contains harmonized values mapped from the originally submitted data found in field Untransformed Radiation Anatomic Site. <p>Permissible values for this field include one or more NCIt concept codes in format C##### or C######. Missing values are mapped to C43234 (Not Reported). <p>For more details about mappings for this field, see Transformation Description. <p>For more details about specific NCIt concept codes, see Description or Long Description.",
+      "caDSR CDE Public ID Hyperlink": "https://cadsr.cancer.gov/onedata/dmdirect/NIH/NCI/CO/CDEDD?filter=CDEDD.ITEM_ID=13362279%20and%20ver_nr=1",
+      "caDSR CDE Public ID": "13362279",
+      "Permissible_Values": [
+        {
+          "Value": "C12664",
+          "Description": "Abdomen"
+        },
+        {
+          "Value": "C12664 | C12415 | C12666 | C12298 | C12392 | C12414:C12410 | C17649",
+          "Description": "Abdomen | Kidney | Adrenal | Retroperitoneum | Liver | Bladder,Prostate | Other"
+        },
+        {
+          "Value": "C12664 | C12415 | C17649",
+          "Description": "Abdomen | Kidney | Other"
+        },
+        {
+          "Value": "C12664 | C12468",
+          "Description": "Abdomen | Lung"
+        },
+        {
+          "Value": "C12664 | C12745",
+          "Description": "Abdomen | Lymph Nodes"
+        },
+        {
+          "Value": "C12664 | C13063 | C12745 | C12748 | C17649",
+          "Description": "Abdomen | Neck | Lymph Nodes | Mediastinum | Other"
+        },
+        {
+          "Value": "C12664 | C12347",
+          "Description": "Abdomen | Orbit"
+        },
+        {
+          "Value": "C12664 | C12767",
+          "Description": "Abdomen | Pelvis"
+        },
+        {
+          "Value": "C12664 | C12767 | C12415 | C17649",
+          "Description": "Abdomen | Pelvis | Kidney | Other"
+        },
+        {
+          "Value": "C12664 | C12767 | C12745",
+          "Description": "Abdomen | Pelvis | Lymph Nodes"
+        },
+        {
+          "Value": "C12664 | C12767 | C33508 | C176977 | C17649",
+          "Description": "Abdomen | Pelvis | Sacrum | Iliac | Other"
+        },
+        {
+          "Value": "C12664 | C12789",
+          "Description": "Abdomen | Skull"
+        },
+        {
+          "Value": "C77608",
+          "Description": "Abdominal Wall"
+        },
+        {
+          "Value": "C12666",
+          "Description": "Adrenal"
+        },
+        {
+          "Value": "C43362:C37912:C99148",
+          "Description": "Anal and Perianal"
+        },
+        {
+          "Value": "C32078",
+          "Description": "Ankle Joint"
+        },
+        {
+          "Value": "C180372",
+          "Description": "Anterior Skull Base"
+        },
+        {
+          "Value": "C43362",
+          "Description": "Anus"
+        },
+        {
+          "Value": "C12380",
+          "Description": "Appendix"
+        },
+        {
+          "Value": "C12674",
+          "Description": "Axilla"
+        },
+        {
+          "Value": "C94547",
+          "Description": "Basin"
+        },
+        {
+          "Value": "C12414",
+          "Description": "Bladder"
+        },
+        {
+          "Value": "C12414:C12410",
+          "Description": "Bladder,Prostate"
+        },
+        {
+          "Value": "C12366",
+          "Description": "Bone"
+        },
+        {
+          "Value": "C63706",
+          "Description": "Bone Face"
+        },
+        {
+          "Value": "C13068",
+          "Description": "Bone Foot"
+        },
+        {
+          "Value": "C12431",
+          "Description": "Bone Marrow"
+        },
+        {
+          "Value": "C12366:C37998:C12431",
+          "Description": "Bone or Bone Marrow"
+        },
+        {
+          "Value": "C12439",
+          "Description": "Brain"
+        },
+        {
+          "Value": "C12439 | C69313",
+          "Description": "Brain | Cervical Spine"
+        },
+        {
+          "Value": "C12439 | C12767",
+          "Description": "Brain | Pelvis"
+        },
+        {
+          "Value": "C12439 | C12464 | C17649",
+          "Description": "Brain | Spinal Cord | Other"
+        },
+        {
+          "Value": "C12439 | C12998",
+          "Description": "Brain | Spine"
+        },
+        {
+          "Value": "C12439 | C177357 | C177766 | C177764 | C177767 | C177768 | C12398 | C17649",
+          "Description": "Brain | Suprasellar,Neurohypophyseal | Frontal Cortex | Parietal Cortex | Occipital Cortex | Temporal Cortex | Pineal | Other"
+        },
+        {
+          "Value": "C12439 | C13041",
+          "Description": "Brain | Whole Body"
+        },
+        {
+          "Value": "C12439:C32979",
+          "Description": "Brain,Leptomeninges"
+        },
+        {
+          "Value": "C12971",
+          "Description": "Breast"
+        },
+        {
+          "Value": "C12971 | C62484 | C12745",
+          "Description": "Breast | Chest Wall | Lymph Nodes"
+        },
+        {
+          "Value": "C12683",
+          "Description": "Bronchus"
+        },
+        {
+          "Value": "C89806",
+          "Description": "Buttock"
+        },
+        {
+          "Value": "C69313",
+          "Description": "Cervical Spine"
+        },
+        {
+          "Value": "C69313 | C32472",
+          "Description": "Cervical Spine | Dorsal Spine"
+        },
+        {
+          "Value": "C69313 | C69314",
+          "Description": "Cervical Spine | Lumbar Spine"
+        },
+        {
+          "Value": "C12311",
+          "Description": "Cervix"
+        },
+        {
+          "Value": "C13070",
+          "Description": "Cheek"
+        },
+        {
+          "Value": "C25389",
+          "Description": "Chest"
+        },
+        {
+          "Value": "C25389 | C12664",
+          "Description": "Chest | Abdomen"
+        },
+        {
+          "Value": "C25389 | C12415 | C17649",
+          "Description": "Chest | Kidney | Other"
+        },
+        {
+          "Value": "C25389 | C12468",
+          "Description": "Chest | Lung"
+        },
+        {
+          "Value": "C25389 | C25203",
+          "Description": "Chest | Shoulder"
+        },
+        {
+          "Value": "C25389 | C12998",
+          "Description": "Chest | Spine"
+        },
+        {
+          "Value": "C25389 | C12432",
+          "Description": "Chest | Spleen"
+        },
+        {
+          "Value": "C62484",
+          "Description": "Chest Wall"
+        },
+        {
+          "Value": "C62484 | C13063 | C12745 | C12748 | C17649",
+          "Description": "Chest Wall | Neck | Lymph Nodes | Mediastinum | Other"
+        },
+        {
+          "Value": "C12695",
+          "Description": "Clavicle"
+        },
+        {
+          "Value": "C12696",
+          "Description": "Coccyx"
+        },
+        {
+          "Value": "C12382",
+          "Description": "Colon"
+        },
+        {
+          "Value": "C13316",
+          "Description": "Cutaneous"
+        },
+        {
+          "Value": "C179483:C13071",
+          "Description": "Deep Facial Areas"
+        },
+        {
+          "Value": "C106042",
+          "Description": "Distant Lymph Nodes"
+        },
+        {
+          "Value": "C32472",
+          "Description": "Dorsal Spine"
+        },
+        {
+          "Value": "C32472 | C69314",
+          "Description": "Dorsal Spine | Lumbar Spine"
+        },
+        {
+          "Value": "C32472 | C12290",
+          "Description": "Dorsal Spine | Mandible"
+        },
+        {
+          "Value": "C12263",
+          "Description": "Duodenum"
+        },
+        {
+          "Value": "C32497",
+          "Description": "Elbow Joint"
+        },
+        {
+          "Value": "C12328",
+          "Description": "Epididymis"
+        },
+        {
+          "Value": "C12389",
+          "Description": "Esophagus"
+        },
+        {
+          "Value": "C12711",
+          "Description": "Ethmoid"
+        },
+        {
+          "Value": "C12713",
+          "Description": "Eyelid"
+        },
+        {
+          "Value": "C12403",
+          "Description": "Fallopian Tube"
+        },
+        {
+          "Value": "C12403 | C12404",
+          "Description": "Fallopian Tube | Ovary"
+        },
+        {
+          "Value": "C13039",
+          "Description": "Female Reproductive System Part"
+        },
+        {
+          "Value": "C12717",
+          "Description": "Femur"
+        },
+        {
+          "Value": "C12717 | C12731",
+          "Description": "Femur | Humerus"
+        },
+        {
+          "Value": "C12718",
+          "Description": "Fibula"
+        },
+        {
+          "Value": "C32608",
+          "Description": "Finger"
+        },
+        {
+          "Value": "C32622",
+          "Description": "Foot"
+        },
+        {
+          "Value": "C52772",
+          "Description": "Foot Phalanges"
+        },
+        {
+          "Value": "C32628",
+          "Description": "Forearm"
+        },
+        {
+          "Value": "C177766",
+          "Description": "Frontal Cortex"
+        },
+        {
+          "Value": "C12377",
+          "Description": "Gallbladder"
+        },
+        {
+          "Value": "C12377 | C12392:C37912:C12678",
+          "Description": "Gallbladder | Liver and Biliary Tract"
+        },
+        {
+          "Value": "C34082",
+          "Description": "Gastrointestinal Tract"
+        },
+        {
+          "Value": "C12726",
+          "Description": "Groin"
+        },
+        {
+          "Value": "C32712",
+          "Description": "Hand"
+        },
+        {
+          "Value": "C52771",
+          "Description": "Hand Bone"
+        },
+        {
+          "Value": "C32868",
+          "Description": "Hand Phalanges"
+        },
+        {
+          "Value": "C12419",
+          "Description": "Head"
+        },
+        {
+          "Value": "C12419 | C12664",
+          "Description": "Head | Abdomen"
+        },
+        {
+          "Value": "C12419 | C12439",
+          "Description": "Head | Brain"
+        },
+        {
+          "Value": "C12419 | C12789",
+          "Description": "Head | Skull"
+        },
+        {
+          "Value": "C12418",
+          "Description": "Head and Neck"
+        },
+        {
+          "Value": "C12418 | C12347 | C12424:C37912:C12763 | C12423 | C12789 | C17649",
+          "Description": "Head and Neck | Orbit | Nasal Cavity and Paranasal Sinuses | Nasopharynx | Skull | Other"
+        },
+        {
+          "Value": "C12727",
+          "Description": "Heart"
+        },
+        {
+          "Value": "C12727:C37912:C13005",
+          "Description": "Heart and Pericardium"
+        },
+        {
+          "Value": "C64193",
+          "Description": "Hip"
+        },
+        {
+          "Value": "C12731",
+          "Description": "Humerus"
+        },
+        {
+          "Value": "C12246",
+          "Description": "Hypopharynx"
+        },
+        {
+          "Value": "C176977",
+          "Description": "Iliac"
+        },
+        {
+          "Value": "C176977 | C77643",
+          "Description": "Iliac | Paraaortic Lymph Node"
+        },
+        {
+          "Value": "C12982",
+          "Description": "Inferior Limb"
+        },
+        {
+          "Value": "C13352",
+          "Description": "Intraperitoneal"
+        },
+        {
+          "Value": "C105579",
+          "Description": "Intrathoracic"
+        },
+        {
+          "Value": "C12415",
+          "Description": "Kidney"
+        },
+        {
+          "Value": "C12415 | C17649",
+          "Description": "Kidney | Other"
+        },
+        {
+          "Value": "C32898",
+          "Description": "Knee Joint"
+        },
+        {
+          "Value": "C102955",
+          "Description": "Large Vessels"
+        },
+        {
+          "Value": "C12420",
+          "Description": "Larynx"
+        },
+        {
+          "Value": "C12420 | C12246",
+          "Description": "Larynx | Hypopharynx"
+        },
+        {
+          "Value": "C32974",
+          "Description": "Leg"
+        },
+        {
+          "Value": "C12392",
+          "Description": "Liver"
+        },
+        {
+          "Value": "C12392:C37912:C12678",
+          "Description": "Liver and Biliary Tract"
+        },
+        {
+          "Value": "C25309:C32628",
+          "Description": "Lower Arm"
+        },
+        {
+          "Value": "C12742",
+          "Description": "Lower Extremity"
+        },
+        {
+          "Value": "C25309:C32974",
+          "Description": "Lower Leg"
+        },
+        {
+          "Value": "C69314",
+          "Description": "Lumbar Spine"
+        },
+        {
+          "Value": "C69314 | C12767",
+          "Description": "Lumbar Spine | Pelvis"
+        },
+        {
+          "Value": "C12468",
+          "Description": "Lung"
+        },
+        {
+          "Value": "C12468 | C12683",
+          "Description": "Lung | Bronchus"
+        },
+        {
+          "Value": "C12468 | C12415 | C17649",
+          "Description": "Lung | Kidney | Other"
+        },
+        {
+          "Value": "C12745",
+          "Description": "Lymph Nodes"
+        },
+        {
+          "Value": "C12290",
+          "Description": "Mandible"
+        },
+        {
+          "Value": "C26470",
+          "Description": "Maxilla"
+        },
+        {
+          "Value": "C12748",
+          "Description": "Mediastinum"
+        },
+        {
+          "Value": "C12348",
+          "Description": "Meninges"
+        },
+        {
+          "Value": "C12751",
+          "Description": "Metacarpals"
+        },
+        {
+          "Value": "C12752",
+          "Description": "Metatarsals"
+        },
+        {
+          "Value": "C12274",
+          "Description": "Middle Ear"
+        },
+        {
+          "Value": "C12424",
+          "Description": "Nasal Cavity"
+        },
+        {
+          "Value": "C12424:C37912:C12763",
+          "Description": "Nasal Cavity and Paranasal Sinuses"
+        },
+        {
+          "Value": "C33160",
+          "Description": "Nasal Septum"
+        },
+        {
+          "Value": "C12423",
+          "Description": "Nasopharynx"
+        },
+        {
+          "Value": "C13063",
+          "Description": "Neck"
+        },
+        {
+          "Value": "C13063 | C12664",
+          "Description": "Neck | Abdomen"
+        },
+        {
+          "Value": "C13063 | C12745 | C12748 | C17649",
+          "Description": "Neck | Lymph Nodes | Mediastinum | Other"
+        },
+        {
+          "Value": "C13063 | C12745 | C12748 | C12432 | C17649",
+          "Description": "Neck | Lymph Nodes | Mediastinum | Spleen | Other"
+        },
+        {
+          "Value": "C13063 | C12745",
+          "Description": "Neck | Lymph Nodes"
+        },
+        {
+          "Value": "C13063 | C12748",
+          "Description": "Neck | Mediastinum"
+        },
+        {
+          "Value": "C13063 | C17649",
+          "Description": "Neck | Other"
+        },
+        {
+          "Value": "C13063 | C12432",
+          "Description": "Neck | Spleen"
+        },
+        {
+          "Value": "C13063 | C12799 | C12745",
+          "Description": "Neck | Thorax | Lymph Nodes"
+        },
+        {
+          "Value": "C43234",
+          "Description": "Not Reported"
+        },
+        {
+          "Value": "C177767",
+          "Description": "Occipital Cortex"
+        },
+        {
+          "Value": "C12421",
+          "Description": "Oral Cavity"
+        },
+        {
+          "Value": "C12347",
+          "Description": "Orbit"
+        },
+        {
+          "Value": "C12762",
+          "Description": "Oropharynx"
+        },
+        {
+          "Value": "C17649",
+          "Description": "Other"
+        },
+        {
+          "Value": "C12404",
+          "Description": "Ovary"
+        },
+        {
+          "Value": "C12393",
+          "Description": "Pancreas"
+        },
+        {
+          "Value": "C12393 | C12392:C37912:C12678",
+          "Description": "Pancreas | Liver and Biliary Tract"
+        },
+        {
+          "Value": "C77643",
+          "Description": "Paraaortic Lymph Node"
+        },
+        {
+          "Value": "C12763",
+          "Description": "Paranasal Sinuses"
+        },
+        {
+          "Value": "C162818",
+          "Description": "Parapharyngeal Area"
+        },
+        {
+          "Value": "C129461",
+          "Description": "Paraspinal"
+        },
+        {
+          "Value": "C162491",
+          "Description": "Paratesticular"
+        },
+        {
+          "Value": "C177764",
+          "Description": "Parietal Cortex"
+        },
+        {
+          "Value": "C12427",
+          "Description": "Parotid"
+        },
+        {
+          "Value": "C12427 | C12426",
+          "Description": "Parotid | Salivary Gland"
+        },
+        {
+          "Value": "C33282",
+          "Description": "Patella"
+        },
+        {
+          "Value": "C12767",
+          "Description": "Pelvis"
+        },
+        {
+          "Value": "C12767 | C25389",
+          "Description": "Pelvis | Chest"
+        },
+        {
+          "Value": "C12767 | C12742",
+          "Description": "Pelvis | Lower Extremity"
+        },
+        {
+          "Value": "C12767 | C12745",
+          "Description": "Pelvis | Lymph Nodes"
+        },
+        {
+          "Value": "C12767 | C17649",
+          "Description": "Pelvis | Other"
+        },
+        {
+          "Value": "C12767 | C12782",
+          "Description": "Pelvis | Rib"
+        },
+        {
+          "Value": "C12409",
+          "Description": "Penis"
+        },
+        {
+          "Value": "C33301",
+          "Description": "Perineum"
+        },
+        {
+          "Value": "C12770",
+          "Description": "Peritoneum"
+        },
+        {
+          "Value": "C12398",
+          "Description": "Pineal"
+        },
+        {
+          "Value": "C12469",
+          "Description": "Pleura"
+        },
+        {
+          "Value": "C3331",
+          "Description": "Pleural Effusion"
+        },
+        {
+          "Value": "C12410",
+          "Description": "Prostate"
+        },
+        {
+          "Value": "C12777",
+          "Description": "Radius"
+        },
+        {
+          "Value": "C12390",
+          "Description": "Rectum"
+        },
+        {
+          "Value": "C12298",
+          "Description": "Retroperitoneum"
+        },
+        {
+          "Value": "C12782",
+          "Description": "Rib"
+        },
+        {
+          "Value": "C33506",
+          "Description": "Sacrococcygeal"
+        },
+        {
+          "Value": "C33508",
+          "Description": "Sacrum"
+        },
+        {
+          "Value": "C12426",
+          "Description": "Salivary Gland"
+        },
+        {
+          "Value": "C89807",
+          "Description": "Scalp"
+        },
+        {
+          "Value": "C12783",
+          "Description": "Scapula"
+        },
+        {
+          "Value": "C12783 | C12674",
+          "Description": "Scapula | Axilla"
+        },
+        {
+          "Value": "C25203",
+          "Description": "Shoulder"
+        },
+        {
+          "Value": "C33547",
+          "Description": "Shoulder Girdle"
+        },
+        {
+          "Value": "C33548",
+          "Description": "Shoulder Joint"
+        },
+        {
+          "Value": "C12789",
+          "Description": "Skull"
+        },
+        {
+          "Value": "C12789:C37912:C63706",
+          "Description": "Skull and Face Bone"
+        },
+        {
+          "Value": "C12789 | C12717",
+          "Description": "Skull | Femur"
+        },
+        {
+          "Value": "C12386",
+          "Description": "Small Intestine"
+        },
+        {
+          "Value": "C12471",
+          "Description": "Soft Tissue"
+        },
+        {
+          "Value": "C12464",
+          "Description": "Spinal Cord"
+        },
+        {
+          "Value": "C12464 | C69313 | C69314 | C32472 | C17649",
+          "Description": "Spinal Cord | Cervical Spine | Lumbar Spine | Dorsal Spine | Other"
+        },
+        {
+          "Value": "C12998",
+          "Description": "Spine"
+        },
+        {
+          "Value": "C12998 | C12767",
+          "Description": "Spine | Pelvis"
+        },
+        {
+          "Value": "C12432",
+          "Description": "Spleen"
+        },
+        {
+          "Value": "C12432 | C12767",
+          "Description": "Spleen | Pelvis"
+        },
+        {
+          "Value": "C33600:C37998:C12432",
+          "Description": "Splenic Hilar or Spleen"
+        },
+        {
+          "Value": "C12793",
+          "Description": "Sternum"
+        },
+        {
+          "Value": "C12391",
+          "Description": "Stomach"
+        },
+        {
+          "Value": "C33682",
+          "Description": "Superior Maxilla"
+        },
+        {
+          "Value": "C177357",
+          "Description": "Suprasellar,Neurohypophyseal"
+        },
+        {
+          "Value": "C12796",
+          "Description": "Tarsals"
+        },
+        {
+          "Value": "C177768",
+          "Description": "Temporal Cortex"
+        },
+        {
+          "Value": "C12412",
+          "Description": "Testes"
+        },
+        {
+          "Value": "C12412 | C17649",
+          "Description": "Testes | Other"
+        },
+        {
+          "Value": "C12459",
+          "Description": "Thalamus"
+        },
+        {
+          "Value": "C33763",
+          "Description": "Thigh"
+        },
+        {
+          "Value": "C12799",
+          "Description": "Thorax"
+        },
+        {
+          "Value": "C12799 | C12745",
+          "Description": "Thorax | Lymph Nodes"
+        },
+        {
+          "Value": "C12799 | C12748 | C129461 | C12468 | C13063 | C12745 | C17649",
+          "Description": "Thorax | Mediastinum | Paraspinal | Lung | Neck | Lymph Nodes | Other"
+        },
+        {
+          "Value": "C12400",
+          "Description": "Thyroid"
+        },
+        {
+          "Value": "C12800",
+          "Description": "Tibia"
+        },
+        {
+          "Value": "C33788",
+          "Description": "Toe"
+        },
+        {
+          "Value": "C12802",
+          "Description": "Tonsil"
+        },
+        {
+          "Value": "C33816",
+          "Description": "Trunk"
+        },
+        {
+          "Value": "C12809",
+          "Description": "Ulna"
+        },
+        {
+          "Value": "C17998",
+          "Description": "Unknown"
+        },
+        {
+          "Value": "C33839",
+          "Description": "Upper Airway"
+        },
+        {
+          "Value": "C32141",
+          "Description": "Upper Arm"
+        },
+        {
+          "Value": "C12671",
+          "Description": "Upper Extremity"
+        },
+        {
+          "Value": "C12671 | C12742",
+          "Description": "Upper Extremity | Lower Extremity"
+        },
+        {
+          "Value": "C12416",
+          "Description": "Ureter"
+        },
+        {
+          "Value": "C25350",
+          "Description": "Urogenital"
+        },
+        {
+          "Value": "C12405",
+          "Description": "Uterus"
+        },
+        {
+          "Value": "C12405 | C12311",
+          "Description": "Uterus | Cervix"
+        },
+        {
+          "Value": "C12407",
+          "Description": "Vagina"
+        },
+        {
+          "Value": "C28287",
+          "Description": "Viscera"
+        },
+        {
+          "Value": "C12408",
+          "Description": "Vulva"
+        },
+        {
+          "Value": "C13041",
+          "Description": "Whole Body"
+        },
+        {
+          "Value": "C13041 | C17649",
+          "Description": "Whole Body | Other"
+        },
+        {
+          "Value": "C33894",
+          "Description": "Wrist Joint"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            }
+          ],
+          "Description": "Abdomen",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12666"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12298"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12392"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12414:C12410"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Abdomen | Kidney | Adrenal | Retroperitoneum | Liver | Bladder,Prostate | Other",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros. | A flattened, roughly triangular body resting upon the upper end of each kidney; it is one of the ductless glands furnishing internal secretions (epinephrine and norepinephrine from the medulla and steroid hormones from the cortex). | The back of the abdomen where the kidneys lie and the great blood vessels run. | A triangular-shaped organ located under the diaphragm in the right hypochondrium. It is the largest internal organ of the body, weighting up to 2 kg. Metabolism and bile secretion are its main functions. It is composed of cells which have the ability to regenerate. | A distensible musculomembranous organ serving as a receptacle for fluid, as the gallbladder.: A gland in the male reproductive system just below the bladder. It surrounds part of the urethra, the canal that empties the bladder. It produces a fluid that forms part of semen. (NCI-GLOSS) | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Abdomen | Kidney | Other",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12468"
+            }
+          ],
+          "Description": "Abdomen | Lung",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Abdomen | Lymph Nodes",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Abdomen | Neck | Lymph Nodes | Mediastinum | Other",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The region that connects the head to the rest of the body. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection. | A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12347"
+            }
+          ],
+          "Description": "Abdomen | Orbit",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The bony cavity of the skull which contains the eye, anterior portion of the optic nerve, ocular muscles and ocular adnexa. Seven bones contribute to the structure of the orbit: the frontal, maxillary, zygomatic, sphenoid, lacrimal, ethmoid, and palatine bones."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            }
+          ],
+          "Description": "Abdomen | Pelvis",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Abdomen | Pelvis | Kidney | Other",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Abdomen | Pelvis | Lymph Nodes",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33508"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C176977"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Abdomen | Pelvis | Sacrum | Iliac | Other",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | The triangular bone, made up of 5 fused bones of the spine, located in the lower area of the spine between the fifth lumbar vertebra and the coccyx. | An area of the lower abdomen to the left or right of the hypogastric (suprapubic) region, overlying an iliac crest. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12789"
+            }
+          ],
+          "Description": "Abdomen | Skull",
+          "Long Description": "The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen. | The bones that form the head, made up of the bones of the braincase and face."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C77608"
+            }
+          ],
+          "Description": "Abdominal Wall",
+          "Long Description": "The tissues that surround the organs that are present within the abdominal cavity. The abdominal wall tissue is composed of layers of fat, parietal peritoneum, fascia, and muscles."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12666"
+            }
+          ],
+          "Description": "Adrenal",
+          "Long Description": "A flattened, roughly triangular body resting upon the upper end of each kidney; it is one of the ductless glands furnishing internal secretions (epinephrine and norepinephrine from the medulla and steroid hormones from the cortex)."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C43362:C37912:C99148"
+            }
+          ],
+          "Description": "Anal and Perianal",
+          "Long Description": "The lower opening of the digestive tract, lying in the cleft between the buttocks, through which fecal matter is extruded._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._The skin area around the anus."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32078"
+            }
+          ],
+          "Description": "Ankle Joint",
+          "Long Description": "A gliding joint between the distal ends of the tibia and fibula and the proximal end of the talus."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C180372"
+            }
+          ],
+          "Description": "Anterior Skull Base",
+          "Long Description": "The portion of the skull that is formed laterally by the orbital plates of the frontal bone, medially by the cribriform palate and crista galli of the ethmoid bone, and posteriorly by the planum sphenoidale and lesser wings of the sphenoid bone."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C43362"
+            }
+          ],
+          "Description": "Anus",
+          "Long Description": "The lower opening of the digestive tract, lying in the cleft between the buttocks, through which fecal matter is extruded."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12380"
+            }
+          ],
+          "Description": "Appendix",
+          "Long Description": "A small, fingerlike pouch that sticks out from the cecum (the first part of the large intestine near the end of the small intestine)."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12674"
+            }
+          ],
+          "Description": "Axilla",
+          "Long Description": "Axilla; the hollow under the arm where it is joined to the shoulder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C94547"
+            }
+          ],
+          "Description": "Basin",
+
+          "Long Description": "A regional collection of lymph nodes that drains lymph from a specific area of the body."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12414"
+            }
+          ],
+          "Description": "Bladder",
+          "Long Description": "A distensible musculomembranous organ serving as a receptacle for fluid, as the gallbladder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12414:C12410"
+            }
+          ],
+          "Description": "Bladder,Prostate",
+          "Long Description": "A distensible musculomembranous organ serving as a receptacle for fluid, as the gallbladder.: A gland in the male reproductive system just below the bladder. It surrounds part of the urethra, the canal that empties the bladder. It produces a fluid that forms part of semen. (NCI-GLOSS)"
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12366"
+            }
+          ],
+          "Description": "Bone",
+          "Long Description": "Connective tissue that forms the skeletal components of the body."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C63706"
+            }
+          ],
+          "Description": "Bone Face",
+          "Long Description": "Any bone that contributes to the facial structures, except those bones that are part of the braincase."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13068"
+            }
+          ],
+          "Description": "Bone Foot",
+          "Long Description": "The tarsus, metatarsus, and phalanges. (MeSH)"
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12431"
+            }
+          ],
+          "Description": "Bone Marrow",
+          "Long Description": "The soft, sponge-like tissue in the center of bones that produces white blood cells, red blood cells, and platelets."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12366:C37998:C12431"
+            }
+          ],
+          "Description": "Bone or Bone Marrow",
+          "Long Description": "The structural organ comprised of specialized connective tissue that forms the skeletal components of the body._An article used to connect words, phrases, or clauses representing alternatives; used to connect alternative terms for the same thing; used in correlation; used to correct or rephrase what was previously said; otherwise._The tissue occupying the spaces of bone. It consists of blood vessel sinuses and a network of hematopoietic cells which give rise to the red cells, white cells, and megakaryocytes."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            }
+          ],
+          "Description": "Brain",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69313"
+            }
+          ],
+          "Description": "Brain | Cervical Spine",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. | Those vertebrae immediately behind (caudal to) the skull, C1-C7 in man."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            }
+          ],
+          "Description": "Brain | Pelvis",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12464"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Brain | Spinal Cord | Other",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. | The elongated, approximately cylindrical part of the central nervous system of vertebrates that lies in the vertebral canal and from which the spinal nerves emerge. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12998"
+            }
+          ],
+          "Description": "Brain | Spine",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. | A series of bones, muscles, tendons, and other tissues reaching from the base of the skull to the tailbone. The vertebral column forms the axis of the skeleton and encloses as well as protects the spinal cord and the fluid surrounding the spinal cord."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177357"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177766"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177764"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177768"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12398"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Brain | Suprasellar,Neurohypophyseal | Frontal Cortex | Parietal Cortex | Occipital Cortex | Temporal Cortex | Pineal | Other",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. | The anatomical region which includes the sella turcica, pituitary gland, ventral adenohypophysis and dorsal neurohypophysis. | The grey matter, or outermost layer of the frontal lobe. | The outermost layer of the parietal lobe, made up primarily of gray matter. | The grey matter, or outermost layer of the occipital lobe. | The grey matter, or outermost layer of the temporal lobe. | A small endocrine gland in the brain, situated beneath the back part of the corpus callosum, that secretes melatonin. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13041"
+            }
+          ],
+          "Description": "Brain | Whole Body",
+          "Long Description": "That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. | The entire physical structure of an organism. It is composed of anatomic systems, regions, cavities, and spaces."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439:C32979"
+            }
+          ],
+          "Description": "Brain,Leptomeninges",
+          "Long Description": "An organ composed of grey and white matter containing billions of neurons that is the center for intelligence and reasoning. It is protected by the bony cranium._The two innermost layers of tissue that cover the brain and spinal cord, the arachnoid mater and the pia mater."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12971"
+            }
+          ],
+          "Description": "Breast",
+          "Long Description": "One of two hemispheric projections of variable size situated in the subcutaneous layer over the pectoralis major muscle on either side of the chest."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12971"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C62484"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Breast | Chest Wall | Lymph Nodes",
+          "Long Description": "One of two hemispheric projections of variable size situated in the subcutaneous layer over the pectoralis major muscle on either side of the chest. | The total system of structures outside the lungs that move as a part of breathing; it includes all structures from the skin to the parietal pleura. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12683"
+            }
+          ],
+          "Description": "Bronchus",
+          "Long Description": "Tubular structure in continuation with the trachea, serving as air passage. It terminates in the lung (terminal bronchiole)."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C89806"
+            }
+          ],
+          "Description": "Buttock",
+          "Long Description": "Either of the fleshy mounds in the rear pelvic area of the human body formed by the gluteal muscles."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69313"
+            }
+          ],
+          "Description": "Cervical Spine",
+          "Long Description": "Those vertebrae immediately behind (caudal to) the skull, C1-C7 in man."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69313"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32472"
+            }
+          ],
+          "Description": "Cervical Spine | Dorsal Spine",
+          "Long Description": "Those vertebrae immediately behind (caudal to) the skull, C1-C7 in man. | A spinal curve that originates at the middle of the second thoracic vertebra and terminates at the middle of the last thoracic vertebra."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69313"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69314"
+            }
+          ],
+          "Description": "Cervical Spine | Lumbar Spine",
+          "Long Description": "Those vertebrae immediately behind (caudal to) the skull, C1-C7 in man. | Those vertebrae between the ribs and the pelvis, L1-L5 in man."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12311"
+            }
+          ],
+          "Description": "Cervix",
+          "Long Description": "The lower part of the uterus occupying the region between the isthmus of the uterus and the vagina. It is divided into supravaginal and vaginal portions."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13070"
+            }
+          ],
+          "Description": "Cheek",
+          "Long Description": "The fleshy part of the face bounded by the eyes, nose, ear, and jaw line."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            }
+          ],
+          "Description": "Chest",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            }
+          ],
+          "Description": "Chest | Abdomen",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates. | The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Chest | Kidney | Other",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates. | One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12468"
+            }
+          ],
+          "Description": "Chest | Lung",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates. | One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25203"
+            }
+          ],
+          "Description": "Chest | Shoulder",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates. | The region of the body between the neck and the upper arm."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12998"
+            }
+          ],
+          "Description": "Chest | Spine",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates. | A series of bones, muscles, tendons, and other tissues reaching from the base of the skull to the tailbone. The vertebral column forms the axis of the skeleton and encloses as well as protects the spinal cord and the fluid surrounding the spinal cord."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12432"
+            }
+          ],
+          "Description": "Chest | Spleen",
+          "Long Description": "The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates. | An organ that is part of the lymphatic system. The spleen produces lymphocytes, filters the blood, stores blood cells, and destroys old blood cells. It is located on the left side of the abdomen near the stomach."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C62484"
+            }
+          ],
+          "Description": "Chest Wall",
+          "Long Description": "The total system of structures outside the lungs that move as a part of breathing; it includes all structures from the skin to the parietal pleura."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C62484"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Chest Wall | Neck | Lymph Nodes | Mediastinum | Other",
+          "Long Description": "The total system of structures outside the lungs that move as a part of breathing; it includes all structures from the skin to the parietal pleura. | The region that connects the head to the rest of the body. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection. | A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12695"
+            }
+          ],
+          "Description": "Clavicle",
+          "Long Description": "A bone of the upper extremity that articulates with the acromion process of the scapula on one end and the sternum on the other."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12696"
+            }
+          ],
+          "Description": "Coccyx",
+          "Long Description": "The last portion of the vertebral column just below the sacrum consisting of 3-5 rudimentary vertebrae."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12382"
+            }
+          ],
+          "Description": "Colon",
+          "Long Description": "The part of the large intestine measured from the cecum to the rectum consisting of ascending, transverse, descending and sigmoid portions. The purpose of the colon is to remove water from digested food prior to excretion."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13316"
+            }
+          ],
+          "Description": "Cutaneous",
+          "Long Description": "(kyoo-TAY-nee-us) Having to do with the skin."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C179483:C13071"
+            }
+          ],
+          "Description": "Deep Facial Areas",
+          "Long Description": "Terminology created by EVS and PCDC to support the OS Radiation Therapy Table._The anterior portion of the head extending from the forehead to the chin and ear to ear. The facial structures contain the eyes, nose and mouth, cheeks and jaws."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C106042"
+            }
+          ],
+          "Description": "Distant Lymph Nodes",
+          "Long Description": "A lymph node located distant to the anatomic site of interest."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32472"
+            }
+          ],
+          "Description": "Dorsal Spine",
+          "Long Description": "A spinal curve that originates at the middle of the second thoracic vertebra and terminates at the middle of the last thoracic vertebra."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32472"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69314"
+            }
+          ],
+          "Description": "Dorsal Spine | Lumbar Spine",
+          "Long Description": "A spinal curve that originates at the middle of the second thoracic vertebra and terminates at the middle of the last thoracic vertebra. | Those vertebrae between the ribs and the pelvis, L1-L5 in man."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32472"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12290"
+            }
+          ],
+          "Description": "Dorsal Spine | Mandible",
+          "Long Description": "A spinal curve that originates at the middle of the second thoracic vertebra and terminates at the middle of the last thoracic vertebra. | The lower jaw bone holding the lower teeth."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12263"
+            }
+          ],
+          "Description": "Duodenum",
+          "Long Description": "A jointed tube 25-30 cm long that connects the stomach to the jejunum."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32497"
+            }
+          ],
+          "Description": "Elbow Joint",
+          "Long Description": "A type of hinge joint located between the forearm and upper arm."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12328"
+            }
+          ],
+          "Description": "Epididymis",
+          "Long Description": "A crescent-like structure located in the upper and posterior surfaces of the testis. It consists of the efferent ductules and the duct of the epididymis. It facilitates the maturation of sperm that is produced in the testis."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12389"
+            }
+          ],
+          "Description": "Esophagus",
+          "Long Description": "The portion of the digestive canal between the pharynx and stomach. It is about 25 cm long and consists of three parts: the cervical part, from the cricoid cartilage to the thoracic inlet; thoracic part, from thoracic inlet to the diaphragm; and abdominal part, below the diaphragm to the cardiac opening of the stomach."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12711"
+            }
+          ],
+          "Description": "Ethmoid",
+          "Long Description": "A light and spongy bone that is cubical in shape. This bone is positioned at the anterior part of the cranium, sitting between the two orbits, at the roof of the nose. It consists of four parts: a horizontal or cribriform plate; a perpendicular plate; and two lateral masses or labyrinths."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12713"
+            }
+          ],
+          "Description": "Eyelid",
+          "Long Description": "A thin membrane of skin with the purpose of covering and protecting an eye."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12403"
+            }
+          ],
+          "Description": "Fallopian Tube",
+          "Long Description": "One of a pair of tubes that extend from the uterus to each of the ovaries. Following ovulation the egg travels down the fallopian tube to the uterus where fertilization may or may not occur."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12403"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12404"
+            }
+          ],
+          "Description": "Fallopian Tube | Ovary",
+          "Long Description": "One of a pair of tubes that extend from the uterus to each of the ovaries. Following ovulation the egg travels down the fallopian tube to the uterus where fertilization may or may not occur. | One of the paired female reproductive glands containing the ova or germ cells; the ovary's stroma is a vascular connective tissue containing numbers of ovarian follicles enclosing the ova."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13039"
+            }
+          ],
+          "Description": "Female Reproductive System Part",
+          "Long Description": "Any component of the female organs and tissues involved in the production and maturation of gametes and in their union and subsequent development as offspring."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12717"
+            }
+          ],
+          "Description": "Femur",
+          "Long Description": "The longest and largest bone of the skeleton, it is situated between the hip and the knee."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12717"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12731"
+            }
+          ],
+          "Description": "Femur | Humerus",
+          "Long Description": "The longest and largest bone of the skeleton, it is situated between the hip and the knee. | The upper arm bone between the shoulder and elbow."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12718"
+            }
+          ],
+          "Description": "Fibula",
+          "Long Description": "The bone of the lower leg lateral to and smaller than the tibia. In proportion to its length, it is the most slender of the long bones."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32608"
+            }
+          ],
+          "Description": "Finger",
+          "Long Description": "Any of the digits of the hand."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32622"
+            }
+          ],
+          "Description": "Foot",
+          "Long Description": "The structure found below the ankle joint."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C52772"
+            }
+          ],
+          "Description": "Foot Phalanges",
+          "Long Description": "A bone of the foot."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32628"
+            }
+          ],
+          "Description": "Forearm",
+          "Long Description": "The structure on the upper limb, between the elbow and the wrist."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177766"
+            }
+          ],
+          "Description": "Frontal Cortex",
+          "Long Description": "The grey matter, or outermost layer of the frontal lobe."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12377"
+            }
+          ],
+          "Description": "Gallbladder",
+          "Long Description": "A pear-shaped organ just below the liver that stores the bile secreted by the liver, delivering the bile through the bile ducts into the intestines to help with digestion."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12377"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12392:C37912:C12678"
+            }
+          ],
+          "Description": "Gallbladder | Liver and Biliary Tract",
+          "Long Description": "A pear-shaped organ just below the liver that stores the bile secreted by the liver, delivering the bile through the bile ducts into the intestines to help with digestion. | A triangular-shaped organ located under the diaphragm in the right hypochondrium. It is the largest internal organ of the body, weighting up to 2 kg. Metabolism and bile secretion are its main functions. It is composed of cells which have the ability to regenerate._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._The system that transports bile from the hepatocytes in the liver to the small intestine. It is comprised of the intrahepatic bile ducts, hepatic ducts, common bile duct, cystic duct, and the gallbladder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C34082"
+            }
+          ],
+          "Description": "Gastrointestinal Tract",
+          "Long Description": "The upper gastrointestinal (GI) tract is comprised of mouth, pharynx, esophagus and stomach while the lower GI tract consists of intestines and anus. The primary function of the GI tract is to ingest, digest, absorb and ultimately excrete food stuff."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12726"
+            }
+          ],
+          "Description": "Groin",
+          "Long Description": "The lower region of the anterior abdominal wall located laterally to the pubic region."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32712"
+            }
+          ],
+          "Description": "Hand",
+          "Long Description": "The distal portion of the upper extremity. It consists of the carpus, metacarpus, and digits."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C52771"
+            }
+          ],
+          "Description": "Hand Bone",
+          "Long Description": "A bone of the hand."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32868"
+            }
+          ],
+          "Description": "Hand Phalanges",
+          "Long Description": "The hinge synovial joints between the phalanges of the fingers."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12419"
+            }
+          ],
+          "Description": "Head",
+          "Long Description": "The anterior and superior part of a human bearing the mouth, the brain and sensory organs."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12419"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            }
+          ],
+          "Description": "Head | Abdomen",
+          "Long Description": "The anterior and superior part of a human bearing the mouth, the brain and sensory organs. | The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12419"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12439"
+            }
+          ],
+          "Description": "Head | Brain",
+          "Long Description": "The anterior and superior part of a human bearing the mouth, the brain and sensory organs. | That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12419"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12789"
+            }
+          ],
+          "Description": "Head | Skull",
+          "Long Description": "The anterior and superior part of a human bearing the mouth, the brain and sensory organs. | The bones that form the head, made up of the bones of the braincase and face."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12418"
+            }
+          ],
+          "Description": "Head and Neck",
+          "Long Description": "For oncology, an area of the body generally construed to comprise the base of skull and facial bones, sinuses, orbits, salivary glands, oral cavity, oropharynx, larynx, thyroid, facial and neck musculature and lymph nodes draining these areas."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12418"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12347"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12424:C37912:C12763"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12423"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12789"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Head and Neck | Orbit | Nasal Cavity and Paranasal Sinuses | Nasopharynx | Skull | Other",
+          "Long Description": "For oncology, an area of the body generally construed to comprise the base of skull and facial bones, sinuses, orbits, salivary glands, oral cavity, oropharynx, larynx, thyroid, facial and neck musculature and lymph nodes draining these areas. | The bony cavity of the skull which contains the eye, anterior portion of the optic nerve, ocular muscles and ocular adnexa. Seven bones contribute to the structure of the orbit: the frontal, maxillary, zygomatic, sphenoid, lacrimal, ethmoid, and palatine bones. | The proximal portion of the respiratory passages on either side of the nasal septum lying between the floor of the cranium and the roof of the mouth and extending from the face to the pharynx. The nasal cavity is lined with ciliated mucosa, extending from the nares to the pharynx._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._Any one of the air-filled spaces within the ethmoid, frontal, maxillary, or sphenoid bones, which communicate with the nasal cavity. | The part of the pharynx in the back of the throat, at and above the soft palate. The nasopharynx is continuous with the nasal passages. | The bones that form the head, made up of the bones of the braincase and face. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12727"
+            }
+          ],
+          "Description": "Heart",
+          "Long Description": "A hollow muscular organ which receives the blood from the veins and propels it into the arteries. It is divided by a musculomembranous septum into two halves -- right or venous and left or arterial -- each of which consists of a receiving chamber (atrium) and an ejecting chamber (ventricle). SYN cor, coeur."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12727:C37912:C13005"
+            }
+          ],
+          "Description": "Heart and Pericardium",
+          "Long Description": "A hollow organ located slightly to the left of the middle portion of the chest. It is composed of muscle and it is divided by a septum into two sides: the right side which receives de-oxygenated blood from the body and the left side which sends newly oxygenated blood to the body. Each side is composed of two chambers: the atrium (receiving blood) and ventricle (ejecting blood)._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._A conical membranous sac filled with serous fluid in which the heart as well as the roots of the aorta and other large blood vessels are contained."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C64193"
+            }
+          ],
+          "Description": "Hip",
+          "Long Description": "The lateral prominence of the pelvis from the waist to the thigh."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12731"
+            }
+          ],
+          "Description": "Humerus",
+          "Long Description": "The upper arm bone between the shoulder and elbow."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12246"
+            }
+          ],
+          "Description": "Hypopharynx",
+          "Long Description": "The lower part of the pharynx that connects to the esophagus."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C176977"
+            }
+          ],
+          "Description": "Iliac",
+          "Long Description": "An area of the lower abdomen to the left or right of the hypogastric (suprapubic) region, overlying an iliac crest."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C176977"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C77643"
+            }
+          ],
+          "Description": "Iliac | Paraaortic Lymph Node",
+          "Long Description": "An area of the lower abdomen to the left or right of the hypogastric (suprapubic) region, overlying an iliac crest. | A lymph node located adjacent to the lumbar region of the spine."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12982"
+            }
+          ],
+          "Description": "Inferior Limb",
+          "Long Description": "A bone of the leg (lower extremity)."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13352"
+            }
+          ],
+          "Description": "Intraperitoneal",
+          "Long Description": "(IN-tra-per-ih-toe-NEE-al) IP. Within the peritoneal cavity (the area that contains the abdominal organs)."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C105579"
+            }
+          ],
+          "Description": "Intrathoracic",
+          "Long Description": "Within the thoracic cavity."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            }
+          ],
+          "Description": "Kidney",
+          "Long Description": "One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Kidney | Other",
+          "Long Description": "One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32898"
+            }
+          ],
+          "Description": "Knee Joint",
+          "Long Description": "A joint connecting the lower part of the femur with the upper part of the tibia. The lower part of the femur and the upper part of the tibia are attached to each other by ligaments. Other structures of the knee joint include the upper part of the fibula, located below and parallel to the tibia, and the patella which moves as the knee bends."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C102955"
+            }
+          ],
+          "Description": "Large Vessels",
+          "Long Description": "Any of the major arteries or veins attached to the cardiac atria or ventricles. This includes the aorta, superior and inferior vena cava and the pulmonary arteries and veins."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12420"
+            }
+          ],
+          "Description": "Larynx",
+          "Long Description": "The cartilaginous structure of the respiratory tract between the pharynx and the trachea. It contains elastic vocal cords required for sound production."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12420"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12246"
+            }
+          ],
+          "Description": "Larynx | Hypopharynx",
+          "Long Description": "The cartilaginous structure of the respiratory tract between the pharynx and the trachea. It contains elastic vocal cords required for sound production. | The lower part of the pharynx that connects to the esophagus."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32974"
+            }
+          ],
+          "Description": "Leg",
+          "Long Description": "One of the two lower extremities in humans used for locomotion and support."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12392"
+            }
+          ],
+          "Description": "Liver",
+          "Long Description": "A triangular-shaped organ located under the diaphragm in the right hypochondrium. It is the largest internal organ of the body, weighting up to 2 kg. Metabolism and bile secretion are its main functions. It is composed of cells which have the ability to regenerate."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12392:C37912:C12678"
+            }
+          ],
+          "Description": "Liver and Biliary Tract",
+          "Long Description": "A triangular-shaped organ located under the diaphragm in the right hypochondrium. It is the largest internal organ of the body, weighting up to 2 kg. Metabolism and bile secretion are its main functions. It is composed of cells which have the ability to regenerate._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._The system that transports bile from the hepatocytes in the liver to the small intestine. It is comprised of the intrahepatic bile ducts, hepatic ducts, common bile duct, cystic duct, and the gallbladder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25309:C32628"
+            }
+          ],
+          "Description": "Lower Arm",
+          "Long Description": "The bottom one of two._The structure on the upper limb, between the elbow and the wrist."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12742"
+            }
+          ],
+          "Description": "Lower Extremity",
+          "Long Description": "The limb that is composed of the hip, thigh, leg and foot."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25309:C32974"
+            }
+          ],
+          "Description": "Lower Leg",
+          "Long Description": "Lower; the bottom one of two.: Commonly used to refer to the whole lower limb but technically only the part between the knee and ankle."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69314"
+            }
+          ],
+          "Description": "Lumbar Spine",
+          "Long Description": "Those vertebrae between the ribs and the pelvis, L1-L5 in man."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69314"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            }
+          ],
+          "Description": "Lumbar Spine | Pelvis",
+          "Long Description": "Those vertebrae between the ribs and the pelvis, L1-L5 in man. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12468"
+            }
+          ],
+          "Description": "Lung",
+          "Long Description": "One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12468"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12683"
+            }
+          ],
+          "Description": "Lung | Bronchus",
+          "Long Description": "One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border. | Tubular structure in continuation with the trachea, serving as air passage. It terminates in the lung (terminal bronchiole)."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12468"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12415"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Lung | Kidney | Other",
+          "Long Description": "One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border. | One of the two organs that excrete the urine. The kidneys are bean-shaped organs (about 11 cm long, 5 cm wide, and 3 cm thick) lying on either side of the vertebral column, posterior to the peritoneum, about opposite the twelfth thoracic and first three lumbar vertebrae. SYN ren, nephros. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Lymph Nodes",
+          "Long Description": "A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12290"
+            }
+          ],
+          "Description": "Mandible",
+          "Long Description": "The lower jaw bone holding the lower teeth."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C26470"
+            }
+          ],
+          "Description": "Maxilla",
+          "Long Description": "The upper jawbone in vertebrates: it is fused to the cranium."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            }
+          ],
+          "Description": "Mediastinum",
+          "Long Description": "A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12348"
+            }
+          ],
+          "Description": "Meninges",
+          "Long Description": "Any one of three membranes that surround the brain and spinal cord."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12751"
+            }
+          ],
+          "Description": "Metacarpals",
+          "Long Description": "Any of the five bones between the wrist and the fingers that form the skeleton of the palm."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12752"
+            }
+          ],
+          "Description": "Metatarsals",
+          "Long Description": "A bone belonging to the middle part of the foot located between toes and ankle. There are 5 metatarsal bones and they are numbered from the medial side."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12274"
+            }
+          ],
+          "Description": "Middle Ear",
+          "Long Description": "The part of the ear including the eardrum and ossicles. The middle ear leads to the inner ear."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12424"
+            }
+          ],
+          "Description": "Nasal Cavity",
+          "Long Description": "The proximal portion of the respiratory passages on either side of the nasal septum lying between the floor of the cranium and the roof of the mouth and extending from the face to the pharynx. The nasal cavity is lined with ciliated mucosa, extending from the nares to the pharynx."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12424:C37912:C12763"
+            }
+          ],
+          "Description": "Nasal Cavity and Paranasal Sinuses",
+          "Long Description": "The proximal portion of the respiratory passages on either side of the nasal septum lying between the floor of the cranium and the roof of the mouth and extending from the face to the pharynx. The nasal cavity is lined with ciliated mucosa, extending from the nares to the pharynx._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._Any one of the air-filled spaces within the ethmoid, frontal, maxillary, or sphenoid bones, which communicate with the nasal cavity."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33160"
+            }
+          ],
+          "Description": "Nasal Septum",
+          "Long Description": "The thin wall between the two nasal cavities."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12423"
+            }
+          ],
+          "Description": "Nasopharynx",
+          "Long Description": "The part of the pharynx in the back of the throat, at and above the soft palate. The nasopharynx is continuous with the nasal passages."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            }
+          ],
+          "Description": "Neck",
+          "Long Description": "The region that connects the head to the rest of the body."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12664"
+            }
+          ],
+          "Description": "Neck | Abdomen",
+          "Long Description": "The region that connects the head to the rest of the body. | The cavity located between the lungs and pelvis. It contains the lower esophagus, stomach, pancreas, intestines, liver, gallbladder and spleen."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Neck | Lymph Nodes | Mediastinum | Other",
+          "Long Description": "The region that connects the head to the rest of the body. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection. | A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12432"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Neck | Lymph Nodes | Mediastinum | Spleen | Other",
+          "Long Description": "The region that connects the head to the rest of the body. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection. | A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues. | An organ that is part of the lymphatic system. The spleen produces lymphocytes, filters the blood, stores blood cells, and destroys old blood cells. It is located on the left side of the abdomen near the stomach. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Neck | Lymph Nodes",
+          "Long Description": "The region that connects the head to the rest of the body. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            }
+          ],
+          "Description": "Neck | Mediastinum",
+          "Long Description": "The region that connects the head to the rest of the body. | A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Neck | Other",
+          "Long Description": "The region that connects the head to the rest of the body. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12432"
+            }
+          ],
+          "Description": "Neck | Spleen",
+          "Long Description": "The region that connects the head to the rest of the body. | An organ that is part of the lymphatic system. The spleen produces lymphocytes, filters the blood, stores blood cells, and destroys old blood cells. It is located on the left side of the abdomen near the stomach."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12799"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Neck | Thorax | Lymph Nodes",
+          "Long Description": "The region that connects the head to the rest of the body. | The division of the body lying between the neck and the abdomen. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C43234"
+            }
+          ],
+          "Description": "Not Reported",
+          "Long Description": "Not provided or available."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177767"
+            }
+          ],
+          "Description": "Occipital Cortex",
+          "Long Description": "The grey matter, or outermost layer of the occipital lobe."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12421"
+            }
+          ],
+          "Description": "Oral Cavity",
+          "Long Description": "The cavity located at the upper end of the alimentary canal, behind the teeth and gums that is bounded on the outside by the lips, above by the hard and soft palates and below by the tongue."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12347"
+            }
+          ],
+          "Description": "Orbit",
+          "Long Description": "The bony cavity of the skull which contains the eye, anterior portion of the optic nerve, ocular muscles and ocular adnexa. Seven bones contribute to the structure of the orbit: the frontal, maxillary, zygomatic, sphenoid, lacrimal, ethmoid, and palatine bones."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12762"
+            }
+          ],
+          "Description": "Oropharynx",
+          "Long Description": "The part of the pharynx between the soft palate and the upper portion of the epiglottis."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Other",
+          "Long Description": "Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12404"
+            }
+          ],
+          "Description": "Ovary",
+          "Long Description": "One of the paired female reproductive glands containing the ova or germ cells; the ovary's stroma is a vascular connective tissue containing numbers of ovarian follicles enclosing the ova."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12393"
+            }
+          ],
+          "Description": "Pancreas",
+          "Long Description": "An organ behind the lower part of the stomach that is the shape of a fish and about the size of a hand. It is a compound gland composed of both exocrine and endocrine tissues. The endocrine pancreas makes insulin so that the body can use glucose (sugar) for energy. The exocrine pancreas makes enzymes that help the body digest food. Spread all over the pancreas are areas called the Islets of Langerhans. The cells in these areas each have a special purpose. The alpha cells make glucagon, which raises the level of glucose in the blood; the beta cells make insulin; the delta cells make somatostatin. There are also PP cells and D1 cells, about which little is known."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12393"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12392:C37912:C12678"
+            }
+          ],
+          "Description": "Pancreas | Liver and Biliary Tract",
+          "Long Description": "An organ behind the lower part of the stomach that is the shape of a fish and about the size of a hand. It is a compound gland composed of both exocrine and endocrine tissues. The endocrine pancreas makes insulin so that the body can use glucose (sugar) for energy. The exocrine pancreas makes enzymes that help the body digest food. Spread all over the pancreas are areas called the Islets of Langerhans. The cells in these areas each have a special purpose. The alpha cells make glucagon, which raises the level of glucose in the blood; the beta cells make insulin; the delta cells make somatostatin. There are also PP cells and D1 cells, about which little is known. | A triangular-shaped organ located under the diaphragm in the right hypochondrium. It is the largest internal organ of the body, weighting up to 2 kg. Metabolism and bile secretion are its main functions. It is composed of cells which have the ability to regenerate._An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence._The system that transports bile from the hepatocytes in the liver to the small intestine. It is comprised of the intrahepatic bile ducts, hepatic ducts, common bile duct, cystic duct, and the gallbladder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C77643"
+            }
+          ],
+          "Description": "Paraaortic Lymph Node",
+          "Long Description": "A lymph node located adjacent to the lumbar region of the spine."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12763"
+            }
+          ],
+          "Description": "Paranasal Sinuses",
+          "Long Description": "Any one of the air-filled spaces within the ethmoid, frontal, maxillary, or sphenoid bones, which communicate with the nasal cavity."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C162818"
+            }
+          ],
+          "Description": "Parapharyngeal Area",
+          "Long Description": "A cone-shaped lateral neck space with its base on the base of the skull and its apex at the hyoid bone."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C129461"
+            }
+          ],
+          "Description": "Paraspinal",
+          "Long Description": "Pertaining to muscles and,or tissue adjacent to the spinal column."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C162491"
+            }
+          ],
+          "Description": "Paratesticular",
+          "Long Description": "A small anatomical compartment that contains the testicular collecting system, and mesothelial and mesenchymal components that represent extensions of the abdominal cavity and retroperitoneum."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177764"
+            }
+          ],
+          "Description": "Parietal Cortex",
+          "Long Description": "The outermost layer of the parietal lobe, made up primarily of gray matter."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12427"
+            }
+          ],
+          "Description": "Parotid",
+          "Long Description": "The largest of the three paired salivary glands, located in front of the ear."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12427"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12426"
+            }
+          ],
+          "Description": "Parotid | Salivary Gland",
+          "Long Description": "The largest of the three paired salivary glands, located in front of the ear. | An exocrine gland that secretes saliva. Salivary glands are mostly located in and around the oral cavity."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33282"
+            }
+          ],
+          "Description": "Patella",
+          "Long Description": "A small flat triangular bone in front of the knee that articulates with the femur and protects the knee joint."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            }
+          ],
+          "Description": "Pelvis",
+          "Long Description": "The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25389"
+            }
+          ],
+          "Description": "Pelvis | Chest",
+          "Long Description": "The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | The part of the human body between the neck and the diaphragm or the corresponding part in other vertebrates."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12742"
+            }
+          ],
+          "Description": "Pelvis | Lower Extremity",
+          "Long Description": "The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | The limb that is composed of the hip, thigh, leg and foot."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Pelvis | Lymph Nodes",
+          "Long Description": "The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Pelvis | Other",
+          "Long Description": "The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12782"
+            }
+          ],
+          "Description": "Pelvis | Rib",
+          "Long Description": "The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans. | Any one of the paired bones, 12 on either side, extending from the thoracic vertebrae toward the median line on the ventral aspect of the trunk. The long curved bones which form the rib cage. Generally, ribs 1 to 7 are connected to the sternum' by their costal cartilages and are called true ribs, whereas ribs 8 to 12 are termed false ribs."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12409"
+            }
+          ],
+          "Description": "Penis",
+          "Long Description": "The male organ of urination and copulation."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33301"
+            }
+          ],
+          "Description": "Perineum",
+          "Long Description": "The area located between the anus and vulva in females, and anus and scrotum in males."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12770"
+            }
+          ],
+          "Description": "Peritoneum",
+          "Long Description": "The tissue that lines the wall of the abdominal cavity, intestine, and mesentery. It consists of the parietal peritoneum that covers the inside of the abdominal wall and the visceral peritoneum that covers the surface of the intestine and mesentery."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12398"
+            }
+          ],
+          "Description": "Pineal",
+          "Long Description": "A small endocrine gland in the brain, situated beneath the back part of the corpus callosum, that secretes melatonin."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12469"
+            }
+          ],
+          "Description": "Pleura",
+          "Long Description": "The tissue that lines the wall of the thoracic cavity and the surface of the lungs."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C3331"
+            }
+          ],
+          "Description": "Pleural Effusion",
+          "Long Description": "Increased amounts of fluid within the pleural cavity. Symptoms include shortness of breath, cough, and chest pain. It is usually caused by lung infections, congestive heart failure, pleural and lung tumors, connective tissue disorders, and trauma."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12410"
+            }
+          ],
+          "Description": "Prostate",
+          "Long Description": "The walnut shaped accessory sex gland of the male reproductive system. It is located in the pelvis just below the bladder, surrounding the prostatic part of the urethra. The prostate gland secretes a fluid which is part of the semen."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12777"
+            }
+          ],
+          "Description": "Radius",
+          "Long Description": "The long bone of the forearm that extends from the lateral aspect of the elbow to the thumb-side of the wrist."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12390"
+            }
+          ],
+          "Description": "Rectum",
+          "Long Description": "The terminal portion of the gastrointestinal tract, extending from the rectosigmoid junction to the anal canal."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12298"
+            }
+          ],
+          "Description": "Retroperitoneum",
+          "Long Description": "The back of the abdomen where the kidneys lie and the great blood vessels run."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12782"
+            }
+          ],
+          "Description": "Rib",
+          "Long Description": "Any one of the paired bones, 12 on either side, extending from the thoracic vertebrae toward the median line on the ventral aspect of the trunk. The long curved bones which form the rib cage. Generally, ribs 1 to 7 are connected to the sternum' by their costal cartilages and are called true ribs, whereas ribs 8 to 12 are termed false ribs."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33506"
+            }
+          ],
+          "Description": "Sacrococcygeal",
+          "Long Description": "The amphiarthrodial joint between the sacrum and coccyx."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33508"
+            }
+          ],
+          "Description": "Sacrum",
+          "Long Description": "The triangular bone, made up of 5 fused bones of the spine, located in the lower area of the spine between the fifth lumbar vertebra and the coccyx."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12426"
+            }
+          ],
+          "Description": "Salivary Gland",
+          "Long Description": "An exocrine gland that secretes saliva. Salivary glands are mostly located in and around the oral cavity."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C89807"
+            }
+          ],
+          "Description": "Scalp",
+          "Long Description": "The skin which covers the top of the head and which is usually covered by hair."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12783"
+            }
+          ],
+          "Description": "Scapula",
+          "Long Description": "The flat triangle-shaped bone that connects the humerus with the clavicle in the back of the shoulder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12783"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12674"
+            }
+          ],
+          "Description": "Scapula | Axilla",
+          "Long Description": "The flat triangle-shaped bone that connects the humerus with the clavicle in the back of the shoulder. | Axilla; the hollow under the arm where it is joined to the shoulder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25203"
+            }
+          ],
+          "Description": "Shoulder",
+          "Long Description": "The region of the body between the neck and the upper arm."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33547"
+            }
+          ],
+          "Description": "Shoulder Girdle",
+          "Long Description": "The bony arch formed by the collarbones and shoulder blades."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33548"
+            }
+          ],
+          "Description": "Shoulder Joint",
+          "Long Description": "A ball-and-socket joint at the upper end of the humerus, located at the junction of humerus and scapula."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12789"
+            }
+          ],
+          "Description": "Skull",
+          "Long Description": "The bones that form the head, made up of the bones of the braincase and face."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12789:C37912:C63706"
+            }
+          ],
+          "Description": "Skull and Face Bone",
+          "Long Description": "The bones that form the head, made up of the bones of the braincase and face.: An article which expresses the relation of connection or addition. It is used to conjoin a word with a word, a clause with a clause, or a sentence with a sentence.: Any bone that contributes to the facial structures, except those bones that are part of the braincase."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12789"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12717"
+            }
+          ],
+          "Description": "Skull | Femur",
+          "Long Description": "The bones that form the head, made up of the bones of the braincase and face. | The longest and largest bone of the skeleton, it is situated between the hip and the knee."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12386"
+            }
+          ],
+          "Description": "Small Intestine",
+          "Long Description": "The section of the intestines between the pylorus and cecum. The small intestine is approximately 20 feet long and consists of the duodenum, the jejunum, and the ileum. Its main function is to absorb nutrients from food as the food is transported to the large intestine."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12471"
+            }
+          ],
+          "Description": "Soft Tissue",
+          "Long Description": "Refers to muscle, fat, fibrous tissue, blood vessels, or other supporting tissue of the body."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12464"
+            }
+          ],
+          "Description": "Spinal Cord",
+          "Long Description": "The elongated, approximately cylindrical part of the central nervous system of vertebrates that lies in the vertebral canal and from which the spinal nerves emerge."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12464"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69313"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C69314"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32472"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Spinal Cord | Cervical Spine | Lumbar Spine | Dorsal Spine | Other",
+          "Long Description": "The elongated, approximately cylindrical part of the central nervous system of vertebrates that lies in the vertebral canal and from which the spinal nerves emerge. | Those vertebrae immediately behind (caudal to) the skull, C1-C7 in man. | Those vertebrae between the ribs and the pelvis, L1-L5 in man. | A spinal curve that originates at the middle of the second thoracic vertebra and terminates at the middle of the last thoracic vertebra. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12998"
+            }
+          ],
+          "Description": "Spine",
+          "Long Description": "A series of bones, muscles, tendons, and other tissues reaching from the base of the skull to the tailbone. The vertebral column forms the axis of the skeleton and encloses as well as protects the spinal cord and the fluid surrounding the spinal cord."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12998"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            }
+          ],
+          "Description": "Spine | Pelvis",
+          "Long Description": "A series of bones, muscles, tendons, and other tissues reaching from the base of the skull to the tailbone. The vertebral column forms the axis of the skeleton and encloses as well as protects the spinal cord and the fluid surrounding the spinal cord. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12432"
+            }
+          ],
+          "Description": "Spleen",
+          "Long Description": "An organ that is part of the lymphatic system. The spleen produces lymphocytes, filters the blood, stores blood cells, and destroys old blood cells. It is located on the left side of the abdomen near the stomach."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12432"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12767"
+            }
+          ],
+          "Description": "Spleen | Pelvis",
+          "Long Description": "An organ that is part of the lymphatic system. The spleen produces lymphocytes, filters the blood, stores blood cells, and destroys old blood cells. It is located on the left side of the abdomen near the stomach. | The bony, basin-shaped structure formed by the hipbones and the base of the backbone supporting the lower limbs in humans."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33600:C37998:C12432"
+            }
+          ],
+          "Description": "Splenic Hilar or Spleen",
+          "Long Description": "A lymph node located in the hilar region of the spleen._An article used to connect words, phrases, or clauses representing alternatives; used to connect alternative terms for the same thing; used in correlation; used to correct or rephrase what was previously said; otherwise._An organ that is part of the hematopoietic and immune systems. It is composed of the white pulp and the red pulp and is surrounded by a capsule. It is located in the left hypochondriac region. Its functions include lymphocyte production, blood cell storage, and blood cell destruction."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12793"
+            }
+          ],
+          "Description": "Sternum",
+          "Long Description": "The long, flat bone connecting with the cartilages of the first seven ribs and the clavicle."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12391"
+            }
+          ],
+          "Description": "Stomach",
+          "Long Description": "An organ located under the diaphragm, between the liver and the spleen as well as between the esophagus and the small intestine. The stomach is the primary organ of food digestion."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33682"
+            }
+          ],
+          "Description": "Superior Maxilla",
+          "Long Description": "The facial bone that forms the mediala floor of the orbit."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177357"
+            }
+          ],
+          "Description": "Suprasellar,Neurohypophyseal",
+          "Long Description": "The anatomical region which includes the sella turcica, pituitary gland, ventral adenohypophysis and dorsal neurohypophysis."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12796"
+            }
+          ],
+          "Description": "Tarsals",
+          "Long Description": "Any one of the seven bones forming the instep of the foot. (NCI)"
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C177768"
+            }
+          ],
+          "Description": "Temporal Cortex",
+          "Long Description": "The grey matter, or outermost layer of the temporal lobe."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12412"
+            }
+          ],
+          "Description": "Testes",
+          "Long Description": "Either of the paired male reproductive glands that produce the male germ cells and the male hormones."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12412"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Testes | Other",
+          "Long Description": "Either of the paired male reproductive glands that produce the male germ cells and the male hormones. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12459"
+            }
+          ],
+          "Description": "Thalamus",
+          "Long Description": "(THAL-a-muss) An area of the brain that helps process information from the senses and transmit it to other parts of the brain."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33763"
+            }
+          ],
+          "Description": "Thigh",
+          "Long Description": "A part of the lower limb, located between hip and knee."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12799"
+            }
+          ],
+          "Description": "Thorax",
+          "Long Description": "The division of the body lying between the neck and the abdomen."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12799"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            }
+          ],
+          "Description": "Thorax | Lymph Nodes",
+          "Long Description": "The division of the body lying between the neck and the abdomen. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12799"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12748"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C129461"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12468"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13063"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12745"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Thorax | Mediastinum | Paraspinal | Lung | Neck | Lymph Nodes | Other",
+          "Long Description": "The division of the body lying between the neck and the abdomen. | A group of organs surrounded by loose connective tissue, separating the two pleural sacs, between the sternum anteriorly and the vertebral column posteriorly as well as from the thoracic inlet superiorly to the diaphragm inferiorly. The mediastinum contains the heart and pericardium, the bases of the great vessels, the trachea and bronchi, esophagus, thymus, lymph nodes, thoracic duct, phrenic and vagus nerves, and other structures and tissues. | Pertaining to muscles and,or tissue adjacent to the spinal column. | One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border. | The region that connects the head to the rest of the body. | A bean-shaped organ surrounded by a connective tissue capsule. It is part of the lymphatic system and is found throughout the body. It is composed predominantly of lymphocytes and its main function is immune protection. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12400"
+            }
+          ],
+          "Description": "Thyroid",
+          "Long Description": "An endocrine gland located at the base of the neck that produces and secretes thyroxine and other hormones. Thyroxine is important for metabolic control."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12800"
+            }
+          ],
+          "Description": "Tibia",
+          "Long Description": "The second longest bone of the skeleton. It is located on the medial side of the lower leg, articulating with the FIBULA laterally, the TALUS distally, and the FEMUR proximally."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33788"
+            }
+          ],
+          "Description": "Toe",
+          "Long Description": "One of the terminal digits of the foot."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12802"
+            }
+          ],
+          "Description": "Tonsil",
+          "Long Description": "The two organs situated in the throat on either side of the narrow passage from the mouth to the pharynx. They are composed of lymphoid tissues."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33816"
+            }
+          ],
+          "Description": "Trunk",
+          "Long Description": "The body excluding the head and neck and limbs."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12809"
+            }
+          ],
+          "Description": "Ulna",
+          "Long Description": "One of the bones that comprise the forearm. The largest aspect articulates with the humerus at the elbow joint and the smallest portion of the ulna articulates with the carpal bones in the wrist."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17998"
+            }
+          ],
+          "Description": "Unknown",
+          "Long Description": "Not known, not observed, not recorded, or refused."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33839"
+            }
+          ],
+          "Description": "Upper Airway",
+          "Long Description": "The sinuses and those parts of the respiratory system above the trachea. It includes the nares, nasopharynx, oropharynx, larynx, vocal cords, glottis and upper trachea."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C32141"
+            }
+          ],
+          "Description": "Upper Arm",
+          "Long Description": "The portion of the upper extremity between the shoulder and the elbow. For clinical purposes this term is also used to refer to the whole superior limb."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12671"
+            }
+          ],
+          "Description": "Upper Extremity",
+          "Long Description": "The region of the body that includes the arm, the forearm, and hand."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12671"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12742"
+            }
+          ],
+          "Description": "Upper Extremity | Lower Extremity",
+          "Long Description": "The region of the body that includes the arm, the forearm, and hand. | The limb that is composed of the hip, thigh, leg and foot."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12416"
+            }
+          ],
+          "Description": "Ureter",
+          "Long Description": "(yoo-REE-ter) The tube that carries urine from the kidney to the bladder."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C25350"
+            }
+          ],
+          "Description": "Urogenital",
+          "Long Description": "Of or related to the genital and urinary organs or their functions."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12405"
+            }
+          ],
+          "Description": "Uterus",
+          "Long Description": "A hollow, thick-walled, muscular organ located within the pelvic cavity of a woman. Within the uterus the fertilized egg implants and the fetus develops during pregnancy."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12405"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12311"
+            }
+          ],
+          "Description": "Uterus | Cervix",
+          "Long Description": "A hollow, thick-walled, muscular organ located within the pelvic cavity of a woman. Within the uterus the fertilized egg implants and the fetus develops during pregnancy. | The lower part of the uterus occupying the region between the isthmus of the uterus and the vagina. It is divided into supravaginal and vaginal portions."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12407"
+            }
+          ],
+          "Description": "Vagina",
+          "Long Description": "The female genital canal, extending from the uterus to the vulva."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C28287"
+            }
+          ],
+          "Description": "Viscera",
+          "Long Description": "The soft internal organs of the body, including the lungs, the heart, and the organs of the digestive, excretory, and reproductive systems."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C12408"
+            }
+          ],
+          "Description": "Vulva",
+          "Long Description": "The external female genital organs, including the clitoris, vaginal lips, and the opening to the vagina."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13041"
+            }
+          ],
+          "Description": "Whole Body",
+          "Long Description": "The entire physical structure of an organism. It is composed of anatomic systems, regions, cavities, and spaces."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C13041"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Whole Body | Other",
+          "Long Description": "The entire physical structure of an organism. It is composed of anatomic systems, regions, cavities, and spaces. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C33894"
+            }
+          ],
+          "Description": "Wrist Joint",
+          "Long Description": "A joint between the distal end of the radius and the proximal row of carpal bones."
+        }
+      ]
+    },
+    {
+      "Item_Name": "Untransformed Radiation Anatomic Site",
+      "Column_Name_at_Source": "untransformed_anatomic_site",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "string"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false,
+      "Item_Description": "Anatomic site or region that radiation is delivered to, in format of original submission. <p>Data describing radiation anatomic site were provided from multiple sources using various semantic encodings. This field corresponds to the originally submitted data and is used to create the harmonized variables found in field Radiation Anatomic Site. For more details, see Transformation Description for Radiation Anatomic Site.",
+      "Permissible_Value_Details": []
+    },
+    {
+      "Item_Name": "Radiation Therapy Type",
+      "Info": [
+        {
+          "label": "Transformation Description",
+          "Value": "These data were provided from multiple sources using various semantic encodings. To harmonize the submitted data, a common data element (CDE) from the NCI's Cancer Data Standards Registry and Repository (caDSR II) with permissible values in alignment with submitted values was selected and validated by a team of clinical oncology experts. Radiation Therapy Type was harmonized to the CDE with Public ID 14956043. Submitted values corresponding to the harmonized data in this field can be found in the Untransformed Radiation Therapy Type field. <p>For submitted values that map to more than one permissible value found in the chosen CDE, Radiation Therapy Type will contain multiple concept codes separated by pipes (e.g., C##### | C#####). <p>Submitted values that represent a radiation therapy type but do not map to a permissible value found in the chosen CDE are mapped to C17649 (Other). Submitted values that contain text that does not represent a radiation therapy type are mapped to C17998 (Unknown). When submitted values for the Untransformed Radiation Therapy Type field are empty, this field is mapped to C43234 (Not Reported). <p>In some cases, information about radiation therapy type and energy type were submitted in just one field. In these cases, Untransformed Radiation Therapy Type will appear identical to Untransformed Radiation Energy Type, and Radiation Therapy Type will contain any radiation therapy type information that could be harmonized to that CDE."
+        },
+        {
+          "Type": "link",
+          "label": "caDSR CDE Public ID",
+          "Url": "caDSR",
+          "Value": "14956043"
+        }
+      ],
+      "Column_Name_at_Source": "radiation_therapy_type",
+      "Item_Section": "",
+      "Variable Delimiter": ":",
+      "NCI Thesaurus base url": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "lookup_value"
+      },
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Item_Description": "The type of treatment by means of exposure of the target or the whole body to radiation. This field contains harmonized values mapped from the originally submitted data found in field Untransformed Radiation Therapy Type. <p>Permissible values for this field include one or more NCIt concept codes in format C##### or C######. Missing values are mapped to C43234 (Not Reported). <p>For more details about mappings for this field, see Transformation Description. <p>For more details about specific NCIt concept codes, see Description or Long Description.",
+      "caDSR CDE Public ID Hyperlink": "https://cadsr.cancer.gov/onedata/dmdirect/NIH/NCI/CO/CDEDD?filter=CDEDD.ITEM_ID=14956043%20and%20ver_nr=1",
+      "caDSR CDE Public ID": "14956043",
+      "Permissible_Values": [
+        {
+          "Value": "C15195",
+          "Description": "Brachytherapy"
+        },
+        {
+          "Value": "C16035",
+          "Description": "EBRT, 3D Conformal"
+        },
+        {
+          "Value": "C16035 | C17649",
+          "Description": "EBRT, 3D Conformal | Other"
+        },
+        {
+          "Value": "C16135",
+          "Description": "EBRT, Intensity Modulated"
+        },
+        {
+          "Value": "C16135 | C17649",
+          "Description": "EBRT, Intensity Modulated | Other"
+        },
+        {
+          "Value": "C15751",
+          "Description": "EBRT, NOS"
+        },
+        {
+          "Value": "C15751 | C17649",
+          "Description": "EBRT, NOS | Other"
+        },
+        {
+          "Value": "C15358",
+          "Description": "EBRT, Stereotactic radiosurgery"
+        },
+        {
+          "Value": "C43234",
+          "Description": "Not Reported"
+        },
+        {
+          "Value": "C17649",
+          "Description": "Other"
+        },
+        {
+          "Value": "C17998",
+          "Description": "Unknown"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C15195"
+            }
+          ],
+          "Description": "Brachytherapy",
+          "Long Description": "A type of radiation therapy in which radioactive material sealed in needles, seeds, wires, or catheters is placed directly into or near a tumor."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C16035"
+            }
+          ],
+          "Description": "EBRT, 3D Conformal",
+          "Long Description": "A process by which a dose of radiation is automatically shaped to closely conform to the entire volume of the tumor, so that surrounding normal tissue is spared and treatment toxicity is decreased."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C16035"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "EBRT, 3D Conformal | Other",
+          "Long Description": "A process by which a dose of radiation is automatically shaped to closely conform to the entire volume of the tumor, so that surrounding normal tissue is spared and treatment toxicity is decreased. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C16135"
+            }
+          ],
+          "Description": "EBRT, Intensity Modulated",
+          "Long Description": "An advanced form of 3-Dimensional Conformal Radiation Therapy"
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C16135"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "EBRT, Intensity Modulated | Other",
+          "Long Description": "An advanced form of 3-Dimensional Conformal Radiation Therapy. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C15751"
+            }
+          ],
+          "Description": "EBRT, NOS",
+          "Long Description": "Radiation therapy in which high-energy beams are delivered to the tumor from outside of the body."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C15751"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "EBRT, NOS | Other",
+          "Long Description": "Radiation therapy in which high-energy beams are delivered to the tumor from outside of the body. | Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C15358"
+            }
+          ],
+          "Description": "EBRT, Stereotactic radiosurgery",
+          "Long Description": "A type of external radiation therapy that uses special equipment to position the patient and precisely give a single large dose of radiation to a tumor. It is used to treat brain tumors and other brain disorders that cannot be treated by regular surgery. It is also being studied in the treatment of other types of cancer."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C43234"
+            }
+          ],
+          "Description": "Not Reported",
+          "Long Description": "Not provided or available."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Other",
+          "Long Description": "Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17998"
+            }
+          ],
+          "Description": "Unknown",
+          "Long Description": "Not known, observed, recorded; or reported as unknown by the data contributor."
+        }
+      ]
+    },
+    {
+      "Item_Name": "Untransformed Radiation Therapy Type",
+      "Column_Name_at_Source": "untransformed_rad_therapy_type",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "string"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false,
+      "Item_Description": "The type of treatment by means of exposure of the target or the whole body to radiation, in format of original submission. <p>Data describing radiation therapy type were provided from multiple sources using various semantic encodings. This field corresponds to the originally submitted data and is used to create the harmonized variables found in field Radiation Therapy Type. For more details, see Transformation Description for Radiation Therapy Type. <p>Untransformed Radiation Therapy Type may contain information about radiation therapy type, radiation energy type, or both. We recommend viewing both untransformed fields for additional information.",
+      "Permissible_Value_Details": []
+    },
+    {
+      "Item_Name": "Radiation Energy Type",
+      "Info": [
+        {
+          "label": "Transformation Description",
+          "Value": "These data were provided from multiple sources using various semantic encodings. To harmonize the submitted data, a common data element (CDE) from the NCI's Cancer Data Standards Registry and Repository (caDSR II) with permissible values in alignment with submitted values was selected and validated by a team of clinical oncology experts. Radiation Energy Type was harmonized to the CDE with Public ID 13382467. Submitted values corresponding to the harmonized data in this field can be found in the Untransformed Radiation Energy Type field. <p>For submitted values that map to more than one permissible value found in the chosen CDE, Radiation Energy Type will contain multiple concept codes separated by pipes (e.g., C##### | C#####). <p>Submitted values that represent a radiation energy type but do not map to a permissible value found in the chosen CDE are mapped to C17649 (Other). Submitted values that contain text that does not represent a radiation energy type are mapped to C17998 (Unknown). When submitted values for the Untransformed Radiation Energy Type field are empty, this field is mapped to C43234 (Not Reported). <p>In some cases, information about radiation therapy type and energy type were submitted in just one field. In these cases, Untransformed Radiation Therapy Type will appear identical to Untransformed Radiation Energy Type, and Radiation Energy Type will contain any radiation energy type information that could be harmonized to that CDE."
+        },
+        {
+          "Type": "link",
+          "label": "caDSR CDE Public ID",
+          "Url": "caDSR",
+          "Value": "13382467"
+        }
+      ],
+      "Item_Section": "",
+      "Column_Name_at_Source": "radiation_energy_type",
+      "Variable Delimiter": ":",
+      "NCI Thesaurus base url": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "lookup_value"
+      },
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Item_Description": "The type of radiation therapy used as treatment of a disease by means of exposure of the target or the whole body to radiation. This field contains harmonized values mapped from the originally submitted values found in field Untransformed Radiation Energy Type. <p>Permissible values for this field include one or more NCIt concept codes in format C##### or C######. Missing values are mapped to C43234 (Not Reported). <p>For more details about mappings for this field, see Transformation Description. <p>For more details about specific NCIt concept codes, see Description or Long Description.",
+      "caDSR CDE Public ID Hyperlink": "https://cadsr.cancer.gov/onedata/dmdirect/NIH/NCI/CO/CDEDD?filter=CDEDD.ITEM_ID=13382467%20and%20ver_nr=1",
+      "caDSR CDE Public ID": "13382467",
+      "Permissible_Values": [
+        {
+          "Value": "C15650",
+          "Description": "Electron"
+        },
+        {
+          "Value": "C15650 | C66897",
+          "Description": "Electron | Proton"
+        },
+        {
+          "Value": "C43234",
+          "Description": "Not Reported"
+        },
+        {
+          "Value": "C17649",
+          "Description": "Other"
+        },
+        {
+          "Value": "C104914",
+          "Description": "Photon"
+        },
+        {
+          "Value": "C66897",
+          "Description": "Proton"
+        },
+        {
+          "Value": "C17998",
+          "Description": "Unknown"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C15650"
+            }
+          ],
+          "Description": "Electron",
+          "Long Description": "Radiation therapy using electron beam"
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C15650"
+            },
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C66897"
+            }
+          ],
+          "Description": "Electron | Proton",
+          "Long Description": "Radiation therapy using electron beam. | A type of external beam radiation therapy using a beam of protons. It has the advantage of precisely localizing the radiation dose on the targeted tissue and avoiding damage to the healthy surrounding tissues"
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C43234"
+            }
+          ],
+          "Description": "Not Reported",
+          "Long Description": "Not provided or available."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17649"
+            }
+          ],
+          "Description": "Other",
+          "Long Description": "Different than the one(s) previously specified or mentioned."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C104914"
+            }
+          ],
+          "Description": "Photon",
+          "Long Description": "Radiation therapy using photon beam."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C66897"
+            }
+          ],
+          "Description": "Proton",
+          "Long Description": "A type of external beam radiation therapy using a beam of protons. It has the advantage of precisely localizing the radiation dose on the targeted tissue and avoiding damage to the healthy surrounding tissues."
+        },
+        {
+          "NCI Thesaurus Code": [
+            {
+              "Type": "link",
+              "Url": "nci_thesaurus",
+              "Value": "C17998"
+            }
+          ],
+          "Description": "Unknown",
+          "Long Description": "Not known, not observed, not recorded, or refused."
+        }
+      ]
+    },
+    {
+      "Item_Name": "Untransformed Radiation Energy Type",
+      "Column_Name_at_Source": "untransformed_rad_energy_type",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "string"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false,
+      "Item_Description": "The type of radiation therapy used as treatment of a disease by means of exposure of the target or the whole body to radiation, in format of original submission. <p>Data describing radiation energy type were provided from multiple sources using various semantic encodings. This field corresponds to the originally submitted data and is used to create the harmonized variables found in field Radiation Energy Type. For more details, see Transformation Description for Radiation Energy Type. <p>Untransformed Radiation Energy Type may contain information about radiation energy type, radiation therapy type, or both. We recommend viewing both untransformed fields for additional information.",
+      "Permissible_Value_Details": []
+    },
+    {
+      "Item_Name": "Radiation Dose Delivered",
+      "Column_Name_at_Source": "radiation_dose_delivered",
+      "Units": "Gy",
+      "Item_Description": "Total radiation dose delivered for this radiation record. Doses were submitted as both grays and centigrays, but were converted to grays at a ratio of 100 centigrays:1 gray. ",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "float"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Binned_Column": {
+        "Bins": [
+          {
+            "Max": 0.0,
+            "Label": "No Doses"
+          },
+          {
+            "Min": 0.0,
+            "Max": 10.0
+          },
+          {
+            "Min": 10.0,
+            "Max": 20.0
+          },
+          {
+            "Min": 20.0,
+            "Max": 30.0
+          },
+          {
+            "Min": 30.0,
+            "Max": 40.0
+          },
+          {
+            "Min": 40.0,
+            "Max": 50.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 60.0,
+            "Max": 70.0
+          },
+          {
+            "Min": 70.0,
+            "Max": 80.0
+          },
+          {
+            "Min": 80.0,
+            "Max": 90.0
+          },
+          {
+            "Min": 90.0,
+            "Max": 100.0
+          },
+          {
+            "Min": 100.0,
+            "Label": "> 100.0"
+          }
+        ]
+      },
+      "Permissible_Values": [
+        {
+          "Value": "0-1000",
+          "Description": "Exact grays"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "0-1000",
+          "Description": "Exact grays"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ]
+    },
+    {
+      "Item_Name": "Radiation Fractions Delivered",
+      "Column_Name_at_Source": "radiation_fractions_delivered",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "float"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Binned_Column": {
+        "Bins": [
+          {
+            "Max": 0.0,
+            "Label": "No Doses"
+          },
+          {
+            "Min": 0.0,
+            "Max": 10.0
+          },
+          {
+            "Min": 10.0,
+            "Max": 20.0
+          },
+          {
+            "Min": 20.0,
+            "Max": 30.0
+          },
+          {
+            "Min": 30.0,
+            "Max": 40.0
+          },
+          {
+            "Min": 40.0,
+            "Max": 50.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 60.0,
+            "Max": 70.0
+          },
+          {
+            "Min": 70.0,
+            "Max": 80.0
+          },
+          {
+            "Min": 80.0,
+            "Max": 90.0
+          },
+          {
+            "Min": 90.0,
+            "Max": 100.0
+          },
+          {
+            "Min": 100.0,
+            "Label": "> 100.0"
+          }
+        ]
+      },
+      "Units": "fractions",
+      "Item_Description": "Total number of fractions or divided doses that were delivered to the patient for this radiation record.",
+      "Permissible_Values": [
+        {
+          "Value": "0-600",
+          "Description": "Total fractions"
+        },
+        {
+          "Value": "999",
+          "Description": "Missing"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "0-600",
+          "Description": "Total fractions"
+        },
+        {
+          "Value": "999",
+          "Description": "Missing"
+        }
+      ]
+    },
+    {
+      "Item_Name": "Radiation Dose Prescribed",
+      "Column_Name_at_Source": "radiation_dose_prescribed",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "float"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Binned_Column": {
+        "Bins": [
+          {
+            "Max": 0.0,
+            "Label": "No Doses"
+          },
+          {
+            "Min": 0.0,
+            "Max": 10.0
+          },
+          {
+            "Min": 10.0,
+            "Max": 20.0
+          },
+          {
+            "Min": 20.0,
+            "Max": 30.0
+          },
+          {
+            "Min": 30.0,
+            "Max": 40.0
+          },
+          {
+            "Min": 40.0,
+            "Max": 50.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 60.0,
+            "Max": 70.0
+          },
+          {
+            "Min": 70.0,
+            "Max": 80.0
+          },
+          {
+            "Min": 80.0,
+            "Max": 90.0
+          },
+          {
+            "Min": 90.0,
+            "Max": 100.0
+          },
+          {
+            "Min": 100.0,
+            "Label": "> 100.0"
+          }
+        ]
+      },
+      "Units": "Gy",
+      "Item_Description": "Total radiation dose prescribed for this radiation record. Doses were submitted as both grays and centigrays, but were converted to grays at a ratio of 100 centigrays:1 gray.",
+      "Permissible_Values": [
+        {
+          "Value": "0-100",
+          "Description": "Exact grays"
+        },
+        {
+          "Value": "999",
+          "Description": "Missing"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "0-100",
+          "Description": "Exact grays"
+        },
+        {
+          "Value": "999",
+          "Description": "Missing"
+        }
+      ]
+    },
+    {
+      "Item_Name": "Radiation Fractions Prescribed",
+      "Column_Name_at_Source": "radiation_fractions_prescribed",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "float"
+      },
+      "Info": [],
+      "Item_Section": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Binned_Column": {
+        "Bins": [
+          {
+            "Max": 0.0,
+            "Label": "No Doses"
+          },
+          {
+            "Min": 0.0,
+            "Max": 10.0
+          },
+          {
+            "Min": 10.0,
+            "Max": 20.0
+          },
+          {
+            "Min": 20.0,
+            "Max": 30.0
+          },
+          {
+            "Min": 30.0,
+            "Max": 40.0
+          },
+          {
+            "Min": 40.0,
+            "Max": 50.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 50.0,
+            "Max": 60.0
+          },
+          {
+            "Min": 60.0,
+            "Max": 70.0
+          },
+          {
+            "Min": 70.0,
+            "Max": 80.0
+          },
+          {
+            "Min": 80.0,
+            "Max": 90.0
+          },
+          {
+            "Min": 90.0,
+            "Max": 100.0
+          },
+          {
+            "Min": 100.0,
+            "Label": "> 100.0"
+          }
+        ]
+      },
+      "Units": "fractions",
+      "Item_Description": "Total number of fractions or divided doses that were prescribed to the patient for this radiation record.",
+      "Permissible_Values": [
+        {
+          "Value": "0-50",
+          "Description": "Total fractions"
+        },
+        {
+          "Value": "99",
+          "Description": "Missing"
+        }
+      ],
+      "Permissible_Value_Details": [
+        {
+          "Value": "0-50",
+          "Description": "Total fractions"
+        },
+        {
+          "Value": "99",
+          "Description": "Missing"
+        }
+      ]
+    }
+  ]
+}

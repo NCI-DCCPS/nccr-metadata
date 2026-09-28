@@ -1,0 +1,466 @@
+{
+  "Dictionary_Elements": [
+    {
+      "Column_Name_at_Source": "nccrId",
+      "Column_DataType_at_Source": {
+        "Field_Length": "64",
+        "Semantic_Type": "string",
+        "Abbreviated_Source_Vocabulary": "SEER Recode"
+      },
+      "Item_Name": "NCCR Persistent Identifier",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "NCCR Persistent Identifier for the Data Platform",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": false
+    },
+    {
+      "Column_Name_at_Source": "medicationRequestNdc9",
+      "Column_DataType_at_Source": {
+        "Field_Length": "9",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "9-digit National Drug Code (NDC)",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The 9-digit National Drug Code (NDC) is a unique number in two segments, denoting the labeler code (manufacturer, re-packager, or distributor) and product code (including strength, dosage form, and formulation), respectively.<p> Code NONE=Pharmacy Claim Stated None and UNK=Pharmacy Claim Stated Unknown",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "medicationRequestNdc11",
+      "Column_DataType_at_Source": {
+        "Field_Length": "11",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "11-digit National Drug Code (NDC)",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The 11-digit National Drug Code is a unique number in three segments, denoting the labeler code (manufacturer, re-packager, or distributor), product code (including strength, dosage form, and formulation), and package code (identifying package sizes and types), respectively. <p> Code NONE=Pharmacy Claim Stated None and UNK=Pharmacy Claim Stated Unknown",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "canmedNonProprietaryName",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "CanMED Non-proprietary Name",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Generic name given by the FDA upon drug approval for identification irrespective of branding or proprietary naming as reported by CanMED. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim. Names separated by semicolons. <p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields",
+      "Item_Section": "",
+      "Rationale": "",
+	  "Processed_Data_Substitutions": [
+        {
+          "Value": "7-No CanMED Data Available",
+          "Substitution": "Not found in CanMED; see RxNorm fields"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Limit": "100"
+    },
+    {
+      "Column_Name_at_Source": "canmedProprietaryName",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "CanMED Proprietary Name",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Brand name assigned to a drug by the pharmaceutical company for marketing and identification as reported by CanMED. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim.<p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "canmedDrugCategory",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "lookup_value"
+      },
+      "Item_Name": "CanMED Drug Category",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The CanMED Drug Category is extracted from CanMED\u0092s SEER Rx category and classifies the drug into one of five groups: Hormone, Chemotherapy, Ancillary, Immunotherapy, or Radiopharmaceutical. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim. <p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "CHEMOTHERAPY, HORMONAL THERAPY",
+          "Description": "CHEMOTHERAPY, HORMONAL THERAPY"
+        },
+        {
+          "Value": "IMMUNOTHERAPY, RADIOPHARMACEUTICAL",
+          "Description": "IMMUNOTHERAPY, RADIOPHARMACEUTICAL"
+        },
+        {
+          "Value": "ANCILLARY THERAPY",
+          "Description": "ANCILLARY THERAPY"
+        },
+        {
+          "Value": "CHEMOTHERAPY",
+          "Description": "CHEMOTHERAPY"
+        },
+        {
+          "Value": "HORMONAL THERAPY",
+          "Description": "HORMONAL THERAPY"
+        },
+        {
+          "Value": "IMMUNOTHERAPY",
+          "Description": "IMMUNOTHERAPY"
+        },
+        {
+          "Value": "RADIOPHARMACEUTICAL",
+          "Description": "RADIOPHARMACEUTICAL"
+        },
+        {
+          "Value": "7-No CanMED Data Available",
+          "Description": "Not found in CanMED: see RxNorm fields"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "canmedMajorDrugClass",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "CanMED Major Drug Class",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The CanMED Major Drug Class denotes the general mechanism of action or group name. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim.<p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+        {
+          "Value": "7-No CanMED Data Available",
+          "Substitution": "Not found in CanMED; see RxNorm fields"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "canmedMinorDrugClass",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "CanMED Minor Drug Class",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The CanMED Minor Drug Class denotes the overall group that a particular drug is associated with, typically indicating the drug's mechanism of action or broad treatment indication. CanMED fields do not come directly from the claim; these fields provide information in CanMED that maps to the NDC provided in the claim.<p> Code 7-No CanMED Data Available = Not found in CanMED; see RxNorm fields and 9-Missing = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+        {
+          "Value": "7-No CanMED Data Available",
+          "Substitution": "Not found in CanMED; see RxNorm fields"
+        },
+        {
+          "Value": "9-Missing",
+          "Substitution": "Missing"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "medicationDispenseQuantity",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "float"
+      },
+      "Item_Name": "Medication Dispense Quantity",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The amount of medication that has been dispensed for each prescription. Note that this variable includes all values received from the data provider. We expect that researchers will use their own discretion when determining if any values should be excluded from analysis. <p> Code 9999999=Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Binned_Column": {
+        "Bins": [
+          {
+            "Max": 7.0,
+            "Label": "<7"
+          },
+          {
+            "Min": 7.0,
+            "Max": 14.0,
+            "Label": "7-<14"
+          },
+          {
+            "Min": 14.0,
+            "Max": 21.0,
+            "Label": "14-<21"
+          },
+          {
+            "Min": 21.0,
+            "Max": 30.0,
+            "Label": "21-<30"
+          },
+          {
+            "Min": 30.0,
+            "Max": 60.0,
+            "Label": "30-<60"
+          },
+          {
+            "Min": 60.0,
+            "Max": 90.0,
+            "Label": "60-<90"
+          },
+          {
+            "Min": 90.0,
+            "Max": 120.0,
+            "Label": "90-<120"
+          },
+          {
+            "Min": 120.0,
+            "Max": 180.0,
+            "Label": "120-<180"
+          },
+          {
+            "Min": 180.0,
+            "Max": 270.0,
+            "Label": "180-<270"
+          },
+          {
+            "Min": 270.0,
+            "Label": ">=270"
+          }
+        ]
+      }
+    },
+    {
+      "Column_Name_at_Source": "medicationDispenseDuration",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-4",
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Medication Dispense Duration",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Identifies the number of days over which the supplied product is expected to be used, or the length of time the dispense is expected to last. Note that this variable includes all values received from the data provider. We expect that researchers will use their own discretion when determining if any values should be excluded from analysis.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "-999-999",
+          "Description": "-999-999 days"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "monthsFromIndexDxtoDispense",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-4",
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Months From Index Cancer to Dispense Date",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The difference in time from a patient\u0092s index cancer date to the first documented dispense date for each drug the patient receives.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "-999-999",
+          "Description": "-999-999 days"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Month_Range_Column": "default"
+    },
+    {
+      "Column_Name_at_Source": "rxnormRxcui",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "RxNorm RXCUI",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "A unique identifier (RXCUI) for each concept or meaning in RxNorm. RxNorm fields do not come directly from the claim; these fields provide information in RxNorm that maps to the 11-digit NDC provided in the claim. The goal of RxNorm vocabulary construction is to understand the intended meaning of each drug name in each source vocabulary and to link all the names from all of the source vocabularies that mean the same thing (the synonyms) to a single RxNorm concept.<p> The clinical drugs that RXCUIs refer to can be one of the following term types:<br>\u00b7 Semantic Clinical Drug (SCD) e.g. azithromycin 250 MG Oral Capsule.<br>\u00b7 Semantic Branded Drug (SBD) e.g. azithromycin 250 MG Oral Capsule [Zithromax].<br>\u00b7 Generic Pack (GPCK) e.g. {6 (azithromycin 250 MG Oral Tablet) } Pack<br>\u00b7 Branded Pack (BPCK) e.g. {6 (azithromycin 250 MG Oral Tablet [Zithromax]) } Pack [Z-PAKS].<p>Populated using RxNorm API: https://www.nlm.nih.gov/research/umls/rxnorm/index.html.<br>Code 7777777 = Not sought in RxNorm because available in CanMED; see CanMED fields and 9999999 = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+          {
+            "Value": "7777777",
+            "Substitution": "Not sought in RxNorm because available in CanMED; see CanMED fields"
+          },
+          {
+            "Value": "9999999",
+            "Substitution": "Missing"
+          }
+        ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "rxnormConceptName",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "RxNorm Concept Name",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "A concept is a fundamental unit of meaning in RxNorm, tied to a unique identifier (RXCUI). RxNorm fields do not come directly from the claim; these fields provide information in RxNorm that maps to the 11-digit NDC provided in the claim. The Concept Name consists of the ingredient, strength, and dose form (in that order) for fully-specified generic drugs. The branded version of a drug uses the same format but includes the brand name in brackets at the end. <p>Populated using RxNorm API: https://www.nlm.nih.gov/research/umls/rxnorm/index.html. <p> Code 7-Not Sought in RxNorm = Not sought in RxNorm because available in CanMED; see CanMED fields and 9-Missing = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+          {
+            "Value": "7-Not Sought in RxNorm",
+            "Substitution": "Not sought in RxNorm because available in CanMED; see CanMED fields"
+          },
+          {
+            "Value": "9-Missing",
+            "Substitution": "Missing"
+          }
+        ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false   
+    },
+    {
+      "Column_Name_at_Source": "rxnormDisplayName",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "RxNorm Display Name",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "This includes the drug name (either generic or brand name) and intended route tied to the RXCUI in RxNorm. RxNorm fields do not come directly from the claim; these fields provide information in RxNorm that maps to the 11-digit NDC provided in the claim. RxNorm Display Name is only available for active RXCUIs in RxNorm. <p>Populated using RxTerms API: https://lhncbc.nlm.nih.gov/MOR/RxTerms/. Note that RxTerms excludes drugs found in RxNorm that are obsolete or unavailable in the U.S. (U.S. availability determined based on the Current Prescribable Content of RxNorm; this is an approximation and may not be 100% accurate). <p>Code 7-Not Sought in RxNorm = Not sought in RxNorm because available in CanMED; see CanMED fields and 9-Missing = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+          {
+            "Value": "7-Not Sought in RxNorm",
+            "Substitution": "Not sought in RxNorm because available in CanMED; see CanMED fields"
+          },
+          {
+            "Value": "9-Missing",
+            "Substitution": "Missing"
+          }
+        ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Limit": "100"     
+    },
+    {
+      "Column_Name_at_Source": "rxnormStrength",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "RxNorm Strength",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Strength information for the drug tied to the RXCUI in RxNorm. RxNorm fields do not come directly from the claim; these fields provide information in RxNorm that maps to the 11-digit NDC provided in the claim. <p>Populated using RxTerms API: https://lhncbc.nlm.nih.gov/MOR/RxTerms/. Note that RxTerms excludes drugs found in RxNorm that are obsolete or unavailable in the U.S. (U.S. availability determined based on the Current Prescribable Content of RxNorm; this is an approximation and may not be 100% accurate). <p>Code 7-Not Sought in RxNorm = Not sought in RxNorm because available in CanMED; see CanMED fields and 9-Missing = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+          {
+            "Value": "7-Not Sought in RxNorm",
+            "Substitution": "Not sought in RxNorm because available in CanMED; see CanMED fields"
+          },
+          {
+            "Value": "9-Missing",
+            "Substitution": "Missing"
+          }
+        ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false      
+    },
+    {
+      "Column_Name_at_Source": "rxnormDoseForm",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "RxNorm Dose Form",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "This includes the dose form and intended route information for the RXCUI from RxNorm. RxNorm fields do not come directly from the claim; these fields provide information in RxNorm that maps to the 11-digit NDC provided in the claim. Populated using RxTerms API: https://lhncbc.nlm.nih.gov/MOR/RxTerms/. List of dose forms with definitions: https://www.nlm.nih.gov/research/umls/rxnorm/docs/appendix2.html. Note that RxTerms excludes drugs found in RxNorm that are obsolete or unavailable in the U.S. (U.S. availability determined based on the Current Prescribable Content of RxNorm; this is an approximation and may not be 100% accurate). <p>Code 7-Not Sought in RxNorm = Not sought in RxNorm because available in CanMED; see CanMED fields and 9-Missing = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+          {
+            "Value": "7-Not Sought in RxNorm",
+            "Substitution": "Not sought in RxNorm because available in CanMED; see CanMED fields"
+          },
+          {
+            "Value": "9-Missing",
+            "Substitution": "Missing"
+          }
+        ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false      
+    },
+    {
+      "Column_Name_at_Source": "rxnormAtcprodClass",
+      "Column_DataType_at_Source": {
+        "Field_Length": "",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "RxNorm ATCPROD Class",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The fourth level of the Anatomic Therapeutic Chemical (ATC) product-level (ATCPROD) classification system for the RXCUI in RxNorm. RxNorm fields do not come directly from the claim; these fields provide information in RxNorm that maps to the 11-digit NDC provided in the claim. The ATC classification system groups drugs according to the organ or system on which they act and according to their chemical, pharmacological and therapeutic properties. The drugs are divided into 14 main groups (first level), with two therapeutic/pharmacological subgroups (second and third levels). The fourth level is a therapeutic/pharmacological/chemical subgroup and the fifth level is the chemical substance. The second, third and fourth levels are often used to identify pharmacological subgroups when these are considered to be more appropriate than therapeutic or chemical subgroups. Drug (product-level) ATC class members are curated by the National Library of Medicine. <p>Populated using RxClass API:https://lhncbc.nlm.nih.gov/RxNav/APIs/RxClassAPIs.html. <p>Possible useful links: https://lhncbc.nlm.nih.gov/RxNav/news/ATCPROD-202307.html;  https://lhncbc.nlm.nih.gov/RxNav/applications/RxClassIntro.html. Note: RxClass API sometimes returns >1 class for a single RXCUI. In these cases, the first alphabetical class is selected.<p>Code 7-Not Sought in RxNorm = Not sought in RxNorm because available in CanMED; see CanMED fields and 9-Missing = Missing",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+          {
+            "Value": "7-Not Sought in RxNorm",
+            "Substitution": "Not sought in RxNorm because available in CanMED; see CanMED fields"
+          },
+          {
+            "Value": "9-Missing",
+            "Substitution": "Missing"
+          }
+        ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Limit": "100"      
+    }
+  ]
+}

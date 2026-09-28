@@ -1,0 +1,201 @@
+{
+  "Dictionary_Elements": [
+    {
+      "Column_Name_at_Source": "nccrId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 64,
+        "Semantic_Type": "string",
+        "Abbreviated_Source_Vocabulary": "SEER Recode"
+      },
+      "Item_Name": "NCCR Persistent Identifier",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "NCCR Persistent Identifier for the Data Platform",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": false
+    },
+    {
+      "Column_Name_at_Source": "reportedCOGEnrollment",
+      "Column_DataType_at_Source": {
+        "Field_Length": 1,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Reported COG Study Enrollment",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Indicates whether the patient was known to be enrolled in a Children's Oncology Group (COG) study at the time of the linkage (e.g., years of diagnosis, years of specific data freezes, geographical coverage). ",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0",
+          "Description": "Patient not Found at Time of Linkage"
+        },
+        {
+          "Value": "1",
+          "Description": "Confirmed Enrollment"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "_all_"
+    },
+    {
+      "Column_Name_at_Source": "biobankingTumorClassStudyCount",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Biobanking/Tumor Classification Study Enrollments",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of biobanking/tumor classification studies the patient was enrolled on. Patients not found at the time of linkage will be coded as 7777 (No Data Available for Patient at Time of Linkage).<p>\nThese studies collect and store biological samples, such as tissue, blood, or other fluids. The goal is to use these samples to better understand the biology of cancer, improve diagnostic methods, and develop new treatments. These studies aim to categorize and/or risk-stratify cancer subtypes based on their molecular and cellular features.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0-999",
+          "Description": "0-999 trials"
+        },
+        {
+          "Value": "7777",
+          "Description": "No Data Available for Patient at Time of Linkage"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "7777"
+    },
+    {
+      "Column_Name_at_Source": "registryStudyCount",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Registry/Epidemiology Study Enrollments",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of registry/epidemiology studies the patient was enrolled on. Patients not found at the time of linkage will be coded as 7777 (No Data Available for Patient at Time of Linkage).<p>   \nThese studies track and record data on patients over time to study patient health, quality of life, and/or survival outcomes.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0-999",
+          "Description": "0-999 trials"
+        },
+        {
+          "Value": "7777",
+          "Description": "No Data Available for Patient at Time of Linkage"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "7777"
+    },
+    {
+      "Column_Name_at_Source": "supportiveStudyCount",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Supportive Study Enrollments",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of supportive studies the patient was enrolled on. Patients not found at the time of linkage will be coded as 7777 (No Data Available for Patient at Time of Linkage).<p>\nThese studies focus on improving the health and/or quality of life patients by managing the side effects of cancer and its treatment. These studies may investigate methods to alleviate symptoms, reduce treatment-related complications, and support patients’ physical, emotional, and psychosocial needs.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0-999",
+          "Description": "0-999 trials"
+        },
+        {
+          "Value": "7777",
+          "Description": "No Data Available for Patient at Time of Linkage"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "7777"
+    },
+    {
+      "Column_Name_at_Source": "therapeuticOtherTrialCount",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Therapeutic-Other Trial Enrollments",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of therapeutic-other trials the patient was enrolled on. Patients not found at the time of linkage will be coded as 7777 (No Data Available for Patient at Time of Linkage).<p>\nThese studies test the safety and efficacy of interventions to improve treatment response and/or survival. These are primarily interventions to reduce side effects or treat a non-cancer condition. These studies meet criteria for more than one study type.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0-999",
+          "Description": "0-999 trials"
+        },
+        {
+          "Value": "7777",
+          "Description": "No Data Available for Patient at Time of Linkage"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "7777"
+    },
+    {
+      "Column_Name_at_Source": "therapeuticFrontLineTrialCount",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Therapeutic Frontline Trial Enrollments",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of therapeutic frontline trials the patient was enrolled on. Patients not found at the time of linkage will be coded as 7777 (No Data Available for Patient at Time of Linkage).<p>   \nThese studies test the effectiveness and safety of treatments that are given as the first line treatment for newly diagnosed cancers.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0-999",
+          "Description": "0-999 trials"
+        },
+        {
+          "Value": "7777",
+          "Description": "No Data Available for Patient at Time of Linkage"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "7777"
+    },
+    {
+      "Column_Name_at_Source": "therapeuticRelapsedTrialCount",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Therapeutic Relapsed Trial Enrollments",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of therapeutic relapsed trials the patient was enrolled on. Patients not found at the time of linkage will be coded as 7777 (No Data Available for Patient at Time of Linkage).<p>    \nThese studies focus on treatments for cancers that have recurred or progressed after an initial cancer-directed treatment.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "0-999",
+          "Description": "0-999 trials"
+        },
+        {
+          "Value": "7777",
+          "Description": "No Data Available for Patient at Time of Linkage"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "7777"
+    }
+  ]
+}

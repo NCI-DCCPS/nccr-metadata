@@ -1,0 +1,52 @@
+{
+  "Dictionary_Elements": [
+    {
+      "Column_Name_at_Source": "nccrId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 64,
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "NCCR Persistent Identifier",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "NCCR Persistent Identifier for the Data Platform",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": false,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "resourceParticipantId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 100,
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Resource Participant Identifier",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Public identifier that appears in a research dataset accessible to researchers (e.g., Kids First ID or GENIE ID). This also includes global identifiers used more broadly (e.g., COG USI or dbGaP Subject ID).",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "resourceName",
+      "Column_DataType_at_Source": {
+        "Field_Length": 100,
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Resource Name",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Name of resource associated with the resource participant identifier with a matched NCCR patient.\n<p>Resources can be categorized as:\n<p><b>Dataset:</b> Refers to a single dataset for a particular study where data files for the participants can be found. This is typically a dbGaP phs accession number – for example phs000720 (dbGaP accession: Genomic sequencing of Pediatric Rhabdomyosarcoma). These datasets can potentially have linked data to an NCCR patient. \n<p><b>Study:</b> Represents programmatic references to research initiatives, such as TARGET, or institution’s internal study synonyms for dataset domains such as sd_aq9kvn5p, equivalent to phs002276. <p><b>Organizational Identifier</b>: A larger project/network namespace of unique pariticipant identifiers. Current organizational identifiers include dbGaP_subject_id (dbGaP Subject Sample Telemetry Report), GENIE, Gabriella Miller Kids First, Pediatric Cancer Data Commons (PCDC), St. Jude Cloud, Treehouse Childhood Cancer Initiative, and COG USI. \n<p>Mappings to the dataset category identify data files that are linked to a specific dataset that can be requested from external resources. The organizational identifier and study mappings represent linkages to projects, networks, or research initiatives, rather than an individual dataset.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true
+    }
+  ]
+}

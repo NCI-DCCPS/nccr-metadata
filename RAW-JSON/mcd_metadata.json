@@ -1,0 +1,89 @@
+{
+  "Dictionary_Elements": [
+    {
+      "Column_Name_at_Source": "nccrId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 64,
+        "Semantic_Type": "string",
+        "Abbreviated_Source_Vocabulary": "SEER Recode"
+      },
+      "Item_Name": "NCCR Persistent Identifier",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "NCCR Persisent Identifier for the Data Platform",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": false,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "claimDiagnosisCode",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-7",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Claim Diagnosis Code",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "The ICD-9 or ICD-10 diagnostic code associated with the claim. \n<p><b>ICD-9 (International Classification of Diseases, 9th Edition):</b>\nA system used to classify diseases and medical conditions for billing and statistical purposes. Example: 410.01<p>\n<p><b>ICD-10 (International Classification of Diseases, 10th Edition):</b>\nAn updated version of ICD-9 with expanded codes and specificity, adopted by most countries. Example: E11.9 <p>\nClaims are deduplicated over the patient ID, claim service date and claim procedure code. Each diagnosis code for a given claim will have a separate record. ",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processing_Rules": "Claims are deduplicated over patientID, claim service date and claim procedure code. Each diagnosis code for a given claim will have a separate record. ",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Limit": 2000
+    },
+    {
+      "Column_Name_at_Source": "claimDiagnosisCodeSequence",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Claim Diagnosis Code Sequence Number",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Sequence number for diagnoses codes that occurred on multiple claims within the same month.<p>Claims are deduplicated over the patient ID, claim service date and claim diagnosis code. Records with the same diagnosis code occuring on different dates but in the same month will be assigned a different sequence number. ",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "801-831",
+          "Description": "801-831 sequence number"
+        }
+      ],
+      "Processing_Rules": "Claims are deduplicated over patientID, claim service date and claim diagnosis code. Records with the same diagnosis code occuring on different dates but in the same month will be assigned a different sequence number. ",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "monthsFromIndexDxToDiagnosisCode",
+      "Column_DataType_at_Source": {
+        "Field_Length": "3-4",
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Months From Index Cancer Diagnosis to Service Date of Claim",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of months from the index cancer diagnosis to service date of claim for the diagnosis code",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "-999-999",
+          "Description": "-999-999 months"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Month_Range_Column": "default"
+    }
+  ]
+}

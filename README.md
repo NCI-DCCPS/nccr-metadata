@@ -14,6 +14,7 @@ This repository provides semantic metadata representations for the NCCR Data Pla
 | `nccr_datmm.ttl` | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and its 9 datasources (CTC, ABM, CCDI, COG, MCD, MCE, MCP, PHARM, RO) |
 | `nccr_instances.ttl` | **Instance data** — Complete RDF representation of all 533 variables across all 9 NCCR datasources, including value sets, display configs, filters, and processing rules (28,620 triples) |
 | `request-form.ttl` | **Data request form** — field inventory, character limits, publicly-displayed flags, the Research Areas controlled vocabulary, and the data elements the form selects by default per datasource |
+| `RAW-JSON/` | **Raw upstream input** — unmodified source data-dictionary JSON for the 9 datasources, published for partners doing their own crosswalk ([details](RAW-JSON/README.md)) |
 | `mcp/` | **MCP server** — exposes the metadata as tools for AI assistants ([setup](mcp/README.md)) |
 | `skills/nccr-data-request/` | **Skill** — helps a researcher draft and validate an NCCR data request ([install](skills/nccr-data-request/README.md)) |
 
@@ -56,6 +57,13 @@ nccr_datmm.ttl       ← Dataset-level catalog (who, what, where)
        │
 nccr_instances.ttl    ← All variables, value sets, filters, and rules as RDF (the content)
 ```
+
+> **Raw input vs. NCCR's interpretation.** The `RAW-JSON/` folder holds the
+> **unmodified upstream data-dictionary metadata** — the *source input* to a DATMM
+> crosswalk. The `datmm/` and `datmm-jsonld/` files are **NCCR's interpretation** of
+> that input, mapped into the DATMM model. A partner performing an independent
+> crosswalk should start from `RAW-JSON/` and treat the DATMM files as one mapping,
+> not as authoritative source.
 
 The vocabulary supports three layers of metadata:
 - **Scientific metadata** — variable definitions, value sets, external vocabulary links (NAACCR, SEER, ICD-O-3, RxNorm, CanMED)

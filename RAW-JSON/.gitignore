@@ -1,0 +1,3 @@
+# Local-only provenance marker — records the private upstream commit the snapshot
+# was taken from. Kept out of the public repo intentionally (source repo is private).
+.source-commit

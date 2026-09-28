@@ -1,0 +1,198 @@
+{
+  "Dictionary_Elements": [
+    {
+      "Column_Name_at_Source": "nccrId",
+      "Column_DataType_at_Source": {
+        "Field_Length": 64,
+        "Semantic_Type": "string",
+        "Abbreviated_Source_Vocabulary": "SEER Recode"
+      },
+      "Item_Name": "NCCR Persistent Identifier",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "NCCR Persisent Identifier for the Data Platform",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": false,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCode",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-10",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Claim Procedure Code",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Procedure code listed for claim. This includes ICD-9, ICD-10, HCPC and CPT codes. \n<p><b>ICD-9 (International Classification of Diseases, 9th Edition)</b>: A system used to classify diseases and medical conditions for billing and statistical purposes. Example: 410.01 <p>\n<p><b>ICD-10 (International Classification of Diseases, 10th Edition)</b>: An updated version of ICD-9 with expanded codes and specificity, adopted by most countries. Example: E11.9 <p>\n<p><b>HCPCS (Healthcare Common Procedure Coding System)</b>: A set of codes used for identifying medical services and procedures provided by healthcare professionals, supplies, and equipment under the Medicare and Medicaid programs. Example: J0150 <p>\n<p><b>CPT (Current Procedural Terminology)</b>: A set of medical codes maintained by the American Medical Association (AMA) that describes medical, surgical, and diagnostic services performed by healthcare providers. Example: 99213 <p>\nClaims are deduplicated over the patient ID, claim service date and claim procedure code. Each procedure code for a given claim will have a separate record.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processing_Rules": "Claims are deduplicated over patientID, claim service date and claim procedure code. Each procedure code for a given claim will have a separate record. ",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Limit": 2000
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCodeText",
+      "Column_DataType_at_Source": {
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Claim Procedure Code Description",
+      "Internet_Link": "",
+      "Item_Description": "The descriptive text that corresponds with the claim procedure code. Missing descriptive text will be coded as 9-Missing.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": false
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCodeSequence",
+      "Column_DataType_at_Source": {
+        "Field_Length": 3,
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Claim Procedure Sequence Number",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Sequence number for procedures that occurred on multiple claims within the same month, sequenced by full claim service date. <p>Claims are deduplicated over the patient ID, claim service date and claim procedure code. Records with the same procedure code occuring on different dates but in the same month will be assigned a different sequence number. ",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "701-731",
+          "Description": "701-731 sequence number"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true
+    },
+    {
+      "Column_Name_at_Source": "monthsFromIndexDxToProcedureCode",
+      "Column_DataType_at_Source": {
+        "Field_Length": "3-4",
+        "Semantic_Type": "numeric"
+      },
+      "Item_Name": "Months From Index Cancer Diagnosis to Service Date of Procedure",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Number of months from index cancer diagnosis to service date of procedure",
+      "Item_Section": "",
+      "Rationale": "",
+      "Permissible_Values": [
+        {
+          "Value": "-999-999",
+          "Description": "-999-999 months"
+        },
+        {
+          "Value": "9999",
+          "Description": "Missing"
+        }
+      ],
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": true,
+      "Generate_Data_Browser_Graph": true,
+      "Add_Processed_Month_Range_Column": "default"
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCodeMod1",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-3",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Procedure Modifier 1",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Coding modifier appended to a CPT or HCPCS code. The modifier provides additional information about the medical procedure, service, or supply involved without changing the meaning of the code. A claim can have up to 4 procedure modifiers. If no associated modifier, then variable will be coded as 999=Missing. Note that this variable includes all values received from the data provider. We expect that researchers will use their own discretion when determining if any values should be excluded from analysis.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+        {
+          "Value": "999",
+          "Substitution": "Missing"
+        }
+      ],
+      "Processed_Data_Substitutions_Active": false,
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "999"
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCodeMod2",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-3",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Procedure Modifier 2",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Coding modifier appended to a CPT or HCPCS code. The modifier provides additional information about the medical procedure, service, or supply involved without changing the meaning of the code. A claim can have up to 4 procedure modifiers. If no associated modifier, then variable will be coded as 999=Missing. Note that this variable includes all values received from the data provider. We expect that researchers will use their own discretion when determining if any values should be excluded from analysis.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+        {
+          "Value": "999",
+          "Substitution": "Missing"
+        }
+      ],
+      "Processed_Data_Substitutions_Active": false,
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "999"
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCodeMod3",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-3",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Procedure Modifier 3",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Coding modifier appended to a CPT or HCPCS code. The modifier provides additional information about the medical procedure, service, or supply involved without changing the meaning of the code. A claim can have up to 4 procedure modifiers. If no associated modifier, then variable will be coded as 999=Missing. Note that this variable includes all values received from the data provider. We expect that researchers will use their own discretion when determining if any values should be excluded from analysis.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+        {
+          "Value": "999",
+          "Substitution": "Missing"
+        }
+      ],
+      "Processed_Data_Substitutions_Active": false,
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "999"
+    },
+    {
+      "Column_Name_at_Source": "claimProcedureCodeMod4",
+      "Column_DataType_at_Source": {
+        "Field_Length": "1-3",
+        "Semantic_Type": "string"
+      },
+      "Item_Name": "Procedure Modifier 4",
+      "Item_Number": "",
+      "Internet_Link": "",
+      "Item_Description": "Coding modifier appended to a CPT or HCPCS code. The modifier provides additional information about the medical procedure, service, or supply involved without changing the meaning of the code. A claim can have up to 4 procedure modifiers. If no associated modifier, then variable will be coded as 999=Missing. Note that this variable includes all values received from the data provider. We expect that researchers will use their own discretion when determining if any values should be excluded from analysis.",
+      "Item_Section": "",
+      "Rationale": "",
+      "Processed_Data_Substitutions": [
+        {
+          "Value": "999",
+          "Substitution": "Missing"
+        }
+      ],
+      "Processed_Data_Substitutions_Active": false,
+      "Visible_in_UI": true,
+      "Visible_in_Quicksight": false,
+      "Generate_Data_Browser_Graph": true,
+      "Data_Browser_Graph_Hover_Display_Lookup": "999"
+    }
+  ]
+}
