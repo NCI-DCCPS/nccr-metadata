@@ -266,6 +266,7 @@ def _report_top(field_name: str, limit: int, datasource: str | None):
     sources = ({datasource.upper(): REPORT_SOURCES[datasource.upper()]}
                if datasource and datasource.upper() in REPORT_SOURCES else REPORT_SOURCES)
 
+    reports = {}
     for ds_id, filename in sources.items():
         report = None
         if local_dir and (local_dir / filename).exists():
@@ -280,21 +281,41 @@ def _report_top(field_name: str, limit: int, datasource: str | None):
             except Exception:
                 continue
 
-        for field in report.get("fields", []):
-            fn = field.get("fieldName", "")
-            if (fn.lower() == field_name.lower()
-                    or field_name.lower() in fn.lower()
-                    or fn.lower() in field_name.lower()):
-                values = field["charts"][0]["values"] if field.get("charts") else []
-                out = []
-                for v in values[:limit]:
-                    if not isinstance(v, list) or len(v) < 3:
-                        continue
-                    label_info = v[1] if isinstance(v[1], dict) else {}
-                    label = str(label_info.get("label", v[0])) if label_info else str(v[0])
-                    out.append({"value": label, "records": v[2]})
-                return {"variable": fn, "datasource": ds_id,
-                        "total_records": report.get("totalCount"), "values": out}
+        reports[ds_id] = report
+
+    # Exact field-name matches win. Substring matching alone sends
+    # "claimDiagnosisCode" to "claimDiagnosisCodeSequence", which is a different
+    # variable entirely.
+    for exact_pass in (True, False):
+        for ds_id, report in reports.items():
+            for field in report.get("fields", []):
+                fn = field.get("fieldName", "")
+                hit = (fn.lower() == field_name.lower()) if exact_pass else (
+                    field_name.lower() in fn.lower() or fn.lower() in field_name.lower())
+                if not hit:
+                    continue
+                rows = field["charts"][0]["values"] if field.get("charts") else []
+                # Row shape is [code, {"label": "<count>", ...}, count]. The nested
+                # "label" is the chart's data label, i.e. the count again, so the
+                # code at position 0 is the only real display value.
+                pairs = [(str(v[0]), v[2]) for v in rows
+                         if isinstance(v, list) and len(v) >= 3]
+                if not pairs:
+                    continue
+                total = report.get("totalCount") or 0
+                covered = sum(c for _, c in pairs if isinstance(c, (int, float)))
+                return {
+                    "variable": fn,
+                    "datasource": ds_id,
+                    "total_records": total,
+                    "values_listed": len(pairs),
+                    "coverage_of_records": (
+                        f"{covered:,} of {total:,} ({covered/total*100:.1f}%)"
+                        if total else None),
+                    "values": [{"value": c, "records": n} for c, n in pairs[:limit]],
+                    "note": ("Counts are records, not patients. Values outside the "
+                             "listed set exist but are not itemised."),
+                }
     return None
 
 
@@ -313,40 +334,59 @@ def top_values(field: str, limit: int = 20, datasource: str = "") -> str:
     g = get_graph()
     ds = datasource or None
 
-    # Try the graph first (coded values with counts)
-    q = f"""
-    PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
-    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    SELECT ?dsLabel ?varLabel ?code ?description ?count WHERE {{
-        ?var a nccr:Variable ;
-             rdfs:label ?varLabel ;
-             nccr:sourceColumn ?col ;
-             nccr:belongsToSource ?dsn ;
-             nccr:hasValueSet/nccr:hasCodeValue ?cv .
-        ?dsn rdfs:label ?dsLabel ; nccr:sourceId ?id .
-        ?cv skos:notation ?code ; nccr:recordCount ?count .
-        OPTIONAL {{ ?cv skos:prefLabel ?description . }}
-        FILTER(LCASE(?varLabel) = LCASE("{field}") || LCASE(?col) = LCASE("{field}")
-               || CONTAINS(LCASE(?varLabel), LCASE("{field}")) || CONTAINS(LCASE(?col), LCASE("{field}")))
-        {f'FILTER(UCASE(?id) = UCASE("{ds}"))' if ds else ''}
-    }}
-    ORDER BY DESC(?count)
-    LIMIT {limit}
-    """
-    rows = list(g.query(q))
-    if rows:
-        return json.dumps({
-            "variable": str(rows[0].varLabel),
-            "datasource": str(rows[0].dsLabel),
-            "values": [{"value": str(r.description or r.code), "records": int(r["count"])}
-                       for r in rows],
-        }, indent=2)
+    def graph_query(match_clause: str):
+        q = f"""
+        PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        SELECT ?dsLabel ?varLabel ?code ?description ?count WHERE {{
+            ?var a nccr:Variable ;
+                 rdfs:label ?varLabel ;
+                 nccr:sourceColumn ?col ;
+                 nccr:belongsToSource ?dsn ;
+                 nccr:hasValueSet/nccr:hasCodeValue ?cv .
+            ?dsn rdfs:label ?dsLabel ; nccr:sourceId ?id .
+            ?cv skos:notation ?code ; nccr:recordCount ?count .
+            OPTIONAL {{ ?cv skos:prefLabel ?description . }}
+            FILTER({match_clause})
+            {f'FILTER(UCASE(?id) = UCASE("{ds}"))' if ds else ''}
+        }}
+        ORDER BY DESC(?count)
+        LIMIT {limit}
+        """
+        return list(g.query(q))
 
-    # Fallback: Report JSON (high-cardinality fields)
+    def pack(rows, note=None):
+        # Keep a single variable. The query can span several when names overlap.
+        want = str(rows[0].varLabel)
+        rows = [r for r in rows if str(r.varLabel) == want]
+        out = {
+            "variable": want,
+            "datasource": str(rows[0].dsLabel),
+            "values": [{"value": str(r.description or r.code),
+                        "records": int(r["count"])} for r in rows],
+        }
+        if note:
+            out["note"] = note
+        return json.dumps(out, indent=2)
+
+    exact = f'LCASE(?varLabel) = LCASE("{field}") || LCASE(?col) = LCASE("{field}")'
+    rows = graph_query(exact)
+    if rows:
+        return pack(rows)
+
+    # Report files next: this is where diagnosis codes, procedure codes, and drug
+    # names live. Checking them before a substring graph match matters, because
+    # "claimDiagnosisCode" would otherwise match "claimDiagnosisCodeSequence".
     result = _report_top(field, limit, ds)
     if result:
         return json.dumps(result, indent=2)
+
+    loose = graph_query(
+        f'CONTAINS(LCASE(?varLabel), LCASE("{field}")) '
+        f'|| CONTAINS(LCASE(?col), LCASE("{field}"))')
+    if loose:
+        return pack(loose, note=f"No exact match for '{field}'; closest variable shown.")
 
     return json.dumps({"field": field, "values": [],
                        "note": "No frequency data found. Try list_datasources or discover_filters first."}, indent=2)
