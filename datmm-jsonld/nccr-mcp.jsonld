@@ -23,7 +23,7 @@
         "MCP"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCP",
-      "dct:description": "Patient procedure data extracted from medical claims collected by various insurers. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, applicable procedure modifiers, sequence numbers for procedures occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and the service date of the procedure. Contains 65,745,499 records for 300,461 patients, covering diagnosis years 1995-2023.",
+      "dct:description": "Patient procedure data extracted from medical claims collected by various insurers. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, applicable procedure modifiers, sequence numbers for procedures occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and the service date of the procedure. Includes claims with start dates between 2000 and 2025. Contains 65,745,499 records for 300,461 patients, covering diagnosis years 1995-2023.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."

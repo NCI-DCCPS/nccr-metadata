@@ -12,7 +12,7 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-abm> a datmm:Dataset ;
     dct:title "NCCR Area-Based Measures (ABM)" ;
     dct:alternative "ABM" ;
-    dct:description "Non-clinical data variables derived from the US Census Department providing broader context of health-related factors. Variables use 2010 Census attributes and 2010 Census-defined geographic boundaries. Includes Yost socioeconomic status quintiles, Rural-Urban Commuting Area codes, Urban Rural Indicator Codes, and persistent poverty indicators. Values provided for patients with SEER diagnosis year 2006-2022. Contains 1,614,685 records for 1,483,916 patients, aligned to the tumour records in CTC." ;
+    dct:description "Non-clinical data variables derived from the US Census Department providing broader context of health-related factors. Variables use 2010 Census attributes and 2010 Census-defined boundaries for diagnosis years 2006 through 2017, and 2020 Census attributes and boundaries for diagnosis years 2018 through 2023. Includes Yost socioeconomic status quintiles, Rural-Urban Commuting Area codes, Urban Rural Indicator Codes, and persistent poverty indicators. Every cancer diagnosis has its own record, with variables calculated for the census tract associated with the address known at the time of that diagnosis. Values provided for cases with SEER diagnosis year 2006-2023. Contains 1,614,685 records for 1,483,916 patients, aligned to the tumour records in CTC." ;
     dct:identifier "nccr-abm" ;
     dct:issued "2026-06-21"^^xsd:date ;
     dct:language "en" ;

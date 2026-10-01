@@ -23,7 +23,7 @@
         "MCD"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCD",
-      "dct:description": "Patient diagnosis data extracted from medical claims collected by various insurers. Includes the ICD-9 or ICD-10 diagnosis code associated with each claim, sequence numbers for diagnosis codes occurring on multiple claims within the same month, and months elapsed between the index cancer diagnosis and the service date of the claim. Contains 56,660,564 records for 300,394 patients, covering diagnosis years 1995-2023.",
+      "dct:description": "Patient diagnosis data extracted from medical claims collected by various insurers. Includes the ICD-9 or ICD-10 diagnosis code associated with each claim, sequence numbers for diagnosis codes occurring on multiple claims within the same month, and months elapsed between the index cancer diagnosis and the service date of the claim. Includes claims with an original service start date between 2000 and 2025. Contains 56,660,564 records for 300,394 patients, covering diagnosis years 1995-2023.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."

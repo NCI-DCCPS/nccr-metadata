@@ -12,7 +12,7 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-ctc> a datmm:Dataset ;
     dct:title "NCCR Consolidated Tumor Case (CTC)" ;
     dct:alternative "CTC" ;
-    dct:description "Final adjudicated data collected from population-based cancer registries including SEER. Contains all cancer diagnoses reported in 21 states for years 1995-2023, totaling 1,614,685 tumors from 1,483,916 unique individuals ages 0-39. Registries include California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. Also includes NAACCR Virtual Pooled Registry linkage for identifying prior and subsequent malignant neoplasms." ;
+    dct:description "Final adjudicated data collected from population-based cancer registries including SEER. Submitted in December 2025 under National Childhood Cancer Registry data submission requirements for cases diagnosed from 1995 to 2023, totaling 1,614,685 tumors from 1,483,916 unique individuals ages 0-39. Every cancer diagnosis has its own record. The records represent 54.3% of all U.S. children, adolescents, and young adults ages 0-39 based on 2023 U.S. populations. Registries include California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, Massachusetts, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. Also includes NAACCR Virtual Pooled Registry linkage for identifying prior and subsequent malignant neoplasms." ;
     dct:identifier "nccr-ctc" ;
     dct:issued "2026-06-21"^^xsd:date ;
     dct:language "en" ;
