@@ -159,7 +159,7 @@ python tools/cohort_builder.py top "canmedNonProprietaryName" -n 30
 
 # What does claims procedure data show?
 python tools/cohort_builder.py datasources
-# Note MCP has 62M records — what does this mean?
+# Note MCP has 65.7M records but only ~300K patients — what does this mean?
 ```
 
 **Questions to answer:**
@@ -258,7 +258,7 @@ python tools/cohort_builder.py values "Resources"
 
 **Questions to answer:**
 1. What is the CCDI Participant Index (CPI)? How does it differ from the CTC registry data?
-2. The CCDI datasource has far fewer records than CTC (20K vs 1.4M). Why? What subset of patients does it represent?
+2. The CCDI datasource has far fewer records than CTC (69,716 vs 1.6M) and fewer patients still (16,453). Why? What subset of patients does it represent?
 3. If a researcher has genomic data from dbGaP study phs002790, how would CCDI mappings help them?
 4. Why would a researcher want to combine registry data (CTC) with molecular characterization data (via CCDI)?
 
@@ -281,7 +281,7 @@ The NCCR metadata shows aggregate counts but suppresses values with fewer than 1
 ### Exercise 11: Representativeness and generalizability
 
 **Discussion:**
-1. CTC covers 21 states representing 52.7% of U.S. children/AYA ages 0-39. List three states you think are likely included and three that might be missing. What populations are underrepresented?
+1. CTC represents 54.3% of U.S. children, adolescents and young adults ages 0-39. List three states you think are likely included and three that might be missing. What populations are underrepresented?
 2. Pharmacy claims include "commercial plans, Medicaid, and commercial pharmacies." Who is missing from this data? (Hint: uninsured, VA, IHS.)
 3. COG data covers diagnosis years 2007-2018. CTC covers 1995-2023. If you're studying trends over time, how does this mismatch affect your analysis?
 4. A study finding from NCCR data says "30% of pediatric leukemia patients received Drug X within 6 months of diagnosis." Can you generalize this to all U.S. children with leukemia? Why or why not?
@@ -295,6 +295,97 @@ The NCCR metadata shows aggregate counts but suppresses values with fewer than 1
 2. What does NCCR offer that a single-institution dataset does not?
 3. What does a single-institution dataset offer that NCCR does not?
 4. When would you use NCCR vs. the Childhood Cancer Survivor Study (CCSS) for long-term outcomes research?
+
+---
+
+## Advanced: Can This Study Even Be Done Here?
+
+### Exercise 13: Feasibility review of an outside request
+
+*Adapted from a real inquiry. Identifying details, the cancer mix and the age criteria have been changed.*
+
+**Learning objectives:** Assess a request written for a different kind of data source. Separate "not available" from "available in a different shape." Produce a defensible verdict instead of a yes or no.
+
+Most exercises here start from a question that fits the data. This one does not, which is the point. Investigators routinely arrive with a specification built against a hospital data warehouse and assume a registry will behave the same way. Learning to triage that quickly is a core skill.
+
+#### The request
+
+A cardio-oncology group wants to build a real-world toxicity database and asks whether NCCR can supply it. Their specification asks for:
+
+- **Patients:** pediatric 0-17 **and** adults 18-89, both sexes
+- **Cancers:** defined by ICD-10 code lists, covering B-cell lymphoma (C83.0, C83.3, C85.1, C85.2, C88), breast (C50), renal (C64), and a lung/renal/melanoma group for immunotherapy recipients (C34, C43, C64, C78.0)
+- **Procedures:** all CPT codes since diagnosis
+- **Comorbid outcomes:** ICD-10 lists for heart failure (I50.x), ischemic heart disease (I25.x), atrial fibrillation (I48.x), hypertension (I10), diabetes (E10, E11), lipid disorders (E78.x)
+- **Medications:** ~47 named agents, mixing brand and generic, including anthracyclines, trastuzumab, rituximab and checkpoint inhibitors
+- **Observations:** roughly 60 laboratory tests plus LVEF and global longitudinal strain
+
+They want to predict cardiotoxicity. Your job is to tell them what they can actually have.
+
+#### Steps
+
+```bash
+# Scope: who is in this registry at all?
+python tools/cohort_builder.py datasources
+python tools/cohort_builder.py values "Min Age (Yrs)"
+
+# Their cancers are in ICD-10. How does CTC code cancer?
+python tools/cohort_builder.py values "ICCC Extended (Level 3)"
+
+# Their comorbid outcomes are claims diagnoses, not registry fields
+python tools/cohort_builder.py top claimDiagnosisCode --limit 40
+
+# Their procedures and, it turns out, their lab tests
+python tools/cohort_builder.py top claimProcedureCode --limit 40
+
+# Their medications, in two different places
+python tools/cohort_builder.py top canmedNonProprietaryName --limit 25
+python tools/cohort_builder.py top rxnormAtcprodClass --limit 25
+
+# Does anything resemble a lab result?
+python tools/cohort_builder.py top --list
+```
+
+#### Questions to answer
+
+**Scope and translation**
+
+1. What age range does NCCR actually cover, and what happens to the "18-89" stratum? Roughly 72,000 tumours are recorded at age 40 or above. Where do those come from, and why does that *not* make the registry a source for adult-onset cancer?
+2. Translate three of their ICD-10 cancer groups into ICCC codes and report the tumour counts. Which of their four cohorts is largest in NCCR, and does that surprise you given the registry's name?
+3. The registry spans diagnosis years 1995-2023. What does that imply for a code list written only in ICD-10?
+
+**The denominator**
+
+4. MCP holds 65.7 million procedure records. How many patients is that? Find both numbers and explain why quoting the first as a sample size would be wrong.
+5. Only about 20% of the cohort has claims. Every element of this request except the cancer diagnosis itself comes from claims. Recompute one of your cohort sizes with that restriction applied. By what factor did it shrink?
+6. You now have a tumour count, a patient count, and a claims-linked patient count for the same cohort. Which belongs in a power calculation, and why are the other two still worth reporting?
+
+**Missing, or just different?**
+
+7. Search the metadata for any of their 60 laboratory tests. What do you find, and what are the two CTC fields that look like labs actually for?
+8. Now look at the procedure codes for 85025, 80053, 84484, 83880 and 93306. What are they, and what does their presence let you measure that a lab table would not? State plainly what you can and cannot infer from a test having been ordered.
+9. The request treats "cardiotoxicity" as a lab finding. Propose two alternative endpoints that NCCR can support today, and name the specific fields each would use.
+
+**A trap worth falling into once**
+
+10. Look for doxorubicin and pembrolizumab in `canmedNonProprietaryName`. Then look for J9000 and J9271 in `claimProcedureCode`. Explain the discrepancy. If a student had only queried the pharmacy source, what would they have concluded about anthracycline exposure, and how wrong would it have been?
+11. Roughly 85% of pharmacy records carry no CanMED classification. What does that do to a study that filters on drug class, and what is the fallback?
+
+**The verdict**
+
+12. Write a 200-word response to the investigators. Distinguish what is unavailable in principle from what is available in a different form, give one concrete number, and recommend either a reshaped study or a different data resource. Do not simply say no.
+
+#### Instructor notes
+
+The intended arc is that students first conclude "this is impossible," then discover that roughly two thirds of the request is satisfiable once it is reframed, and that the genuine blockers are narrower than they look: no lab values, and an age range that stops at 39.
+
+Common wrong turns, all of them productive:
+
+- Quoting record counts as sample sizes. Question 4 exists to catch this.
+- Multiplying marginal distributions. If a student computes "breast cancer × claims-linked" by multiplying percentages, ask what assumption that makes and whether claims linkage is plausibly independent of cancer type, state and diagnosis year. It is not. The metadata gives marginals only; real cross-tabulation needs the platform.
+- Treating `discover` as the data inventory. It lists 51 cohort filters, not 528 variables, and the claims sources have no filters at all. Worth making explicit, because it has misled experienced researchers.
+- Concluding that absent-from-top-2000 means absent-from-data.
+
+For a shorter session, questions 4, 7, 8 and 10 carry most of the value.
 
 ---
 
