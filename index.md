@@ -54,7 +54,7 @@ and validates — you review, attach your IRB and approval documents, submit, an
 | File | Description |
 |------|-------------|
 | [nccr_vocab.ttl](nccr_vocab.ttl) | Vocabulary — OWL ontology (schema) |
-| [nccr_instances.ttl](nccr_instances.ttl) | Instance data — 42,067 triples with value frequencies |
+| [nccr_instances.ttl](nccr_instances.ttl) | Instance data — 44,293 triples with value frequencies and patient counts |
 | [datmm/](datmm/) | DATMM catalog — 9 standalone dataset records + repository |
 
 - [GitHub repository](https://github.com/NCI-DCCPS/nccr-metadata)

@@ -6,13 +6,15 @@ RDF vocabulary and DATMM metadata for the [National Childhood Cancer Registry (N
 
 This repository provides semantic metadata representations for the NCCR Data Platform's datasources and data dictionaries. It enables machine-readable, FAIR-compliant discovery and integration of NCCR data.
 
+**Data vintage:** generated from the NCCR Data Platform on **1 October 2026**, covering diagnosis years 1995-2023. 528 variables across 9 datasources, 1,614,685 tumours from 1,483,916 patients. Counts here will drift as the platform is refreshed, so check against the platform before quoting them in a publication.
+
 ## Files
 
 | File | Purpose |
 |------|---------|
 | `nccr_vocab.ttl` | **Vocabulary** — OWL classes and properties for variables, value sets, filters, processing rules, and display configuration |
 | `nccr_datmm.ttl` | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and its 9 datasources (CTC, ABM, CCDI, COG, MCD, MCE, MCP, PHARM, RO) |
-| `nccr_instances.ttl` | **Instance data** — Complete RDF representation of all 533 variables across all 9 NCCR datasources, including value sets, display configs, filters, and processing rules (28,620 triples) |
+| `nccr_instances.ttl` | **Instance data** — Complete RDF representation of all 528 variables across all 9 NCCR datasources, including value sets, display configs, filters, processing rules, and per-source patient counts (44,293 triples) |
 | `request-form.ttl` | **Data request form** — field inventory, character limits, publicly-displayed flags, the Research Areas controlled vocabulary, and the data elements the form selects by default per datasource |
 | `RAW-JSON/` | **Raw upstream input** — unmodified source data-dictionary JSON for the 9 datasources, published for partners doing their own crosswalk ([details](RAW-JSON/README.md)) |
 | `mcp/` | **MCP server** — exposes the metadata as tools for AI assistants ([setup](mcp/README.md)) |

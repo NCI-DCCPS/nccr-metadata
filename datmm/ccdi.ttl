@@ -12,7 +12,7 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-ccdi> a datmm:Dataset ;
     dct:title "NCCR Childhood Cancer Data Initiative Mappings (CCDI)" ;
     dct:alternative "CCDI Mappings" ;
-    dct:description "Leverages the CCDI Participant Index (CPI) to match individuals across organizations, datasets, and studies. Maps publicly available participant identifiers to NCCR identifiers enabling dataset merging across public health surveillance, research studies, and real-world healthcare resources. Three types of external resources: datasets (e.g., genomic data from phs002790), organizations (e.g., AACR Project GENIE), and studies (e.g., St. Jude). Records updated periodically via the CPI." ;
+    dct:description "Leverages the CCDI Participant Index (CPI) to match individuals across organizations, datasets, and studies. Maps publicly available participant identifiers to NCCR identifiers enabling dataset merging across public health surveillance, research studies, and real-world healthcare resources. Three types of external resources: datasets (e.g., genomic data from phs002790), organizations (e.g., AACR Project GENIE), and studies (e.g., St. Jude). Records updated periodically via the CPI. Contains 69,716 records for 16,453 patients, matched across 74 external resources." ;
     dct:identifier "nccr-ccdi" ;
     dct:issued "2026-06-21"^^xsd:date ;
     dct:language "en" ;

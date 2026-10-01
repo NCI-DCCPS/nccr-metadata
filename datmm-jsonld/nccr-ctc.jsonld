@@ -23,7 +23,7 @@
         "CTC"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/CTC",
-      "dct:description": "Final adjudicated data collected from population-based cancer registries including SEER. Contains all cancer diagnoses reported in 21 states for years 1995-2022, totaling 1,474,368 tumors from 1,359,308 unique individuals ages 0-39. Registries include California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. Also includes NAACCR Virtual Pooled Registry linkage for identifying prior and subsequent malignant neoplasms.",
+      "dct:description": "Final adjudicated data collected from population-based cancer registries including SEER. Contains all cancer diagnoses reported in 21 states for years 1995-2023, totaling 1,614,685 tumors from 1,483,916 unique individuals ages 0-39. Registries include California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. Also includes NAACCR Virtual Pooled Registry linkage for identifying prior and subsequent malignant neoplasms.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."

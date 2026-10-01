@@ -632,6 +632,36 @@ nccr:patientCount a owl:DatatypeProperty ;
     rdfs:range xsd:integer ;
     skos:definition "The number of unique patients matching this cohort definition at the time it was saved."@en .
 
+nccr:sourcePatientCount a owl:DatatypeProperty ;
+    rdfs:label "source patient count"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of unique patients represented in a data source. Distinct from totalRecordCount, which counts rows: a patient contributes many claims. Read this together with patientCountBasis, because what counts as a patient differs by source."@en .
+
+nccr:patientCountBasis a owl:DatatypeProperty ;
+    rdfs:label "patient count basis"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The platform's own wording for what sourcePatientCount measures, kept verbatim because it is not uniform across sources. For most sources it is a plain patient count, but COG reports patients with confirmed study enrollment and MCE reports patients with confirmed insurance enrollment, which are narrower."@en .
+
+nccr:sourceTumorCount a owl:DatatypeProperty ;
+    rdfs:label "source tumor count"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of tumor records in a data source, where the source is tumor-level. One patient may contribute several tumours."@en .
+
+nccr:diagnosisYearRange a owl:DatatypeProperty ;
+    rdfs:label "diagnosis year range"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:string ;
+    skos:definition "The span of index cancer diagnosis years covered by a data source, as published by the platform."@en .
+
+nccr:matchedResourceCount a owl:DatatypeProperty ;
+    rdfs:label "matched resource count"@en ;
+    rdfs:domain nccr:DataSource ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of external resources, such as datasets or studies, that have at least one participant matched to an NCCR patient. A count of resources, not of people."@en .
+
 nccr:tumorCount a owl:DatatypeProperty ;
     rdfs:label "tumor count"@en ;
     rdfs:domain nccr:CohortDefinition ;

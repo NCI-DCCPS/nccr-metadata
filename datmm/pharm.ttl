@@ -12,7 +12,7 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-pharm> a datmm:Dataset ;
     dct:title "NCCR Pharmacy Claims (PHARM)" ;
     dct:alternative "PHARM" ;
-    dct:description "Information derived from outpatient pharmacy providers' claims for medications dispensed to patients with cancer. Includes patients with claims since 2000 from commercial plans, Medicaid, and commercial pharmacies. Contains 9- and 11-digit NDC codes, CanMED and RxNorm drug classification, dispense quantity and duration, and months from diagnosis to dispense. Primarily oral antineoplastics and infusion-based chemotherapies; hospital-based chemotherapy agents currently not included. Contains 12,611,171 records." ;
+    dct:description "Information derived from outpatient pharmacy providers' claims for medications dispensed to patients with cancer. Includes patients with claims since 2000 from commercial plans, Medicaid, and commercial pharmacies. Contains 9- and 11-digit NDC codes, CanMED and RxNorm drug classification, dispense quantity and duration, and months from diagnosis to dispense. Primarily oral antineoplastics and infusion-based chemotherapies; hospital-based chemotherapy agents currently not included. Contains 13,017,829 records for 249,120 patients, covering diagnosis years 1995-2023." ;
     dct:identifier "nccr-pharm" ;
     dct:issued "2026-06-21"^^xsd:date ;
     dct:language "en" ;

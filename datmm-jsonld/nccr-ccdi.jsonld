@@ -23,7 +23,7 @@
         "CCDI Mappings"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/CCDI",
-      "dct:description": "Leverages the CCDI Participant Index (CPI) to match individuals across organizations, datasets, and studies. Maps publicly available participant identifiers to NCCR identifiers enabling dataset merging across public health surveillance, research studies, and real-world healthcare resources. Three types of external resources: datasets (e.g., genomic data from phs002790), organizations (e.g., AACR Project GENIE), and studies (e.g., St. Jude). Records updated periodically via the CPI.",
+      "dct:description": "Leverages the CCDI Participant Index (CPI) to match individuals across organizations, datasets, and studies. Maps publicly available participant identifiers to NCCR identifiers enabling dataset merging across public health surveillance, research studies, and real-world healthcare resources. Three types of external resources: datasets (e.g., genomic data from phs002790), organizations (e.g., AACR Project GENIE), and studies (e.g., St. Jude). Records updated periodically via the CPI. Contains 69,716 records for 16,453 patients, matched across 74 external resources.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process. Approval to access mappings for external resources should be obtained from the respective resource."

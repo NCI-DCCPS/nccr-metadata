@@ -64,13 +64,17 @@ class TestGraphIntegrity:
         assert count == 9, f"Expected 9 DataSources, got {count}"
 
     def test_variables_exist(self, graph):
-        """Should have 533 variables."""
+        """Should have 528 variables.
+
+        Was 533 before the 2026-10-01 refresh. The platform withdrew the
+        nccrId patient identifier from all nine published dictionaries.
+        """
         results = graph.query("""
             PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
             SELECT (COUNT(?v) as ?n) WHERE { ?v a nccr:Variable . }
         """)
         count = int(list(results)[0][0])
-        assert count == 533, f"Expected 533 Variables, got {count}"
+        assert count == 528, f"Expected 528 Variables, got {count}"
 
     def test_cohort_filters_exist(self, graph):
         """Should have 51 cohort filters."""
@@ -300,12 +304,26 @@ class TestValueDistributions:
     def test_female_count(self, graph):
         results = list(graph.query(self.QUERY))
         counts = {str(row.label): int(row['count']) for row in results}
-        assert counts["Female"] == 900104, f"Expected Female=900104, got {counts.get('Female')}"
+        assert counts["Female"] == 987476, f"Expected Female=987476, got {counts.get('Female')}"
 
     def test_male_count(self, graph):
         results = list(graph.query(self.QUERY))
         counts = {str(row.label): int(row['count']) for row in results}
-        assert counts["Male"] == 574264, f"Expected Male=574264, got {counts.get('Male')}"
+        assert counts["Male"] == 627209, f"Expected Male=627209, got {counts.get('Male')}"
+
+    def test_sex_sums_to_ctc_total(self, graph):
+        """Sex is complete for CTC, so the two values must sum to its record count."""
+        counts = {str(r.label): int(r['count']) for r in graph.query(self.QUERY)}
+        total = int(list(graph.query("""
+            PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
+            SELECT ?c WHERE {
+                <https://nccrdataplatform.ccdi.cancer.gov/datasource/ctc>
+                    nccr:totalRecordCount ?c .
+            }
+        """))[0][0])
+        assert counts["Female"] + counts["Male"] == total, (
+            f"Sex values sum to {counts['Female'] + counts['Male']}, "
+            f"but CTC holds {total} records")
 
 
 # ============================================================
@@ -327,16 +345,19 @@ class TestTotalRecordCounts:
     ORDER BY DESC(?count)
     """
 
+    # Refreshed from the platform 2026-10-01. These are pinned deliberately:
+    # when they fail, the published metadata has fallen behind the platform and
+    # should be regenerated with scripts/fetch_platform_data.py.
     EXPECTED_COUNTS = {
-        "Medical Claims Procedure": 62669037,
-        "Medical Claims Diagnosis": 54148739,
-        "Pharmacy Claims": 12611171,
-        "Consolidated Tumor Case (CTC)": 1474368,
-        "Area-Based Measures": 1474368,
-        "Children's Oncology Group (COG)": 1359308,
-        "Medical Claims Enrollment": 1359308,
-        "Childhood Cancer Data Initiative (CCDI) Mappings": 20838,
-        "Radiation Oncology": 4335,
+        "Medical Claims Procedure": 65745499,
+        "Medical Claims Diagnosis": 56660564,
+        "Pharmacy Claims": 13017829,
+        "Consolidated Tumor Case (CTC)": 1614685,
+        "Area-Based Measures": 1614685,
+        "Children's Oncology Group (COG)": 1483916,
+        "Medical Claims Enrollment": 1483916,
+        "Childhood Cancer Data Initiative (CCDI) Mappings": 69716,
+        "Radiation Oncology": 5060,
     }
 
     def test_all_datasources_have_counts(self, graph):
@@ -346,12 +367,12 @@ class TestTotalRecordCounts:
     def test_ctc_count(self, graph):
         results = list(graph.query(self.QUERY))
         counts = {str(row.label): int(row['count']) for row in results}
-        assert counts.get("Consolidated Tumor Case (CTC)") == 1474368
+        assert counts.get("Consolidated Tumor Case (CTC)") == 1614685
 
     def test_mcp_count(self, graph):
         results = list(graph.query(self.QUERY))
         counts = {str(row.label): int(row['count']) for row in results}
-        assert counts.get("Medical Claims Procedure") == 62669037
+        assert counts.get("Medical Claims Procedure") == 65745499
 
     def test_all_counts_match(self, graph):
         results = list(graph.query(self.QUERY))

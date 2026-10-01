@@ -23,7 +23,7 @@
         "ABM"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/ABM",
-      "dct:description": "Non-clinical data variables derived from the US Census Department providing broader context of health-related factors. Variables use 2010 Census attributes and 2010 Census-defined geographic boundaries. Includes Yost socioeconomic status quintiles, Rural-Urban Commuting Area codes, Urban Rural Indicator Codes, and persistent poverty indicators. Values provided for patients with SEER diagnosis year 2006-2022.",
+      "dct:description": "Non-clinical data variables derived from the US Census Department providing broader context of health-related factors. Variables use 2010 Census attributes and 2010 Census-defined geographic boundaries. Includes Yost socioeconomic status quintiles, Rural-Urban Commuting Area codes, Urban Rural Indicator Codes, and persistent poverty indicators. Values provided for patients with SEER diagnosis year 2006-2022. Contains 1,614,685 records for 1,483,916 patients, aligned to the tumour records in CTC.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."

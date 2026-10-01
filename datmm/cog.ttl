@@ -12,7 +12,7 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-cog> a datmm:Dataset ;
     dct:title "NCCR Children's Oncology Group (COG)" ;
     dct:alternative "COG" ;
-    dct:description "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018." ;
+    dct:description "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018. Contains 1,483,916 records, one per patient, of whom 42,031 have confirmed COG study enrollment." ;
     dct:identifier "nccr-cog" ;
     dct:issued "2026-06-21"^^xsd:date ;
     dct:language "en" ;

@@ -36,7 +36,7 @@ Per NLM requirements, the NCCR Data Platform is described as a **Repository** co
 | File | Format | Description | Triples |
 |------|--------|-------------|---------|
 | [`nccr_vocab.ttl`]({{ site.baseurl }}/nccr_vocab.ttl) | OWL / Turtle | Vocabulary — classes and properties for variables, value sets, filters, processing rules, cohort definitions, and display configuration | ~150 |
-| [`nccr_instances.ttl`]({{ site.baseurl }}/nccr_instances.ttl) | RDF / Turtle | Instance data — all 533 variables, 3,715 coded values with observed frequencies, 51 cohort filters, and processing rules | 42,067 |
+| [`nccr_instances.ttl`]({{ site.baseurl }}/nccr_instances.ttl) | RDF / Turtle | Instance data — all 528 variables, 3,963 coded values with observed frequencies, 51 cohort filters, processing rules, and per-source patient counts | 44,293 |
 
 ## Architecture
 

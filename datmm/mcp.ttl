@@ -12,7 +12,7 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-mcp> a datmm:Dataset ;
     dct:title "NCCR Medical Claims Procedure (MCP)" ;
     dct:alternative "MCP" ;
-    dct:description "Patient procedure data extracted from medical claims collected by various insurers. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, applicable procedure modifiers, sequence numbers for procedures occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and the service date of the procedure. Contains 62,669,037 records." ;
+    dct:description "Patient procedure data extracted from medical claims collected by various insurers. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, applicable procedure modifiers, sequence numbers for procedures occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and the service date of the procedure. Contains 65,745,499 records for 300,461 patients, covering diagnosis years 1995-2023." ;
     dct:identifier "nccr-mcp" ;
     dct:issued "2026-06-21"^^xsd:date ;
     dct:language "en" ;

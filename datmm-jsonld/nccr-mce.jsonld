@@ -23,7 +23,7 @@
         "MCE"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCE",
-      "dct:description": "Patient enrollment data extracted from medical claims collected by various insurers. Includes details about each patient's insurance enrollment status at various points in time before and after their index cancer diagnosis. Enrollment status known only for years 2000-2023, for patients with SEER diagnosis year 2000-2021.",
+      "dct:description": "Patient enrollment data extracted from medical claims collected by various insurers. Includes details about each patient's insurance enrollment status at various points in time before and after their index cancer diagnosis. Enrollment status known only for years 2000-2023, for patients with SEER diagnosis year 2000-2021. Contains 1,483,916 records, one per patient, of whom 303,620 have confirmed insurance enrollment. That subset is roughly 20 percent of the cohort and bounds any analysis that depends on claims.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."

@@ -80,15 +80,15 @@ python tools/cohort_builder.py datasources
 ```
   ID       Name                                          Records     Filters
   -------- --------------------------------------------- ----------- --------
-  MCP      Medical Claims Procedure                       62,669,037        0
-  MCD      Medical Claims Diagnosis                       54,148,739        0
-  PHARM    Pharmacy Claims                                12,611,171        7
-  ABM      Area-Based Measures                             1,474,368        0
-  CTC      Consolidated Tumor Case (CTC)                   1,474,368       23
-  COG      Children's Oncology Group (COG)                 1,359,308        7
-  MCE      Medical Claims Enrollment                       1,359,308        0
-  CCDI     Childhood Cancer Data Initiative (CCDI)            20,838        2
-  RO       Radiation Oncology                                  4,335       11
+  MCP      Medical Claims Procedure                       65,745,499        0
+  MCD      Medical Claims Diagnosis                       56,660,564        0
+  PHARM    Pharmacy Claims                                13,017,829        7
+  ABM      Area-Based Measures                             1,614,685        0
+  CTC      Consolidated Tumor Case (CTC)                   1,614,685       23
+  COG      Children's Oncology Group (COG)                 1,483,916        7
+  MCE      Medical Claims Enrollment                       1,483,916        0
+  CCDI     Childhood Cancer Data Initiative (CCDI)            69,716        2
+  RO       Radiation Oncology                                  5,060       11
 ```
 
 **Notes:**
@@ -148,7 +148,7 @@ python tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (S
   2            Female                                              900,104
   1            Male                                                574,264
                                                               ------------
-               TOTAL                                            1,474,368
+               TOTAL                                            1,614,685
 ```
 
 **Tips:**
@@ -421,11 +421,17 @@ Use `discover` to see UI names, `top --list` to see source column names.
 
 The metadata reflects the most recent NCCR data release. Key facts about the current data:
 
-- **CTC**: 1,474,368 tumors from 1,359,308 patients (diagnosis years 1995-2022)
-- **PHARM**: 12,611,171 dispensing records
-- **MCP**: 62,669,037 procedure records
-- **MCD**: 54,148,739 diagnosis records
-- **COG**: 1,359,308 records (diagnosis years 2007-2018)
-- **RO**: 4,335 radiation treatment records
+- **CTC**: 1,614,685 tumors from 1,483,916 patients (diagnosis years 1995-2023)
+- **PHARM**: 13,017,829 dispensing records for 249,120 patients
+- **MCP**: 65,745,499 procedure records for 300,461 patients
+- **MCD**: 56,660,564 diagnosis records for 300,394 patients
+- **COG**: 1,483,916 records, of which 42,031 patients have confirmed study enrollment (diagnosis years 2007-2018)
+- **RO**: 5,060 radiation treatment records for 2,650 patients
+
+Record counts and patient counts are very different questions. A patient
+contributes many claims, so MCP holds 65.7 million procedure records for roughly
+300,000 people. Claims exist for about 20% of the cohort: 303,620 of 1,483,916
+patients have confirmed insurance enrollment, which bounds any claims-based
+analysis.
 
 Record counts below 16 are suppressed for patient privacy.

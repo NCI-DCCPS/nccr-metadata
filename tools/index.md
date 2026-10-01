@@ -27,11 +27,11 @@ python tools/cohort_builder.py datasources
 ```
   ID       Name                                          Records     Filters
   -------- --------------------------------------------- ----------- --------
-  MCP      Medical Claims Procedure                       62,669,037        0
-  MCD      Medical Claims Diagnosis                       54,148,739        0
-  PHARM    Pharmacy Claims                                12,611,171        7
-  CTC      Consolidated Tumor Case (CTC)                   1,474,368       23
-  COG      Children's Oncology Group (COG)                 1,359,308        7
+  MCP      Medical Claims Procedure                       65,745,499        0
+  MCD      Medical Claims Diagnosis                       56,660,564        0
+  PHARM    Pharmacy Claims                                13,017,829        7
+  CTC      Consolidated Tumor Case (CTC)                   1,614,685       23
+  COG      Children's Oncology Group (COG)                 1,483,916        7
   ...
 ```
 
@@ -81,7 +81,7 @@ python tools/cohort_builder.py top "canmedNonProprietaryName" -n 10
 
 ```
   Variable: canmedNonProprietaryName
-  Source:   PHARM (12,611,171 total records)
+  Source:   PHARM (13,017,829 total records)
 
   #    Value                                                   Records
   ---- ------------------------------------------------------- --------

@@ -134,7 +134,7 @@ python tools/cohort_builder.py build -o aya_leukemia_survival.ttl
 
 **Questions to answer:**
 1. Why include COG alongside CTC? What research question does COG enrollment data help answer?
-2. What years of diagnosis are covered? Does the COG coverage (2007-2018) limit your cohort differently than CTC (1995-2022)?
+2. What years of diagnosis are covered? Does the COG coverage (2007-2018) limit your cohort differently than CTC (1995-2023)?
 3. Open the generated `.ttl` file. What information does it capture? Could another researcher reproduce your cohort from this file alone?
 4. What additional variables might you want to request in the actual data download that aren't reflected in the cohort filters?
 
@@ -235,7 +235,7 @@ Write a 1-paragraph research aim that uses NCCR data to investigate whether soci
 1. Which datasources do you need? (at minimum: CTC + ABM + PHARM or CTC + ABM)
 2. What is your exposure variable? What is your outcome variable?
 3. What confounders would you control for? Which ones are available in the metadata?
-4. The SES data uses 2010 Census boundaries but patients were diagnosed 1995-2022. How does this affect your study design?
+4. The SES data uses 2010 Census boundaries but patients were diagnosed 1995-2023. How does this affect your study design?
 5. Insurance enrollment data (MCE) is available for years 2000-2023. How might you use this to strengthen your study?
 
 ---
@@ -250,7 +250,7 @@ Write a 1-paragraph research aim that uses NCCR data to investigate whether soci
 # What does CCDI offer?
 python tools/cohort_builder.py discover --source CCDI
 python tools/cohort_builder.py datasources
-# Note: CCDI has 20,838 records
+# Note: CCDI has 69,716 records for 16,453 patients across 74 resources
 
 # What external resources are mapped?
 python tools/cohort_builder.py values "Resources"
@@ -283,7 +283,7 @@ The NCCR metadata shows aggregate counts but suppresses values with fewer than 1
 **Discussion:**
 1. CTC covers 21 states representing 52.7% of U.S. children/AYA ages 0-39. List three states you think are likely included and three that might be missing. What populations are underrepresented?
 2. Pharmacy claims include "commercial plans, Medicaid, and commercial pharmacies." Who is missing from this data? (Hint: uninsured, VA, IHS.)
-3. COG data covers diagnosis years 2007-2018. CTC covers 1995-2022. If you're studying trends over time, how does this mismatch affect your analysis?
+3. COG data covers diagnosis years 2007-2018. CTC covers 1995-2023. If you're studying trends over time, how does this mismatch affect your analysis?
 4. A study finding from NCCR data says "30% of pediatric leukemia patients received Drug X within 6 months of diagnosis." Can you generalize this to all U.S. children with leukemia? Why or why not?
 
 ---

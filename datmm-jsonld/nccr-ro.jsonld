@@ -23,7 +23,7 @@
         "RO"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/RO",
-      "dct:description": "Data from NCI-supported Cancer Centers and the Pediatric Proton/Photon Consortium Registry (PPCR). Offers expanded radiation treatment data associated with each patient's course of therapy providing an enhanced longitudinal perspective regarding exposure to radiotherapy. Includes radiation anatomic site, radiation therapy type, radiation energy type, total and prescribed doses and fractions, months from index diagnosis to start and end of radiation therapy event, and other elements abstracted from clinical records. Contains 4,335 records.",
+      "dct:description": "Data from NCI-supported Cancer Centers and the Pediatric Proton/Photon Consortium Registry (PPCR). Offers expanded radiation treatment data associated with each patient's course of therapy providing an enhanced longitudinal perspective regarding exposure to radiotherapy. Includes radiation anatomic site, radiation therapy type, radiation energy type, total and prescribed doses and fractions, months from index diagnosis to start and end of radiation therapy event, and other elements abstracted from clinical records. Contains 5,060 records for 2,650 patients.",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
