@@ -41,6 +41,60 @@ NCCR_FLT = Namespace("https://nccrdataplatform.ccdi.cancer.gov/filter/")
 
 INSTANCES_URL = "https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_instances.ttl"
 
+# Frequency distributions for high-cardinality fields (diagnosis codes, procedure
+# codes, drug names) are not carried in the Turtle, because enumerating them as
+# value sets would add hundreds of thousands of triples. They live in the
+# platform's per-source report files instead, which the `top` command reads.
+REPORT_BASE_URL = "https://nccrdataplatform.ccdi.cancer.gov/data/json/"
+REPORT_SOURCES = {
+    "CTC": "ctcReport.json", "ABM": "abmReport.json",
+    "CCDI": "ccdiReport.json", "COG": "cogReport.json",
+    "MCD": "mcdReport.json", "MCE": "mceReport.json",
+    "MCP": "mcpReport.json", "PHARM": "pharmReport.json",
+    "RO": "roReport.json",
+}
+
+
+def _report_dir() -> Path:
+    d = Path(__file__).parent.parent / "source-data"
+    return d if d.exists() else Path("source-data")
+
+
+def load_report(ds_id: str):
+    """Load one source's report, preferring a local copy over the live platform."""
+    filename = REPORT_SOURCES.get(ds_id.upper())
+    if not filename:
+        return None
+    local_path = _report_dir() / filename
+    if local_path.exists():
+        try:
+            with open(local_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+    import urllib.request
+    try:
+        with urllib.request.urlopen(REPORT_BASE_URL + filename, timeout=15) as resp:
+            return json.load(resp)
+    except Exception:
+        return None
+
+
+def report_field_values(field):
+    """Extract (code, count) pairs from a report field.
+
+    Report rows look like [code, {"label": "<count>", "type": ...}, count]. The
+    nested "label" is the chart's data label, i.e. the count again, not a human
+    readable name, so the code in position 0 is the only display value.
+    """
+    if not field.get("charts"):
+        return []
+    out = []
+    for row in field["charts"][0].get("values", []):
+        if isinstance(row, list) and len(row) >= 3:
+            out.append((str(row[0]), row[2]))
+    return out
+
 # Try local file first, fall back to remote
 LOCAL_INSTANCES = Path(__file__).parent.parent / "nccr_instances.ttl"
 LOCAL_INSTANCES_ALT = Path(__file__).parent.parent / "output" / "nccr_instances.ttl"
@@ -234,22 +288,37 @@ def cmd_top(g: Graph, field_name: str, limit: int = 50, datasource: str | None =
         OPTIONAL {{ ?cv skos:prefLabel ?description . }}
         FILTER(
             LCASE(?varLabel) = LCASE("{field_name}") ||
-            LCASE(?col) = LCASE("{field_name}") ||
-            CONTAINS(LCASE(?varLabel), LCASE("{field_name}")) ||
-            CONTAINS(LCASE(?col), LCASE("{field_name}"))
+            LCASE(?col) = LCASE("{field_name}")
+            {{exact_only}}
         )
         {ds_filter}
     }}
     ORDER BY DESC(?count)
     LIMIT {limit}
     """
-    results = list(g.query(query))
 
-    if results:
-        _display_top_results(results, field_name, limit)
+    # Exact matches first. A loose substring match used to send
+    # "claimDiagnosisCode" to "Claim Diagnosis Code Sequence Number", because the
+    # sequence column name contains the requested one. Exact first, then the
+    # report files, then substring as a last resort.
+    exact = list(g.query(query.replace("{exact_only}", "")))
+    if exact:
+        _display_top_results(exact, field_name, limit)
+        return
+
+    if _top_from_reports(field_name, limit, datasource):
+        return
+
+    loose = list(g.query(query.replace(
+        "{exact_only}",
+        f'|| CONTAINS(LCASE(?varLabel), LCASE("{field_name}")) '
+        f'|| CONTAINS(LCASE(?col), LCASE("{field_name}"))')))
+    if loose:
+        print(f"\n  (no exact match for '{field_name}'; showing closest variable)")
+        _display_top_results(loose, field_name, limit)
     else:
-        # Fallback: try reading directly from Report JSON files
-        _top_from_reports(field_name, limit, datasource)
+        print(f"No frequency data found for '{field_name}'.")
+        print("Try: python cohort_builder.py top --list")
 
 
 def _display_top_results(results, field_name: str, limit: int):
@@ -277,78 +346,64 @@ def _display_top_results(results, field_name: str, limit: int):
     print(f"  {'':4} {'TOTAL (shown)':<55} {total:>12,}")
 
 
-def _top_from_reports(field_name: str, limit: int, datasource: str | None):
-    """Fallback: read frequency data directly from Report JSON files."""
-    import urllib.request
+def _top_from_reports(field_name: str, limit: int, datasource: str | None) -> bool:
+    """Read frequency data from the per-source report files.
 
-    # Try local source-data directory first
-    report_dir = Path(__file__).parent.parent / "source-data"
-    if not report_dir.exists():
-        report_dir = Path("source-data")
+    This is how the high-cardinality fields are reached: diagnosis codes,
+    procedure codes, and drug names are not value sets in the Turtle.
+    Returns True if something was displayed.
+    """
+    if datasource and datasource.upper() not in REPORT_SOURCES:
+        print(f"Unknown datasource '{datasource}'. "
+              f"Known: {', '.join(sorted(REPORT_SOURCES))}")
+        return False
 
-    # Report filenames by datasource
-    report_sources = {
-        "CTC": "ctcReport.json", "ABM": "abmReport.json",
-        "CCDI": "ccdiReport.json", "COG": "cogReport.json",
-        "MCD": "mcdReport.json", "MCE": "mceReport.json",
-        "MCP": "mcpReport.json", "PHARM": "pharmReport.json",
-        "RO": "roReport.json",
-    }
-    REPORT_BASE_URL = "https://nccrdataplatform.ccdi.cancer.gov/data/json/"
+    order = [datasource.upper()] if datasource else list(REPORT_SOURCES)
+    want = field_name.lower()
 
-    found = False
-    sources_to_check = {datasource.upper(): report_sources[datasource.upper()]} if datasource else report_sources
-
-    for ds_id, filename in sources_to_check.items():
-        report = None
-        local_path = report_dir / filename
-        if local_path.exists():
-            try:
-                with open(local_path, "r", encoding="utf-8") as f:
-                    report = json.load(f)
-            except (json.JSONDecodeError, IOError):
-                pass
-
-        if report is None:
-            # Try fetching from live platform
-            try:
-                url = REPORT_BASE_URL + filename
-                with urllib.request.urlopen(url, timeout=10) as resp:
-                    report = json.load(resp)
-            except Exception:
+    # Exact field-name matches win over substring ones.
+    for exact_pass in (True, False):
+        for ds_id in order:
+            report = load_report(ds_id)
+            if report is None:
                 continue
-
-        if report is None:
-            continue
-
-        for field in report.get("fields", []):
-            fn = field.get("fieldName", "")
-            if (fn.lower() == field_name.lower() or
-                field_name.lower() in fn.lower() or
-                fn.lower() in field_name.lower()):
-
-                found = True
-                values = field["charts"][0]["values"] if field.get("charts") else []
+            for field in report.get("fields", []):
+                fn = field.get("fieldName", "")
+                hit = (fn.lower() == want) if exact_pass else (
+                    want in fn.lower() or fn.lower() in want)
+                if not hit:
+                    continue
+                values = report_field_values(field)
+                if not values:
+                    continue
+                total_records = report.get("totalCount") or 0
+                covered = sum(c for _, c in values if isinstance(c, (int, float)))
 
                 print(f"\n  Variable: {fn}")
-                print(f"  Source:   {ds_id} ({report.get('totalCount', 'N/A'):,} total records)")
-                print(f"  Showing top {min(limit, len(values))} values by record count\n")
+                print(f"  Source:   {ds_id} ({total_records:,} total records)")
+                if field.get("charts"):
+                    print(f"  Chart:    {field['charts'][0].get('title','')}")
+                print(f"  Showing top {min(limit, len(values))} of {len(values)} "
+                      f"listed values\n")
                 print(f"  {'#':<4} {'Value':<55} {'Records':>12}")
                 print(f"  {'-'*4} {'-'*55} {'-'*12}")
 
-                total = 0
-                for i, v in enumerate(values[:limit], 1):
-                    code = str(v[0])
-                    label_info = v[1] if len(v) > 1 and isinstance(v[1], dict) else {}
-                    label = str(label_info.get("label", code)) if label_info else code
-                    count = v[2] if len(v) > 2 else 0
-                    total += count
-                    display = label[:55] if len(label) > 55 else label
-                    print(f"  {i:<4} {display:<55} {count:>12,}")
+                shown = 0
+                for i, (code, count) in enumerate(values[:limit], 1):
+                    shown += count if isinstance(count, (int, float)) else 0
+                    print(f"  {i:<4} {code[:55]:<55} {count:>12,}")
 
                 print(f"  {'':4} {'':55} {'-'*12}")
-                print(f"  {'':4} {'TOTAL (shown)':<55} {total:>12,}")
-                return
+                print(f"  {'':4} {'TOTAL (shown)':<55} {shown:>12,}")
+                if total_records:
+                    print(f"\n  These {len(values)} listed values cover "
+                          f"{covered:,} of {total_records:,} records "
+                          f"({covered/total_records*100:.1f}%). Codes outside the "
+                          f"list exist but are not itemised here.")
+                print("  Counts are records, not patients. One patient "
+                      "contributes many claims.")
+                return True
+    return False
 
     if not found:
         print(f"No frequency data found for '{field_name}'.")
@@ -379,13 +434,38 @@ def cmd_top_list(g: Graph):
         return
 
     current_ds = None
-    print(f"\n  Variables with frequency data (use with 'top' command):\n")
+    print("\n  Variables with frequency data in the metadata "
+          "(use with 'top' command):\n")
     for row in results:
         if str(row.dsLabel) != current_ds:
             current_ds = str(row.dsLabel)
             print(f"\n  {current_ds}")
             print(f"  {'-'*60}")
         print(f"    {str(row.varLabel):<45} ({int(row.valueCount)} values)")
+
+    # The Turtle only enumerates low-cardinality value sets. Diagnosis codes,
+    # procedure codes, and drug names are the fields researchers most often want
+    # and they are NOT above, so list them explicitly rather than leaving the
+    # impression that the data does not exist.
+    print("\n\n  Additional high-cardinality fields, served from the platform's")
+    print("  report files rather than the Turtle. These are the diagnosis,")
+    print("  procedure, and medication distributions:\n")
+    for ds_id in REPORT_SOURCES:
+        report = load_report(ds_id)
+        if report is None:
+            continue
+        rows = []
+        for field in report.get("fields", []):
+            vals = report_field_values(field)
+            if len(vals) >= 40:  # the long-tail fields, not the small recodes
+                rows.append((field.get("fieldName", ""), len(vals)))
+        if not rows:
+            continue
+        print(f"  {ds_id}  ({report.get('totalCount', 0):,} records)")
+        print(f"  {'-'*60}")
+        for fn, n in sorted(rows, key=lambda t: -t[1]):
+            print(f"    {fn:<45} ({n} values listed)")
+        print()
 
 
 # ============================================================
