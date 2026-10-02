@@ -13,8 +13,11 @@ A command-line tool that queries the published NCCR metadata to explore data sou
 ```bash
 git clone https://github.com/NCI-DCCPS/nccr-metadata.git
 cd nccr-metadata
-pip install rdflib
+python3 -m pip install -r requirements.txt
 ```
+
+Use `python3 -m pip`, not a bare `pip`. See the
+[tools guide](../docs/tools-guide.md) for virtual environment setup.
 
 ## Commands
 
