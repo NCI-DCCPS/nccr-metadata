@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Check that the ERD page and DBML list the same data sources as the metadata.
+"""Check that the generated ERD assets agree with the metadata.
 
-Run from the repo root. Exits non-zero if the ERD assets have drifted from
-nccr_instances.ttl, which is how the diagram ended up showing 7 of 9
-sources in the first place.
+Run from the repo root. Exits non-zero if erd.html or erd.dbml has
+drifted from nccr_instances.ttl, which is how the diagram ended up
+showing 7 of 9 sources in the first place.
+
+    python tools/check_erd_matches_metadata.py
 """
 import re
 import sys
@@ -26,8 +28,7 @@ def metadata_sources():
          <{V}totalRecordCount> ?rec .
     }} ORDER BY DESC(?rec)
     """
-    g2 = g.query(q)
-    return [(str(r.id), str(r.label), int(r.rec)) for r in g2]
+    return [(str(r.id), str(r.label), int(r.rec)) for r in g.query(q)]
 
 
 def main():
@@ -55,6 +56,14 @@ def main():
     extra = dbml_tables - {s[0] for s in sources}
     for sid in sorted(extra):
         failures.append(f"{DBML} has table {sid}, which is not a metadata data source")
+
+    claimed = re.search(r"All (\d+) sources:", page)
+    if not claimed:
+        failures.append(f"{PAGE} does not state how many sources it covers")
+    elif int(claimed.group(1)) != len(sources):
+        failures.append(
+            f"{PAGE} claims {claimed.group(1)} sources, metadata defines {len(sources)}"
+        )
 
     print()
     if failures:

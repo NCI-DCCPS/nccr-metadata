@@ -2,7 +2,7 @@
 <!-- GENERATED FILE - DO NOT EDIT.
      Produced by tools/generate_erd.py from tools/templates/erd.html.template
      and the metadata in nccr_instances.ttl.
-     Generated 2026-10-02. Edit the template, then regenerate. -->
+     Generated {{GENERATED}}. Edit the template, then regenerate. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -65,8 +65,8 @@
     <div class="title">NCCR Data Cut — <span class="accent">Interactive ERD</span></div>
     <div class="legend">
       <span><b>Master:</b> CTC (per tumor)</span>
-      <span><b>Patient link:</b> <span class="k">dataRequestPatientId</span></span>
-      <span><b>CTC + ABM:</b> <span class="k">tumorRecordNumber</span></span>
+      <span><b>Patient link:</b> <span class="k">{{PATIENT_KEY}}</span></span>
+      <span><b>CTC + ABM:</b> <span class="k">{{TUMOR_KEY}}</span></span>
     </div>
     <a class="home" href="./">← Back to home</a>
   </header>
@@ -74,22 +74,14 @@
   <!-- Source list generated from the metadata registry
        (sourceId / sourceLabel / totalRecordCount). -->
   <div class="sources">
-    <span class="lead">All 9 sources:</span>
-    <b>MCP</b> Medical Claims Procedure 65,745,499 &middot;
-    <b>MCD</b> Medical Claims Diagnosis 56,660,564 &middot;
-    <b>PHARM</b> Pharmacy Claims 13,017,829 &middot;
-    <b>ABM</b> Area-Based Measures 1,614,685 &middot;
-    <b>CTC</b> Consolidated Tumor Case 1,614,685 &middot;
-    <b>COG</b> Children&rsquo;s Oncology Group 1,483,916 &middot;
-    <b>MCE</b> Medical Claims Enrollment 1,483,916 &middot;
-    <b>CCDI</b> Childhood Cancer Data Initiative Mappings 69,716 &middot;
-    <b>RO</b> Radiation Oncology 5,060
+    <span class="lead">All {{SOURCE_COUNT}} sources:</span>
+{{SOURCE_STRIP}}
   </div>
 
   <!-- ================= dbdiagram.io interactive embed (full-bleed) ================= -->
   <div class="frame">
     <iframe
-      src="https://dbdiagram.io/e/6aa1befbf476a8187a5492e7/6aa1bf01f476a8187a54935b"
+      src="{{EMBED_URL}}"
       title="NCCR Data Cut interactive ERD (dbdiagram.io)"
       allowfullscreen>
     </iframe>
@@ -97,7 +89,7 @@
 
   <footer>
     <span>Drag tables to rearrange · follow the lines to see joins. Some columns are
-      summarized (MCE has 363 fields, CTC 109);
+      summarized ({{WIDEST_SOURCE}} has {{WIDEST_COLS}} fields, {{SECOND_SOURCE}} {{SECOND_COLS}});
       the full field list per table is in the data dictionary shipped with each cut.
       Diagram source: <a href="erd.dbml">erd.dbml</a>, generated from the metadata.</span>
     <span>NCCR · DCCPS / NCI / NIH · <a href="https://github.com/NCI-DCCPS/nccr-metadata">repo</a></span>
