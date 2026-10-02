@@ -32,6 +32,15 @@
   header .legend b{color:var(--ink); font-weight:700;}
   header .legend .k{color:var(--cyan); font-weight:700;}
   header .home{font-size:12.5px; color:var(--teal); text-decoration:none; white-space:nowrap;}
+  /* metadata-driven source strip, so a missing table is obvious at a glance */
+  .sources{
+    flex:none; padding:7px 22px; font-size:11.5px; line-height:1.5;
+    color:var(--muted); background:#0b1826;
+    border-bottom:1px solid rgba(157,178,198,.15);
+    white-space:nowrap; overflow-x:auto;
+  }
+  .sources b{color:var(--cyan); font-weight:700;}
+  .sources .lead{color:var(--ink); font-weight:700;}
   /* the diagram fills all remaining space */
   .frame{flex:1 1 auto; position:relative; background:#0e1f33;}
   .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
@@ -58,6 +67,21 @@
     <a class="home" href="./">← Back to home</a>
   </header>
 
+  <!-- Source list generated from the metadata registry (sourceId / sourceLabel /
+       totalRecordCount). Regenerate with tools/generate_erd_dbml.py; do not hand-edit. -->
+  <div class="sources">
+    <span class="lead">All 9 sources:</span>
+    <b>MCP</b> Medical Claims Procedure 65,745,499 ·
+    <b>MCD</b> Medical Claims Diagnosis 56,660,564 ·
+    <b>PHARM</b> Pharmacy Claims 13,017,829 ·
+    <b>ABM</b> Area-Based Measures 1,614,685 ·
+    <b>CTC</b> Consolidated Tumor Case 1,614,685 ·
+    <b>COG</b> Children&rsquo;s Oncology Group 1,483,916 ·
+    <b>MCE</b> Medical Claims Enrollment 1,483,916 ·
+    <b>CCDI</b> Childhood Cancer Data Initiative Mappings 69,716 ·
+    <b>RO</b> Radiation Oncology 5,060
+  </div>
+
   <!-- ================= dbdiagram.io interactive embed (full-bleed) ================= -->
   <div class="frame">
     <iframe
@@ -68,7 +92,7 @@
   </div>
 
   <footer>
-    <span>Drag tables to rearrange · follow the lines to see joins. Some columns are summarized; full field list is in the data dictionary shipped with each cut.</span>
+    <span>Drag tables to rearrange · follow the lines to see joins. Some columns are summarized (MCE has 363 monthly enrollment fields, CTC 109); full field list is in the data dictionary shipped with each cut. Diagram source: <a href="erd.dbml">erd.dbml</a>, generated from the metadata.</span>
     <span>NCCR · DCCPS / NCI / NIH · <a href="https://github.com/NCI-DCCPS/nccr-metadata">repo</a></span>
   </footer>
 </body>
