@@ -1,0 +1,4 @@
+# Dependencies for the command-line tools in tools/
+# Install with:  python3 -m pip install -r requirements.txt
+# Use "python3 -m pip", not a bare "pip" - see docs/tools-guide.md
+rdflib>=7.0.0

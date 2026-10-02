@@ -7,8 +7,11 @@ Exercises for students learning to explore and use NCCR Data Platform metadata. 
 ```bash
 git clone https://github.com/NCI-DCCPS/nccr-metadata.git
 cd nccr-metadata
-pip install rdflib
+python3 -m pip install -r requirements.txt
 ```
+
+Use `python3 -m pip`, not a bare `pip`. See the
+[tools guide](tools-guide.md) if the install gives you trouble.
 
 ---
 

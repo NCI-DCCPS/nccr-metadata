@@ -25,11 +25,25 @@ source .venv/bin/activate
 uv pip install rdflib
 ```
 
-**Option B — using pip directly:**
+**Option B — using the Python you already have:**
 
 ```bash
-pip install rdflib
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
 ```
+
+If you would rather not use a virtual environment, install into your user
+site-packages instead:
+
+```bash
+python3 -m pip install --user rdflib
+```
+
+Use `python3 -m pip`, not a bare `pip`. On macOS the `pip` command is often
+absent even when pip itself is installed, and `python3 pip install rdflib`
+(without the `-m`) fails with `can't open file '.../pip'`, because Python
+looks for a *file* named `pip` in the current directory.
 
 ### 3. Verify it works
 
