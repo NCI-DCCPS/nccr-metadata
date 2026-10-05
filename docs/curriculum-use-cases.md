@@ -25,13 +25,13 @@ Use `python3 -m pip`, not a bare `pip`. See the
 
 ```bash
 # See all available datasources and their sizes
-python tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py datasources
 
 # What cancer types are represented?
-python tools/cohort_builder.py values "ICCC Major (Level 1)"
+python3 tools/cohort_builder.py values "ICCC Major (Level 1)"
 
 # What does the age distribution look like?
-python tools/cohort_builder.py top "ageRecode19Groups"
+python3 tools/cohort_builder.py top "ageRecode19Groups"
 ```
 
 **Questions to answer:**
@@ -50,13 +50,13 @@ python tools/cohort_builder.py top "ageRecode19Groups"
 
 ```bash
 # What drug categories exist?
-python tools/cohort_builder.py values "CanMED Drug Category"
+python3 tools/cohort_builder.py values "CanMED Drug Category"
 
 # What are the top 20 individual drugs?
-python tools/cohort_builder.py top "canmedNonProprietaryName" -n 20
+python3 tools/cohort_builder.py top "canmedNonProprietaryName" -n 20
 
 # What major drug classes are represented?
-python tools/cohort_builder.py top "canmedMajorDrugClass" -n 15
+python3 tools/cohort_builder.py top "canmedMajorDrugClass" -n 15
 ```
 
 **Questions to answer:**
@@ -74,7 +74,7 @@ python tools/cohort_builder.py top "canmedMajorDrugClass" -n 15
 **Steps:**
 
 ```bash
-python tools/cohort_builder.py values "Race/Ethnicity"
+python3 tools/cohort_builder.py values "Race/Ethnicity"
 ```
 
 **Questions to answer:**
@@ -92,8 +92,8 @@ python tools/cohort_builder.py values "Race/Ethnicity"
 **Steps:**
 
 ```bash
-python tools/cohort_builder.py discover --source ABM
-python tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (SES) Quintile"
+python3 tools/cohort_builder.py discover --source ABM
+python3 tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (SES) Quintile"
 ```
 
 **Questions to answer:**
@@ -114,19 +114,19 @@ python tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (S
 
 ```bash
 # What filters are available in CTC?
-python tools/cohort_builder.py discover --source CTC
+python3 tools/cohort_builder.py discover --source CTC
 
 # Find the leukemia code
-python tools/cohort_builder.py values "ICCC Major (Level 1)"
+python3 tools/cohort_builder.py values "ICCC Major (Level 1)"
 
 # What vital status options exist?
-python tools/cohort_builder.py values "Vital Status"
+python3 tools/cohort_builder.py values "Vital Status"
 
 # What does the COG datasource add?
-python tools/cohort_builder.py discover --source COG
+python3 tools/cohort_builder.py discover --source COG
 
 # Build the cohort
-python tools/cohort_builder.py build -o aya_leukemia_survival.ttl
+python3 tools/cohort_builder.py build -o aya_leukemia_survival.ttl
 ```
 
 **Cohort criteria:**
@@ -151,17 +151,17 @@ python tools/cohort_builder.py build -o aya_leukemia_survival.ttl
 
 ```bash
 # What surgery options are recorded?
-python tools/cohort_builder.py values "Surgery of Primary Site"
+python3 tools/cohort_builder.py values "Surgery of Primary Site"
 
 # What chemotherapy information is available?
-python tools/cohort_builder.py values "Chemotherapy"
+python3 tools/cohort_builder.py values "Chemotherapy"
 
 # What about pharmacy-level detail?
-python tools/cohort_builder.py discover --source PHARM
-python tools/cohort_builder.py top "canmedNonProprietaryName" -n 30
+python3 tools/cohort_builder.py discover --source PHARM
+python3 tools/cohort_builder.py top "canmedNonProprietaryName" -n 30
 
 # What does claims procedure data show?
-python tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py datasources
 # Note MCP has 65.7M records but only ~300K patients — what does this mean?
 ```
 
@@ -181,19 +181,19 @@ python tools/cohort_builder.py datasources
 
 ```bash
 # What RO filters are available?
-python tools/cohort_builder.py discover --source RO
+python3 tools/cohort_builder.py discover --source RO
 
 # What anatomic sites are treated?
-python tools/cohort_builder.py top "radiation_anatomic_site"
+python3 tools/cohort_builder.py top "radiation_anatomic_site"
 
 # What therapy types exist?
-python tools/cohort_builder.py top "radiation_therapy_type"
+python3 tools/cohort_builder.py top "radiation_therapy_type"
 
 # What energy types?
-python tools/cohort_builder.py top "radiation_energy_type"
+python3 tools/cohort_builder.py top "radiation_energy_type"
 
 # Build a brain tumor + radiation cohort
-python tools/cohort_builder.py build -o brain_radiation.ttl
+python3 tools/cohort_builder.py build -o brain_radiation.ttl
 # → Datasources: CTC, RO
 # → ICCC Major (Level 1) = 03 (CNS tumors)
 # → Min Age = 0, Max Age = 14
@@ -217,17 +217,17 @@ python tools/cohort_builder.py build -o brain_radiation.ttl
 
 ```bash
 # SES measures
-python tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (SES) Quintile"
+python3 tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (SES) Quintile"
 
 # Treatment timing
-python tools/cohort_builder.py discover --source CTC
+python3 tools/cohort_builder.py discover --source CTC
 # Note: "Min Months" and "Max Months" filters for time-to-treatment
 
 # Pharmacy timing
-python tools/cohort_builder.py top "monthsFromIndexDxtoDispense" --source PHARM
+python3 tools/cohort_builder.py top "monthsFromIndexDxtoDispense" --source PHARM
 
 # Claims enrollment (insurance coverage)
-python tools/cohort_builder.py discover --source MCE
+python3 tools/cohort_builder.py discover --source MCE
 ```
 
 **Design a study:**
@@ -251,12 +251,12 @@ Write a 1-paragraph research aim that uses NCCR data to investigate whether soci
 
 ```bash
 # What does CCDI offer?
-python tools/cohort_builder.py discover --source CCDI
-python tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py discover --source CCDI
+python3 tools/cohort_builder.py datasources
 # Note: CCDI has 69,716 records for 16,453 patients across 74 resources
 
 # What external resources are mapped?
-python tools/cohort_builder.py values "Resources"
+python3 tools/cohort_builder.py values "Resources"
 ```
 
 **Questions to answer:**
@@ -328,24 +328,24 @@ They want to predict cardiotoxicity. Your job is to tell them what they can actu
 
 ```bash
 # Scope: who is in this registry at all?
-python tools/cohort_builder.py datasources
-python tools/cohort_builder.py values "Min Age (Yrs)"
+python3 tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py values "Min Age (Yrs)"
 
 # Their cancers are in ICD-10. How does CTC code cancer?
-python tools/cohort_builder.py values "ICCC Extended (Level 3)"
+python3 tools/cohort_builder.py values "ICCC Extended (Level 3)"
 
 # Their comorbid outcomes are claims diagnoses, not registry fields
-python tools/cohort_builder.py top claimDiagnosisCode --limit 40
+python3 tools/cohort_builder.py top claimDiagnosisCode --limit 40
 
 # Their procedures and, it turns out, their lab tests
-python tools/cohort_builder.py top claimProcedureCode --limit 40
+python3 tools/cohort_builder.py top claimProcedureCode --limit 40
 
 # Their medications, in two different places
-python tools/cohort_builder.py top canmedNonProprietaryName --limit 25
-python tools/cohort_builder.py top rxnormAtcprodClass --limit 25
+python3 tools/cohort_builder.py top canmedNonProprietaryName --limit 25
+python3 tools/cohort_builder.py top rxnormAtcprodClass --limit 25
 
 # Does anything resemble a lab result?
-python tools/cohort_builder.py top --list
+python3 tools/cohort_builder.py top --list
 ```
 
 #### Questions to answer

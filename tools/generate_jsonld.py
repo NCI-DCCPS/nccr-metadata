@@ -19,7 +19,7 @@ Turtle files change (e.g., an annual data refresh).
 Output: datmm-jsonld/  (one file per dataset + a combined file)
 
 Usage:
-    python tools/generate_jsonld.py
+    python3 tools/generate_jsonld.py
 
 Requirements:
     pip install rdflib
