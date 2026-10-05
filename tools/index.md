@@ -24,7 +24,7 @@ Use `python3 -m pip`, not a bare `pip`. See the
 ### Show available datasources
 
 ```bash
-python tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py datasources
 ```
 
 ```
@@ -41,7 +41,7 @@ python tools/cohort_builder.py datasources
 ### Discover filterable variables
 
 ```bash
-python tools/cohort_builder.py discover --source CTC
+python3 tools/cohort_builder.py discover --source CTC
 ```
 
 ```
@@ -59,7 +59,7 @@ python tools/cohort_builder.py discover --source CTC
 ### View permissible values with record counts
 
 ```bash
-python tools/cohort_builder.py values "Race/Ethnicity"
+python3 tools/cohort_builder.py values "Race/Ethnicity"
 ```
 
 ```
@@ -79,7 +79,7 @@ python tools/cohort_builder.py values "Race/Ethnicity"
 ### Top values by frequency (including drug names)
 
 ```bash
-python tools/cohort_builder.py top "canmedNonProprietaryName" -n 10
+python3 tools/cohort_builder.py top "canmedNonProprietaryName" -n 10
 ```
 
 ```
@@ -99,7 +99,7 @@ python tools/cohort_builder.py top "canmedNonProprietaryName" -n 10
 ### Build a cohort definition
 
 ```bash
-python tools/cohort_builder.py build -o my_cohort.ttl
+python3 tools/cohort_builder.py build -o my_cohort.ttl
 ```
 
 Interactive prompts guide you through:
@@ -112,7 +112,7 @@ The output is a portable RDF/Turtle file that can be shared with collaborators o
 ### Example: Pediatric Leukemia cohort (ages 7-17)
 
 ```bash
-python tools/cohort_builder.py build -o pediatric_leukemia.ttl
+python3 tools/cohort_builder.py build -o pediatric_leukemia.ttl
 ```
 
 ```

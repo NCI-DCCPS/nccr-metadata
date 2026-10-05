@@ -12,9 +12,9 @@ ERD previously showed 7 of the 9 sources because the diagram was maintained by
 hand with no source in the repo, and the page was duplicated in two places.
 
 Usage (from the repo root):
-    python tools/generate_erd.py
-    python tools/generate_erd.py --all-columns
-    python tools/generate_erd.py --max-columns 40
+    python3 tools/generate_erd.py
+    python3 tools/generate_erd.py --all-columns
+    python3 tools/generate_erd.py --max-columns 40
 
 Edit tools/templates/erd.html.template for page changes, never erd.html.
 """

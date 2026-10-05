@@ -5,7 +5,7 @@ Run from the repo root. Exits non-zero if erd.html or erd.dbml has
 drifted from nccr_instances.ttl, which is how the diagram ended up
 showing 7 of 9 sources in the first place.
 
-    python tools/check_erd_matches_metadata.py
+    python3 tools/check_erd_matches_metadata.py
 """
 import re
 import sys

@@ -48,10 +48,32 @@ looks for a *file* named `pip` in the current directory.
 ### 3. Verify it works
 
 ```bash
-python tools/cohort_builder.py --help
+python3 tools/cohort_builder.py --help
 ```
 
 You should see the command listing and examples.
+
+### Troubleshooting
+
+Python reports a missing *file* for three different mistakes, and the message
+always names a path that was never meant to exist. If you see `can't open
+file ...: [Errno 2] No such file or directory`, compare your command against
+these.
+
+| What you see | What it means |
+|---|---|
+| `can't open file '<dir>/pip'` | The `-m` is missing. Use `python3 -m pip install ...`, which runs pip as a module. Without `-m`, Python looks for a file named `pip`. |
+| `can't open file '<dir>/cohort_builder.py'` | The `tools/` prefix is missing. The script lives in `tools/`, so run `python3 tools/cohort_builder.py`. |
+| `python: command not found` | macOS and most Linux systems have no bare `python`, only `python3`. Every command in this guide uses `python3`. |
+
+The script itself does not care which directory you run it from. It finds the
+metadata relative to its own location, so all of these work:
+
+```bash
+python3 tools/cohort_builder.py datasources          # from the repo root
+cd tools && python3 cohort_builder.py datasources    # from inside tools/
+python3 ~/nccr-metadata/tools/cohort_builder.py datasources   # from anywhere
+```
 
 ---
 
@@ -86,7 +108,7 @@ The first run may take 5-10 seconds to parse the graph. Subsequent queries again
 Shows all 9 NCCR datasources with their record counts and number of filterable variables.
 
 ```bash
-python tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py datasources
 ```
 
 **Output:**
@@ -118,12 +140,12 @@ Lists all variables that can be used as filters in the cohort builder.
 
 ```bash
 # All filterable variables across all datasources
-python tools/cohort_builder.py discover
+python3 tools/cohort_builder.py discover
 
 # Only filters for a specific datasource
-python tools/cohort_builder.py discover --source CTC
-python tools/cohort_builder.py discover --source PHARM
-python tools/cohort_builder.py discover -s RO
+python3 tools/cohort_builder.py discover --source CTC
+python3 tools/cohort_builder.py discover --source PHARM
+python3 tools/cohort_builder.py discover -s RO
 ```
 
 **Output columns:**
@@ -143,12 +165,12 @@ python tools/cohort_builder.py discover -s RO
 Displays all allowed values for a filter variable, including record counts when available.
 
 ```bash
-python tools/cohort_builder.py values "Sex"
-python tools/cohort_builder.py values "Race/Ethnicity"
-python tools/cohort_builder.py values "ICCC Major (Level 1)"
-python tools/cohort_builder.py values "Vital Status"
-python tools/cohort_builder.py values "CanMED Drug Category"
-python tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (SES) Quintile"
+python3 tools/cohort_builder.py values "Sex"
+python3 tools/cohort_builder.py values "Race/Ethnicity"
+python3 tools/cohort_builder.py values "ICCC Major (Level 1)"
+python3 tools/cohort_builder.py values "Vital Status"
+python3 tools/cohort_builder.py values "CanMED Drug Category"
+python3 tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (SES) Quintile"
 ```
 
 **Output:**
@@ -178,16 +200,16 @@ Shows the most common values for any variable, sorted by record count. Works for
 
 ```bash
 # Top 50 values (default)
-python tools/cohort_builder.py top "canmedNonProprietaryName"
+python3 tools/cohort_builder.py top "canmedNonProprietaryName"
 
 # Limit results
-python tools/cohort_builder.py top "canmedNonProprietaryName" -n 10
+python3 tools/cohort_builder.py top "canmedNonProprietaryName" -n 10
 
 # Filter by datasource
-python tools/cohort_builder.py top "primarySite" --source CTC -n 20
+python3 tools/cohort_builder.py top "primarySite" --source CTC -n 20
 
 # List all variables that have frequency data
-python tools/cohort_builder.py top --list
+python3 tools/cohort_builder.py top --list
 ```
 
 **How it works:**
@@ -198,28 +220,28 @@ The `top` command first tries to find frequency data in the RDF graph (for varia
 
 ```bash
 # Most common drugs prescribed
-python tools/cohort_builder.py top "canmedNonProprietaryName" -n 20
+python3 tools/cohort_builder.py top "canmedNonProprietaryName" -n 20
 
 # Drug classes
-python tools/cohort_builder.py top "canmedMajorDrugClass" -n 15
+python3 tools/cohort_builder.py top "canmedMajorDrugClass" -n 15
 
 # RxNorm drug names
-python tools/cohort_builder.py top "rxnormDisplayName" -n 20
+python3 tools/cohort_builder.py top "rxnormDisplayName" -n 20
 
 # Primary cancer sites
-python tools/cohort_builder.py top "primarySite" -n 20
+python3 tools/cohort_builder.py top "primarySite" -n 20
 
 # Radiation anatomic sites
-python tools/cohort_builder.py top "radiation_anatomic_site"
+python3 tools/cohort_builder.py top "radiation_anatomic_site"
 
 # Radiation therapy types
-python tools/cohort_builder.py top "radiation_therapy_type"
+python3 tools/cohort_builder.py top "radiation_therapy_type"
 
 # Age distribution
-python tools/cohort_builder.py top "ageRecode19Groups"
+python3 tools/cohort_builder.py top "ageRecode19Groups"
 
 # Diagnosis codes in medical claims
-python tools/cohort_builder.py top "diagnosisCode" --source MCD
+python3 tools/cohort_builder.py top "diagnosisCode" --source MCD
 ```
 
 **Note:** The field name for `top` uses the source column name (camelCase, as stored in the data) rather than the UI display name. Use `top --list` to see all available field names.
@@ -232,11 +254,11 @@ Guides you through building a cohort definition step by step, then exports it as
 
 ```bash
 # Interactive mode
-python tools/cohort_builder.py build
+python3 tools/cohort_builder.py build
 
 # Specify output file
-python tools/cohort_builder.py build -o my_cohort.ttl
-python tools/cohort_builder.py build --output pediatric_leukemia.ttl
+python3 tools/cohort_builder.py build -o my_cohort.ttl
+python3 tools/cohort_builder.py build --output pediatric_leukemia.ttl
 ```
 
 **Interactive workflow:**
@@ -351,43 +373,43 @@ The `build` command generates an RDF/Turtle file. Here's what a generated cohort
 
 ```bash
 # 1. Check what datasources are relevant
-python tools/cohort_builder.py datasources
+python3 tools/cohort_builder.py datasources
 
 # 2. Explore filters for the primary datasource
-python tools/cohort_builder.py discover --source CTC
+python3 tools/cohort_builder.py discover --source CTC
 
 # 3. Check specific variable values
-python tools/cohort_builder.py values "ICCC Major (Level 1)"
+python3 tools/cohort_builder.py values "ICCC Major (Level 1)"
 
 # 4. Look at distributions for detailed variables
-python tools/cohort_builder.py top "primarySite" -n 30
+python3 tools/cohort_builder.py top "primarySite" -n 30
 ```
 
 ### Workflow 2: "How common is [condition/drug/treatment]?"
 
 ```bash
 # Drugs
-python tools/cohort_builder.py top "canmedNonProprietaryName" -n 30
+python3 tools/cohort_builder.py top "canmedNonProprietaryName" -n 30
 
 # Cancer sites
-python tools/cohort_builder.py top "primarySite" -n 30
+python3 tools/cohort_builder.py top "primarySite" -n 30
 
 # Radiation treatments
-python tools/cohort_builder.py top "radiation_therapy_type"
+python3 tools/cohort_builder.py top "radiation_therapy_type"
 
 # Drug categories
-python tools/cohort_builder.py values "CanMED Drug Category"
+python3 tools/cohort_builder.py values "CanMED Drug Category"
 ```
 
 ### Workflow 3: "Build and export a cohort definition"
 
 ```bash
 # 1. Explore what's available
-python tools/cohort_builder.py discover --source CTC
-python tools/cohort_builder.py values "ICCC Major (Level 1)"
+python3 tools/cohort_builder.py discover --source CTC
+python3 tools/cohort_builder.py values "ICCC Major (Level 1)"
 
 # 2. Build the cohort
-python tools/cohort_builder.py build -o my_study_cohort.ttl
+python3 tools/cohort_builder.py build -o my_study_cohort.ttl
 
 # 3. Share the .ttl file with your team or include in your DAR
 ```
@@ -399,8 +421,8 @@ python tools/cohort_builder.py build -o my_study_cohort.ttl
 ### "No values found for X"
 
 The `values` command works with filter titles as shown in `discover` output. Try:
-- Check exact spelling: `python tools/cohort_builder.py discover --source CTC`
-- Use the `top` command instead for non-filterable variables: `python tools/cohort_builder.py top "fieldName"`
+- Check exact spelling: `python3 tools/cohort_builder.py discover --source CTC`
+- Use the `top` command instead for non-filterable variables: `python3 tools/cohort_builder.py top "fieldName"`
 - Use `top --list` to see all variables with frequency data
 
 ### "Loading from GitHub (this may take a moment)..."
