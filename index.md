@@ -22,8 +22,8 @@ This site provides **machine-readable metadata** for the platform's datasources 
 | [Cohort Builder Tool](tools/) | CLI tool for discovering variables, exploring value frequencies, and building cohort definitions |
 | [Data Cut ERD](erd.html) | Interactive entity-relationship diagram of a full data cut (full-screen) |
 | [Metadata Graph](graph.html) | Interactive graph of the ontology and example data, parsed live from the Turtle |
-| [MCP Server](https://github.com/NCI-DCCPS/nccr-metadata/blob/main/mcp/README.md) | Query NCCR metadata from any AI assistant (Claude, Cursor, VS Code, Kiro) |
-| [Data Request Skill](https://github.com/NCI-DCCPS/nccr-metadata/blob/main/skills/nccr-data-request/README.md) | Helps a researcher draft and validate an NCCR data request |
+| [MCP Server]({{ site.baseurl }}/mcp/) | Query NCCR metadata from any AI assistant (Claude, Cursor, VS Code, Kiro) |
+| [Data Request Skill]({{ site.baseurl }}/skills/nccr-data-request/) | Helps a researcher draft and validate an NCCR data request |
 
 ---
 
@@ -35,14 +35,14 @@ conversationally:
 **1. The MCP server** — register it once in your AI editor, then ask questions in
 plain language. It answers from the published metadata, with real record counts and
 no access to patient data.
-[Setup instructions →](https://github.com/NCI-DCCPS/nccr-metadata/blob/main/mcp/README.md)
+[Setup instructions →]({{ site.baseurl }}/mcp/)
 
 **2. The data request skill** — drop it into your assistant's skills folder
 (`~/.kiro/skills/`, `~/.claude/skills/`, or your framework's equivalent) and it guides
 you through the NCCR Data Request form: drafting the narrative sections within the
 1500-character limits, choosing Research Areas, the SEER Research Plus collaborator
 rules, and selecting data elements.
-[Install instructions →](https://github.com/NCI-DCCPS/nccr-metadata/blob/main/skills/nccr-data-request/README.md)
+[Install instructions →]({{ site.baseurl }}/skills/nccr-data-request/)
 
 The server supplies the facts; the skill supplies the judgment. The assistant drafts
 and validates — you review, attach your IRB and approval documents, submit, and sign.

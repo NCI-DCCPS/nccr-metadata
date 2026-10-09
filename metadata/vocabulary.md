@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Vocabulary
 permalink: /metadata/vocabulary/
 nav_exclude: true

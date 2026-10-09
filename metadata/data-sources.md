@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Data Sources
 permalink: /metadata/data-sources/
 nav_exclude: true

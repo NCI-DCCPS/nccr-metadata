@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Usage & Examples
 permalink: /metadata/usage/
 nav_exclude: true
