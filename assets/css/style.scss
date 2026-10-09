@@ -1,0 +1,56 @@
+---
+---
+
+@import "jekyll-theme-minimal";
+
+// ---------------------------------------------------------------------------
+// Wider two-column layout: roughly one third sidebar, two thirds content.
+//
+// The theme ships a fixed 860px wrapper holding a 270px sidebar and a 500px
+// content column, which leaves most of a modern screen unused and makes the
+// wide tables on the metadata pages wrap badly.
+//
+// header and footer are position:fixed in the theme. A percentage width on a
+// fixed element resolves against the viewport, not the wrapper, so it would
+// drift out of step with the content column and overlap it on wide screens.
+// Those two keep pixel widths; the content column uses calc() against the
+// wrapper, which is its actual containing block.
+// ---------------------------------------------------------------------------
+
+$sidebar-width: 420px;
+$column-gap: 60px;
+$sidebar-width-medium: 300px;
+$column-gap-medium: 40px;
+
+@media screen and (min-width: 961px) {
+  .wrapper {
+    width: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+
+  header,
+  footer {
+    width: $sidebar-width;
+  }
+
+  section {
+    width: calc(100% - #{$sidebar-width + $column-gap});
+  }
+}
+
+// Between the theme's 960px breakpoint and a comfortable desktop width there
+// is not enough room for a 420px sidebar, so narrow the sidebar rather than
+// squeezing the content column.
+@media screen and (min-width: 961px) and (max-width: 1200px) {
+  header,
+  footer {
+    width: $sidebar-width-medium;
+  }
+
+  section {
+    width: calc(100% - #{$sidebar-width-medium + $column-gap-medium});
+  }
+}
