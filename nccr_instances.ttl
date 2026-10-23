@@ -1073,8 +1073,8 @@ nccr-cv:cog-biobankingtumorclassstudycount-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-biobankingtumorclassstudycount ;
     skos:notation "0" ;
-    skos:prefLabel "20780"@en ;
-    nccr:codeDescription "20780" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 20780 .
 
@@ -1090,8 +1090,8 @@ nccr-cv:cog-biobankingtumorclassstudycount-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-biobankingtumorclassstudycount ;
     skos:notation "1" ;
-    skos:prefLabel "20727"@en ;
-    nccr:codeDescription "20727" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 20727 .
 
@@ -1099,8 +1099,8 @@ nccr-cv:cog-biobankingtumorclassstudycount-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-biobankingtumorclassstudycount ;
     skos:notation "2" ;
-    skos:prefLabel "518"@en ;
-    nccr:codeDescription "518" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 518 .
 
@@ -1117,8 +1117,8 @@ nccr-cv:cog-registrystudycount-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-registrystudycount ;
     skos:notation "0" ;
-    skos:prefLabel "10405"@en ;
-    nccr:codeDescription "10405" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 10405 .
 
@@ -1134,8 +1134,8 @@ nccr-cv:cog-registrystudycount-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-registrystudycount ;
     skos:notation "1" ;
-    skos:prefLabel "30622"@en ;
-    nccr:codeDescription "30622" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 30622 .
 
@@ -1143,8 +1143,8 @@ nccr-cv:cog-registrystudycount-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-registrystudycount ;
     skos:notation "2" ;
-    skos:prefLabel "992"@en ;
-    nccr:codeDescription "992" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 992 .
 
@@ -1179,8 +1179,8 @@ nccr-cv:cog-supportivestudycount-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-supportivestudycount ;
     skos:notation "0" ;
-    skos:prefLabel "37807"@en ;
-    nccr:codeDescription "37807" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 37807 .
 
@@ -1196,8 +1196,8 @@ nccr-cv:cog-supportivestudycount-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-supportivestudycount ;
     skos:notation "1" ;
-    skos:prefLabel "3657"@en ;
-    nccr:codeDescription "3657" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 3657 .
 
@@ -1205,8 +1205,8 @@ nccr-cv:cog-supportivestudycount-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-supportivestudycount ;
     skos:notation "2" ;
-    skos:prefLabel "521"@en ;
-    nccr:codeDescription "521" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 521 .
 
@@ -1214,8 +1214,8 @@ nccr-cv:cog-supportivestudycount-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-supportivestudycount ;
     skos:notation "3" ;
-    skos:prefLabel "41"@en ;
-    nccr:codeDescription "41" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 41 .
 
@@ -1232,8 +1232,8 @@ nccr-cv:cog-therapeuticfrontlinetrialcount-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticfrontlinetrialcount ;
     skos:notation "0" ;
-    skos:prefLabel "25663"@en ;
-    nccr:codeDescription "25663" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 25663 .
 
@@ -1249,8 +1249,8 @@ nccr-cv:cog-therapeuticfrontlinetrialcount-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticfrontlinetrialcount ;
     skos:notation "1" ;
-    skos:prefLabel "15606"@en ;
-    nccr:codeDescription "15606" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 15606 .
 
@@ -1258,8 +1258,8 @@ nccr-cv:cog-therapeuticfrontlinetrialcount-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticfrontlinetrialcount ;
     skos:notation "2" ;
-    skos:prefLabel "753"@en ;
-    nccr:codeDescription "753" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 753 .
 
@@ -1276,8 +1276,8 @@ nccr-cv:cog-therapeuticothertrialcount-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticothertrialcount ;
     skos:notation "0" ;
-    skos:prefLabel "41821"@en ;
-    nccr:codeDescription "41821" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 41821 .
 
@@ -1293,8 +1293,8 @@ nccr-cv:cog-therapeuticothertrialcount-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticothertrialcount ;
     skos:notation "1" ;
-    skos:prefLabel "207"@en ;
-    nccr:codeDescription "207" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 207 .
 
@@ -1311,8 +1311,8 @@ nccr-cv:cog-therapeuticrelapsedtrialcount-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticrelapsedtrialcount ;
     skos:notation "0" ;
-    skos:prefLabel "40252"@en ;
-    nccr:codeDescription "40252" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 40252 .
 
@@ -1328,8 +1328,8 @@ nccr-cv:cog-therapeuticrelapsedtrialcount-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticrelapsedtrialcount ;
     skos:notation "1" ;
-    skos:prefLabel "1585"@en ;
-    nccr:codeDescription "1585" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 1585 .
 
@@ -1337,8 +1337,8 @@ nccr-cv:cog-therapeuticrelapsedtrialcount-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticrelapsedtrialcount ;
     skos:notation "2" ;
-    skos:prefLabel "172"@en ;
-    nccr:codeDescription "172" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 172 .
 
@@ -1346,8 +1346,8 @@ nccr-cv:cog-therapeuticrelapsedtrialcount-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:cog-therapeuticrelapsedtrialcount ;
     skos:notation "3" ;
-    skos:prefLabel "17"@en ;
-    nccr:codeDescription "17" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 17 .
 
@@ -11250,8 +11250,8 @@ nccr-cv:ctc-monthsfromdxtobrm-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "0" ;
-    skos:prefLabel "13913"@en ;
-    nccr:codeDescription "13913" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 13913 .
 
@@ -11267,8 +11267,8 @@ nccr-cv:ctc-monthsfromdxtobrm-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "1" ;
-    skos:prefLabel "25831"@en ;
-    nccr:codeDescription "25831" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 25831 .
 
@@ -11276,8 +11276,8 @@ nccr-cv:ctc-monthsfromdxtobrm-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "1102"@en ;
-    nccr:codeDescription "1102" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 1102 .
 
@@ -11285,8 +11285,8 @@ nccr-cv:ctc-monthsfromdxtobrm-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "> 120" ;
-    skos:prefLabel "113"@en ;
-    nccr:codeDescription "113" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 113 .
 
@@ -11294,8 +11294,8 @@ nccr-cv:ctc-monthsfromdxtobrm-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "440"@en ;
-    nccr:codeDescription "440" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 440 .
 
@@ -11303,8 +11303,8 @@ nccr-cv:ctc-monthsfromdxtobrm-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "173"@en ;
-    nccr:codeDescription "173" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 173 .
 
@@ -11312,8 +11312,8 @@ nccr-cv:ctc-monthsfromdxtobrm-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "83"@en ;
-    nccr:codeDescription "83" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 83 .
 
@@ -11321,8 +11321,8 @@ nccr-cv:ctc-monthsfromdxtobrm-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "2" ;
-    skos:prefLabel "13443"@en ;
-    nccr:codeDescription "13443" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 13443 .
 
@@ -11330,8 +11330,8 @@ nccr-cv:ctc-monthsfromdxtobrm-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "51"@en ;
-    nccr:codeDescription "51" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 51 .
 
@@ -11339,8 +11339,8 @@ nccr-cv:ctc-monthsfromdxtobrm-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "139"@en ;
-    nccr:codeDescription "139" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 139 .
 
@@ -11348,8 +11348,8 @@ nccr-cv:ctc-monthsfromdxtobrm-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "3" ;
-    skos:prefLabel "7623"@en ;
-    nccr:codeDescription "7623" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 7623 .
 
@@ -11357,8 +11357,8 @@ nccr-cv:ctc-monthsfromdxtobrm-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "76"@en ;
-    nccr:codeDescription "76" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 76 .
 
@@ -11366,8 +11366,8 @@ nccr-cv:ctc-monthsfromdxtobrm-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "9302"@en ;
-    nccr:codeDescription "9302" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 9302 .
 
@@ -11375,8 +11375,8 @@ nccr-cv:ctc-monthsfromdxtobrm-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "50"@en ;
-    nccr:codeDescription "50" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 50 .
 
@@ -11384,8 +11384,8 @@ nccr-cv:ctc-monthsfromdxtobrm-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "117"@en ;
-    nccr:codeDescription "117" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 117 .
 
@@ -11401,8 +11401,8 @@ nccr-cv:ctc-monthsfromdxtobrm-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "2818"@en ;
-    nccr:codeDescription "2818" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 2818 .
 
@@ -11418,8 +11418,8 @@ nccr-cv:ctc-monthsfromdxtobrm-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtobrm ;
     skos:notation "Missing" ;
-    skos:prefLabel "1539400"@en ;
-    nccr:codeDescription "1539400" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 1539400 .
 
@@ -11427,8 +11427,8 @@ nccr-cv:ctc-monthsfromdxtochemo-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "0" ;
-    skos:prefLabel "173788"@en ;
-    nccr:codeDescription "173788" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 173788 .
 
@@ -11444,8 +11444,8 @@ nccr-cv:ctc-monthsfromdxtochemo-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "1" ;
-    skos:prefLabel "194378"@en ;
-    nccr:codeDescription "194378" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 194378 .
 
@@ -11453,8 +11453,8 @@ nccr-cv:ctc-monthsfromdxtochemo-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "1687"@en ;
-    nccr:codeDescription "1687" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 1687 .
 
@@ -11462,8 +11462,8 @@ nccr-cv:ctc-monthsfromdxtochemo-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "> 120" ;
-    skos:prefLabel "231"@en ;
-    nccr:codeDescription "231" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 231 .
 
@@ -11471,8 +11471,8 @@ nccr-cv:ctc-monthsfromdxtochemo-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "981"@en ;
-    nccr:codeDescription "981" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 981 .
 
@@ -11480,8 +11480,8 @@ nccr-cv:ctc-monthsfromdxtochemo-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "315"@en ;
-    nccr:codeDescription "315" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 315 .
 
@@ -11489,8 +11489,8 @@ nccr-cv:ctc-monthsfromdxtochemo-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "184"@en ;
-    nccr:codeDescription "184" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 184 .
 
@@ -11498,8 +11498,8 @@ nccr-cv:ctc-monthsfromdxtochemo-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "2" ;
-    skos:prefLabel "91145"@en ;
-    nccr:codeDescription "91145" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 91145 .
 
@@ -11507,8 +11507,8 @@ nccr-cv:ctc-monthsfromdxtochemo-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "132"@en ;
-    nccr:codeDescription "132" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 132 .
 
@@ -11516,8 +11516,8 @@ nccr-cv:ctc-monthsfromdxtochemo-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "332"@en ;
-    nccr:codeDescription "332" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 332 .
 
@@ -11525,8 +11525,8 @@ nccr-cv:ctc-monthsfromdxtochemo-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "3" ;
-    skos:prefLabel "39734"@en ;
-    nccr:codeDescription "39734" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 39734 .
 
@@ -11534,8 +11534,8 @@ nccr-cv:ctc-monthsfromdxtochemo-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "179"@en ;
-    nccr:codeDescription "179" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 179 .
 
@@ -11543,8 +11543,8 @@ nccr-cv:ctc-monthsfromdxtochemo-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "30352"@en ;
-    nccr:codeDescription "30352" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 30352 .
 
@@ -11552,8 +11552,8 @@ nccr-cv:ctc-monthsfromdxtochemo-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "116"@en ;
-    nccr:codeDescription "116" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 116 .
 
@@ -11561,8 +11561,8 @@ nccr-cv:ctc-monthsfromdxtochemo-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "276"@en ;
-    nccr:codeDescription "276" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 276 .
 
@@ -11578,8 +11578,8 @@ nccr-cv:ctc-monthsfromdxtochemo-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "4447"@en ;
-    nccr:codeDescription "4447" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 4447 .
 
@@ -11595,8 +11595,8 @@ nccr-cv:ctc-monthsfromdxtochemo-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "Missing" ;
-    skos:prefLabel "1076218"@en ;
-    nccr:codeDescription "1076218" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 1076218 .
 
@@ -11604,8 +11604,8 @@ nccr-cv:ctc-monthsfromdxtochemo-not-available-due-to-imputed-month-of-diagnosis 
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtochemo ;
     skos:notation "Not Available Due to Imputed Month of Diagnosis" ;
-    skos:prefLabel "190"@en ;
-    nccr:codeDescription "190" ;
+    skos:prefLabel "Not Available Due to Imputed Month of Diagnosis"@en ;
+    nccr:codeDescription "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:codeNotation "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:recordCount 190 .
 
@@ -11613,8 +11613,8 @@ nccr-cv:ctc-monthsfromdxtohormone-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "0" ;
-    skos:prefLabel "78752"@en ;
-    nccr:codeDescription "78752" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 78752 .
 
@@ -11630,8 +11630,8 @@ nccr-cv:ctc-monthsfromdxtohormone-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "1" ;
-    skos:prefLabel "56213"@en ;
-    nccr:codeDescription "56213" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 56213 .
 
@@ -11639,8 +11639,8 @@ nccr-cv:ctc-monthsfromdxtohormone-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "9755"@en ;
-    nccr:codeDescription "9755" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 9755 .
 
@@ -11648,8 +11648,8 @@ nccr-cv:ctc-monthsfromdxtohormone-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "> 120" ;
-    skos:prefLabel "134"@en ;
-    nccr:codeDescription "134" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 134 .
 
@@ -11657,8 +11657,8 @@ nccr-cv:ctc-monthsfromdxtohormone-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "2299"@en ;
-    nccr:codeDescription "2299" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 2299 .
 
@@ -11666,8 +11666,8 @@ nccr-cv:ctc-monthsfromdxtohormone-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "720"@en ;
-    nccr:codeDescription "720" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 720 .
 
@@ -11675,8 +11675,8 @@ nccr-cv:ctc-monthsfromdxtohormone-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "281"@en ;
-    nccr:codeDescription "281" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 281 .
 
@@ -11684,8 +11684,8 @@ nccr-cv:ctc-monthsfromdxtohormone-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "2" ;
-    skos:prefLabel "29814"@en ;
-    nccr:codeDescription "29814" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 29814 .
 
@@ -11693,8 +11693,8 @@ nccr-cv:ctc-monthsfromdxtohormone-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "157"@en ;
-    nccr:codeDescription "157" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 157 .
 
@@ -11702,8 +11702,8 @@ nccr-cv:ctc-monthsfromdxtohormone-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "241"@en ;
-    nccr:codeDescription "241" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 241 .
 
@@ -11711,8 +11711,8 @@ nccr-cv:ctc-monthsfromdxtohormone-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "3" ;
-    skos:prefLabel "16703"@en ;
-    nccr:codeDescription "16703" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 16703 .
 
@@ -11720,8 +11720,8 @@ nccr-cv:ctc-monthsfromdxtohormone-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "108"@en ;
-    nccr:codeDescription "108" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 108 .
 
@@ -11729,8 +11729,8 @@ nccr-cv:ctc-monthsfromdxtohormone-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "28220"@en ;
-    nccr:codeDescription "28220" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 28220 .
 
@@ -11738,8 +11738,8 @@ nccr-cv:ctc-monthsfromdxtohormone-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "86"@en ;
-    nccr:codeDescription "86" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 86 .
 
@@ -11747,8 +11747,8 @@ nccr-cv:ctc-monthsfromdxtohormone-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "171"@en ;
-    nccr:codeDescription "171" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 171 .
 
@@ -11764,8 +11764,8 @@ nccr-cv:ctc-monthsfromdxtohormone-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "21830"@en ;
-    nccr:codeDescription "21830" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 21830 .
 
@@ -11781,8 +11781,8 @@ nccr-cv:ctc-monthsfromdxtohormone-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "Missing" ;
-    skos:prefLabel "1369116"@en ;
-    nccr:codeDescription "1369116" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 1369116 .
 
@@ -11790,8 +11790,8 @@ nccr-cv:ctc-monthsfromdxtohormone-not-available-due-to-imputed-month-of-diagnosi
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtohormone ;
     skos:notation "Not Available Due to Imputed Month of Diagnosis" ;
-    skos:prefLabel "85"@en ;
-    nccr:codeDescription "85" ;
+    skos:prefLabel "Not Available Due to Imputed Month of Diagnosis"@en ;
+    nccr:codeDescription "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:codeNotation "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:recordCount 85 .
 
@@ -11799,8 +11799,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "0" ;
-    skos:prefLabel "331638"@en ;
-    nccr:codeDescription "331638" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 331638 .
 
@@ -11816,8 +11816,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "1" ;
-    skos:prefLabel "156693"@en ;
-    nccr:codeDescription "156693" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 156693 .
 
@@ -11825,8 +11825,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "3708"@en ;
-    nccr:codeDescription "3708" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 3708 .
 
@@ -11834,8 +11834,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "> 120" ;
-    skos:prefLabel "167"@en ;
-    nccr:codeDescription "167" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 167 .
 
@@ -11843,8 +11843,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "1328"@en ;
-    nccr:codeDescription "1328" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 1328 .
 
@@ -11852,8 +11852,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "549"@en ;
-    nccr:codeDescription "549" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 549 .
 
@@ -11861,8 +11861,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "264"@en ;
-    nccr:codeDescription "264" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 264 .
 
@@ -11870,8 +11870,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "2" ;
-    skos:prefLabel "70484"@en ;
-    nccr:codeDescription "70484" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 70484 .
 
@@ -11879,8 +11879,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "207"@en ;
-    nccr:codeDescription "207" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 207 .
 
@@ -11888,8 +11888,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "407"@en ;
-    nccr:codeDescription "407" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 407 .
 
@@ -11897,8 +11897,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "3" ;
-    skos:prefLabel "31831"@en ;
-    nccr:codeDescription "31831" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 31831 .
 
@@ -11906,8 +11906,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "176"@en ;
-    nccr:codeDescription "176" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 176 .
 
@@ -11915,8 +11915,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "51340"@en ;
-    nccr:codeDescription "51340" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 51340 .
 
@@ -11924,8 +11924,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "132"@en ;
-    nccr:codeDescription "132" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 132 .
 
@@ -11933,8 +11933,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "306"@en ;
-    nccr:codeDescription "306" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 306 .
 
@@ -11950,8 +11950,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "18264"@en ;
-    nccr:codeDescription "18264" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 18264 .
 
@@ -11967,8 +11967,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "Missing" ;
-    skos:prefLabel "946667"@en ;
-    nccr:codeDescription "946667" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 946667 .
 
@@ -11976,8 +11976,8 @@ nccr-cv:ctc-monthsfromdxtomostdefinsurg-not-available-due-to-imputed-month-of-di
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtomostdefinsurg ;
     skos:notation "Not Available Due to Imputed Month of Diagnosis" ;
-    skos:prefLabel "524"@en ;
-    nccr:codeDescription "524" ;
+    skos:prefLabel "Not Available Due to Imputed Month of Diagnosis"@en ;
+    nccr:codeDescription "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:codeNotation "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:recordCount 524 .
 
@@ -11985,8 +11985,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "0" ;
-    skos:prefLabel "7698"@en ;
-    nccr:codeDescription "7698" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 7698 .
 
@@ -12002,8 +12002,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "1" ;
-    skos:prefLabel "4048"@en ;
-    nccr:codeDescription "4048" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 4048 .
 
@@ -12011,8 +12011,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "333"@en ;
-    nccr:codeDescription "333" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 333 .
 
@@ -12020,8 +12020,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "> 120" ;
-    skos:prefLabel "25"@en ;
-    nccr:codeDescription "25" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 25 .
 
@@ -12029,8 +12029,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "159"@en ;
-    nccr:codeDescription "159" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 159 .
 
@@ -12038,8 +12038,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "64"@en ;
-    nccr:codeDescription "64" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 64 .
 
@@ -12047,8 +12047,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "36"@en ;
-    nccr:codeDescription "36" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 36 .
 
@@ -12056,8 +12056,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "2" ;
-    skos:prefLabel "2034"@en ;
-    nccr:codeDescription "2034" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 2034 .
 
@@ -12065,8 +12065,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "24"@en ;
-    nccr:codeDescription "24" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 24 .
 
@@ -12074,8 +12074,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "55"@en ;
-    nccr:codeDescription "55" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 55 .
 
@@ -12083,8 +12083,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "3" ;
-    skos:prefLabel "1318"@en ;
-    nccr:codeDescription "1318" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 1318 .
 
@@ -12092,8 +12092,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "31"@en ;
-    nccr:codeDescription "31" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 31 .
 
@@ -12101,8 +12101,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "2078"@en ;
-    nccr:codeDescription "2078" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 2078 .
 
@@ -12110,8 +12110,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "17"@en ;
-    nccr:codeDescription "17" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 17 .
 
@@ -12119,8 +12119,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "35"@en ;
-    nccr:codeDescription "35" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 35 .
 
@@ -12136,8 +12136,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "790"@en ;
-    nccr:codeDescription "790" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 790 .
 
@@ -12153,8 +12153,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "Missing" ;
-    skos:prefLabel "1595921"@en ;
-    nccr:codeDescription "1595921" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 1595921 .
 
@@ -12162,8 +12162,8 @@ nccr-cv:ctc-monthsfromdxtoothertx-not-available-due-to-imputed-month-of-diagnosi
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoothertx ;
     skos:notation "Not Available Due to Imputed Month of Diagnosis" ;
-    skos:prefLabel "19"@en ;
-    nccr:codeDescription "19" ;
+    skos:prefLabel "Not Available Due to Imputed Month of Diagnosis"@en ;
+    nccr:codeDescription "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:codeNotation "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:recordCount 19 .
 
@@ -12171,8 +12171,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "0" ;
-    skos:prefLabel "18941"@en ;
-    nccr:codeDescription "18941" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 18941 .
 
@@ -12188,8 +12188,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "1" ;
-    skos:prefLabel "55735"@en ;
-    nccr:codeDescription "55735" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 55735 .
 
@@ -12197,8 +12197,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "11543"@en ;
-    nccr:codeDescription "11543" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 11543 .
 
@@ -12206,8 +12206,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "> 120" ;
-    skos:prefLabel "115"@en ;
-    nccr:codeDescription "115" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 115 .
 
@@ -12215,8 +12215,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "2691"@en ;
-    nccr:codeDescription "2691" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 2691 .
 
@@ -12224,8 +12224,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "959"@en ;
-    nccr:codeDescription "959" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 959 .
 
@@ -12233,8 +12233,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "368"@en ;
-    nccr:codeDescription "368" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 368 .
 
@@ -12242,8 +12242,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "2" ;
-    skos:prefLabel "52518"@en ;
-    nccr:codeDescription "52518" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 52518 .
 
@@ -12251,8 +12251,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "183"@en ;
-    nccr:codeDescription "183" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 183 .
 
@@ -12260,8 +12260,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "374"@en ;
-    nccr:codeDescription "374" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 374 .
 
@@ -12269,8 +12269,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "3" ;
-    skos:prefLabel "39585"@en ;
-    nccr:codeDescription "39585" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 39585 .
 
@@ -12278,8 +12278,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "170"@en ;
-    nccr:codeDescription "170" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 170 .
 
@@ -12287,8 +12287,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "77323"@en ;
-    nccr:codeDescription "77323" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 77323 .
 
@@ -12296,8 +12296,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "104"@en ;
-    nccr:codeDescription "104" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 104 .
 
@@ -12305,8 +12305,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "173"@en ;
-    nccr:codeDescription "173" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 173 .
 
@@ -12322,8 +12322,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "48122"@en ;
-    nccr:codeDescription "48122" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 48122 .
 
@@ -12339,8 +12339,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "Missing" ;
-    skos:prefLabel "1305677"@en ;
-    nccr:codeDescription "1305677" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 1305677 .
 
@@ -12348,8 +12348,8 @@ nccr-cv:ctc-monthsfromdxtoradiation-not-available-due-to-imputed-month-of-diagno
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtoradiation ;
     skos:notation "Not Available Due to Imputed Month of Diagnosis" ;
-    skos:prefLabel "104"@en ;
-    nccr:codeDescription "104" ;
+    skos:prefLabel "Not Available Due to Imputed Month of Diagnosis"@en ;
+    nccr:codeDescription "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:codeNotation "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:recordCount 104 .
 
@@ -12357,8 +12357,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "0" ;
-    skos:prefLabel "599158"@en ;
-    nccr:codeDescription "599158" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 599158 .
 
@@ -12374,8 +12374,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "1" ;
-    skos:prefLabel "176296"@en ;
-    nccr:codeDescription "176296" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 176296 .
 
@@ -12383,8 +12383,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "4383"@en ;
-    nccr:codeDescription "4383" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 4383 .
 
@@ -12392,8 +12392,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "> 120" ;
-    skos:prefLabel "100"@en ;
-    nccr:codeDescription "100" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 100 .
 
@@ -12401,8 +12401,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "1438"@en ;
-    nccr:codeDescription "1438" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 1438 .
 
@@ -12410,8 +12410,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "618"@en ;
-    nccr:codeDescription "618" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 618 .
 
@@ -12419,8 +12419,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "276"@en ;
-    nccr:codeDescription "276" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 276 .
 
@@ -12428,8 +12428,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "2" ;
-    skos:prefLabel "76855"@en ;
-    nccr:codeDescription "76855" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 76855 .
 
@@ -12437,8 +12437,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "232"@en ;
-    nccr:codeDescription "232" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 232 .
 
@@ -12446,8 +12446,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "356"@en ;
-    nccr:codeDescription "356" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 356 .
 
@@ -12455,8 +12455,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "3" ;
-    skos:prefLabel "35600"@en ;
-    nccr:codeDescription "35600" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 35600 .
 
@@ -12464,8 +12464,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "159"@en ;
-    nccr:codeDescription "159" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 159 .
 
@@ -12473,8 +12473,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "55823"@en ;
-    nccr:codeDescription "55823" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 55823 .
 
@@ -12482,8 +12482,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "104"@en ;
-    nccr:codeDescription "104" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 104 .
 
@@ -12491,8 +12491,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "220"@en ;
-    nccr:codeDescription "220" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 220 .
 
@@ -12508,8 +12508,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "20226"@en ;
-    nccr:codeDescription "20226" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 20226 .
 
@@ -12525,8 +12525,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "Missing" ;
-    skos:prefLabel "642154"@en ;
-    nccr:codeDescription "642154" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 642154 .
 
@@ -12534,8 +12534,8 @@ nccr-cv:ctc-monthsfromdxtosurgery-not-available-due-to-imputed-month-of-diagnosi
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromdxtosurgery ;
     skos:notation "Not Available Due to Imputed Month of Diagnosis" ;
-    skos:prefLabel "687"@en ;
-    nccr:codeDescription "687" ;
+    skos:prefLabel "Not Available Due to Imputed Month of Diagnosis"@en ;
+    nccr:codeDescription "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:codeNotation "Not Available Due to Imputed Month of Diagnosis" ;
     nccr:recordCount 687 .
 
@@ -12543,8 +12543,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "0" ;
-    skos:prefLabel "1494714"@en ;
-    nccr:codeDescription "1494714" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 1494714 .
 
@@ -12560,8 +12560,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "1" ;
-    skos:prefLabel "3921"@en ;
-    nccr:codeDescription "3921" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 3921 .
 
@@ -12569,8 +12569,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "2155"@en ;
-    nccr:codeDescription "2155" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 2155 .
 
@@ -12578,8 +12578,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "> 120" ;
-    skos:prefLabel "53775"@en ;
-    nccr:codeDescription "53775" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 53775 .
 
@@ -12587,8 +12587,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "2104"@en ;
-    nccr:codeDescription "2104" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 2104 .
 
@@ -12596,8 +12596,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "1898"@en ;
-    nccr:codeDescription "1898" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 1898 .
 
@@ -12605,8 +12605,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "1828"@en ;
-    nccr:codeDescription "1828" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 1828 .
 
@@ -12614,8 +12614,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "2" ;
-    skos:prefLabel "1993"@en ;
-    nccr:codeDescription "1993" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 1993 .
 
@@ -12623,8 +12623,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "1814"@en ;
-    nccr:codeDescription "1814" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 1814 .
 
@@ -12632,8 +12632,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "6441"@en ;
-    nccr:codeDescription "6441" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 6441 .
 
@@ -12641,8 +12641,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "3" ;
-    skos:prefLabel "1460"@en ;
-    nccr:codeDescription "1460" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 1460 .
 
@@ -12650,8 +12650,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "5697"@en ;
-    nccr:codeDescription "5697" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 5697 .
 
@@ -12659,8 +12659,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "2895"@en ;
-    nccr:codeDescription "2895" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 2895 .
 
@@ -12668,8 +12668,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "5439"@en ;
-    nccr:codeDescription "5439" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 5439 .
 
@@ -12677,8 +12677,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "26243"@en ;
-    nccr:codeDescription "26243" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 26243 .
 
@@ -12694,8 +12694,8 @@ nccr-cv:ctc-monthsfromindexdxtotumor-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-monthsfromindexdxtotumor ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "2308"@en ;
-    nccr:codeDescription "2308" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 2308 .
 
@@ -13382,8 +13382,8 @@ nccr-cv:ctc-numberofprimaries-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "1" ;
-    skos:prefLabel "1372650"@en ;
-    nccr:codeDescription "1372650" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 1372650 .
 
@@ -13391,8 +13391,8 @@ nccr-cv:ctc-numberofprimaries-10 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "10" ;
-    skos:prefLabel "100"@en ;
-    nccr:codeDescription "100" ;
+    skos:prefLabel "10"@en ;
+    nccr:codeDescription "10" ;
     nccr:codeNotation "10" ;
     nccr:recordCount 100 .
 
@@ -13400,8 +13400,8 @@ nccr-cv:ctc-numberofprimaries-11 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "11" ;
-    skos:prefLabel "77"@en ;
-    nccr:codeDescription "77" ;
+    skos:prefLabel "11"@en ;
+    nccr:codeDescription "11" ;
     nccr:codeNotation "11" ;
     nccr:recordCount 77 .
 
@@ -13409,8 +13409,8 @@ nccr-cv:ctc-numberofprimaries-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "12" ;
-    skos:prefLabel "48"@en ;
-    nccr:codeDescription "48" ;
+    skos:prefLabel "12"@en ;
+    nccr:codeDescription "12" ;
     nccr:codeNotation "12" ;
     nccr:recordCount 48 .
 
@@ -13418,8 +13418,8 @@ nccr-cv:ctc-numberofprimaries-14 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "14" ;
-    skos:prefLabel "28"@en ;
-    nccr:codeDescription "28" ;
+    skos:prefLabel "14"@en ;
+    nccr:codeDescription "14" ;
     nccr:codeNotation "14" ;
     nccr:recordCount 28 .
 
@@ -13445,8 +13445,8 @@ nccr-cv:ctc-numberofprimaries-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "2" ;
-    skos:prefLabel "192724"@en ;
-    nccr:codeDescription "192724" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 192724 .
 
@@ -13463,8 +13463,8 @@ nccr-cv:ctc-numberofprimaries-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "21" ;
-    skos:prefLabel "42"@en ;
-    nccr:codeDescription "42" ;
+    skos:prefLabel "21"@en ;
+    nccr:codeDescription "21" ;
     nccr:codeNotation "21" ;
     nccr:recordCount 42 .
 
@@ -13490,8 +13490,8 @@ nccr-cv:ctc-numberofprimaries-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "3" ;
-    skos:prefLabel "35868"@en ;
-    nccr:codeDescription "35868" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 35868 .
 
@@ -13517,8 +13517,8 @@ nccr-cv:ctc-numberofprimaries-4 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "4" ;
-    skos:prefLabel "8440"@en ;
-    nccr:codeDescription "8440" ;
+    skos:prefLabel "4"@en ;
+    nccr:codeDescription "4" ;
     nccr:codeNotation "4" ;
     nccr:recordCount 8440 .
 
@@ -13526,8 +13526,8 @@ nccr-cv:ctc-numberofprimaries-5 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "5" ;
-    skos:prefLabel "2475"@en ;
-    nccr:codeDescription "2475" ;
+    skos:prefLabel "5"@en ;
+    nccr:codeDescription "5" ;
     nccr:codeNotation "5" ;
     nccr:recordCount 2475 .
 
@@ -13535,8 +13535,8 @@ nccr-cv:ctc-numberofprimaries-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "6" ;
-    skos:prefLabel "1140"@en ;
-    nccr:codeDescription "1140" ;
+    skos:prefLabel "6"@en ;
+    nccr:codeDescription "6" ;
     nccr:codeNotation "6" ;
     nccr:recordCount 1140 .
 
@@ -13544,8 +13544,8 @@ nccr-cv:ctc-numberofprimaries-7 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "7" ;
-    skos:prefLabel "525"@en ;
-    nccr:codeDescription "525" ;
+    skos:prefLabel "7"@en ;
+    nccr:codeDescription "7" ;
     nccr:codeNotation "7" ;
     nccr:recordCount 525 .
 
@@ -13553,8 +13553,8 @@ nccr-cv:ctc-numberofprimaries-8 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "8" ;
-    skos:prefLabel "208"@en ;
-    nccr:codeDescription "208" ;
+    skos:prefLabel "8"@en ;
+    nccr:codeDescription "8" ;
     nccr:codeNotation "8" ;
     nccr:recordCount 208 .
 
@@ -13562,8 +13562,8 @@ nccr-cv:ctc-numberofprimaries-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ctc-numberofprimaries ;
     skos:notation "9" ;
-    skos:prefLabel "171"@en ;
-    nccr:codeDescription "171" ;
+    skos:prefLabel "9"@en ;
+    nccr:codeDescription "9" ;
     nccr:codeNotation "9" ;
     nccr:recordCount 171 .
 
@@ -20617,8 +20617,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-801 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "801" ;
-    skos:prefLabel "33888828"@en ;
-    nccr:codeDescription "33888828" ;
+    skos:prefLabel "801"@en ;
+    nccr:codeDescription "801" ;
     nccr:codeNotation "801" ;
     nccr:recordCount 33888828 .
 
@@ -20634,8 +20634,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-802 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "802" ;
-    skos:prefLabel "8114364"@en ;
-    nccr:codeDescription "8114364" ;
+    skos:prefLabel "802"@en ;
+    nccr:codeDescription "802" ;
     nccr:codeNotation "802" ;
     nccr:recordCount 8114364 .
 
@@ -20643,8 +20643,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-803 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "803" ;
-    skos:prefLabel "3908994"@en ;
-    nccr:codeDescription "3908994" ;
+    skos:prefLabel "803"@en ;
+    nccr:codeDescription "803" ;
     nccr:codeNotation "803" ;
     nccr:recordCount 3908994 .
 
@@ -20652,8 +20652,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-804 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "804" ;
-    skos:prefLabel "2466063"@en ;
-    nccr:codeDescription "2466063" ;
+    skos:prefLabel "804"@en ;
+    nccr:codeDescription "804" ;
     nccr:codeNotation "804" ;
     nccr:recordCount 2466063 .
 
@@ -20661,8 +20661,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-805 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "805" ;
-    skos:prefLabel "1660596"@en ;
-    nccr:codeDescription "1660596" ;
+    skos:prefLabel "805"@en ;
+    nccr:codeDescription "805" ;
     nccr:codeNotation "805" ;
     nccr:recordCount 1660596 .
 
@@ -20670,8 +20670,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-806 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "806" ;
-    skos:prefLabel "1202949"@en ;
-    nccr:codeDescription "1202949" ;
+    skos:prefLabel "806"@en ;
+    nccr:codeDescription "806" ;
     nccr:codeNotation "806" ;
     nccr:recordCount 1202949 .
 
@@ -20679,8 +20679,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-807 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "807" ;
-    skos:prefLabel "923812"@en ;
-    nccr:codeDescription "923812" ;
+    skos:prefLabel "807"@en ;
+    nccr:codeDescription "807" ;
     nccr:codeNotation "807" ;
     nccr:recordCount 923812 .
 
@@ -20688,8 +20688,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-808 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "808" ;
-    skos:prefLabel "724905"@en ;
-    nccr:codeDescription "724905" ;
+    skos:prefLabel "808"@en ;
+    nccr:codeDescription "808" ;
     nccr:codeNotation "808" ;
     nccr:recordCount 724905 .
 
@@ -20697,8 +20697,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-809 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "809" ;
-    skos:prefLabel "577464"@en ;
-    nccr:codeDescription "577464" ;
+    skos:prefLabel "809"@en ;
+    nccr:codeDescription "809" ;
     nccr:codeNotation "809" ;
     nccr:recordCount 577464 .
 
@@ -20706,8 +20706,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-810 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "810" ;
-    skos:prefLabel "469422"@en ;
-    nccr:codeDescription "469422" ;
+    skos:prefLabel "810"@en ;
+    nccr:codeDescription "810" ;
     nccr:codeNotation "810" ;
     nccr:recordCount 469422 .
 
@@ -20715,8 +20715,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-811 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "811" ;
-    skos:prefLabel "392039"@en ;
-    nccr:codeDescription "392039" ;
+    skos:prefLabel "811"@en ;
+    nccr:codeDescription "811" ;
     nccr:codeNotation "811" ;
     nccr:recordCount 392039 .
 
@@ -20724,8 +20724,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-812 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "812" ;
-    skos:prefLabel "331329"@en ;
-    nccr:codeDescription "331329" ;
+    skos:prefLabel "812"@en ;
+    nccr:codeDescription "812" ;
     nccr:codeNotation "812" ;
     nccr:recordCount 331329 .
 
@@ -20733,8 +20733,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-813 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "813" ;
-    skos:prefLabel "280884"@en ;
-    nccr:codeDescription "280884" ;
+    skos:prefLabel "813"@en ;
+    nccr:codeDescription "813" ;
     nccr:codeNotation "813" ;
     nccr:recordCount 280884 .
 
@@ -20742,8 +20742,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-814 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "814" ;
-    skos:prefLabel "236664"@en ;
-    nccr:codeDescription "236664" ;
+    skos:prefLabel "814"@en ;
+    nccr:codeDescription "814" ;
     nccr:codeNotation "814" ;
     nccr:recordCount 236664 .
 
@@ -20751,8 +20751,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-815 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "815" ;
-    skos:prefLabel "203261"@en ;
-    nccr:codeDescription "203261" ;
+    skos:prefLabel "815"@en ;
+    nccr:codeDescription "815" ;
     nccr:codeNotation "815" ;
     nccr:recordCount 203261 .
 
@@ -20760,8 +20760,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-816 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "816" ;
-    skos:prefLabel "177065"@en ;
-    nccr:codeDescription "177065" ;
+    skos:prefLabel "816"@en ;
+    nccr:codeDescription "816" ;
     nccr:codeNotation "816" ;
     nccr:recordCount 177065 .
 
@@ -20769,8 +20769,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-817 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "817" ;
-    skos:prefLabel "155279"@en ;
-    nccr:codeDescription "155279" ;
+    skos:prefLabel "817"@en ;
+    nccr:codeDescription "817" ;
     nccr:codeNotation "817" ;
     nccr:recordCount 155279 .
 
@@ -20778,8 +20778,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-818 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "818" ;
-    skos:prefLabel "136713"@en ;
-    nccr:codeDescription "136713" ;
+    skos:prefLabel "818"@en ;
+    nccr:codeDescription "818" ;
     nccr:codeNotation "818" ;
     nccr:recordCount 136713 .
 
@@ -20787,8 +20787,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-819 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "819" ;
-    skos:prefLabel "120654"@en ;
-    nccr:codeDescription "120654" ;
+    skos:prefLabel "819"@en ;
+    nccr:codeDescription "819" ;
     nccr:codeNotation "819" ;
     nccr:recordCount 120654 .
 
@@ -20796,8 +20796,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-820 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "820" ;
-    skos:prefLabel "105609"@en ;
-    nccr:codeDescription "105609" ;
+    skos:prefLabel "820"@en ;
+    nccr:codeDescription "820" ;
     nccr:codeNotation "820" ;
     nccr:recordCount 105609 .
 
@@ -20805,8 +20805,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-821 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "821" ;
-    skos:prefLabel "91960"@en ;
-    nccr:codeDescription "91960" ;
+    skos:prefLabel "821"@en ;
+    nccr:codeDescription "821" ;
     nccr:codeNotation "821" ;
     nccr:recordCount 91960 .
 
@@ -20814,8 +20814,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-822 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "822" ;
-    skos:prefLabel "80096"@en ;
-    nccr:codeDescription "80096" ;
+    skos:prefLabel "822"@en ;
+    nccr:codeDescription "822" ;
     nccr:codeNotation "822" ;
     nccr:recordCount 80096 .
 
@@ -20823,8 +20823,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-823 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "823" ;
-    skos:prefLabel "70035"@en ;
-    nccr:codeDescription "70035" ;
+    skos:prefLabel "823"@en ;
+    nccr:codeDescription "823" ;
     nccr:codeNotation "823" ;
     nccr:recordCount 70035 .
 
@@ -20832,8 +20832,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-824 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "824" ;
-    skos:prefLabel "62788"@en ;
-    nccr:codeDescription "62788" ;
+    skos:prefLabel "824"@en ;
+    nccr:codeDescription "824" ;
     nccr:codeNotation "824" ;
     nccr:recordCount 62788 .
 
@@ -20841,8 +20841,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-825 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "825" ;
-    skos:prefLabel "56733"@en ;
-    nccr:codeDescription "56733" ;
+    skos:prefLabel "825"@en ;
+    nccr:codeDescription "825" ;
     nccr:codeNotation "825" ;
     nccr:recordCount 56733 .
 
@@ -20850,8 +20850,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-826 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "826" ;
-    skos:prefLabel "51351"@en ;
-    nccr:codeDescription "51351" ;
+    skos:prefLabel "826"@en ;
+    nccr:codeDescription "826" ;
     nccr:codeNotation "826" ;
     nccr:recordCount 51351 .
 
@@ -20859,8 +20859,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-827 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "827" ;
-    skos:prefLabel "46372"@en ;
-    nccr:codeDescription "46372" ;
+    skos:prefLabel "827"@en ;
+    nccr:codeDescription "827" ;
     nccr:codeNotation "827" ;
     nccr:recordCount 46372 .
 
@@ -20868,8 +20868,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-828 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "828" ;
-    skos:prefLabel "41601"@en ;
-    nccr:codeDescription "41601" ;
+    skos:prefLabel "828"@en ;
+    nccr:codeDescription "828" ;
     nccr:codeNotation "828" ;
     nccr:recordCount 41601 .
 
@@ -20877,8 +20877,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-829 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "829" ;
-    skos:prefLabel "35481"@en ;
-    nccr:codeDescription "35481" ;
+    skos:prefLabel "829"@en ;
+    nccr:codeDescription "829" ;
     nccr:codeNotation "829" ;
     nccr:recordCount 35481 .
 
@@ -20886,8 +20886,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-830 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "830" ;
-    skos:prefLabel "30129"@en ;
-    nccr:codeDescription "30129" ;
+    skos:prefLabel "830"@en ;
+    nccr:codeDescription "830" ;
     nccr:codeNotation "830" ;
     nccr:recordCount 30129 .
 
@@ -20895,8 +20895,8 @@ nccr-cv:mcd-claimdiagnosiscodesequence-831 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-claimdiagnosiscodesequence ;
     skos:notation "831" ;
-    skos:prefLabel "17124"@en ;
-    nccr:codeDescription "17124" ;
+    skos:prefLabel "831"@en ;
+    nccr:codeDescription "831" ;
     nccr:codeNotation "831" ;
     nccr:recordCount 17124 .
 
@@ -20904,8 +20904,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "0" ;
-    skos:prefLabel "1999026"@en ;
-    nccr:codeDescription "1999026" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 1999026 .
 
@@ -20913,8 +20913,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-1" ;
-    skos:prefLabel "429967"@en ;
-    nccr:codeDescription "429967" ;
+    skos:prefLabel "-1"@en ;
+    nccr:codeDescription "-1" ;
     nccr:codeNotation "-1" ;
     nccr:recordCount 429967,
         1887894 .
@@ -20923,8 +20923,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "2062689"@en ;
-    nccr:codeDescription "2062689" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 2062689 .
 
@@ -20932,8 +20932,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-12-to-10 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-12 to -10" ;
-    skos:prefLabel "396437"@en ;
-    nccr:codeDescription "396437" ;
+    skos:prefLabel "-12 to -10"@en ;
+    nccr:codeDescription "-12 to -10" ;
     nccr:codeNotation "-12 to -10" ;
     nccr:recordCount 396437 .
 
@@ -20941,8 +20941,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "< -120" ;
-    skos:prefLabel "973083"@en ;
-    nccr:codeDescription "973083" ;
+    skos:prefLabel "< -120"@en ;
+    nccr:codeDescription "< -120" ;
     nccr:codeNotation "< -120" ;
     nccr:recordCount 973083,
         9639270 .
@@ -20951,8 +20951,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-120-to-61 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-120 to -61" ;
-    skos:prefLabel "2141636"@en ;
-    nccr:codeDescription "2141636" ;
+    skos:prefLabel "-120 to -61"@en ;
+    nccr:codeDescription "-120 to -61" ;
     nccr:codeNotation "-120 to -61" ;
     nccr:recordCount 2141636 .
 
@@ -20960,8 +20960,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "1733452"@en ;
-    nccr:codeDescription "1733452" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 1733452 .
 
@@ -20969,8 +20969,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-15-to-13 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-15 to -13" ;
-    skos:prefLabel "359359"@en ;
-    nccr:codeDescription "359359" ;
+    skos:prefLabel "-15 to -13"@en ;
+    nccr:codeDescription "-15 to -13" ;
     nccr:codeNotation "-15 to -13" ;
     nccr:recordCount 359359 .
 
@@ -20978,8 +20978,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "1528292"@en ;
-    nccr:codeDescription "1528292" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 1528292 .
 
@@ -20987,8 +20987,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-18-to-16 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-18 to -16" ;
-    skos:prefLabel "313135"@en ;
-    nccr:codeDescription "313135" ;
+    skos:prefLabel "-18 to -16"@en ;
+    nccr:codeDescription "-18 to -16" ;
     nccr:codeNotation "-18 to -16" ;
     nccr:recordCount 313135 .
 
@@ -20996,8 +20996,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "1355655"@en ;
-    nccr:codeDescription "1355655" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 1355655 .
 
@@ -21005,8 +21005,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-2" ;
-    skos:prefLabel "275464"@en ;
-    nccr:codeDescription "275464" ;
+    skos:prefLabel "-2"@en ;
+    nccr:codeDescription "-2" ;
     nccr:codeNotation "-2" ;
     nccr:recordCount 275464,
         1569607 .
@@ -21015,8 +21015,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-21-to-19 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-21 to -19" ;
-    skos:prefLabel "278766"@en ;
-    nccr:codeDescription "278766" ;
+    skos:prefLabel "-21 to -19"@en ;
+    nccr:codeDescription "-21 to -19" ;
     nccr:codeNotation "-21 to -19" ;
     nccr:recordCount 278766 .
 
@@ -21024,8 +21024,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "1253725"@en ;
-    nccr:codeDescription "1253725" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 1253725 .
 
@@ -21033,8 +21033,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-24-to-22 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-24 to -22" ;
-    skos:prefLabel "252322"@en ;
-    nccr:codeDescription "252322" ;
+    skos:prefLabel "-24 to -22"@en ;
+    nccr:codeDescription "-24 to -22" ;
     nccr:codeNotation "-24 to -22" ;
     nccr:recordCount 252322 .
 
@@ -21042,8 +21042,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "4071132"@en ;
-    nccr:codeDescription "4071132" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 4071132 .
 
@@ -21051,8 +21051,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-3" ;
-    skos:prefLabel "219184"@en ;
-    nccr:codeDescription "219184" ;
+    skos:prefLabel "-3"@en ;
+    nccr:codeDescription "-3" ;
     nccr:codeNotation "-3" ;
     nccr:recordCount 219184,
         1418758 .
@@ -21061,8 +21061,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-36-to-25 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-36 to -25" ;
-    skos:prefLabel "904000"@en ;
-    nccr:codeDescription "904000" ;
+    skos:prefLabel "-36 to -25"@en ;
+    nccr:codeDescription "-36 to -25" ;
     nccr:codeNotation "-36 to -25" ;
     nccr:recordCount 904000 .
 
@@ -21070,8 +21070,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "2789805"@en ;
-    nccr:codeDescription "2789805" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 2789805 .
 
@@ -21079,8 +21079,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "3495484"@en ;
-    nccr:codeDescription "3495484" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 3495484 .
 
@@ -21088,8 +21088,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-48-to-37 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-48 to -37" ;
-    skos:prefLabel "776749"@en ;
-    nccr:codeDescription "776749" ;
+    skos:prefLabel "-48 to -37"@en ;
+    nccr:codeDescription "-48 to -37" ;
     nccr:codeNotation "-48 to -37" ;
     nccr:recordCount 776749 .
 
@@ -21097,8 +21097,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "2184165"@en ;
-    nccr:codeDescription "2184165" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 2184165 .
 
@@ -21106,8 +21106,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-6-to-4 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-6 to -4" ;
-    skos:prefLabel "533502"@en ;
-    nccr:codeDescription "533502" ;
+    skos:prefLabel "-6 to -4"@en ;
+    nccr:codeDescription "-6 to -4" ;
     nccr:codeNotation "-6 to -4" ;
     nccr:recordCount 533502 .
 
@@ -21115,8 +21115,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-60-to-49 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-60 to -49" ;
-    skos:prefLabel "674713"@en ;
-    nccr:codeDescription "674713" ;
+    skos:prefLabel "-60 to -49"@en ;
+    nccr:codeDescription "-60 to -49" ;
     nccr:codeNotation "-60 to -49" ;
     nccr:recordCount 674713 .
 
@@ -21124,8 +21124,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "8003593"@en ;
-    nccr:codeDescription "8003593" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 8003593 .
 
@@ -21133,8 +21133,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "2691444"@en ;
-    nccr:codeDescription "2691444" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 2691444 .
 
@@ -21142,8 +21142,8 @@ nccr-cv:mcd-monthsfromindexdxtodiagnosiscode-9-to-7 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcd-monthsfromindexdxtodiagnosiscode ;
     skos:notation "-9 to -7" ;
-    skos:prefLabel "448256"@en ;
-    nccr:codeDescription "448256" ;
+    skos:prefLabel "-9 to -7"@en ;
+    nccr:codeDescription "-9 to -7" ;
     nccr:codeNotation "-9 to -7" ;
     nccr:recordCount 448256 .
 
@@ -29915,8 +29915,8 @@ nccr-cv:mcp-claimprocedurecodesequence-701 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "701" ;
-    skos:prefLabel "48813274"@en ;
-    nccr:codeDescription "48813274" ;
+    skos:prefLabel "701"@en ;
+    nccr:codeDescription "701" ;
     nccr:codeNotation "701" ;
     nccr:recordCount 48813274 .
 
@@ -29932,8 +29932,8 @@ nccr-cv:mcp-claimprocedurecodesequence-702 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "702" ;
-    skos:prefLabel "7266359"@en ;
-    nccr:codeDescription "7266359" ;
+    skos:prefLabel "702"@en ;
+    nccr:codeDescription "702" ;
     nccr:codeNotation "702" ;
     nccr:recordCount 7266359 .
 
@@ -29941,8 +29941,8 @@ nccr-cv:mcp-claimprocedurecodesequence-703 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "703" ;
-    skos:prefLabel "3090513"@en ;
-    nccr:codeDescription "3090513" ;
+    skos:prefLabel "703"@en ;
+    nccr:codeDescription "703" ;
     nccr:codeNotation "703" ;
     nccr:recordCount 3090513 .
 
@@ -29950,8 +29950,8 @@ nccr-cv:mcp-claimprocedurecodesequence-704 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "704" ;
-    skos:prefLabel "1791355"@en ;
-    nccr:codeDescription "1791355" ;
+    skos:prefLabel "704"@en ;
+    nccr:codeDescription "704" ;
     nccr:codeNotation "704" ;
     nccr:recordCount 1791355 .
 
@@ -29959,8 +29959,8 @@ nccr-cv:mcp-claimprocedurecodesequence-705 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "705" ;
-    skos:prefLabel "1080700"@en ;
-    nccr:codeDescription "1080700" ;
+    skos:prefLabel "705"@en ;
+    nccr:codeDescription "705" ;
     nccr:codeNotation "705" ;
     nccr:recordCount 1080700 .
 
@@ -29968,8 +29968,8 @@ nccr-cv:mcp-claimprocedurecodesequence-706 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "706" ;
-    skos:prefLabel "713242"@en ;
-    nccr:codeDescription "713242" ;
+    skos:prefLabel "706"@en ;
+    nccr:codeDescription "706" ;
     nccr:codeNotation "706" ;
     nccr:recordCount 713242 .
 
@@ -29977,8 +29977,8 @@ nccr-cv:mcp-claimprocedurecodesequence-707 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "707" ;
-    skos:prefLabel "529112"@en ;
-    nccr:codeDescription "529112" ;
+    skos:prefLabel "707"@en ;
+    nccr:codeDescription "707" ;
     nccr:codeNotation "707" ;
     nccr:recordCount 529112 .
 
@@ -29986,8 +29986,8 @@ nccr-cv:mcp-claimprocedurecodesequence-708 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "708" ;
-    skos:prefLabel "404964"@en ;
-    nccr:codeDescription "404964" ;
+    skos:prefLabel "708"@en ;
+    nccr:codeDescription "708" ;
     nccr:codeNotation "708" ;
     nccr:recordCount 404964 .
 
@@ -29995,8 +29995,8 @@ nccr-cv:mcp-claimprocedurecodesequence-709 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "709" ;
-    skos:prefLabel "312900"@en ;
-    nccr:codeDescription "312900" ;
+    skos:prefLabel "709"@en ;
+    nccr:codeDescription "709" ;
     nccr:codeNotation "709" ;
     nccr:recordCount 312900 .
 
@@ -30004,8 +30004,8 @@ nccr-cv:mcp-claimprocedurecodesequence-710 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "710" ;
-    skos:prefLabel "249898"@en ;
-    nccr:codeDescription "249898" ;
+    skos:prefLabel "710"@en ;
+    nccr:codeDescription "710" ;
     nccr:codeNotation "710" ;
     nccr:recordCount 249898 .
 
@@ -30013,8 +30013,8 @@ nccr-cv:mcp-claimprocedurecodesequence-711 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "711" ;
-    skos:prefLabel "204991"@en ;
-    nccr:codeDescription "204991" ;
+    skos:prefLabel "711"@en ;
+    nccr:codeDescription "711" ;
     nccr:codeNotation "711" ;
     nccr:recordCount 204991 .
 
@@ -30022,8 +30022,8 @@ nccr-cv:mcp-claimprocedurecodesequence-712 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "712" ;
-    skos:prefLabel "174234"@en ;
-    nccr:codeDescription "174234" ;
+    skos:prefLabel "712"@en ;
+    nccr:codeDescription "712" ;
     nccr:codeNotation "712" ;
     nccr:recordCount 174234 .
 
@@ -30031,8 +30031,8 @@ nccr-cv:mcp-claimprocedurecodesequence-713 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "713" ;
-    skos:prefLabel "148402"@en ;
-    nccr:codeDescription "148402" ;
+    skos:prefLabel "713"@en ;
+    nccr:codeDescription "713" ;
     nccr:codeNotation "713" ;
     nccr:recordCount 148402 .
 
@@ -30040,8 +30040,8 @@ nccr-cv:mcp-claimprocedurecodesequence-714 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "714" ;
-    skos:prefLabel "125933"@en ;
-    nccr:codeDescription "125933" ;
+    skos:prefLabel "714"@en ;
+    nccr:codeDescription "714" ;
     nccr:codeNotation "714" ;
     nccr:recordCount 125933 .
 
@@ -30049,8 +30049,8 @@ nccr-cv:mcp-claimprocedurecodesequence-715 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "715" ;
-    skos:prefLabel "109771"@en ;
-    nccr:codeDescription "109771" ;
+    skos:prefLabel "715"@en ;
+    nccr:codeDescription "715" ;
     nccr:codeNotation "715" ;
     nccr:recordCount 109771 .
 
@@ -30058,8 +30058,8 @@ nccr-cv:mcp-claimprocedurecodesequence-716 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "716" ;
-    skos:prefLabel "96576"@en ;
-    nccr:codeDescription "96576" ;
+    skos:prefLabel "716"@en ;
+    nccr:codeDescription "716" ;
     nccr:codeNotation "716" ;
     nccr:recordCount 96576 .
 
@@ -30067,8 +30067,8 @@ nccr-cv:mcp-claimprocedurecodesequence-717 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "717" ;
-    skos:prefLabel "85973"@en ;
-    nccr:codeDescription "85973" ;
+    skos:prefLabel "717"@en ;
+    nccr:codeDescription "717" ;
     nccr:codeNotation "717" ;
     nccr:recordCount 85973 .
 
@@ -30076,8 +30076,8 @@ nccr-cv:mcp-claimprocedurecodesequence-718 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "718" ;
-    skos:prefLabel "76490"@en ;
-    nccr:codeDescription "76490" ;
+    skos:prefLabel "718"@en ;
+    nccr:codeDescription "718" ;
     nccr:codeNotation "718" ;
     nccr:recordCount 76490 .
 
@@ -30085,8 +30085,8 @@ nccr-cv:mcp-claimprocedurecodesequence-719 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "719" ;
-    skos:prefLabel "67994"@en ;
-    nccr:codeDescription "67994" ;
+    skos:prefLabel "719"@en ;
+    nccr:codeDescription "719" ;
     nccr:codeNotation "719" ;
     nccr:recordCount 67994 .
 
@@ -30094,8 +30094,8 @@ nccr-cv:mcp-claimprocedurecodesequence-720 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "720" ;
-    skos:prefLabel "60072"@en ;
-    nccr:codeDescription "60072" ;
+    skos:prefLabel "720"@en ;
+    nccr:codeDescription "720" ;
     nccr:codeNotation "720" ;
     nccr:recordCount 60072 .
 
@@ -30103,8 +30103,8 @@ nccr-cv:mcp-claimprocedurecodesequence-721 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "721" ;
-    skos:prefLabel "52329"@en ;
-    nccr:codeDescription "52329" ;
+    skos:prefLabel "721"@en ;
+    nccr:codeDescription "721" ;
     nccr:codeNotation "721" ;
     nccr:recordCount 52329 .
 
@@ -30112,8 +30112,8 @@ nccr-cv:mcp-claimprocedurecodesequence-722 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "722" ;
-    skos:prefLabel "45962"@en ;
-    nccr:codeDescription "45962" ;
+    skos:prefLabel "722"@en ;
+    nccr:codeDescription "722" ;
     nccr:codeNotation "722" ;
     nccr:recordCount 45962 .
 
@@ -30121,8 +30121,8 @@ nccr-cv:mcp-claimprocedurecodesequence-723 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "723" ;
-    skos:prefLabel "40427"@en ;
-    nccr:codeDescription "40427" ;
+    skos:prefLabel "723"@en ;
+    nccr:codeDescription "723" ;
     nccr:codeNotation "723" ;
     nccr:recordCount 40427 .
 
@@ -30130,8 +30130,8 @@ nccr-cv:mcp-claimprocedurecodesequence-724 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "724" ;
-    skos:prefLabel "36625"@en ;
-    nccr:codeDescription "36625" ;
+    skos:prefLabel "724"@en ;
+    nccr:codeDescription "724" ;
     nccr:codeNotation "724" ;
     nccr:recordCount 36625 .
 
@@ -30139,8 +30139,8 @@ nccr-cv:mcp-claimprocedurecodesequence-725 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "725" ;
-    skos:prefLabel "33523"@en ;
-    nccr:codeDescription "33523" ;
+    skos:prefLabel "725"@en ;
+    nccr:codeDescription "725" ;
     nccr:codeNotation "725" ;
     nccr:recordCount 33523 .
 
@@ -30148,8 +30148,8 @@ nccr-cv:mcp-claimprocedurecodesequence-726 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "726" ;
-    skos:prefLabel "30526"@en ;
-    nccr:codeDescription "30526" ;
+    skos:prefLabel "726"@en ;
+    nccr:codeDescription "726" ;
     nccr:codeNotation "726" ;
     nccr:recordCount 30526 .
 
@@ -30157,8 +30157,8 @@ nccr-cv:mcp-claimprocedurecodesequence-727 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "727" ;
-    skos:prefLabel "27828"@en ;
-    nccr:codeDescription "27828" ;
+    skos:prefLabel "727"@en ;
+    nccr:codeDescription "727" ;
     nccr:codeNotation "727" ;
     nccr:recordCount 27828 .
 
@@ -30166,8 +30166,8 @@ nccr-cv:mcp-claimprocedurecodesequence-728 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "728" ;
-    skos:prefLabel "25105"@en ;
-    nccr:codeDescription "25105" ;
+    skos:prefLabel "728"@en ;
+    nccr:codeDescription "728" ;
     nccr:codeNotation "728" ;
     nccr:recordCount 25105 .
 
@@ -30175,8 +30175,8 @@ nccr-cv:mcp-claimprocedurecodesequence-729 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "729" ;
-    skos:prefLabel "21613"@en ;
-    nccr:codeDescription "21613" ;
+    skos:prefLabel "729"@en ;
+    nccr:codeDescription "729" ;
     nccr:codeNotation "729" ;
     nccr:recordCount 21613 .
 
@@ -30184,8 +30184,8 @@ nccr-cv:mcp-claimprocedurecodesequence-730 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "730" ;
-    skos:prefLabel "18404"@en ;
-    nccr:codeDescription "18404" ;
+    skos:prefLabel "730"@en ;
+    nccr:codeDescription "730" ;
     nccr:codeNotation "730" ;
     nccr:recordCount 18404 .
 
@@ -30193,8 +30193,8 @@ nccr-cv:mcp-claimprocedurecodesequence-731 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-claimprocedurecodesequence ;
     skos:notation "731" ;
-    skos:prefLabel "10404"@en ;
-    nccr:codeDescription "10404" ;
+    skos:prefLabel "731"@en ;
+    nccr:codeDescription "731" ;
     nccr:codeNotation "731" ;
     nccr:recordCount 10404 .
 
@@ -30202,8 +30202,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "0" ;
-    skos:prefLabel "2479873"@en ;
-    nccr:codeDescription "2479873" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 2479873 .
 
@@ -30211,8 +30211,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-1" ;
-    skos:prefLabel "544462"@en ;
-    nccr:codeDescription "544462" ;
+    skos:prefLabel "-1"@en ;
+    nccr:codeDescription "-1" ;
     nccr:codeNotation "-1" ;
     nccr:recordCount 544462,
         2312871 .
@@ -30221,8 +30221,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "2315341"@en ;
-    nccr:codeDescription "2315341" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 2315341 .
 
@@ -30230,8 +30230,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-12-to-10 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-12 to -10" ;
-    skos:prefLabel "476408"@en ;
-    nccr:codeDescription "476408" ;
+    skos:prefLabel "-12 to -10"@en ;
+    nccr:codeDescription "-12 to -10" ;
     nccr:codeNotation "-12 to -10" ;
     nccr:recordCount 476408 .
 
@@ -30239,8 +30239,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "< -120" ;
-    skos:prefLabel "1264710"@en ;
-    nccr:codeDescription "1264710" ;
+    skos:prefLabel "< -120"@en ;
+    nccr:codeDescription "< -120" ;
     nccr:codeNotation "< -120" ;
     nccr:recordCount 1264710,
         9889154 .
@@ -30249,8 +30249,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-120-to-61 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-120 to -61" ;
-    skos:prefLabel "2830981"@en ;
-    nccr:codeDescription "2830981" ;
+    skos:prefLabel "-120 to -61"@en ;
+    nccr:codeDescription "-120 to -61" ;
     nccr:codeNotation "-120 to -61" ;
     nccr:recordCount 2830981 .
 
@@ -30258,8 +30258,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "1933832"@en ;
-    nccr:codeDescription "1933832" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 1933832 .
 
@@ -30267,8 +30267,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-15-to-13 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-15 to -13" ;
-    skos:prefLabel "436781"@en ;
-    nccr:codeDescription "436781" ;
+    skos:prefLabel "-15 to -13"@en ;
+    nccr:codeDescription "-15 to -13" ;
     nccr:codeNotation "-15 to -13" ;
     nccr:recordCount 436781 .
 
@@ -30276,8 +30276,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "1691747"@en ;
-    nccr:codeDescription "1691747" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 1691747 .
 
@@ -30285,8 +30285,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-18-to-16 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-18 to -16" ;
-    skos:prefLabel "385571"@en ;
-    nccr:codeDescription "385571" ;
+    skos:prefLabel "-18 to -16"@en ;
+    nccr:codeDescription "-18 to -16" ;
     nccr:codeNotation "-18 to -16" ;
     nccr:recordCount 385571 .
 
@@ -30294,8 +30294,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "1520526"@en ;
-    nccr:codeDescription "1520526" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 1520526 .
 
@@ -30303,8 +30303,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-2" ;
-    skos:prefLabel "339218"@en ;
-    nccr:codeDescription "339218" ;
+    skos:prefLabel "-2"@en ;
+    nccr:codeDescription "-2" ;
     nccr:codeNotation "-2" ;
     nccr:recordCount 339218,
         2076777 .
@@ -30313,8 +30313,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-21-to-19 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-21 to -19" ;
-    skos:prefLabel "346810"@en ;
-    nccr:codeDescription "346810" ;
+    skos:prefLabel "-21 to -19"@en ;
+    nccr:codeDescription "-21 to -19" ;
     nccr:codeNotation "-21 to -19" ;
     nccr:recordCount 346810 .
 
@@ -30322,8 +30322,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "1417013"@en ;
-    nccr:codeDescription "1417013" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 1417013 .
 
@@ -30331,8 +30331,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-24-to-22 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-24 to -22" ;
-    skos:prefLabel "318905"@en ;
-    nccr:codeDescription "318905" ;
+    skos:prefLabel "-24 to -22"@en ;
+    nccr:codeDescription "-24 to -22" ;
     nccr:codeNotation "-24 to -22" ;
     nccr:recordCount 318905 .
 
@@ -30340,8 +30340,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "4574347"@en ;
-    nccr:codeDescription "4574347" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 4574347 .
 
@@ -30349,8 +30349,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-3" ;
-    skos:prefLabel "264834"@en ;
-    nccr:codeDescription "264834" ;
+    skos:prefLabel "-3"@en ;
+    nccr:codeDescription "-3" ;
     nccr:codeNotation "-3" ;
     nccr:recordCount 264834,
         1860385 .
@@ -30359,8 +30359,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-36-to-25 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-36 to -25" ;
-    skos:prefLabel "1149509"@en ;
-    nccr:codeDescription "1149509" ;
+    skos:prefLabel "-36 to -25"@en ;
+    nccr:codeDescription "-36 to -25" ;
     nccr:codeNotation "-36 to -25" ;
     nccr:recordCount 1149509 .
 
@@ -30368,8 +30368,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "3202891"@en ;
-    nccr:codeDescription "3202891" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 3202891 .
 
@@ -30377,8 +30377,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "4387969"@en ;
-    nccr:codeDescription "4387969" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 4387969 .
 
@@ -30386,8 +30386,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-48-to-37 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-48 to -37" ;
-    skos:prefLabel "1002603"@en ;
-    nccr:codeDescription "1002603" ;
+    skos:prefLabel "-48 to -37"@en ;
+    nccr:codeDescription "-48 to -37" ;
     nccr:codeNotation "-48 to -37" ;
     nccr:recordCount 1002603 .
 
@@ -30395,8 +30395,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "2517677"@en ;
-    nccr:codeDescription "2517677" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 2517677 .
 
@@ -30404,8 +30404,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-6-to-4 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-6 to -4" ;
-    skos:prefLabel "636716"@en ;
-    nccr:codeDescription "636716" ;
+    skos:prefLabel "-6 to -4"@en ;
+    nccr:codeDescription "-6 to -4" ;
     nccr:codeNotation "-6 to -4" ;
     nccr:recordCount 636716 .
 
@@ -30413,8 +30413,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-60-to-49 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-60 to -49" ;
-    skos:prefLabel "876223"@en ;
-    nccr:codeDescription "876223" ;
+    skos:prefLabel "-60 to -49"@en ;
+    nccr:codeDescription "-60 to -49" ;
     nccr:codeNotation "-60 to -49" ;
     nccr:recordCount 876223 .
 
@@ -30422,8 +30422,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "9058801"@en ;
-    nccr:codeDescription "9058801" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 9058801 .
 
@@ -30431,8 +30431,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "3099806"@en ;
-    nccr:codeDescription "3099806" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 3099806 .
 
@@ -30440,8 +30440,8 @@ nccr-cv:mcp-monthsfromindexdxtoprocedurecode-9-to-7 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:mcp-monthsfromindexdxtoprocedurecode ;
     skos:notation "-9 to -7" ;
-    skos:prefLabel "532758"@en ;
-    nccr:codeDescription "532758" ;
+    skos:prefLabel "-9 to -7"@en ;
+    nccr:codeDescription "-9 to -7" ;
     nccr:codeNotation "-9 to -7" ;
     nccr:recordCount 532758 .
 
@@ -31361,8 +31361,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "0" ;
-    skos:prefLabel "105425"@en ;
-    nccr:codeDescription "105425" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 105425 .
 
@@ -31370,8 +31370,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-1" ;
-    skos:prefLabel "49390"@en ;
-    nccr:codeDescription "49390" ;
+    skos:prefLabel "-1"@en ;
+    nccr:codeDescription "-1" ;
     nccr:codeNotation "-1" ;
     nccr:recordCount 49390,
         133397 .
@@ -31380,8 +31380,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "254913"@en ;
-    nccr:codeDescription "254913" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 254913 .
 
@@ -31389,8 +31389,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-12-to-10 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-12 to -10" ;
-    skos:prefLabel "95685"@en ;
-    nccr:codeDescription "95685" ;
+    skos:prefLabel "-12 to -10"@en ;
+    nccr:codeDescription "-12 to -10" ;
     nccr:codeNotation "-12 to -10" ;
     nccr:recordCount 95685 .
 
@@ -31398,8 +31398,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "< -120" ;
-    skos:prefLabel "420067"@en ;
-    nccr:codeDescription "420067" ;
+    skos:prefLabel "< -120"@en ;
+    nccr:codeDescription "< -120" ;
     nccr:codeNotation "< -120" ;
     nccr:recordCount 420067,
         3202972 .
@@ -31408,8 +31408,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-120-to-61 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-120 to -61" ;
-    skos:prefLabel "865402"@en ;
-    nccr:codeDescription "865402" ;
+    skos:prefLabel "-120 to -61"@en ;
+    nccr:codeDescription "-120 to -61" ;
     nccr:codeNotation "-120 to -61" ;
     nccr:recordCount 865402 .
 
@@ -31417,8 +31417,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "249150"@en ;
-    nccr:codeDescription "249150" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 249150 .
 
@@ -31426,8 +31426,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-15-to-13 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-15 to -13" ;
-    skos:prefLabel "92131"@en ;
-    nccr:codeDescription "92131" ;
+    skos:prefLabel "-15 to -13"@en ;
+    nccr:codeDescription "-15 to -13" ;
     nccr:codeNotation "-15 to -13" ;
     nccr:recordCount 92131 .
 
@@ -31435,8 +31435,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "239630"@en ;
-    nccr:codeDescription "239630" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 239630 .
 
@@ -31444,8 +31444,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-18-to-16 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-18 to -16" ;
-    skos:prefLabel "88521"@en ;
-    nccr:codeDescription "88521" ;
+    skos:prefLabel "-18 to -16"@en ;
+    nccr:codeDescription "-18 to -16" ;
     nccr:codeNotation "-18 to -16" ;
     nccr:recordCount 88521 .
 
@@ -31453,8 +31453,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "234112"@en ;
-    nccr:codeDescription "234112" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 234112 .
 
@@ -31462,8 +31462,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-2" ;
-    skos:prefLabel "41459"@en ;
-    nccr:codeDescription "41459" ;
+    skos:prefLabel "-2"@en ;
+    nccr:codeDescription "-2" ;
     nccr:codeNotation "-2" ;
     nccr:recordCount 41459,
         121777 .
@@ -31472,8 +31472,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-21-to-19 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-21 to -19" ;
-    skos:prefLabel "85545"@en ;
-    nccr:codeDescription "85545" ;
+    skos:prefLabel "-21 to -19"@en ;
+    nccr:codeDescription "-21 to -19" ;
     nccr:codeNotation "-21 to -19" ;
     nccr:recordCount 85545 .
 
@@ -31481,8 +31481,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "230042"@en ;
-    nccr:codeDescription "230042" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 230042 .
 
@@ -31490,8 +31490,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-24-to-22 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-24 to -22" ;
-    skos:prefLabel "84114"@en ;
-    nccr:codeDescription "84114" ;
+    skos:prefLabel "-24 to -22"@en ;
+    nccr:codeDescription "-24 to -22" ;
     nccr:codeNotation "-24 to -22" ;
     nccr:recordCount 84114 .
 
@@ -31499,8 +31499,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "809876"@en ;
-    nccr:codeDescription "809876" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 809876 .
 
@@ -31508,8 +31508,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-3" ;
-    skos:prefLabel "38145"@en ;
-    nccr:codeDescription "38145" ;
+    skos:prefLabel "-3"@en ;
+    nccr:codeDescription "-3" ;
     nccr:codeNotation "-3" ;
     nccr:recordCount 38145,
         108575 .
@@ -31518,8 +31518,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-36-to-25 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-36 to -25" ;
-    skos:prefLabel "315201"@en ;
-    nccr:codeDescription "315201" ;
+    skos:prefLabel "-36 to -25"@en ;
+    nccr:codeDescription "-36 to -25" ;
     nccr:codeNotation "-36 to -25" ;
     nccr:recordCount 315201 .
 
@@ -31527,8 +31527,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "689542"@en ;
-    nccr:codeDescription "689542" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 689542 .
 
@@ -31536,8 +31536,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "286682"@en ;
-    nccr:codeDescription "286682" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 286682 .
 
@@ -31545,8 +31545,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-48-to-37 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-48 to -37" ;
-    skos:prefLabel "280840"@en ;
-    nccr:codeDescription "280840" ;
+    skos:prefLabel "-48 to -37"@en ;
+    nccr:codeDescription "-48 to -37" ;
     nccr:codeNotation "-48 to -37" ;
     nccr:recordCount 280840 .
 
@@ -31554,8 +31554,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "636383"@en ;
-    nccr:codeDescription "636383" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 636383 .
 
@@ -31563,8 +31563,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-6-to-4 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-6 to -4" ;
-    skos:prefLabel "106064"@en ;
-    nccr:codeDescription "106064" ;
+    skos:prefLabel "-6 to -4"@en ;
+    nccr:codeDescription "-6 to -4" ;
     nccr:codeNotation "-6 to -4" ;
     nccr:recordCount 106064 .
 
@@ -31572,8 +31572,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-60-to-49 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-60 to -49" ;
-    skos:prefLabel "250254"@en ;
-    nccr:codeDescription "250254" ;
+    skos:prefLabel "-60 to -49"@en ;
+    nccr:codeDescription "-60 to -49" ;
     nccr:codeNotation "-60 to -49" ;
     nccr:recordCount 250254 .
 
@@ -31581,8 +31581,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "2542557"@en ;
-    nccr:codeDescription "2542557" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 2542557 .
 
@@ -31590,8 +31590,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "260307"@en ;
-    nccr:codeDescription "260307" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 260307 .
 
@@ -31599,8 +31599,8 @@ nccr-cv:pharm-monthsfromindexdxtodispense-9-to-7 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:pharm-monthsfromindexdxtodispense ;
     skos:notation "-9 to -7" ;
-    skos:prefLabel "99671"@en ;
-    nccr:codeDescription "99671" ;
+    skos:prefLabel "-9 to -7"@en ;
+    nccr:codeDescription "-9 to -7" ;
     nccr:codeNotation "-9 to -7" ;
     nccr:recordCount 99671 .
 
@@ -31624,8 +31624,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "0" ;
-    skos:prefLabel "28"@en ;
-    nccr:codeDescription "28" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 28 .
 
@@ -31633,8 +31633,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "1" ;
-    skos:prefLabel "131"@en ;
-    nccr:codeDescription "131" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 131 .
 
@@ -31642,8 +31642,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "360"@en ;
-    nccr:codeDescription "360" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 360 .
 
@@ -31651,8 +31651,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "> 120" ;
-    skos:prefLabel "68"@en ;
-    nccr:codeDescription "68" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 68 .
 
@@ -31660,8 +31660,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "151"@en ;
-    nccr:codeDescription "151" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 151 .
 
@@ -31669,8 +31669,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "127"@en ;
-    nccr:codeDescription "127" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 127 .
 
@@ -31678,8 +31678,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "135"@en ;
-    nccr:codeDescription "135" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 135 .
 
@@ -31687,8 +31687,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "2" ;
-    skos:prefLabel "576"@en ;
-    nccr:codeDescription "576" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 576 .
 
@@ -31696,8 +31696,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "69"@en ;
-    nccr:codeDescription "69" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 69 .
 
@@ -31705,8 +31705,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "220"@en ;
-    nccr:codeDescription "220" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 220 .
 
@@ -31714,8 +31714,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "3" ;
-    skos:prefLabel "576"@en ;
-    nccr:codeDescription "576" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 576 .
 
@@ -31723,8 +31723,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "174"@en ;
-    nccr:codeDescription "174" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 174 .
 
@@ -31732,8 +31732,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "1262"@en ;
-    nccr:codeDescription "1262" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 1262 .
 
@@ -31741,8 +31741,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "104"@en ;
-    nccr:codeDescription "104" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 104 .
 
@@ -31750,8 +31750,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "183"@en ;
-    nccr:codeDescription "183" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 183 .
 
@@ -31759,8 +31759,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "610"@en ;
-    nccr:codeDescription "610" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 610 .
 
@@ -31784,8 +31784,8 @@ nccr-cv:ro-months-from-dx-to-treatment-end-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-treatment-end ;
     skos:notation "Missing" ;
-    skos:prefLabel "271"@en ;
-    nccr:codeDescription "271" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 271 .
 
@@ -31793,8 +31793,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "0" ;
-    skos:prefLabel "109"@en ;
-    nccr:codeDescription "109" ;
+    skos:prefLabel "0"@en ;
+    nccr:codeDescription "0" ;
     nccr:codeNotation "0" ;
     nccr:recordCount 109 .
 
@@ -31802,8 +31802,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-1 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "1" ;
-    skos:prefLabel "540"@en ;
-    nccr:codeDescription "540" ;
+    skos:prefLabel "1"@en ;
+    nccr:codeDescription "1" ;
     nccr:codeNotation "1" ;
     nccr:recordCount 540 .
 
@@ -31811,8 +31811,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-10-to-12 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "10 to 12" ;
-    skos:prefLabel "291"@en ;
-    nccr:codeDescription "291" ;
+    skos:prefLabel "10 to 12"@en ;
+    nccr:codeDescription "10 to 12" ;
     nccr:codeNotation "10 to 12" ;
     nccr:recordCount 291 .
 
@@ -31820,8 +31820,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "> 120" ;
-    skos:prefLabel "67"@en ;
-    nccr:codeDescription "67" ;
+    skos:prefLabel "> 120"@en ;
+    nccr:codeDescription "> 120" ;
     nccr:codeNotation "> 120" ;
     nccr:recordCount 67 .
 
@@ -31829,8 +31829,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-13-to-15 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "13 to 15" ;
-    skos:prefLabel "158"@en ;
-    nccr:codeDescription "158" ;
+    skos:prefLabel "13 to 15"@en ;
+    nccr:codeDescription "13 to 15" ;
     nccr:codeNotation "13 to 15" ;
     nccr:recordCount 158 .
 
@@ -31838,8 +31838,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-16-to-18 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "16 to 18" ;
-    skos:prefLabel "112"@en ;
-    nccr:codeDescription "112" ;
+    skos:prefLabel "16 to 18"@en ;
+    nccr:codeDescription "16 to 18" ;
     nccr:codeNotation "16 to 18" ;
     nccr:recordCount 112 .
 
@@ -31847,8 +31847,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-19-to-21 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "19 to 21" ;
-    skos:prefLabel "127"@en ;
-    nccr:codeDescription "127" ;
+    skos:prefLabel "19 to 21"@en ;
+    nccr:codeDescription "19 to 21" ;
     nccr:codeNotation "19 to 21" ;
     nccr:recordCount 127 .
 
@@ -31856,8 +31856,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-2 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "2" ;
-    skos:prefLabel "552"@en ;
-    nccr:codeDescription "552" ;
+    skos:prefLabel "2"@en ;
+    nccr:codeDescription "2" ;
     nccr:codeNotation "2" ;
     nccr:recordCount 552 .
 
@@ -31865,8 +31865,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-22-to-24 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "22 to 24" ;
-    skos:prefLabel "71"@en ;
-    nccr:codeDescription "71" ;
+    skos:prefLabel "22 to 24"@en ;
+    nccr:codeDescription "22 to 24" ;
     nccr:codeNotation "22 to 24" ;
     nccr:recordCount 71 .
 
@@ -31874,8 +31874,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-25-to-36 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "25 to 36" ;
-    skos:prefLabel "207"@en ;
-    nccr:codeDescription "207" ;
+    skos:prefLabel "25 to 36"@en ;
+    nccr:codeDescription "25 to 36" ;
     nccr:codeNotation "25 to 36" ;
     nccr:recordCount 207 .
 
@@ -31883,8 +31883,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-3 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "3" ;
-    skos:prefLabel "429"@en ;
-    nccr:codeDescription "429" ;
+    skos:prefLabel "3"@en ;
+    nccr:codeDescription "3" ;
     nccr:codeNotation "3" ;
     nccr:recordCount 429 .
 
@@ -31892,8 +31892,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-37-to-48 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "37 to 48" ;
-    skos:prefLabel "176"@en ;
-    nccr:codeDescription "176" ;
+    skos:prefLabel "37 to 48"@en ;
+    nccr:codeDescription "37 to 48" ;
     nccr:codeNotation "37 to 48" ;
     nccr:recordCount 176 .
 
@@ -31901,8 +31901,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-4-to-6 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "4 to 6" ;
-    skos:prefLabel "1122"@en ;
-    nccr:codeDescription "1122" ;
+    skos:prefLabel "4 to 6"@en ;
+    nccr:codeDescription "4 to 6" ;
     nccr:codeNotation "4 to 6" ;
     nccr:recordCount 1122 .
 
@@ -31910,8 +31910,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-49-to-60 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "49 to 60" ;
-    skos:prefLabel "101"@en ;
-    nccr:codeDescription "101" ;
+    skos:prefLabel "49 to 60"@en ;
+    nccr:codeDescription "49 to 60" ;
     nccr:codeNotation "49 to 60" ;
     nccr:recordCount 101 .
 
@@ -31919,8 +31919,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-61-to-120 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "61 to 120" ;
-    skos:prefLabel "183"@en ;
-    nccr:codeDescription "183" ;
+    skos:prefLabel "61 to 120"@en ;
+    nccr:codeDescription "61 to 120" ;
     nccr:codeNotation "61 to 120" ;
     nccr:recordCount 183 .
 
@@ -31928,8 +31928,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-7-to-9 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "7 to 9" ;
-    skos:prefLabel "530"@en ;
-    nccr:codeDescription "530" ;
+    skos:prefLabel "7 to 9"@en ;
+    nccr:codeDescription "7 to 9" ;
     nccr:codeNotation "7 to 9" ;
     nccr:recordCount 530 .
 
@@ -31953,8 +31953,8 @@ nccr-cv:ro-months-from-dx-to-tx-start-missing a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-months-from-dx-to-tx-start ;
     skos:notation "Missing" ;
-    skos:prefLabel "270"@en ;
-    nccr:codeDescription "270" ;
+    skos:prefLabel "Missing"@en ;
+    nccr:codeDescription "Missing" ;
     nccr:codeNotation "Missing" ;
     nccr:recordCount 270 .
 
@@ -33836,8 +33836,8 @@ nccr-cv:ro-radiation-dose-delivered-0-001-to-10-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "0.001 to 10.0" ;
-    skos:prefLabel "683"@en ;
-    nccr:codeDescription "683" ;
+    skos:prefLabel "0.001 to 10.0"@en ;
+    nccr:codeDescription "0.001 to 10.0" ;
     nccr:codeNotation "0.001 to 10.0" ;
     nccr:recordCount 683 .
 
@@ -33853,8 +33853,8 @@ nccr-cv:ro-radiation-dose-delivered-10-001-to-20-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "10.001 to 20.0" ;
-    skos:prefLabel "1086"@en ;
-    nccr:codeDescription "1086" ;
+    skos:prefLabel "10.001 to 20.0"@en ;
+    nccr:codeDescription "10.001 to 20.0" ;
     nccr:codeNotation "10.001 to 20.0" ;
     nccr:recordCount 1086 .
 
@@ -33862,8 +33862,8 @@ nccr-cv:ro-radiation-dose-delivered-100-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "> 100.0" ;
-    skos:prefLabel "29"@en ;
-    nccr:codeDescription "29" ;
+    skos:prefLabel "> 100.0"@en ;
+    nccr:codeDescription "> 100.0" ;
     nccr:codeNotation "> 100.0" ;
     nccr:recordCount 29 .
 
@@ -33871,8 +33871,8 @@ nccr-cv:ro-radiation-dose-delivered-20-001-to-30-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "20.001 to 30.0" ;
-    skos:prefLabel "1011"@en ;
-    nccr:codeDescription "1011" ;
+    skos:prefLabel "20.001 to 30.0"@en ;
+    nccr:codeDescription "20.001 to 30.0" ;
     nccr:codeNotation "20.001 to 30.0" ;
     nccr:recordCount 1011 .
 
@@ -33880,8 +33880,8 @@ nccr-cv:ro-radiation-dose-delivered-30-001-to-40-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "30.001 to 40.0" ;
-    skos:prefLabel "686"@en ;
-    nccr:codeDescription "686" ;
+    skos:prefLabel "30.001 to 40.0"@en ;
+    nccr:codeDescription "30.001 to 40.0" ;
     nccr:codeNotation "30.001 to 40.0" ;
     nccr:recordCount 686 .
 
@@ -33889,8 +33889,8 @@ nccr-cv:ro-radiation-dose-delivered-40-001-to-50-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "40.001 to 50.0" ;
-    skos:prefLabel "366"@en ;
-    nccr:codeDescription "366" ;
+    skos:prefLabel "40.001 to 50.0"@en ;
+    nccr:codeDescription "40.001 to 50.0" ;
     nccr:codeNotation "40.001 to 50.0" ;
     nccr:recordCount 366 .
 
@@ -33898,8 +33898,8 @@ nccr-cv:ro-radiation-dose-delivered-50-001-to-60-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "50.001 to 60.0" ;
-    skos:prefLabel "836"@en ;
-    nccr:codeDescription "836" ;
+    skos:prefLabel "50.001 to 60.0"@en ;
+    nccr:codeDescription "50.001 to 60.0" ;
     nccr:codeNotation "50.001 to 60.0" ;
     nccr:recordCount 836 .
 
@@ -33907,8 +33907,8 @@ nccr-cv:ro-radiation-dose-delivered-60-001-to-70-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "60.001 to 70.0" ;
-    skos:prefLabel "40"@en ;
-    nccr:codeDescription "40" ;
+    skos:prefLabel "60.001 to 70.0"@en ;
+    nccr:codeDescription "60.001 to 70.0" ;
     nccr:codeNotation "60.001 to 70.0" ;
     nccr:recordCount 40 .
 
@@ -33924,8 +33924,8 @@ nccr-cv:ro-radiation-dose-delivered-no-doses a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-delivered ;
     skos:notation "No Doses" ;
-    skos:prefLabel "319"@en ;
-    nccr:codeDescription "319" ;
+    skos:prefLabel "No Doses"@en ;
+    nccr:codeDescription "No Doses" ;
     nccr:codeNotation "No Doses" ;
     nccr:recordCount 319 .
 
@@ -33933,8 +33933,8 @@ nccr-cv:ro-radiation-dose-prescribed-0-001-to-10-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "0.001 to 10.0" ;
-    skos:prefLabel "75"@en ;
-    nccr:codeDescription "75" ;
+    skos:prefLabel "0.001 to 10.0"@en ;
+    nccr:codeDescription "0.001 to 10.0" ;
     nccr:codeNotation "0.001 to 10.0" ;
     nccr:recordCount 75 .
 
@@ -33950,8 +33950,8 @@ nccr-cv:ro-radiation-dose-prescribed-10-001-to-20-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "10.001 to 20.0" ;
-    skos:prefLabel "118"@en ;
-    nccr:codeDescription "118" ;
+    skos:prefLabel "10.001 to 20.0"@en ;
+    nccr:codeDescription "10.001 to 20.0" ;
     nccr:codeNotation "10.001 to 20.0" ;
     nccr:recordCount 118 .
 
@@ -33959,8 +33959,8 @@ nccr-cv:ro-radiation-dose-prescribed-100-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "> 100.0" ;
-    skos:prefLabel "4615"@en ;
-    nccr:codeDescription "4615" ;
+    skos:prefLabel "> 100.0"@en ;
+    nccr:codeDescription "> 100.0" ;
     nccr:codeNotation "> 100.0" ;
     nccr:recordCount 4615 .
 
@@ -33968,8 +33968,8 @@ nccr-cv:ro-radiation-dose-prescribed-20-001-to-30-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "20.001 to 30.0" ;
-    skos:prefLabel "105"@en ;
-    nccr:codeDescription "105" ;
+    skos:prefLabel "20.001 to 30.0"@en ;
+    nccr:codeDescription "20.001 to 30.0" ;
     nccr:codeNotation "20.001 to 30.0" ;
     nccr:recordCount 105 .
 
@@ -33977,8 +33977,8 @@ nccr-cv:ro-radiation-dose-prescribed-30-001-to-40-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "30.001 to 40.0" ;
-    skos:prefLabel "62"@en ;
-    nccr:codeDescription "62" ;
+    skos:prefLabel "30.001 to 40.0"@en ;
+    nccr:codeDescription "30.001 to 40.0" ;
     nccr:codeNotation "30.001 to 40.0" ;
     nccr:recordCount 62 .
 
@@ -33986,8 +33986,8 @@ nccr-cv:ro-radiation-dose-prescribed-40-001-to-50-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "40.001 to 50.0" ;
-    skos:prefLabel "41"@en ;
-    nccr:codeDescription "41" ;
+    skos:prefLabel "40.001 to 50.0"@en ;
+    nccr:codeDescription "40.001 to 50.0" ;
     nccr:codeNotation "40.001 to 50.0" ;
     nccr:recordCount 41 .
 
@@ -33995,8 +33995,8 @@ nccr-cv:ro-radiation-dose-prescribed-50-001-to-60-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-dose-prescribed ;
     skos:notation "50.001 to 60.0" ;
-    skos:prefLabel "40"@en ;
-    nccr:codeDescription "40" ;
+    skos:prefLabel "50.001 to 60.0"@en ;
+    nccr:codeDescription "50.001 to 60.0" ;
     nccr:codeNotation "50.001 to 60.0" ;
     nccr:recordCount 40 .
 
@@ -34075,8 +34075,8 @@ nccr-cv:ro-radiation-fractions-delivered-0-001-to-10-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-delivered ;
     skos:notation "0.001 to 10.0" ;
-    skos:prefLabel "1495"@en ;
-    nccr:codeDescription "1495" ;
+    skos:prefLabel "0.001 to 10.0"@en ;
+    nccr:codeDescription "0.001 to 10.0" ;
     nccr:codeNotation "0.001 to 10.0" ;
     nccr:recordCount 1495 .
 
@@ -34092,8 +34092,8 @@ nccr-cv:ro-radiation-fractions-delivered-10-001-to-20-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-delivered ;
     skos:notation "10.001 to 20.0" ;
-    skos:prefLabel "1314"@en ;
-    nccr:codeDescription "1314" ;
+    skos:prefLabel "10.001 to 20.0"@en ;
+    nccr:codeDescription "10.001 to 20.0" ;
     nccr:codeNotation "10.001 to 20.0" ;
     nccr:recordCount 1314 .
 
@@ -34101,8 +34101,8 @@ nccr-cv:ro-radiation-fractions-delivered-100-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-delivered ;
     skos:notation "> 100.0" ;
-    skos:prefLabel "1347"@en ;
-    nccr:codeDescription "1347" ;
+    skos:prefLabel "> 100.0"@en ;
+    nccr:codeDescription "> 100.0" ;
     nccr:codeNotation "> 100.0" ;
     nccr:recordCount 1347 .
 
@@ -34110,8 +34110,8 @@ nccr-cv:ro-radiation-fractions-delivered-20-001-to-30-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-delivered ;
     skos:notation "20.001 to 30.0" ;
-    skos:prefLabel "801"@en ;
-    nccr:codeDescription "801" ;
+    skos:prefLabel "20.001 to 30.0"@en ;
+    nccr:codeDescription "20.001 to 30.0" ;
     nccr:codeNotation "20.001 to 30.0" ;
     nccr:recordCount 801 .
 
@@ -34119,8 +34119,8 @@ nccr-cv:ro-radiation-fractions-delivered-30-001-to-40-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-delivered ;
     skos:notation "30.001 to 40.0" ;
-    skos:prefLabel "100"@en ;
-    nccr:codeDescription "100" ;
+    skos:prefLabel "30.001 to 40.0"@en ;
+    nccr:codeDescription "30.001 to 40.0" ;
     nccr:codeNotation "30.001 to 40.0" ;
     nccr:recordCount 100 .
 
@@ -34136,8 +34136,8 @@ nccr-cv:ro-radiation-fractions-prescribed-0-001-to-10-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-prescribed ;
     skos:notation "0.001 to 10.0" ;
-    skos:prefLabel "216"@en ;
-    nccr:codeDescription "216" ;
+    skos:prefLabel "0.001 to 10.0"@en ;
+    nccr:codeDescription "0.001 to 10.0" ;
     nccr:codeNotation "0.001 to 10.0" ;
     nccr:recordCount 216 .
 
@@ -34153,8 +34153,8 @@ nccr-cv:ro-radiation-fractions-prescribed-10-001-to-20-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-prescribed ;
     skos:notation "10.001 to 20.0" ;
-    skos:prefLabel "144"@en ;
-    nccr:codeDescription "144" ;
+    skos:prefLabel "10.001 to 20.0"@en ;
+    nccr:codeDescription "10.001 to 20.0" ;
     nccr:codeNotation "10.001 to 20.0" ;
     nccr:recordCount 144 .
 
@@ -34162,8 +34162,8 @@ nccr-cv:ro-radiation-fractions-prescribed-20-001-to-30-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-prescribed ;
     skos:notation "20.001 to 30.0" ;
-    skos:prefLabel "82"@en ;
-    nccr:codeDescription "82" ;
+    skos:prefLabel "20.001 to 30.0"@en ;
+    nccr:codeDescription "20.001 to 30.0" ;
     nccr:codeNotation "20.001 to 30.0" ;
     nccr:recordCount 82 .
 
@@ -34171,8 +34171,8 @@ nccr-cv:ro-radiation-fractions-prescribed-90-001-to-100-0 a skos:Concept,
         nccr:CodeValue ;
     skos:inScheme nccr-vs:ro-radiation-fractions-prescribed ;
     skos:notation "90.001 to 100.0" ;
-    skos:prefLabel "4615"@en ;
-    nccr:codeDescription "4615" ;
+    skos:prefLabel "90.001 to 100.0"@en ;
+    nccr:codeDescription "90.001 to 100.0" ;
     nccr:codeNotation "90.001 to 100.0" ;
     nccr:recordCount 4615 .
 
@@ -34367,17 +34367,17 @@ nccr-dv:ro-radiation-dose-delivered-binned-bin-0 a nccr:BinDefinition ;
     nccr:binMax 0.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-1 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 1" ;
+    nccr:binLabel "0-<10" ;
     nccr:binMax 10.0 ;
     nccr:binMin 0.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-10 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 10" ;
+    nccr:binLabel "80-<90" ;
     nccr:binMax 90.0 ;
     nccr:binMin 80.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-11 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 11" ;
+    nccr:binLabel "90-<100" ;
     nccr:binMax 100.0 ;
     nccr:binMin 90.0 .
 
@@ -34386,42 +34386,42 @@ nccr-dv:ro-radiation-dose-delivered-binned-bin-12 a nccr:BinDefinition ;
     nccr:binMin 100.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-2 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 2" ;
+    nccr:binLabel "10-<20" ;
     nccr:binMax 20.0 ;
     nccr:binMin 10.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-3 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 3" ;
+    nccr:binLabel "20-<30" ;
     nccr:binMax 30.0 ;
     nccr:binMin 20.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-4 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 4" ;
+    nccr:binLabel "30-<40" ;
     nccr:binMax 40.0 ;
     nccr:binMin 30.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-5 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 5" ;
+    nccr:binLabel "40-<50" ;
     nccr:binMax 50.0 ;
     nccr:binMin 40.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-6 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 6" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-7 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 7" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-8 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 8" ;
+    nccr:binLabel "60-<70" ;
     nccr:binMax 70.0 ;
     nccr:binMin 60.0 .
 
 nccr-dv:ro-radiation-dose-delivered-binned-bin-9 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 9" ;
+    nccr:binLabel "70-<80" ;
     nccr:binMax 80.0 ;
     nccr:binMin 70.0 .
 
@@ -34430,17 +34430,17 @@ nccr-dv:ro-radiation-dose-prescribed-binned-bin-0 a nccr:BinDefinition ;
     nccr:binMax 0.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-1 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 1" ;
+    nccr:binLabel "0-<10" ;
     nccr:binMax 10.0 ;
     nccr:binMin 0.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-10 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 10" ;
+    nccr:binLabel "80-<90" ;
     nccr:binMax 90.0 ;
     nccr:binMin 80.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-11 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 11" ;
+    nccr:binLabel "90-<100" ;
     nccr:binMax 100.0 ;
     nccr:binMin 90.0 .
 
@@ -34449,42 +34449,42 @@ nccr-dv:ro-radiation-dose-prescribed-binned-bin-12 a nccr:BinDefinition ;
     nccr:binMin 100.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-2 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 2" ;
+    nccr:binLabel "10-<20" ;
     nccr:binMax 20.0 ;
     nccr:binMin 10.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-3 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 3" ;
+    nccr:binLabel "20-<30" ;
     nccr:binMax 30.0 ;
     nccr:binMin 20.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-4 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 4" ;
+    nccr:binLabel "30-<40" ;
     nccr:binMax 40.0 ;
     nccr:binMin 30.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-5 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 5" ;
+    nccr:binLabel "40-<50" ;
     nccr:binMax 50.0 ;
     nccr:binMin 40.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-6 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 6" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-7 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 7" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-8 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 8" ;
+    nccr:binLabel "60-<70" ;
     nccr:binMax 70.0 ;
     nccr:binMin 60.0 .
 
 nccr-dv:ro-radiation-dose-prescribed-binned-bin-9 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 9" ;
+    nccr:binLabel "70-<80" ;
     nccr:binMax 80.0 ;
     nccr:binMin 70.0 .
 
@@ -34493,17 +34493,17 @@ nccr-dv:ro-radiation-fractions-delivered-binned-bin-0 a nccr:BinDefinition ;
     nccr:binMax 0.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-1 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 1" ;
+    nccr:binLabel "0-<10" ;
     nccr:binMax 10.0 ;
     nccr:binMin 0.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-10 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 10" ;
+    nccr:binLabel "80-<90" ;
     nccr:binMax 90.0 ;
     nccr:binMin 80.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-11 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 11" ;
+    nccr:binLabel "90-<100" ;
     nccr:binMax 100.0 ;
     nccr:binMin 90.0 .
 
@@ -34512,42 +34512,42 @@ nccr-dv:ro-radiation-fractions-delivered-binned-bin-12 a nccr:BinDefinition ;
     nccr:binMin 100.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-2 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 2" ;
+    nccr:binLabel "10-<20" ;
     nccr:binMax 20.0 ;
     nccr:binMin 10.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-3 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 3" ;
+    nccr:binLabel "20-<30" ;
     nccr:binMax 30.0 ;
     nccr:binMin 20.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-4 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 4" ;
+    nccr:binLabel "30-<40" ;
     nccr:binMax 40.0 ;
     nccr:binMin 30.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-5 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 5" ;
+    nccr:binLabel "40-<50" ;
     nccr:binMax 50.0 ;
     nccr:binMin 40.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-6 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 6" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-7 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 7" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-8 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 8" ;
+    nccr:binLabel "60-<70" ;
     nccr:binMax 70.0 ;
     nccr:binMin 60.0 .
 
 nccr-dv:ro-radiation-fractions-delivered-binned-bin-9 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 9" ;
+    nccr:binLabel "70-<80" ;
     nccr:binMax 80.0 ;
     nccr:binMin 70.0 .
 
@@ -34556,17 +34556,17 @@ nccr-dv:ro-radiation-fractions-prescribed-binned-bin-0 a nccr:BinDefinition ;
     nccr:binMax 0.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-1 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 1" ;
+    nccr:binLabel "0-<10" ;
     nccr:binMax 10.0 ;
     nccr:binMin 0.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-10 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 10" ;
+    nccr:binLabel "80-<90" ;
     nccr:binMax 90.0 ;
     nccr:binMin 80.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-11 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 11" ;
+    nccr:binLabel "90-<100" ;
     nccr:binMax 100.0 ;
     nccr:binMin 90.0 .
 
@@ -34575,42 +34575,42 @@ nccr-dv:ro-radiation-fractions-prescribed-binned-bin-12 a nccr:BinDefinition ;
     nccr:binMin 100.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-2 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 2" ;
+    nccr:binLabel "10-<20" ;
     nccr:binMax 20.0 ;
     nccr:binMin 10.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-3 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 3" ;
+    nccr:binLabel "20-<30" ;
     nccr:binMax 30.0 ;
     nccr:binMin 20.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-4 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 4" ;
+    nccr:binLabel "30-<40" ;
     nccr:binMax 40.0 ;
     nccr:binMin 30.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-5 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 5" ;
+    nccr:binLabel "40-<50" ;
     nccr:binMax 50.0 ;
     nccr:binMin 40.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-6 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 6" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-7 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 7" ;
+    nccr:binLabel "50-<60" ;
     nccr:binMax 60.0 ;
     nccr:binMin 50.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-8 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 8" ;
+    nccr:binLabel "60-<70" ;
     nccr:binMax 70.0 ;
     nccr:binMin 60.0 .
 
 nccr-dv:ro-radiation-fractions-prescribed-binned-bin-9 a nccr:BinDefinition ;
-    nccr:binLabel "Bin 9" ;
+    nccr:binLabel "70-<80" ;
     nccr:binMax 80.0 ;
     nccr:binMin 70.0 .
 
