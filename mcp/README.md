@@ -22,7 +22,16 @@ endpoint on demand.
 | `top_values` | Top values by frequency (incl. drug names, cancer sites) |
 | `search_by_subject` | Which datasets carry a given MeSH subject |
 | `get_dataset_info` | Full DATMM profile of a dataset |
+| `list_data_elements` | Every variable in a datasource, with source column and type |
 | `build_cohort` | Generate a portable cohort definition (RDF/Turtle) |
+| `list_request_fields` | The NCCR data request form's fields and character limits |
+| `list_research_areas` | Permissible Research Area values for a request |
+| `validate_request_draft` | Check a drafted request against the form's rules |
+
+Eleven tools. The first seven are read-only lookups over the published metadata.
+`list_request_fields`, `list_research_areas` and `validate_request_draft` support
+drafting an actual NCCR data request. `build_cohort` is the only tool that writes
+a file.
 
 ## Install
 
@@ -34,9 +43,14 @@ cd nccr-metadata/mcp
 uv venv --python 3.12
 uv pip install -r requirements.txt
 
-# or with pip
-pip install -r requirements.txt
+# or with the Python you already have
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 ```
+
+Use `python3 -m pip`, not a bare `pip` — on macOS the `pip` command is frequently
+absent even when pip is installed. See [the tools guide](../docs/tools-guide.md)
+for troubleshooting.
 
 ## Register with your AI client
 
@@ -65,15 +79,40 @@ Add to `.kiro/settings/mcp.json` (workspace) or the user-level MCP config:
 {
   "mcpServers": {
     "nccr-metadata": {
-      "command": "python3",
+      "command": "/absolute/path/to/nccr-metadata/mcp/.venv/bin/python3",
       "args": ["/absolute/path/to/nccr-metadata/mcp/nccr_mcp_server.py"],
-      "disabled": false
+      "disabled": false,
+      "autoApprove": [
+        "list_datasources", "discover_filters", "get_values", "top_values",
+        "search_by_subject", "get_dataset_info", "list_data_elements",
+        "list_request_fields", "list_research_areas", "validate_request_draft"
+      ]
     }
   }
 }
 ```
 
+Point `command` at the interpreter **inside the virtual environment**, not a bare
+`python3` — the system interpreter will not have `mcp` or `rdflib` installed.
+
 Restart the client; the NCCR tools will appear.
+
+## Controlling what runs without asking
+
+`autoApprove` lists the tools the assistant may call without prompting. The
+example above approves the ten read-only tools and deliberately omits
+`build_cohort`, which is the only tool that writes a file — so exploration is
+uninterrupted while anything producing an artifact stops for confirmation.
+
+To make **every** tool prompt, use an empty list or remove the key:
+
+```json
+"autoApprove": []
+```
+
+This is the only control over MCP tool approval. It is per-server, and it is not
+affected by client-level autonomy settings, which govern the client's own file and
+shell operations rather than MCP tools.
 
 ## Try it
 
