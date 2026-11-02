@@ -21,6 +21,7 @@ Requirements:
 
 import json
 import re
+import threading
 import urllib.request
 import uuid
 from datetime import datetime
@@ -82,6 +83,22 @@ LOCAL_REPORT_DIR = [REPO_ROOT / "source-data"]  # optional; usually not present
 
 _graph: Graph | None = None
 
+# The MCP SDK runs each tool call in its own worker thread, and clients such as
+# Kiro send calls in parallel. rdflib is not thread-safe: its SPARQL parser is
+# shared module state, and concurrent first-time parses can leave a parse action
+# broken (TypeError: Param.postParse2() missing 1 required positional argument)
+# for the rest of the process. So: load each graph exactly once, and run one
+# query at a time. Queries take milliseconds, so serialising them costs nothing
+# a user would notice.
+_load_lock = threading.Lock()
+_query_lock = threading.Lock()
+
+
+def run_query(g: Graph, q: str) -> list:
+    """Run a SPARQL query under the global lock and materialise the rows."""
+    with _query_lock:
+        return list(g.query(q))
+
 
 def _first_existing(paths):
     for p in paths:
@@ -95,7 +112,13 @@ def get_graph() -> Graph:
     global _graph
     if _graph is not None:
         return _graph
+    with _load_lock:
+        if _graph is None:
+            _graph = _load_graph()
+    return _graph
 
+
+def _load_graph() -> Graph:
     g = Graph()
 
     # Instances (required)
@@ -128,7 +151,6 @@ def get_graph() -> Graph:
             except Exception:
                 pass
 
-    _graph = g
     return g
 
 
@@ -165,7 +187,7 @@ def list_datasources() -> str:
     ORDER BY DESC(?count)
     """
     rows = []
-    for r in g.query(q):
+    for r in run_query(g, q):
         rows.append({
             "id": str(r.id),
             "name": str(r.label),
@@ -202,7 +224,7 @@ def discover_filters(datasource: str) -> str:
     ORDER BY ?title
     """
     rows = [{"filter": str(r.title), "type": str(r.type), "variable": str(r.varLabel)}
-            for r in g.query(q)]
+            for r in run_query(g, q)]
     if not rows:
         return json.dumps({
             "datasource": datasource.upper(),
@@ -227,7 +249,7 @@ def get_values(variable: str) -> str:
     PREFIX nccr: <https://nccrdataplatform.ccdi.cancer.gov/vocab#>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    SELECT ?dsLabel ?varLabel ?code ?description ?count WHERE {{
+    SELECT DISTINCT ?dsLabel ?varLabel ?code ?description ?count WHERE {{
         ?var a nccr:Variable ;
              rdfs:label ?varLabel ;
              nccr:belongsToSource/rdfs:label ?dsLabel ;
@@ -240,7 +262,9 @@ def get_values(variable: str) -> str:
     }}
     ORDER BY DESC(?count)
     """
-    rows = list(g.query(q))
+    # DISTINCT matters: the filter-title OPTIONAL yields one row per filter, so a
+    # variable with both a Min and a Max filter returned every value twice.
+    rows = run_query(g, q)
     if not rows:
         return json.dumps({
             "variable": variable,
@@ -354,7 +378,7 @@ def top_values(field: str, limit: int = 20, datasource: str = "") -> str:
         ORDER BY DESC(?count)
         LIMIT {limit}
         """
-        return list(g.query(q))
+        return run_query(g, q)
 
     def pack(rows, note=None):
         # Keep a single variable. The query can span several when names overlap.
@@ -419,7 +443,7 @@ def search_by_subject(mesh_term: str) -> str:
     ORDER BY ?dsTitle
     """
     rows = [{"dataset": str(r.dsTitle), "subject": str(r.subjLabel), "mesh": str(r.meshId)}
-            for r in g.query(q)]
+            for r in run_query(g, q)]
     return json.dumps({"query": mesh_term, "matches": rows}, indent=2)
 
 
@@ -546,17 +570,19 @@ def get_request_graph() -> Graph:
     global _req_graph
     if _req_graph is not None:
         return _req_graph
-    g = Graph()
-    p = _first_existing(LOCAL_REQUEST_FORM)
-    if p:
-        g.parse(str(p), format="turtle")
-    else:
-        try:
-            g.parse(f"{RAW_BASE}/request-form.ttl", format="turtle")
-        except Exception:
-            pass
-    _req_graph = g
-    return g
+    with _load_lock:
+        if _req_graph is None:
+            g = Graph()
+            p = _first_existing(LOCAL_REQUEST_FORM)
+            if p:
+                g.parse(str(p), format="turtle")
+            else:
+                try:
+                    g.parse(f"{RAW_BASE}/request-form.ttl", format="turtle")
+                except Exception:
+                    pass
+            _req_graph = g
+    return _req_graph
 
 
 @mcp.tool()
