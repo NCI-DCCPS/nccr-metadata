@@ -23,7 +23,8 @@
         "RO"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/RO",
-      "dct:description": "Data from NCI-supported Cancer Centers and the Pediatric Proton/Photon Consortium Registry (PPCR). Offers expanded radiation treatment data associated with each patient's course of therapy providing an enhanced longitudinal perspective regarding exposure to radiotherapy. Includes radiation anatomic site, radiation therapy type, radiation energy type, total and prescribed doses and fractions, months from index diagnosis to start and end of radiation therapy event, and other elements abstracted from clinical records. Covers patients with a SEER diagnosis year of 1995-2023 and radiation therapy events that took place between 1995 and 2023. Contains 5,060 records for 2,650 patients.",
+      "dct:description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Radiation Oncology data source comprises data from NCI-supported Cancer Centers and the Pediatric Proton/Photon Consortium Registry Exit Disclaimer (PPCR). This data source offers expanded radiation treatment data associated with each patient's course of therapy and provides an enhanced longitudinal perspective regarding a patient's exposure to radiotherapy. It also consists of radiation anatomic site, radiation therapy type, radiation energy type, total and prescribed doses and fractions, months from index diagnosis to start and end of radiation therapy event, and other data elements abstracted from the clinical record. This data source includes radiation therapy records for patients with a SEER diagnosis year of 1995-2023, and for radiation therapy events that took place between 1995-2023.",
+      "dct:issued": "2026-09-11",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
@@ -32,7 +33,7 @@
       "dct:isPartOf": [
         {
           "@type": "datmm:Repository",
-          "dct:identifier": null,
+          "dct:identifier": "doi: 10.71925/byd9-3d93",
           "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
           "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/home",
           "dct:alternative": [

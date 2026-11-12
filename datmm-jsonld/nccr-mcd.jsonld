@@ -23,7 +23,8 @@
         "MCD"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCD",
-      "dct:description": "Patient diagnosis data extracted from medical claims collected by various insurers. Includes the ICD-9 or ICD-10 diagnosis code associated with each claim, sequence numbers for diagnosis codes occurring on multiple claims within the same month, and months elapsed between the index cancer diagnosis and the service date of the claim. Includes claims with an original service start date between 2000 and 2025. Contains 56,660,564 records for 300,394 patients, covering diagnosis years 1995-2023.",
+      "dct:description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Medical Claims Diagnosis data source provides patient diagnosis data extracted from medical claims collected by various insurers. It includes the ICD-9 or ICD-10 diagnosis code associated with each claim, the sequence number for diagnosis codes that occurred on multiple claims within the same month, and the number of months that elapsed between the index cancer diagnosis and the service start date of the claim for the diagnosis code. This data source includes claims with an original service start date between 2000-2025.",
+      "dct:issued": "2026-09-11",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
@@ -32,7 +33,7 @@
       "dct:isPartOf": [
         {
           "@type": "datmm:Repository",
-          "dct:identifier": null,
+          "dct:identifier": "doi: 10.71925/byd9-3d93",
           "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
           "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/home",
           "dct:alternative": [

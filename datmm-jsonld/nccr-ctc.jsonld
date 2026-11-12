@@ -23,7 +23,8 @@
         "CTC"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/CTC",
-      "dct:description": "Final adjudicated data collected from population-based cancer registries including SEER. Submitted in December 2025 under National Childhood Cancer Registry data submission requirements for cases diagnosed from 1995 to 2023, totaling 1,614,685 tumors from 1,483,916 unique individuals ages 0-39. Every cancer diagnosis has its own record. The records represent 54.3% of all U.S. children, adolescents, and young adults ages 0-39 based on 2023 U.S. populations. Registries include California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, Massachusetts, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. Also includes NAACCR Virtual Pooled Registry linkage for identifying prior and subsequent malignant neoplasms.",
+      "dct:description": "The Consolidated Tumor Case (CTC) data source consists of the final adjudicated data collected from population-based cancer registries, including Surveillance, Epidemiology, & End Results (SEER) registries. The CTC data available in the data platform were submitted in December 2025 under the National Childhood Cancer Registry data submission requirements for cases diagnosed from 1995 to 2023. The records represent 54.3% of all U.S. children, adolescents, and young adults between the ages of 0 and 39 based on 2023 U.S. populations. Registries include: California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, Massachusetts, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. This data source also includes information from the NAACCR Virtual Pooled Registry linkage, which helps to identify prior and subsequent malignant neoplasms from additional central cancer registries. In this file, every cancer diagnosis has its own record.",
+      "dct:issued": "2026-09-11",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
@@ -32,7 +33,7 @@
       "dct:isPartOf": [
         {
           "@type": "datmm:Repository",
-          "dct:identifier": null,
+          "dct:identifier": "doi: 10.71925/byd9-3d93",
           "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
           "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/home",
           "dct:alternative": [

@@ -12,9 +12,9 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-abm> a datmm:Dataset ;
     dct:title "NCCR Area-Based Measures (ABM)" ;
     dct:alternative "ABM" ;
-    dct:description "Non-clinical data variables derived from the US Census Department providing broader context of health-related factors. Variables use 2010 Census attributes and 2010 Census-defined boundaries for diagnosis years 2006 through 2017, and 2020 Census attributes and boundaries for diagnosis years 2018 through 2023. Includes Yost socioeconomic status quintiles, Rural-Urban Commuting Area codes, Urban Rural Indicator Codes, and persistent poverty indicators. Every cancer diagnosis has its own record, with variables calculated for the census tract associated with the address known at the time of that diagnosis. Values provided for cases with SEER diagnosis year 2006-2023. Contains 1,614,685 records for 1,483,916 patients, aligned to the tumour records in CTC." ;
+    dct:description "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Area-Based Measures data source provides non-clinical data variables derived from the US Census Department, which allow researchers to gain a broader context of the factors that may contribute to a person's health. The variables use 2010 Census attributes based on 2010 Census-defined geographic boundaries for diagnosis years 2006 through 2017 and 2020 Census attributes based on 2020 Census-defined geographic boundaries for diagnosis years 2018 through 2023. In this file, every cancer diagnosis has its own record, and variables are calculated for the census tract associated with the address known at the time of that diagnosis. Values for these variables are provided for cases with a SEER diagnosis year between 2006 and 2023." ;
     dct:identifier "nccr-abm" ;
-    dct:issued "2026-06-21"^^xsd:date ;
+    dct:issued "2026-09-11"^^xsd:date ;
     dct:language "en" ;
     dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
     adms:status "published" ;
@@ -25,4 +25,4 @@
         <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0004> ;
-    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." .
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: October 22, 2026; cited: November 12, 2026]. doi: 10.71925/byd9-3d93." .
