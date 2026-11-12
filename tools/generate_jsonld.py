@@ -210,6 +210,35 @@ def dataset_node(g: Graph, dataset_id: str) -> dict:
 # Main
 # ============================================================
 
+NLM_FIELDS_FILE = "nccr-nlm-fields.json"
+
+
+def nlm_fields_record(node: dict) -> dict:
+    """Reduce a full dataset node to exactly the fields NLM requested (Nov 2026),
+    keyed by NLM's own field names, in their order. Funding Source is blank
+    until we have more information."""
+    repo = node["dct:isPartOf"][0]
+    contributors = [c["bf:agent"]["foaf:name"]
+                    for c in node.get("bf:contribution", [])
+                    if c.get("bf:agent", {}).get("foaf:name")]
+    pubmed = [i for d in node.get("dct:isReferencedBy", [])
+              for i in d.get("dct:identifier", [])]
+    return {
+        "Data Repository": (repo.get("dct:alternative") or [repo.get("dct:title")])[0],
+        "Data Repository URI": repo.get("dct:identifier"),
+        "Dataset ID": node["dct:identifier"][0],
+        "Dataset Full Name": node["dct:title"],
+        "Description": node["dct:description"],
+        "Study page": node["foaf:homepage"],
+        "Release date": node.get("dct:issued"),
+        "PI name/ Contributor": "; ".join(contributors),
+        "Funding Source": "",
+        "PubMed ID": pubmed,
+        "Limitations for reuse/ Rights": (node.get("dct:rights") or [""])[0],
+        "Subject": {"dct:subject": node["dct:subject"]},
+    }
+
+
 def load_graph() -> Graph:
     g = Graph()
     for ttl in sorted(DATMM_DIR.glob("*.ttl")):
@@ -247,6 +276,12 @@ def main():
     combined_path = OUTPUT_DIR / "nccr-datmm.jsonld"
     combined_path.write_text(json.dumps(combined, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\n  Combined: nccr-datmm.jsonld ({len(all_nodes)} datasets)")
+
+    # NLM-requested fields only, all datasets in one plain JSON file
+    nlm = [nlm_fields_record(n) for n in all_nodes]
+    nlm_path = OUTPUT_DIR / NLM_FIELDS_FILE
+    nlm_path.write_text(json.dumps(nlm, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"  NLM fields: {NLM_FIELDS_FILE} ({len(nlm)} datasets)")
     print(f"\nOutput written to: {OUTPUT_DIR}")
 
 
