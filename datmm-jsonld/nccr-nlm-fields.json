@@ -1,0 +1,347 @@
+[
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-ctc",
+    "Dataset Full Name": "NCCR Consolidated Tumor Case (CTC)",
+    "Description": "The Consolidated Tumor Case (CTC) data source consists of the final adjudicated data collected from population-based cancer registries, including Surveillance, Epidemiology, & End Results (SEER) registries. The CTC data available in the data platform were submitted in December 2025 under the National Childhood Cancer Registry data submission requirements for cases diagnosed from 1995 to 2023. The records represent 54.3% of all U.S. children, adolescents, and young adults between the ages of 0 and 39 based on 2023 U.S. populations. Registries include: California (Greater Bay, Greater California, Los Angeles), Colorado, Connecticut, Georgia, Hawai'i, Idaho, Illinois, Iowa, Kentucky, Louisiana, Massachusetts, New Jersey, New Mexico, New York, Seattle-Puget Sound, Tennessee, Texas, Utah, and Wisconsin. This data source also includes information from the NAACCR Virtual Pooled Registry linkage, which helps to identify prior and subsequent malignant neoplasms from additional central cancer registries. In this file, every cancer diagnosis has its own record.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/CTC",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [
+      "37941743",
+      "PMC10629798"
+    ],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D012042",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Registries",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-abm",
+    "Dataset Full Name": "NCCR Area-Based Measures (ABM)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Area-Based Measures data source provides non-clinical data variables derived from the US Census Department, which allow researchers to gain a broader context of the factors that may contribute to a person's health. The variables use 2010 Census attributes based on 2010 Census-defined geographic boundaries for diagnosis years 2006 through 2017 and 2020 Census attributes based on 2020 Census-defined geographic boundaries for diagnosis years 2018 through 2023. In this file, every cancer diagnosis has its own record, and variables are calculated for the census tract associated with the address known at the time of that diagnosis. Values for these variables are provided for cases with a SEER diagnosis year between 2006 and 2023.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/ABM",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D012959",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Socioeconomic Factors",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-ccdi",
+    "Dataset Full Name": "NCCR Childhood Cancer Data Initiative Mappings (CCDI)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Childhood Cancer Data Initiative (CCDI) Mappings data source leverages the CCDI Participant Index (CPI) to match the same individual across different organizations, datasets, and studies. For example, it matches data between the NCCR Data Platform and studies listed in the CCDI Hub. Example datasets available in this resource include the CCDI: Molecular Characterization Initiative (phs002790) and the CCDI: Enhancement of Data Sharing in Pediatric, Adolescent, and Young Adult Cancers (phs002431). Publicly available participant identifiers are mapped to NCCR identifiers to enable accurate dataset merging and novel analysis of data identified outside the NCCR Data Platform. This facilitates the exploration of complex research questions made possible when an individual’s data are unified across public health surveillance, research studies, and real-world healthcare resources. There are three types of external resources available for data mapping: datasets (data available from an external resource, such as genomic data), organizations (larger projects or networks, such as the American Association for Cancer Research’s Project GENIE), and studies (research initiatives, such as St. Jude). Approval to access mappings for these external resources should be obtained from the respective resource (such as dbGaP). The records available in the CPI are updated periodically. To ensure your cohort includes the most recent data, NCCR recommends using the most recent manifest of identifiers to search for matches each time you plan to use a given cohort in a data request. The CPI currently includes patients with SEER Diagnosis year between 1995 and 2023. To learn more about CCDI's pediatric cancer research datasets and resources, visit the Childhood Cancer Data Initiative Hub.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/CCDI",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process. Approval to access mappings for external resources should be obtained from the respective resource.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D008495",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Medical Record Linkage",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-cog",
+    "Dataset Full Name": "NCCR Children's Oncology Group (COG)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Children's Oncology Group (COG) data source provides data for patients enrolled in COG studies, including clinical trials and registry protocols, such as Childhood Cancer Research Network and Project:EveryChild. When used in tandem with other NCCR data, these data can help researchers better understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. This data source collects data from patients with a COG captured diagnosis year between 2007 and 2018.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D002986",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Clinical Trials as Topic",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-mcd",
+    "Dataset Full Name": "NCCR Medical Claims Diagnosis (MCD)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Medical Claims Diagnosis data source provides patient diagnosis data extracted from medical claims collected by various insurers. It includes the ICD-9 or ICD-10 diagnosis code associated with each claim, the sequence number for diagnosis codes that occurred on multiple claims within the same month, and the number of months that elapsed between the index cancer diagnosis and the service start date of the claim for the diagnosis code. This data source includes claims with an original service start date between 2000-2025.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCD",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D007349",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Insurance Claim Review",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-mce",
+    "Dataset Full Name": "NCCR Medical Claims Enrollment (MCE)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Medical Claims Enrollment data source provides patient enrollment data extracted from medical claims collected by various insurers. It includes details about each patient’s insurance enrollment status at various points in time before and after their index cancer diagnosis. While all patients are included in the Medical Claims Enrollment data, enrollment status is known only for years between 2000 to 2023, and only for patients with a SEER diagnosis year between 2000 and 2021.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCE",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D007348",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Insurance, Health",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-mcp",
+    "Dataset Full Name": "NCCR Medical Claims Procedure (MCP)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Medical Claims Procedure data source provides patient procedure data extracted from medical claims collected by various insurers. It includes the ICD-9, ICD-10, HCPCS, or CPT procedure code associated with each claim (along with any applicable procedure modifiers), the sequence number for procedures that occurred on multiple claims within the same month, and the number of months that elapsed between the index cancer diagnosis and the service start date of the procedure. This data source includes claims with start dates between 2000-2025.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCP",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D007349",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Insurance Claim Review",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-pharm",
+    "Dataset Full Name": "NCCR Pharmacy Claims (PHARM)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Pharmacy Claims data source provides information derived from outpatient pharmacy providers' claims for medications dispensed to patients with cancer. This data source includes information for patients with claims since 2000 from a variety of insurers, such as commercial plans or Medicaid, and from commercial pharmacies and a variety of geographic areas of participating NCCR registries. It holds the 9- and 11-digit National Drug Code, quantity, duration of the dispensed medication, the associated drug classes and names from the NCI's CanMED (or, for medications not found in CanMED, the names, identifiers, strength, dose form, and class information from RxNorm), and the months elapsed between the date of the first cancer diagnosis and dispense start date of that medication. This data source is not hospital-based and contains mostly outpatient pharmacy prescriptions. As such, while oral antineoplastics and infusion-based chemotherapies are included in this data source, hospital-based chemotherapy agents are currently not included.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/PHARM",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D004304",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Drug Prescriptions",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  },
+  {
+    "Data Repository": "NCCR Data Platform",
+    "Data Repository URI": "doi: 10.71925/byd9-3d93",
+    "Dataset ID": "nccr-ro",
+    "Dataset Full Name": "NCCR Radiation Oncology (RO)",
+    "Description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Radiation Oncology data source comprises data from NCI-supported Cancer Centers and the Pediatric Proton/Photon Consortium Registry Exit Disclaimer (PPCR). This data source offers expanded radiation treatment data associated with each patient's course of therapy and provides an enhanced longitudinal perspective regarding a patient's exposure to radiotherapy. It also consists of radiation anatomic site, radiation therapy type, radiation energy type, total and prescribed doses and fractions, months from index diagnosis to start and end of radiation therapy event, and other data elements abstracted from the clinical record. This data source includes radiation therapy records for patients with a SEER diagnosis year of 1995-2023, and for radiation therapy events that took place between 1995-2023.",
+    "Study page": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/RO",
+    "Release date": "2026-09-11",
+    "PI name/ Contributor": "Surveillance, Epidemiology, and End Results (SEER) Program, National Cancer Institute",
+    "Funding Source": "",
+    "PubMed ID": [],
+    "Limitations for reuse/ Rights": "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process.",
+    "Subject": {
+      "dct:subject": [
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D009369",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Neoplasms",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D010372",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Pediatrics",
+          "dct:source": "repository_supplied"
+        },
+        {
+          "@type": "skos:Concept",
+          "dct:identifier": "http://id.nlm.nih.gov/mesh/D019966",
+          "skos:inScheme": "MeSH RDF",
+          "rdfs:label": "Radiation Oncology",
+          "dct:source": "repository_supplied"
+        }
+      ]
+    }
+  }
+]
