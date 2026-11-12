@@ -23,7 +23,8 @@
         "COG"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/COG",
-      "dct:description": "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018. Contains 1,483,916 records, one per patient, of whom 42,031 have confirmed COG study enrollment.",
+      "dct:description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Children's Oncology Group (COG) data source provides data for patients enrolled in COG studies, including clinical trials and registry protocols, such as Childhood Cancer Research Network and Project:EveryChild. When used in tandem with other NCCR data, these data can help researchers better understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. This data source collects data from patients with a COG captured diagnosis year between 2007 and 2018.",
+      "dct:issued": "2026-09-11",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
@@ -32,7 +33,7 @@
       "dct:isPartOf": [
         {
           "@type": "datmm:Repository",
-          "dct:identifier": null,
+          "dct:identifier": "doi: 10.71925/byd9-3d93",
           "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
           "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/home",
           "dct:alternative": [

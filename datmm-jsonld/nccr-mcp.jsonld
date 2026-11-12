@@ -23,7 +23,8 @@
         "MCP"
       ],
       "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/data-browser/MCP",
-      "dct:description": "Patient procedure data extracted from medical claims collected by various insurers. Includes ICD-9, ICD-10, HCPCS, or CPT procedure codes associated with each claim, applicable procedure modifiers, sequence numbers for procedures occurring on multiple claims within the same month, and months elapsed between index cancer diagnosis and the service date of the procedure. Includes claims with start dates between 2000 and 2025. Contains 65,745,499 records for 300,461 patients, covering diagnosis years 1995-2023.",
+      "dct:description": "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Medical Claims Procedure data source provides patient procedure data extracted from medical claims collected by various insurers. It includes the ICD-9, ICD-10, HCPCS, or CPT procedure code associated with each claim (along with any applicable procedure modifiers), the sequence number for procedures that occurred on multiple claims within the same month, and the number of months that elapsed between the index cancer diagnosis and the service start date of the procedure. This data source includes claims with start dates between 2000-2025.",
+      "dct:issued": "2026-09-11",
       "dct:language": "en",
       "dct:rights": [
         "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process."
@@ -32,7 +33,7 @@
       "dct:isPartOf": [
         {
           "@type": "datmm:Repository",
-          "dct:identifier": null,
+          "dct:identifier": "doi: 10.71925/byd9-3d93",
           "dct:title": "National Childhood Cancer Registry (NCCR) Data Platform",
           "foaf:homepage": "https://nccrdataplatform.ccdi.cancer.gov/home",
           "dct:alternative": [

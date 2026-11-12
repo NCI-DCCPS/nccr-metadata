@@ -107,7 +107,7 @@ def repository_node(g: Graph) -> dict:
     """Build the nested datmm:Repository object."""
     node = {
         "@type": "datmm:Repository",
-        "dct:identifier": None,  # NLM assigns a linked-data URI on ingestion
+        "dct:identifier": _lit(g, REPO_URI, DCT.identifier),  # platform DOI
         "dct:title": _lit(g, REPO_URI, DCT.title),
         "foaf:homepage": _lit(g, REPO_URI, FOAF.homepage),
         "dct:alternative": _all(g, REPO_URI, DCT.alternative),
@@ -177,6 +177,9 @@ def dataset_node(g: Graph, dataset_id: str) -> dict:
     node["dct:alternative"] = _all(g, ds, DCT.alternative)
     node["foaf:homepage"] = _lit(g, ds, FOAF.homepage)
     node["dct:description"] = _lit(g, ds, DCT.description)
+    issued = _lit(g, ds, DCT.issued)
+    if issued:
+        node["dct:issued"] = issued  # release date, ISO 8601
     node["dct:language"] = _lit(g, ds, DCT.language)
     rights = _lit(g, ds, DCT.rights)
     node["dct:rights"] = [rights] if rights else []

@@ -12,9 +12,9 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-pharm> a datmm:Dataset ;
     dct:title "NCCR Pharmacy Claims (PHARM)" ;
     dct:alternative "PHARM" ;
-    dct:description "Information derived from outpatient pharmacy providers' claims for medications dispensed to patients with cancer. Includes patients with claims since 2000 from commercial plans, Medicaid, and commercial pharmacies. Contains 9- and 11-digit NDC codes, CanMED and RxNorm drug classification, dispense quantity and duration, and months from diagnosis to dispense. Not hospital-based: contains mostly outpatient pharmacy prescriptions, so while oral antineoplastics and infusion-based chemotherapies are included, hospital-based chemotherapy agents are not. Contains 13,017,829 records for 249,120 patients, covering diagnosis years 1995-2023." ;
+    dct:description "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Pharmacy Claims data source provides information derived from outpatient pharmacy providers' claims for medications dispensed to patients with cancer. This data source includes information for patients with claims since 2000 from a variety of insurers, such as commercial plans or Medicaid, and from commercial pharmacies and a variety of geographic areas of participating NCCR registries. It holds the 9- and 11-digit National Drug Code, quantity, duration of the dispensed medication, the associated drug classes and names from the NCI's CanMED (or, for medications not found in CanMED, the names, identifiers, strength, dose form, and class information from RxNorm), and the months elapsed between the date of the first cancer diagnosis and dispense start date of that medication. This data source is not hospital-based and contains mostly outpatient pharmacy prescriptions. As such, while oral antineoplastics and infusion-based chemotherapies are included in this data source, hospital-based chemotherapy agents are currently not included." ;
     dct:identifier "nccr-pharm" ;
-    dct:issued "2026-06-21"^^xsd:date ;
+    dct:issued "2026-09-11"^^xsd:date ;
     dct:language "en" ;
     dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
     adms:status "published" ;
@@ -25,4 +25,4 @@
         <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0009> ;
-    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." .
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: October 22, 2026; cited: November 12, 2026]. doi: 10.71925/byd9-3d93." .

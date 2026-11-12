@@ -673,17 +673,18 @@ class TestDATMMStructure:
         """))
         assert len(grants) == 0, f"Found {len(grants)} Grant records; expected 0"
 
-    def test_repository_has_no_url_identifier(self, graph):
-        """Repository dct:identifier should be omitted (NLM assigns a linked-data URI)."""
-        results = list(graph.query("""
+    def test_repository_identifier_is_doi(self, graph):
+        """Repository dct:identifier is the platform DOI, in the form NLM requested
+        (Nov 2026). It replaced the earlier rule of omitting the identifier."""
+        results = [str(r.id) for r in graph.query("""
             PREFIX datmm: <http://id.nlm.nih.gov/datmm/>
             PREFIX dct: <http://purl.org/dc/terms/>
             SELECT ?id WHERE {
                 ?repo a datmm:Repository ;
                       dct:identifier ?id .
             }
-        """))
-        assert len(results) == 0, "Repository should not carry a URL as dct:identifier"
+        """)]
+        assert results == ["doi: 10.71925/byd9-3d93"], f"Unexpected repository identifier: {results}"
 
 
 # ============================================================

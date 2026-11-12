@@ -12,9 +12,9 @@
 <http://id.nlm.nih.gov/datmm/dataset/nccr-cog> a datmm:Dataset ;
     dct:title "NCCR Children's Oncology Group (COG)" ;
     dct:alternative "COG" ;
-    dct:description "Data for patients enrolled in COG studies including clinical trials and registry protocols such as Childhood Cancer Research Network and Project:EveryChild. Enables researchers to understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. Collects data from patients with a COG captured diagnosis year 2007-2018. Contains 1,483,916 records, one per patient, of whom 42,031 have confirmed COG study enrollment." ;
+    dct:description "This data source does not represent the entire population of people diagnosed with cancer in the original catchment area. The Children's Oncology Group (COG) data source provides data for patients enrolled in COG studies, including clinical trials and registry protocols, such as Childhood Cancer Research Network and Project:EveryChild. When used in tandem with other NCCR data, these data can help researchers better understand differences between patients who have participated in COG studies or registries and those with no evidence of participation. This data source collects data from patients with a COG captured diagnosis year between 2007 and 2018." ;
     dct:identifier "nccr-cog" ;
-    dct:issued "2026-06-21"^^xsd:date ;
+    dct:issued "2026-09-11"^^xsd:date ;
     dct:language "en" ;
     dct:rights "Controlled access. Individual-level de-identified data requires IRB review and approval via the NCCR Data Access Request process." ;
     adms:status "published" ;
@@ -25,4 +25,4 @@
         <http://id.nlm.nih.gov/datmm/concept/nccr-0001> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0002> ,
         <http://id.nlm.nih.gov/datmm/concept/nccr-0006> ;
-    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: June 21, 2026; cited: June 26, 2026]. doi: 10.71925/byd9-3d93." .
+    dct:bibliographicCitation "Childhood Cancer Data Initiative (CCDI) National Childhood Cancer Registry (NCCR) Data Platform: An interactive data platform for NCCR cancer statistics [Internet]. National Cancer Institute; [updated: October 22, 2026; cited: November 12, 2026]. doi: 10.71925/byd9-3d93." .
