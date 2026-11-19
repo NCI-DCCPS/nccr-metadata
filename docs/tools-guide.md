@@ -181,8 +181,8 @@ python3 tools/cohort_builder.py values "Yost - U.S.-based Socioeconomic Status (
 
   Code         Description                                        Records
   ------------ -------------------------------------------------- --------
-  2            Female                                              900,104
-  1            Male                                                574,264
+  2            Female                                              987,476
+  1            Male                                                627,209
                                                               ------------
                TOTAL                                            1,614,685
 ```
