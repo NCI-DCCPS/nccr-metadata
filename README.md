@@ -13,7 +13,7 @@ This repository provides semantic metadata representations for the NCCR Data Pla
 | File | Purpose |
 |------|---------|
 | `nccr_vocab.ttl` | **Vocabulary** — OWL classes and properties for variables, value sets, filters, processing rules, and display configuration |
-| `nccr_datmm.ttl` | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and its 9 datasources (CTC, ABM, CCDI, COG, MCD, MCE, MCP, PHARM, RO) |
+| `datmm/` | **Dataset catalog** — DATMM 6.0.0 metadata describing the platform and its 9 datasources (CTC, ABM, CCDI, COG, MCD, MCE, MCP, PHARM, RO), one TTL file per record ([index](datmm/index.md)) |
 | `nccr_instances.ttl` | **Instance data** — Complete RDF representation of all 528 variables across all 9 NCCR datasources, including value sets, display configs, filters, processing rules, and per-source patient counts (44,389 triples) |
 | `request-form.ttl` | **Data request form** — field inventory, character limits, publicly-displayed flags, the Research Areas controlled vocabulary, and the data elements the form selects by default per datasource |
 | `RAW-JSON/` | **Raw upstream input** — unmodified source data-dictionary JSON for the 9 datasources, published for partners doing their own crosswalk ([details](RAW-JSON/README.md)) |
@@ -55,7 +55,7 @@ to be used together.
 ```
 nccr_vocab.ttl        ← Defines classes & properties (the schema)
        │
-nccr_datmm.ttl       ← Dataset-level catalog (who, what, where)
+datmm/                ← Dataset-level catalog (who, what, where)
        │
 nccr_instances.ttl    ← All variables, value sets, filters, and rules as RDF (the content)
 ```
@@ -89,7 +89,7 @@ from rdflib import Graph
 
 g = Graph()
 g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_vocab.ttl")
-g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_datmm.ttl")
+g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/datmm/ctc.ttl")  # one of the files in datmm/
 g.parse("https://raw.githubusercontent.com/NCI-DCCPS/nccr-metadata/main/nccr_instances.ttl")
 
 # Query: which variables are visible in the Data Browser?
@@ -111,4 +111,4 @@ for row in results:
 
 ## License
 
-This metadata is provided under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+This metadata is provided under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). See [LICENSE](LICENSE) for the legal code.

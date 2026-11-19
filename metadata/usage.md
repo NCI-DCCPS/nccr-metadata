@@ -143,8 +143,8 @@ ORDER BY DESC(?count)
 
 Example result:
 ```
-Female: 900,104
-Male:   574,264
+Female: 987,476
+Male:   627,209
 ```
 
 ### Find rare values (low frequency)
@@ -222,8 +222,8 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?value ?description ?count WHERE {
+    ?filter nccr:filterControlTitle "ICD-O-3 Behavior Code" .
     ?var a nccr:Variable ;
-         rdfs:label "ICD-O-3 Behavior Code" ;
          nccr:boundToFilter ?filter ;
          nccr:hasValueSet/nccr:hasCodeValue ?cv .
     ?cv skos:notation ?value ;
